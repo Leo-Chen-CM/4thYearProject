@@ -82,7 +82,7 @@ public class GlobalSelection : MonoBehaviour
             else //marquee select
             {
                 verts = new Vector3[4];
-                vecs = new Vector3[4];
+                //vecs = new Vector3[4];
                 int i = 0;
                 p2 = Input.mousePosition;
                 corners = getBoundingBox(p1, p2);
@@ -94,14 +94,14 @@ public class GlobalSelection : MonoBehaviour
                     if (Physics.Raycast(ray, out hit, 50000.0f, (1 << 8)))
                     {
                         verts[i] = new Vector3(hit.point.x, hit.point.y, hit.point.z);
-                        vecs[i] = ray.origin - hit.point;
+                        //vecs[i] = ray.origin - hit.point;
                         Debug.DrawLine(Camera.main.ScreenToWorldPoint(corner), hit.point, Color.red, 1.0f);
                     }
                     i++;
                 }
 
                 //generate the mesh
-                selectionMesh = generateSelectionMesh(verts, vecs);
+                selectionMesh = generateSelectionMesh(verts);
 
                 selectionBox = gameObject.AddComponent<MeshCollider>();
                 selectionBox.sharedMesh = selectionMesh;
@@ -135,24 +135,72 @@ public class GlobalSelection : MonoBehaviour
     }
     Vector2[] getBoundingBox(Vector2 p1, Vector2 p2)
     {
-        // Min and Max to get 2 corners of rectangle regardless of drag direction.
-        var bottomLeft = Vector3.Min(p1, p2);
-        var topRight = Vector3.Max(p1, p2);
+        //// Min and Max to get 2 corners of rectangle regardless of drag direction.
+        //var bottomLeft = Vector3.Min(p1, p2);
+        //var topRight = Vector3.Max(p1, p2);
 
-        // 0 = top left; 1 = top right; 2 = bottom left; 3 = bottom right;
-        Vector2[] corners =
+        //// 0 = top left; 1 = top right; 2 = bottom left; 3 = bottom right;
+        //Vector2[] corners =
+        //{
+        //    new Vector2(bottomLeft.x, topRight.y),
+        //    new Vector2(topRight.x, topRight.y),
+        //    new Vector2(bottomLeft.x, bottomLeft.y),
+        //    new Vector2(topRight.x, bottomLeft.y)
+        //};
+
+        Vector2 newP1;
+        Vector2 newP2;
+        Vector2 newP3;
+        Vector2 newP4;
+
+
+        if (p1.x < p2.x)
         {
-            new Vector2(bottomLeft.x, topRight.y),
-            new Vector2(topRight.x, topRight.y),
-            new Vector2(bottomLeft.x, bottomLeft.y),
-            new Vector2(topRight.x, bottomLeft.y)
-        };
+            if (p1.y > p2.y)
+            {
+                newP1 = p1;
+                newP2 = new Vector2(p2.x, p1.y);
+                newP3 = new Vector2(p1.x, p2.y);
+                newP4 = p2;
+            }
+            else
+            {
+                newP1 = new Vector2(p1.x, p2.y);
+                newP2 = p2;
+                newP3 = p1;
+                newP4 = new Vector2(p2.x, p1.y);
+            }
+  
+        }
+        else
+        {
+
+            if (p1.y > p2.y)
+            {
+                newP1 = new Vector2(p2.x, p1.y);
+                newP2 = p1;
+                newP3 = p2;
+                newP4 = new Vector2(p1.x, p2.y);
+
+
+            }
+            else
+            {
+                newP1 = p2;
+                newP2 = new Vector2(p1.x, p2.y);
+                newP3 = new Vector2(p2.x, p1.y);
+                newP4 = p1;
+            }
+        }
+
+        Vector2[] corners = { newP1, newP2, newP3, newP4 };
+
         return corners;
 
     }
 
     //generate a mesh from the 4 bottom points
-    Mesh generateSelectionMesh(Vector3[] corners, Vector3[] vecs)
+    Mesh generateSelectionMesh(Vector3[] corners)
     {
         Vector3[] verts = new Vector3[8];
         int[] tris = { 0, 1, 2, 2, 1, 3, 4, 6, 0, 0, 6, 2, 6, 7, 2, 2, 7, 3, 7, 5, 3, 3, 5, 1, 5, 0, 1, 1, 4, 0, 4, 5, 6, 6, 5, 7 }; //map the tris of our cube
@@ -164,7 +212,7 @@ public class GlobalSelection : MonoBehaviour
 
         for (int j = 4; j < 8; j++)
         {
-            verts[j] = corners[j - 4] + vecs[j - 4];
+            verts[j] = corners[j - 4] + Vector3.up * 100.0f;
         }
 
         Mesh selectionMesh = new Mesh();

@@ -13,14 +13,14 @@ public class SelectedDictionary : MonoBehaviour
         if (!(selectedUnitsTable.ContainsKey(id)))
         {
             selectedUnitsTable.Add(id, t_selected);
-            t_selected.AddComponent<SelectionColor>();
+            t_selected.AddComponent<SelectionComponent>();
             Debug.Log("Added" + id + "to selected dict");
         }
     }
 
     public void deselect(int id)
     {
-        Destroy(selectedUnitsTable[id].GetComponent<SelectionColor>());
+        Destroy(selectedUnitsTable[id].GetComponent<SelectionComponent>());
         selectedUnitsTable.Remove(id);
     }
 
@@ -31,7 +31,7 @@ public class SelectedDictionary : MonoBehaviour
         {
             if (pair.Value != null)
             {
-                Destroy(selectedUnitsTable[pair.Key].GetComponent<SelectionColor>());
+                Destroy(selectedUnitsTable[pair.Key].GetComponent<SelectionComponent>());
             }
         }
         selectedUnitsTable.Clear();

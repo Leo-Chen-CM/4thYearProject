@@ -77,6 +77,7 @@ public class RTSGameController : MonoBehaviour
         {
             Vector3 moveToPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
+            moveToPosition = new Vector3(moveToPosition.x, moveToPosition.y, 0);
 
             List<Vector3> targetPositionList = GetPositionListAround(moveToPosition, new float[] {5f,10f,15f}, new int[] { 5,10,20});
 

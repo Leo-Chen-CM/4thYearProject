@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// 
+/// </summary>
 public class UnitFieldOfView : MonoBehaviour
 {
 
@@ -31,18 +34,115 @@ public class UnitFieldOfView : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        viewMesh = new Mesh ();
-		viewMesh.name = "View Mesh";
-		viewMeshFilter.mesh = viewMesh;
-
-
+        viewMesh = new Mesh();
+        viewMesh.name = "View Mesh";
+        viewMeshFilter.mesh = viewMesh;
 
 
         m_entityRef = GameObject.FindGameObjectWithTag("Player");
         //StartCoroutine(FOVCheck());
-        //StartCoroutine("FindTargetsWithDelay", .2f);
+        StartCoroutine("FindTargetsWithDelay", .2f);
+
+        
+
     }
-    
+    //private Vector3 GetVectorFromAngle(float t_angle)
+    //{
+    //    float angleRad = t_angle * Mathf.Deg2Rad;
+    //    return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
+    //}
+
+
+    //private void FOV()
+    //{
+    //    Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, m_radius, m_targetLayer);
+
+    //    if (rangeCheck.Length > 0)
+    //    {
+    //        Transform target = rangeCheck[0].transform;
+    //        Vector2 directionToTarget = (target.position - transform.position).normalized;
+
+    //        if (Vector2.Angle(transform.up, directionToTarget) < m_angle / 2)
+    //        {
+    //            float distanceToTarget = Vector2.Distance(transform.position, target.position);
+
+    //            if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, m_obstructionLayer))
+    //            {
+    //                m_enemySpotted = true;
+    //            }
+    //            else
+    //            {
+    //                m_enemySpotted = false;
+    //            }
+    //        }
+    //        else
+    //        {
+    //            m_enemySpotted = false;
+    //        }
+    //    }
+    //    else if (m_enemySpotted)
+    //    {
+    //        m_enemySpotted = false;
+    //    }
+
+    //}
+    void FindVisibleTargets()
+    {
+        Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m_radius, m_targetLayer);
+
+        if (targetsInViewRadius.Length > 0)
+        {
+            for (int i = 0; i < targetsInViewRadius.Length; i++)
+            {
+                Transform target = targetsInViewRadius[i].transform;
+                Vector3 dirToTarget = (target.position - transform.position).normalized;
+
+                if (Vector3.Angle(transform.up, dirToTarget) < m_angle / 2)
+                {
+                    float dstToTarget = Vector3.Distance(transform.position, target.position);
+
+                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer))
+                    {
+                        m_enemySpotted = true;
+                    }
+                    else
+                    {
+                        m_enemySpotted = false;
+                    }
+                }
+                else
+                {
+                    m_enemySpotted = false;
+                }
+                //if (m_enemySpotted)
+                //{
+                //    transform.LookAt(target,Vector3.up);
+                //}
+            }
+        }
+        else
+        {
+            m_enemySpotted = false;
+        }
+
+     
+    }
+
+
+    /// <summary>
+    /// Debug Field of view
+    /// </summary>
+    private void OnDrawGizmos()
+    {
+
+        if (m_enemySpotted)
+        {
+            Gizmos.color = Color.green;
+            Gizmos.DrawLine(transform.position, m_entityRef.transform.position);
+        }
+
+    }
+
     private void LateUpdate()
     {
         DrawFieldOfView();
@@ -56,97 +156,7 @@ public class UnitFieldOfView : MonoBehaviour
             FindVisibleTargets();
         }
     }
-    void FindVisibleTargets()
-    {
-        visibleTargets.Clear();
-        Collider[] targetsInViewRadius = Physics.OverlapSphere(transform.position, m_radius, m_targetLayer);
 
-        for (int i = 0; i < targetsInViewRadius.Length; i++)
-        {
-            Transform target = targetsInViewRadius[i].transform;
-            Vector3 dirToTarget = (target.position - transform.position).normalized;
-            if (Vector3.Angle(transform.forward, dirToTarget) < m_angle / 2)
-            {
-                float dstToTarget = Vector3.Distance(transform.position, target.position);
-                if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer))
-                {
-                    visibleTargets.Add(target);
-                }
-            }
-        }
-    }
-
-    private IEnumerator FOVCheck()
-    {
-        WaitForSeconds wait = new WaitForSeconds(0.2f);
-
-        while (true)
-        {
-            yield return wait;
-            FOV();
-        }
-    
-    }
-
-    private void FOV()
-    {
-        Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, m_radius, m_targetLayer);
-
-        if (rangeCheck.Length > 0)
-        {
-            Transform target = rangeCheck[0].transform;
-            Vector2 directionToTarget = (target.position - transform.position).normalized;
-
-            if (Vector2.Angle(transform.up, directionToTarget) < m_angle / 2)
-            {
-                float distanceToTarget = Vector2.Distance(transform.position, target.position);
-
-                if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, m_obstructionLayer))
-                {
-                    m_enemySpotted = true;
-                }
-                else
-                {
-                    m_enemySpotted = false;
-                }
-            }
-            else
-            {
-                m_enemySpotted = false;
-            }
-        }
-        else if (m_enemySpotted)
-        {
-            m_enemySpotted = false;
-        }
-
-    }
-
-    /// <summary>
-    /// Debug Field of view
-    /// </summary>
-    private void OnDrawGizmos()
-    {
-
-        
-        Gizmos.color = Color.white;
-        UnityEditor.Handles.DrawWireDisc(transform.position, Vector3.forward, m_radius);
-
-        Vector3 angle01 = DirectionFromAngle(-transform.eulerAngles.z, -m_angle / 2);
-        Vector3 angle02 = DirectionFromAngle(-transform.eulerAngles.z, m_angle / 2);
-
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(transform.position, transform.position + angle01 * m_radius);
-        Gizmos.DrawLine(transform.position, transform.position + angle02 * m_radius);
-
-        if (m_enemySpotted)
-        {
-            Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, m_entityRef.transform.position);
-        }
-
-    }
 
 
     /// <summary>
@@ -157,11 +167,11 @@ public class UnitFieldOfView : MonoBehaviour
         int stepCount = Mathf.RoundToInt(m_angle * m_meshResolution);
         float stepAngleSize = m_angle / stepCount;
 
-        //for (int i = 0; i <= stepCount; i++)
-        //{
-        //    float angle = transform.eulerAngles.z - m_angle / 2 + stepAngleSize * i;
-        //    Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * m_radius, Color.red);
-        //}
+        for (int i = 0; i <= stepCount; i++)
+        {
+            float angle = transform.eulerAngles.z - m_angle / 2 + stepAngleSize * i;
+            Debug.DrawLine(transform.position, transform.position + DirFromAngle(angle, true) * m_radius, Color.red);
+        }
 
         List<Vector3> viewPoints = new List<Vector3>();
         ViewCastInfo oldViewCast = new ViewCastInfo();
@@ -170,23 +180,23 @@ public class UnitFieldOfView : MonoBehaviour
             float angle = transform.eulerAngles.z - m_angle / 2 + stepAngleSize * i;
             ViewCastInfo newViewCast = ViewCast(angle);
             viewPoints.Add(newViewCast.point);
-            //if (i > 0)
-            //{
-            //    bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst - newViewCast.dst) > edgeDstThreshold;
-            //    if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDstThresholdExceeded))
-            //    {
-            //        EdgeInfo edge = FindEdge(oldViewCast, newViewCast);
-            //        if (edge.pointA != Vector3.zero)
-            //        {
-            //            viewPoints.Add(edge.pointA);
-            //        }
-            //        if (edge.pointB != Vector3.zero)
-            //        {
-            //            viewPoints.Add(edge.pointB);
-            //        }
-            //    }
-            //}
-            //oldViewCast = newViewCast;
+            if (i > 0)
+            {
+                bool edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst - newViewCast.dst) > edgeDstThreshold;
+                if (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit && newViewCast.hit && edgeDstThresholdExceeded))
+                {
+                    EdgeInfo edge = FindEdge(oldViewCast, newViewCast);
+                    if (edge.pointA != Vector3.zero)
+                    {
+                        viewPoints.Add(edge.pointA);
+                    }
+                    if (edge.pointB != Vector3.zero)
+                    {
+                        viewPoints.Add(edge.pointB);
+                    }
+                }
+            }
+            oldViewCast = newViewCast;
         }
 
         int vertexCount = viewPoints.Count + 1;
@@ -272,9 +282,9 @@ public class UnitFieldOfView : MonoBehaviour
     ViewCastInfo ViewCast(float globalAngle)
     {
         Vector3 dir = DirFromAngle(globalAngle, true);
-        RaycastHit hit;
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, m_radius, m_obstructionLayer);
 
-        if (Physics.Raycast(transform.position, dir, out hit, m_radius, m_obstructionLayer))
+        if (hit)
         {
             return new ViewCastInfo(true, hit.point, hit.distance, globalAngle);
         }
@@ -291,14 +301,7 @@ public class UnitFieldOfView : MonoBehaviour
         {
             angleInDegrees += transform.eulerAngles.z;
         }
-        return new Vector3(Mathf.Sin(-angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(-angleInDegrees * Mathf.Deg2Rad),0 );
-    }
-
-    private Vector2 DirectionFromAngle(float t_eulerZ, float t_angleInDegrees)
-    {
-        t_angleInDegrees += t_eulerZ;
-
-        return new Vector2(Mathf.Sin(t_angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(t_angleInDegrees * Mathf.Deg2Rad));
+        return new Vector3(Mathf.Sin(-angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(-angleInDegrees * Mathf.Deg2Rad), 0);
     }
 }
 

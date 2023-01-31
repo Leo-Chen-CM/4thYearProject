@@ -10,14 +10,14 @@ public class FieldOfViewEditor : Editor
     {
         UnitFieldOfView fow = (UnitFieldOfView)target;
         Handles.color = Color.white;
-        Handles.DrawWireArc(fow.transform.position, Vector3.up, Vector3.forward, 360, fow.m_radius);
+        Handles.DrawWireDisc(fow.transform.position, Vector3.forward, fow.m_radius);
         Vector3 viewAngleA = fow.DirFromAngle(-fow.m_angle/ 2, false);
         Vector3 viewAngleB = fow.DirFromAngle(fow.m_angle / 2, false);
 
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleA * fow.m_radius);
         Handles.DrawLine(fow.transform.position, fow.transform.position + viewAngleB * fow.m_radius);
 
-        Handles.color = Color.red;
+        Handles.color = Color.yellow;
         foreach (Transform visibleTarget in fow.visibleTargets)
         {
             Handles.DrawLine(fow.transform.position, visibleTarget.position);

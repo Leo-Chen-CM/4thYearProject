@@ -2,9 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 /// <summary>
-/// 
+/// Field of view of a single unit
 /// </summary>
 public class UnitFieldOfView : MonoBehaviour
 {
@@ -31,6 +32,10 @@ public class UnitFieldOfView : MonoBehaviour
     Mesh viewMesh;
     public bool m_enemySpotted { get; private set; }
 
+    public Transform m_target;
+
+    private UnitShooting m_unitShooting;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,55 +43,12 @@ public class UnitFieldOfView : MonoBehaviour
         viewMesh.name = "View Mesh";
         viewMeshFilter.mesh = viewMesh;
 
-
+        m_unitShooting = GetComponent<UnitShooting>();
         m_entityRef = GameObject.FindGameObjectWithTag("Player");
-        //StartCoroutine(FOVCheck());
-        StartCoroutine("FindTargetsWithDelay", .2f);
-
-        
-
+        //StartCoroutine("FindTargetsWithDelay", .2f);
     }
-    //private Vector3 GetVectorFromAngle(float t_angle)
-    //{
-    //    float angleRad = t_angle * Mathf.Deg2Rad;
-    //    return new Vector3(Mathf.Cos(angleRad), Mathf.Sin(angleRad));
-    //}
 
-
-    //private void FOV()
-    //{
-    //    Collider2D[] rangeCheck = Physics2D.OverlapCircleAll(transform.position, m_radius, m_targetLayer);
-
-    //    if (rangeCheck.Length > 0)
-    //    {
-    //        Transform target = rangeCheck[0].transform;
-    //        Vector2 directionToTarget = (target.position - transform.position).normalized;
-
-    //        if (Vector2.Angle(transform.up, directionToTarget) < m_angle / 2)
-    //        {
-    //            float distanceToTarget = Vector2.Distance(transform.position, target.position);
-
-    //            if (!Physics2D.Raycast(transform.position, directionToTarget, distanceToTarget, m_obstructionLayer))
-    //            {
-    //                m_enemySpotted = true;
-    //            }
-    //            else
-    //            {
-    //                m_enemySpotted = false;
-    //            }
-    //        }
-    //        else
-    //        {
-    //            m_enemySpotted = false;
-    //        }
-    //    }
-    //    else if (m_enemySpotted)
-    //    {
-    //        m_enemySpotted = false;
-    //    }
-
-    //}
-    void FindVisibleTargets()
+    bool FindVisibleTargets()
     {
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m_radius, m_targetLayer);
 
@@ -101,30 +63,32 @@ public class UnitFieldOfView : MonoBehaviour
                 {
                     float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer))
+                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag)
                     {
+                        m_target = targetsInViewRadius[i].transform;
                         m_enemySpotted = true;
+                        return true;
                     }
                     else
                     {
                         m_enemySpotted = false;
+                        //return false;
                     }
                 }
                 else
                 {
                     m_enemySpotted = false;
+                    //return false;
                 }
-                //if (m_enemySpotted)
-                //{
-                //    transform.LookAt(target,Vector3.up);
-                //}
+
             }
         }
         else
         {
             m_enemySpotted = false;
+            //return false;
         }
-
+        return false;
      
     }
 
@@ -138,7 +102,7 @@ public class UnitFieldOfView : MonoBehaviour
         if (m_enemySpotted)
         {
             Gizmos.color = Color.green;
-            Gizmos.DrawLine(transform.position, m_entityRef.transform.position);
+            Gizmos.DrawLine(transform.position, m_target.position);
         }
 
     }
@@ -146,6 +110,11 @@ public class UnitFieldOfView : MonoBehaviour
     private void LateUpdate()
     {
         DrawFieldOfView();
+        if (FindVisibleTargets())
+        {
+            transform.up = Vector3.Lerp(transform.up, (m_target.position - transform.position), 5);
+            //m_unitShooting.ShootBullet();
+        }
     }
 
     IEnumerator FindTargetsWithDelay(float delay)

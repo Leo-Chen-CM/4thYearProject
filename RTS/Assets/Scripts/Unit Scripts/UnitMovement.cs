@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using static UnityEngine.GraphicsBuffer;
 
 public class UnitMovement : MonoBehaviour
 {
@@ -17,10 +18,13 @@ public class UnitMovement : MonoBehaviour
     private Vector3 m_movePosition;
     private Rigidbody2D m_rigidbody2D;
     private Vector3 m_velocityVector;
-    
+
+    [SerializeField]
+    private UnitFieldOfView UnitFieldOfView;
     private void Awake()
     {
         m_rigidbody2D= GetComponent<Rigidbody2D>();
+        UnitFieldOfView= GetComponent<UnitFieldOfView>();
         m_movePosition = transform.position;   
     }
 
@@ -44,23 +48,22 @@ public class UnitMovement : MonoBehaviour
         {
             m_velocityVector = Vector3.zero;
             m_rigidbody2D.velocity = Vector3.zero;
+            m_movePosition= transform.position;
         }
     }
 
     private void FixedUpdate()
     {
-
-
         if (Vector3.Distance(m_movePosition, transform.position) < 2f)
         {
             m_rigidbody2D.velocity = m_rigidbody2D.velocity * 0.9f;
         }
 
-        if (m_movePosition != null)
+        if (m_movePosition != transform.position && !UnitFieldOfView.m_enemySpotted)
         {
-            Vector3 vectorToTarget = m_movePosition - transform.position;
-            float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - m_rotationModifier;
-            Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
+             Vector3 vectorToTarget = m_movePosition - transform.position;
+             float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - m_rotationModifier;
+             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * m_rotationSpeed);
         }
     }

@@ -6,17 +6,21 @@ public class UnitStatus : MonoBehaviour
 {
     [SerializeField]
     int m_health = 3;
-    [SerializeField]
-    int m_teamNumber = 0;
 
     private void Start()
     {
         if (gameObject.tag == "Team 1")
         {
-            m_teamNumber = 1;
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
+
+        if (gameObject.tag == "Team 2")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
     }
+
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -25,6 +29,7 @@ public class UnitStatus : MonoBehaviour
             if (m_health > 1)
             {
                 m_health--;
+                Destroy(collision.gameObject);
             }
             else
             {

@@ -19,7 +19,11 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag == "Cover" || collision.gameObject.tag == "Wall")
         {
-            Destroy(this);
+            Destroy(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

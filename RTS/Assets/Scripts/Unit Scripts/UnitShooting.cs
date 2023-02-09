@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class UnitShooting : MonoBehaviour
 {
-    [SerializeField]
-    UnitFieldOfView m_unitFieldOfView;
+    //[SerializeField]
+    //UnitFieldOfView m_unitFieldOfView;
     [SerializeField]
     GameObject m_bullet;
     [SerializeField]

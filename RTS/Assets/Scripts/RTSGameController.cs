@@ -22,13 +22,13 @@ public class RTSGameController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             m_selectedAreaTransform.gameObject.SetActive(true);
-            m_startPosition = Camera.main.ScreenToWorldPoint( Input.mousePosition);
+            m_startPosition = Utility.ReturnMousePosition2D();
         }
 
         if (Input.GetMouseButton(0))
         {
 
-            Vector3 currentMousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 currentMousePosition = Utility.ReturnMousePosition2D();
             Vector3 lowerLeft = new Vector3
                 (
                     Mathf.Min(m_startPosition.x, currentMousePosition.x),
@@ -50,7 +50,7 @@ public class RTSGameController : MonoBehaviour
         {
             m_selectedAreaTransform.gameObject.SetActive(false);
 
-            Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(m_startPosition, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(m_startPosition, Utility.ReturnMousePosition2D());
 
 
             foreach(UnitRTS unitRTS in m_selectedUnits)
@@ -75,18 +75,16 @@ public class RTSGameController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Vector3 moveToPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 moveToPosition = Utility.ReturnMousePosition2D();
 
-            moveToPosition = new Vector3(moveToPosition.x, moveToPosition.y, 0);
-
-            List<Vector3> targetPositionList = GetPositionListAround(moveToPosition, new float[] {5f,10f,15f}, new int[] { 5,10,20});
+            List<Vector3> targetPositionList = GetPositionListAround(moveToPosition, new float[] { 5f, 10f, 15f }, new int[] { 5, 10, 20 });
 
 
             int targetPositionListIndex = 0;
 
-            foreach(UnitRTS unitRTS in m_selectedUnits)
+            foreach (UnitRTS unit in m_selectedUnits)
             {
-                unitRTS.MoveTo(targetPositionList[targetPositionListIndex]);
+                unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
                 targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
             }
         }

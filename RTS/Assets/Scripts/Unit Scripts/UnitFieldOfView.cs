@@ -113,7 +113,7 @@ public class UnitFieldOfView : MonoBehaviour
         if (FindVisibleTargets())
         {
             transform.up = Vector3.Lerp(transform.up, (m_target.position - transform.position), 5);
-            //m_unitShooting.ShootBullet();
+            m_unitShooting.ShootBullet();
         }
     }
 

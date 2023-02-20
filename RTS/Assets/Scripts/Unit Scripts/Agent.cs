@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Agent : MonoBehaviour
 {
     private Vector3 m_target;
+    public Vector3 m_goal;
     NavMeshAgent m_agent;
     Rigidbody2D m_rigidbody2D;
     [SerializeField]
@@ -14,6 +15,16 @@ public class Agent : MonoBehaviour
     private float m_rotationModifier;
     [SerializeField]
     private UnitFieldOfView m_unitFieldOfView;
+
+    enum State
+    {
+        Idle,
+        Move,
+        Shoot
+    }
+
+    [SerializeField]
+    private State m_currentState;
 
     private void Awake()
     {
@@ -24,12 +35,41 @@ public class Agent : MonoBehaviour
         m_agent.updateUpAxis = false;
         m_agent.updatePosition = false;
         m_target = transform.position;
+
+        m_currentState = State.Idle;
+        m_target = m_goal;
     }
 
     // Update is called once per frame
-    void Update()
+    //void Update()
+    //{
+    //    //SetAgentPosition();
+
+
+    //}
+
+    private void FixedUpdate()
     {
-        //SetAgentPosition();
+        switch (m_currentState)
+        {
+            case State.Idle:
+
+                break;
+
+            case State.Move:
+                MoveTo();
+                break;
+
+            case State.Shoot:
+
+                break;
+        }
+
+
+    }
+
+    void MoveTo()
+    {
         m_rigidbody2D.velocity = m_agent.velocity;
         m_agent.nextPosition = m_rigidbody2D.position;
 
@@ -40,10 +80,6 @@ public class Agent : MonoBehaviour
             m_target = transform.position;
         }
 
-    }
-
-    private void FixedUpdate()
-    {
         if (m_target != transform.position && !m_unitFieldOfView.m_enemySpotted)
         {
             //Vector3 vectorToTarget = m_target - transform.position;
@@ -58,7 +94,6 @@ public class Agent : MonoBehaviour
     {
         m_target = t_position;
         SetAgentPosition();
-
     }
 
 

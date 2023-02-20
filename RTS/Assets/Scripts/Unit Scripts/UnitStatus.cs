@@ -1,14 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class UnitStatus : MonoBehaviour
 {
     [SerializeField]
     int m_health = 3;
 
-    private void Start()
+
+
+    public Vector3 m_targetPosition;
+    //private delegate void OnReachTarget();
+    //private OnReachTarget m_onReachTarget;
+
+    public void SetupTeam(string t_teamTag)
     {
+        gameObject.tag = t_teamTag;
         if (gameObject.tag == "Team 1")
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
@@ -19,7 +27,6 @@ public class UnitStatus : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
     }
-
 
 
     private void OnCollisionEnter2D(Collision2D collision)

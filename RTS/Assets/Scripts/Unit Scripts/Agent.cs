@@ -7,6 +7,7 @@ public class Agent : MonoBehaviour
 {
     private Vector3 m_target;
     public Vector3 m_goal;
+    public Transform m_goalT;
     NavMeshAgent m_agent;
     Rigidbody2D m_rigidbody2D;
     [SerializeField]
@@ -15,6 +16,11 @@ public class Agent : MonoBehaviour
     private float m_rotationModifier;
     [SerializeField]
     private UnitFieldOfView m_unitFieldOfView;
+    
+    [SerializeField]
+    private bool m_destinationReached = true;
+
+
 
     enum State
     {
@@ -36,8 +42,10 @@ public class Agent : MonoBehaviour
         m_agent.updatePosition = false;
         m_target = transform.position;
 
-        m_currentState = State.Idle;
-        m_target = m_goal;
+        m_currentState = State.Move;
+        m_goal = new Vector3(0, 0, 0);
+        //m_target = m_goal;
+        SetAgentPosition();
     }
 
     // Update is called once per frame
@@ -50,36 +58,54 @@ public class Agent : MonoBehaviour
 
     private void FixedUpdate()
     {
-        switch (m_currentState)
+        //switch (m_currentState)
+        //{
+        //    case State.Idle:
+        //        Idle();
+        //        break;
+
+        //    case State.Move:
+        //        MoveTo();
+        //        break;
+
+        //    case State.Shoot:
+
+        //        break;
+        //}
+        m_agent.nextPosition = m_rigidbody2D.position;
+        m_rigidbody2D.velocity = m_agent.velocity;
+
+        if (m_destinationReached == false)
         {
-            case State.Idle:
-
-                break;
-
-            case State.Move:
-                MoveTo();
-                break;
-
-            case State.Shoot:
-
-                break;
+            MoveTo();
         }
 
+        RotateTowards();
 
+    }
+
+    void Idle()
+    {
+        //Awaiting orders
     }
 
     void MoveTo()
     {
-        m_rigidbody2D.velocity = m_agent.velocity;
-        m_agent.nextPosition = m_rigidbody2D.position;
+
 
         if (Vector3.Distance(m_target, transform.position) <= m_agent.stoppingDistance)
         {
             m_agent.velocity = Vector3.zero;
             m_rigidbody2D.velocity = Vector3.zero;
             m_target = transform.position;
+            m_destinationReached= true;
+            //m_currentState = State.Idle;
         }
 
+    }
+
+    void RotateTowards()
+    {
         if (m_target != transform.position && !m_unitFieldOfView.m_enemySpotted)
         {
             //Vector3 vectorToTarget = m_target - transform.position;
@@ -92,6 +118,7 @@ public class Agent : MonoBehaviour
 
     public void SetTargetPosition(Vector3 t_position)
     {
+        m_destinationReached = false;
         m_target = t_position;
         SetAgentPosition();
     }

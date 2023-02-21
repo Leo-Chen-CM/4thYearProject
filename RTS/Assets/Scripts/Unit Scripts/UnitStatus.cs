@@ -8,9 +8,7 @@ public class UnitStatus : MonoBehaviour
     [SerializeField]
     int m_health = 3;
 
-
-
-    public Vector3 m_targetPosition;
+    //public Vector3 m_targetPosition;
     //private delegate void OnReachTarget();
     //private OnReachTarget m_onReachTarget;
 

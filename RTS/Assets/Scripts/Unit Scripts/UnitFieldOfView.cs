@@ -63,22 +63,24 @@ public class UnitFieldOfView : MonoBehaviour
                 {
                     float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag)
+                    if (m_enemySpotted == false)
                     {
-                        m_target = targetsInViewRadius[i].transform;
-                        m_enemySpotted = true;
-                        return true;
+
+                        if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag)
+                        {
+                            m_target = targetsInViewRadius[i].transform;
+                            m_enemySpotted = true;
+                            return m_enemySpotted;
+                        }
                     }
                     else
                     {
                         m_enemySpotted = false;
-                        //return false;
                     }
                 }
                 else
                 {
                     m_enemySpotted = false;
-                    //return false;
                 }
 
             }
@@ -86,9 +88,8 @@ public class UnitFieldOfView : MonoBehaviour
         else
         {
             m_enemySpotted = false;
-            //return false;
         }
-        return false;
+        return m_enemySpotted;
      
     }
 
@@ -112,7 +113,7 @@ public class UnitFieldOfView : MonoBehaviour
         DrawFieldOfView();
         if (FindVisibleTargets())
         {
-            transform.up = Vector3.Lerp(transform.up, (m_target.position - transform.position), 5);
+            transform.up = Vector3.Lerp(transform.up, (m_target.position - transform.position), 1);
             m_unitShooting.ShootBullet();
         }
     }

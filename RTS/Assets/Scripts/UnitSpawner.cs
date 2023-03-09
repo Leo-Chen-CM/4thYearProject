@@ -22,7 +22,7 @@ public class UnitSpawner : MonoBehaviour
             m_nextSpawn = Time.time + m_spawnTime;
             Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
             GameObject newUnit = Instantiate(m_unit, m_spawnPoint.position,rotation);
-            newUnit.GetComponent<UnitStatus>().SetupTeam(tag);
+            newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
             m_currentUnits++;
             m_reserves--;
         }

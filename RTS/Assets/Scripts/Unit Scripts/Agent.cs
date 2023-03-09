@@ -7,7 +7,6 @@ public class Agent : MonoBehaviour
 {
     private Vector3 m_target;
     public Vector3 m_goal;
-    public Transform m_goalT;
     NavMeshAgent m_agent;
     Rigidbody2D m_rigidbody2D;
     [SerializeField]
@@ -18,7 +17,7 @@ public class Agent : MonoBehaviour
     private UnitFieldOfView m_unitFieldOfView;
     
     [SerializeField]
-    private bool m_destinationReached = true;
+    private bool m_destinationReached = false;
 
 
 
@@ -40,11 +39,18 @@ public class Agent : MonoBehaviour
         m_agent.updateRotation = false;
         m_agent.updateUpAxis = false;
         m_agent.updatePosition = false;
-        m_target = transform.position;
+        //m_target = transform.position;
 
         m_currentState = State.Move;
         m_goal = new Vector3(0, 0, 0);
         //m_target = m_goal;
+
+    }
+
+    private void Start()
+    {
+        m_agent.Warp(transform.position);
+        SetTargetPosition(m_goal);
         SetAgentPosition();
     }
 
@@ -74,10 +80,14 @@ public class Agent : MonoBehaviour
         //}
         m_agent.nextPosition = m_rigidbody2D.position;
         m_rigidbody2D.velocity = m_agent.velocity;
-
+        
         if (m_destinationReached == false)
         {
-            MoveTo();
+            CheckPosition();
+        }
+        else
+        {
+            Idle();
         }
 
         RotateTowards();
@@ -86,19 +96,18 @@ public class Agent : MonoBehaviour
 
     void Idle()
     {
-        //Awaiting orders
+        m_agent.SetDestination(new Vector3(transform.position.x, transform.position.y, 0));
     }
 
-    void MoveTo()
+    void CheckPosition()
     {
-
-
         if (Vector3.Distance(m_target, transform.position) <= m_agent.stoppingDistance)
         {
             m_agent.velocity = Vector3.zero;
             m_rigidbody2D.velocity = Vector3.zero;
             m_target = transform.position;
-            m_destinationReached= true;
+            m_destinationReached = true;
+
             //m_currentState = State.Idle;
         }
 

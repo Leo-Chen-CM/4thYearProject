@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(LineRenderer))]
 public class UnitShooting : MonoBehaviour
 {
     //[SerializeField]
@@ -11,14 +12,44 @@ public class UnitShooting : MonoBehaviour
     [SerializeField]
     Transform m_firingPoint;
     private float nextFire = 0f;
-    public float fireRate;
+    [SerializeField]
+    private LineRenderer m_lineRenderer;
 
-    public void ShootBullet()
+    private void Start()
+    {
+        if (gameObject.tag == "Team1")
+        {
+            m_lineRenderer.material.color = Color.red;
+        }
+        
+        if (gameObject.tag == "Team2")
+        {
+            m_lineRenderer.material.color = Color.blue;
+        }
+
+    }
+
+    public void Shoot()
     {
         if (Time.time > nextFire)
         {
-            nextFire = Time.time + fireRate;
-            Instantiate(m_bullet, m_firingPoint.position, m_firingPoint.transform.rotation);
+            if (Physics2D.Raycast(transform.position, transform.forward))
+            {
+                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.forward);
+                Draw2DRay(m_firingPoint.position, hit.point);
+            }
+            else
+            {
+                Draw2DRay(m_firingPoint.position, m_firingPoint.transform.forward * 15);
+            }
+            //Instantiate(m_bullet, m_firingPoint.position, m_firingPoint.transform.rotation);
         }
     }
+
+    void Draw2DRay(Vector2 startPos, Vector2 endPos)
+    {
+        m_lineRenderer.SetPosition(0, startPos);
+        m_lineRenderer.SetPosition(1, endPos);
+    }
+
 }

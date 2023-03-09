@@ -78,10 +78,10 @@ public class UnitFieldOfView : MonoBehaviour
                         m_enemySpotted = false;
                     }
                 }
-                else
-                {
-                    m_enemySpotted = false;
-                }
+                //else
+                //{
+                //    m_enemySpotted = false;
+                //}
 
             }
         }
@@ -114,7 +114,7 @@ public class UnitFieldOfView : MonoBehaviour
         if (FindVisibleTargets())
         {
             transform.up = Vector3.Lerp(transform.up, (m_target.position - transform.position), 1);
-            m_unitShooting.ShootBullet();
+            m_unitShooting.Shoot();
         }
     }
 

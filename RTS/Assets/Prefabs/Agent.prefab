@@ -132,7 +132,6 @@ GameObject:
   - component: {fileID: 1816387446}
   - component: {fileID: 1816387445}
   - component: {fileID: 1816387444}
-  - component: {fileID: 1816387443}
   m_Layer: 6
   m_Name: Agent
   m_TagString: Untagged
@@ -329,6 +328,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_agent: {fileID: 0}
+  m_health: 3
 --- !u!114 &1816387444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,19 +344,6 @@ MonoBehaviour:
   m_bullet: {fileID: 3544468307600355149, guid: 06bdbac8b03c70348b592285cd9c626d, type: 3}
   m_firingPoint: {fileID: 4389229701348755439}
   fireRate: 1
---- !u!114 &1816387443
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4623158510368895281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 826d4dceff3f27e4ebd9681609dd7560, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_health: 3
 --- !u!1 &5982192985841461842
 GameObject:
   m_ObjectHideFlags: 0

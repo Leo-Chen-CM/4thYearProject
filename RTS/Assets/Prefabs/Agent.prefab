@@ -227,6 +227,7 @@ MonoBehaviour:
   m_rotationSpeed: 1
   m_rotationModifier: 90
   m_unitFieldOfView: {fileID: 0}
+  m_destinationReached: 1
   m_currentState: 1
 --- !u!195 &4623158510368895285
 NavMeshAgent:
@@ -299,8 +300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46cc306b35f9e8c45af87a8768a79fd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_radius: 30
-  m_angle: 90
+  m_radius: 15
+  m_angle: 360
   m_targetLayer:
     serializedVersion: 2
     m_Bits: 64
@@ -356,7 +357,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_health: 3
-  m_targetPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &5982192985841461842
 GameObject:
   m_ObjectHideFlags: 0

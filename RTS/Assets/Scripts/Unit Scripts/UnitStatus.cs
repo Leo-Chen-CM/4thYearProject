@@ -15,12 +15,12 @@ public class UnitStatus : MonoBehaviour
     public void SetupTeam(string t_teamTag)
     {
         gameObject.tag = t_teamTag;
-        if (gameObject.tag == "Team 1")
+        if (gameObject.tag == "Team1")
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
 
-        if (gameObject.tag == "Team 2")
+        if (gameObject.tag == "Team2")
         {
             gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }

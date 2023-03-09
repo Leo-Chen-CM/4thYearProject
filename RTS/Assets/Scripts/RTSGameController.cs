@@ -1,7 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
-using UnityEngine.UIElements;
+
+enum Teams
+{
+    Team1,
+    Team2
+};
 
 public class RTSGameController : MonoBehaviour
 {
@@ -11,6 +17,8 @@ public class RTSGameController : MonoBehaviour
     private List<UnitRTS> m_selectedUnits;
     // Update is called once per frame
 
+    [SerializeField]
+    Teams m_team = Teams.Team1;
     private void Awake()
     {
         m_selectedUnits = new List<UnitRTS>();
@@ -62,7 +70,8 @@ public class RTSGameController : MonoBehaviour
             foreach (Collider2D collider2D in collider2DArray)
             {
                 UnitRTS unitRTS = collider2D.GetComponent<UnitRTS>();
-                if (unitRTS != null) 
+
+                if (unitRTS != null && unitRTS.gameObject.tag == m_team.ToString()) 
                 {
                     unitRTS.SetSelectedVisible(true);
                     m_selectedUnits.Add(unitRTS);

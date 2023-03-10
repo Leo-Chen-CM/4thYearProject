@@ -97,6 +97,16 @@ public class RTSGameController : MonoBehaviour
                 targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
             }
         }
+
+
+        //Checks if any units selected has died and removes them from the list
+        for (int i = 0; i < m_selectedUnits.Count; i++)
+        {
+            if (m_selectedUnits[i] == null)
+            {
+                m_selectedUnits.Remove(m_selectedUnits[i]);
+            }
+        }
     }
 
     private List<Vector3> GetPositionListAround(Vector3 t_startPosition, float[] t_ringDistanceArray, int[] t_ringPositionCountArray)

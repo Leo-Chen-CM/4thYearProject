@@ -62,4 +62,17 @@ public class UnitRTS : MonoBehaviour
 
         }
     }
+
+    public void LoseHealth()
+    {
+        if (m_health > 1)
+        {
+            m_health--;
+        }
+        else
+        {
+            m_health--;
+            Destroy(gameObject);
+        }
+    }
 }

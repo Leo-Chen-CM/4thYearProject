@@ -50,8 +50,8 @@ public class Agent : MonoBehaviour
     private void Start()
     {
         m_agent.Warp(transform.position);
-        SetTargetPosition(m_goal);
-        SetAgentPosition();
+        //SetTargetPosition(m_goal);
+        //SetAgentPosition();
     }
 
     // Update is called once per frame

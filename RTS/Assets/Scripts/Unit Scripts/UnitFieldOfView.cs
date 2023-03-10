@@ -45,7 +45,7 @@ public class UnitFieldOfView : MonoBehaviour
 
         m_unitShooting = GetComponent<UnitShooting>();
         m_entityRef = GameObject.FindGameObjectWithTag("Player");
-        //StartCoroutine("FindTargetsWithDelay", .2f);
+        StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
     bool FindVisibleTargets()
@@ -63,20 +63,38 @@ public class UnitFieldOfView : MonoBehaviour
                 {
                     float dstToTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (m_enemySpotted == false)
+                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag)
                     {
+                        if (m_target != null)
+                        {
 
-                        if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag)
+                            float currentDstToTarget = Vector3.Distance(transform.position, m_target.position);
+
+                            if (dstToTarget < currentDstToTarget)
+                            {
+                                m_target = targetsInViewRadius[i].transform;
+                                m_enemySpotted = true;
+                            }
+
+                        }
+                        else
                         {
                             m_target = targetsInViewRadius[i].transform;
                             m_enemySpotted = true;
-                            return m_enemySpotted;
                         }
+
                     }
-                    else
-                    {
-                        m_enemySpotted = false;
-                    }
+
+                    //if (m_enemySpotted == false)
+                    //{
+
+                        
+                    //}
+                    //else
+                    //{
+                    //    m_enemySpotted = false;
+                    //    m_target = null;
+                    //}
                 }
                 //else
                 //{
@@ -88,6 +106,7 @@ public class UnitFieldOfView : MonoBehaviour
         else
         {
             m_enemySpotted = false;
+            m_target = null;
         }
         return m_enemySpotted;
      
@@ -100,7 +119,7 @@ public class UnitFieldOfView : MonoBehaviour
     private void OnDrawGizmos()
     {
 
-        if (m_enemySpotted)
+        if (m_target != null)
         {
             Gizmos.color = Color.green;
             Gizmos.DrawLine(transform.position, m_target.position);
@@ -111,7 +130,7 @@ public class UnitFieldOfView : MonoBehaviour
     private void LateUpdate()
     {
         DrawFieldOfView();
-        if (FindVisibleTargets())
+        if (m_target != null)
         {
             transform.up = Vector3.Lerp(transform.up, (m_target.position - transform.position), 1);
             m_unitShooting.Shoot();

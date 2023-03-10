@@ -33,18 +33,20 @@ public class UnitShooting : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
-            if (Physics2D.Raycast(transform.position, transform.forward))
+            if (Physics2D.Raycast(transform.position, transform.up))
             {
-                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.forward);
+                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.up);
                 Draw2DRay(m_firingPoint.position, hit.point);
             }
             else
             {
-                Draw2DRay(m_firingPoint.position, m_firingPoint.transform.forward * 15);
+                Draw2DRay(m_firingPoint.position, m_firingPoint.transform.up * 15);
             }
             //Instantiate(m_bullet, m_firingPoint.position, m_firingPoint.transform.rotation);
         }
     }
+
+    
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
     {

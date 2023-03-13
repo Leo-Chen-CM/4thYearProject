@@ -16,6 +16,9 @@ public class UnitShooting : MonoBehaviour
     private LineRenderer m_lineRenderer;
     public float fireRate;
 
+    [SerializeField]
+    private float m_offset;
+
     private void Start()
     {
         if (gameObject.tag == "Team1")
@@ -37,20 +40,23 @@ public class UnitShooting : MonoBehaviour
             nextFire = Time.time + fireRate;
             if (Physics2D.Raycast(transform.position, transform.up))
             {
-                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.up);
-                //Draw2DRay(m_firingPoint.position, hit.point);
+                Vector3 offset = new Vector3(Random.Range(-m_offset, m_offset), 0, 0);
+
+                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.up + offset);
 
                 StartCoroutine(ShootLaser(m_firingPoint.position, hit.point));
-
-
 
                 if (hit.transform.gameObject.GetComponent<UnitRTS>())
                 {
                     hit.transform.gameObject.GetComponent<UnitRTS>().LoseHealth();
                 }
+                else if (hit.transform.gameObject.name == "Dummy")
+                {
+                    Debug.Log("Dummy hit");
+                }
                 else
                 {
-                    Debug.Log("Target hit");
+                    Debug.Log("Laser shot");
                 }
             }
             //Instantiate(m_bullet, m_firingPoint.position, m_firingPoint.transform.rotation);
@@ -60,32 +66,9 @@ public class UnitShooting : MonoBehaviour
     IEnumerator ShootLaser(Vector2 startPos, Vector2 endPos)
     {
         m_lineRenderer.enabled = true;
-
-        //Color c = m_lineRenderer.material.color;
-        //c.a = 1;
-        //m_lineRenderer.material.color = c;
         m_lineRenderer.SetPosition(0, startPos);
         m_lineRenderer.SetPosition(1, endPos);
-        StartCoroutine(Fade());
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(0.1f);
         m_lineRenderer.enabled = false;
     }
-
-    IEnumerator Fade()
-    {
-        Color c = m_lineRenderer.material.color;
-        for (float alpha = 1f; alpha >= 0; alpha -= 0.1f)
-        {
-            c.a = alpha;
-            m_lineRenderer.material.color = c;
-            yield return new WaitForSeconds(.01f);
-        }
-    }
-
-    void Draw2DRay(Vector2 startPos, Vector2 endPos)
-    {
-        m_lineRenderer.SetPosition(0, startPos);
-        m_lineRenderer.SetPosition(1, endPos);
-    }
-
 }

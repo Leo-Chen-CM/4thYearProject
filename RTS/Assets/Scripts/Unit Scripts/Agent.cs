@@ -5,7 +5,7 @@ using UnityEngine.AI;
 
 public class Agent : MonoBehaviour
 {
-    private Vector3 m_target;
+    private Vector3 m_targetDestination;
     public Vector3 m_goal;
     NavMeshAgent m_agent;
     Rigidbody2D m_rigidbody2D;
@@ -19,8 +19,10 @@ public class Agent : MonoBehaviour
     [SerializeField]
     private bool m_destinationReached = false;
 
+    public bool m_leader = false;
 
-
+    [SerializeField]
+    private bool m_toggleGoal = false;
     enum State
     {
         Idle,
@@ -39,19 +41,22 @@ public class Agent : MonoBehaviour
         m_agent.updateRotation = false;
         m_agent.updateUpAxis = false;
         m_agent.updatePosition = false;
-        //m_target = transform.position;
+        m_targetDestination = transform.position;
 
         m_currentState = State.Move;
         m_goal = new Vector3(0, 0, 0);
-        //m_target = m_goal;
-
+        m_targetDestination = m_goal;
     }
 
     private void Start()
     {
-        m_agent.Warp(transform.position);
-        //SetTargetPosition(m_goal);
-        //SetAgentPosition();
+        if (m_toggleGoal)
+        {
+            m_agent.Warp(transform.position);
+            SetTargetPosition(m_goal);
+        }
+
+        SetAgentPosition();
     }
 
     // Update is called once per frame
@@ -101,11 +106,11 @@ public class Agent : MonoBehaviour
 
     void CheckPosition()
     {
-        if (Vector3.Distance(m_target, transform.position) <= m_agent.stoppingDistance)
+        if (Vector3.Distance(m_targetDestination, transform.position) <= m_agent.stoppingDistance)
         {
             m_agent.velocity = Vector3.zero;
             m_rigidbody2D.velocity = Vector3.zero;
-            m_target = transform.position;
+            m_targetDestination = transform.position;
             m_destinationReached = true;
 
             //m_currentState = State.Idle;
@@ -115,7 +120,7 @@ public class Agent : MonoBehaviour
 
     void RotateTowards()
     {
-        if (m_target != transform.position && !m_unitFieldOfView.m_enemySpotted)
+        if (m_targetDestination != transform.position && !m_unitFieldOfView.m_enemySpotted)
         {
             //Vector3 vectorToTarget = m_target - transform.position;
             //float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - m_rotationModifier;
@@ -128,17 +133,22 @@ public class Agent : MonoBehaviour
     public void SetTargetPosition(Vector3 t_position)
     {
         m_destinationReached = false;
-        m_target = t_position;
+        m_targetDestination = t_position;
         SetAgentPosition();
     }
 
 
     void SetAgentPosition()
     {
-        Vector3 moveDirection = (m_target - transform.position).normalized;
+        Vector3 moveDirection = (m_targetDestination - transform.position).normalized;
         
         m_agent.velocity = moveDirection * 5;
 
-        m_agent.SetDestination(new Vector3(m_target.x, m_target.y, 0));
+        m_agent.SetDestination(new Vector3(m_targetDestination.x, m_targetDestination.y, 0));
+    }
+
+    public void ToggleLeader(bool t_toggle)
+    {
+        m_leader = t_toggle;
     }
 }

@@ -45,62 +45,64 @@ public class UnitFieldOfView : MonoBehaviour
 
         m_unitShooting = GetComponent<UnitShooting>();
         m_entityRef = GameObject.FindGameObjectWithTag("Player");
-        StartCoroutine("FindTargetsWithDelay", .2f);
+        StartCoroutine("FindTargetsWithDelay", .1f);
     }
 
     bool FindVisibleTargets()
     {
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m_radius, m_targetLayer);
 
-        if (targetsInViewRadius.Length > 0)
+        if (targetsInViewRadius.Length > 1)
         {
-            for (int i = 0; i < targetsInViewRadius.Length; i++)
+            for (int i = 1; i < targetsInViewRadius.Length; i++)
             {
-                Transform target = targetsInViewRadius[i].transform;
-                Vector3 dirToTarget = (target.position - transform.position).normalized;
-
-                if (Vector3.Angle(transform.up, dirToTarget) < m_angle / 2)
+                if (targetsInViewRadius[i].gameObject != gameObject)
                 {
-                    float dstToTarget = Vector3.Distance(transform.position, target.position);
+                    Transform target = targetsInViewRadius[i].transform;
+                    Vector3 dirToTarget = (target.position - transform.position).normalized;
 
-                    if (!Physics2D.Raycast(transform.position, dirToTarget, dstToTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag)
+                    if (Vector3.Angle(transform.up, dirToTarget) < m_angle / 2)
                     {
-                        if (m_target != null)
+                        float dstToNewTarget = Vector3.Distance(transform.position, target.position);
+
+                        if (!Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag && dstToNewTarget < m_radius)
                         {
+                            if (m_target != null)
+                            {
+                                float currentDstToTarget = Vector3.Distance(transform.position, m_target.position);
 
-                            float currentDstToTarget = Vector3.Distance(transform.position, m_target.position);
+                                if (dstToNewTarget < currentDstToTarget)
+                                {
+                                    m_target = targetsInViewRadius[i].transform;
+                                    m_enemySpotted = true;
+                                }
 
-                            if (dstToTarget < currentDstToTarget)
+                            }
+                            else
                             {
                                 m_target = targetsInViewRadius[i].transform;
                                 m_enemySpotted = true;
                             }
 
                         }
-                        else
-                        {
-                            m_target = targetsInViewRadius[i].transform;
-                            m_enemySpotted = true;
-                        }
 
+                        //if (m_enemySpotted == false)
+                        //{
+
+
+                        //}
+                        //else
+                        //{
+                        //    m_enemySpotted = false;
+                        //    m_target = null;
+                        //}
                     }
-
-                    //if (m_enemySpotted == false)
-                    //{
-
-                        
-                    //}
-                    //else
-                    //{
-                    //    m_enemySpotted = false;
-                    //    m_target = null;
-                    //}
+                    else
+                    {
+                        m_enemySpotted = false;
+                        m_target = null;
+                    }
                 }
-                //else
-                //{
-                //    m_enemySpotted = false;
-                //}
-
             }
         }
         else
@@ -145,8 +147,6 @@ public class UnitFieldOfView : MonoBehaviour
             FindVisibleTargets();
         }
     }
-
-
 
     /// <summary>
     /// Actual field of view
@@ -239,7 +239,6 @@ public class UnitFieldOfView : MonoBehaviour
 
         return new EdgeInfo(minPoint, maxPoint);
     }
-
 
     public struct ViewCastInfo
     {

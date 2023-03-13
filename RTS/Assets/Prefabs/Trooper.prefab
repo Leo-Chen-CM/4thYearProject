@@ -227,6 +227,8 @@ MonoBehaviour:
   m_rotationModifier: 90
   m_unitFieldOfView: {fileID: 0}
   m_destinationReached: 1
+  m_leader: 0
+  m_toggleGoal: 0
   m_currentState: 1
 --- !u!195 &4623158510368895285
 NavMeshAgent:
@@ -345,6 +347,7 @@ MonoBehaviour:
   m_firingPoint: {fileID: 4389229701348755439}
   m_lineRenderer: {fileID: 8303284807999659937}
   fireRate: 1
+  m_offset: 0.1
 --- !u!120 &8303284807999659937
 LineRenderer:
   m_ObjectHideFlags: 0

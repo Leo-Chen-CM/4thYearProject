@@ -20,8 +20,6 @@ public class UnitFieldOfView : MonoBehaviour
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
 
-    public GameObject m_entityRef;
-
     public float m_meshResolution;
     public int edgeResolveIterations;
     public float edgeDstThreshold;
@@ -44,7 +42,6 @@ public class UnitFieldOfView : MonoBehaviour
         viewMeshFilter.mesh = viewMesh;
 
         m_unitShooting = GetComponent<UnitShooting>();
-        m_entityRef = GameObject.FindGameObjectWithTag("Player");
         StartCoroutine("FindTargetsWithDelay", .1f);
     }
 
@@ -60,48 +57,54 @@ public class UnitFieldOfView : MonoBehaviour
                 {
                     Transform target = targetsInViewRadius[i].transform;
                     Vector3 dirToTarget = (target.position - transform.position).normalized;
+                    float dstToNewTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (Vector3.Angle(transform.up, dirToTarget) < m_angle / 2)
+                    if (Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, m_targetLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag && dstToNewTarget < m_radius)
                     {
-                        float dstToNewTarget = Vector3.Distance(transform.position, target.position);
-
-                        if (!Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, m_obstructionLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag && dstToNewTarget < m_radius)
+                        if (m_target != null)
                         {
-                            if (m_target != null)
-                            {
-                                float currentDstToTarget = Vector3.Distance(transform.position, m_target.position);
+                            float currentDstToTarget = Vector3.Distance(transform.position, m_target.position);
 
-                                if (dstToNewTarget < currentDstToTarget)
-                                {
-                                    m_target = targetsInViewRadius[i].transform;
-                                    m_enemySpotted = true;
-                                }
-
-                            }
-                            else
+                            if (dstToNewTarget < currentDstToTarget)
                             {
                                 m_target = targetsInViewRadius[i].transform;
                                 m_enemySpotted = true;
                             }
 
                         }
+                        else
+                        {
+                            m_target = targetsInViewRadius[i].transform;
+                            m_enemySpotted = true;
+                        }
 
-                        //if (m_enemySpotted == false)
-                        //{
-
-
-                        //}
-                        //else
-                        //{
-                        //    m_enemySpotted = false;
-                        //    m_target = null;
-                        //}
                     }
                     else
                     {
                         m_enemySpotted = false;
                         m_target = null;
                     }
+
+                    //if (Vector3.Angle(transform.up, dirToTarget) < m_angle / 2)
+                    //{
+                        
+
+                    //    //if (m_enemySpotted == false)
+                    //    //{
+
+
+                    //    //}
+                    //    //else
+                    //    //{
+                    //    //    m_enemySpotted = false;
+                    //    //    m_target = null;
+                    //    //}
+                    //}
+                    //else
+                    //{
+                    //    m_enemySpotted = false;
+                    //    m_target = null;
+                    //}
                 }
             }
         }
@@ -120,7 +123,6 @@ public class UnitFieldOfView : MonoBehaviour
     /// </summary>
     private void OnDrawGizmos()
     {
-
         if (m_target != null)
         {
             Gizmos.color = Color.green;
@@ -270,6 +272,9 @@ public class UnitFieldOfView : MonoBehaviour
     ViewCastInfo ViewCast(float globalAngle)
     {
         Vector3 dir = DirFromAngle(globalAngle, true);
+
+        //int combinedMask = m_targetLayer | m_obstructionLayer;
+
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, m_radius, m_obstructionLayer);
 
         if (hit)

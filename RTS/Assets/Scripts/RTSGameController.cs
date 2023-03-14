@@ -206,9 +206,7 @@ public class RTSGameController : MonoBehaviour
         List<Vector3> positionList = new List<Vector3>();
         //positionList.Add(t_startPosition);
 
-        float rowMax = Mathf.Ceil(m_selectedUnits.Count / 9f);
-
-        for (int j = 0; j < rowMax; j++)
+        for (int j = 0; j < 4; j++)
         {
             for (int i = 0; i < 9; i++)
             {

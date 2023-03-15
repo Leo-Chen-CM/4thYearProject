@@ -133,7 +133,7 @@ public class FiniteStateMachineAI : MonoBehaviour
                 case States.MoveOut:
                     //m_states = States.Idle;
                     //StartCoroutine(MoveOut());
-                    MoveToPoint(m_wayPoints[1].position);
+                    MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0));
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.GatherForces;
                     break;

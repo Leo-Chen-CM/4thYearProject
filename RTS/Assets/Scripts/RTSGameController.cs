@@ -205,24 +205,16 @@ public class RTSGameController : MonoBehaviour
     {
         List<Vector3> positionList = new List<Vector3>();
         //positionList.Add(t_startPosition);
-
+        float perLine = m_selectedUnits.Count / 4;
+        perLine = Mathf.Ceil(perLine);
         for (int j = 0; j < 4; j++)
         {
-            for (int i = 0; i < 9; i++)
+            for (int i = 0; i < perLine; i++)
             {
-                //positionList.AddRange(GetLinePositionList(t_startPosition, new float[] {9}));
-
-                if (i % 2 != 0)
+                if (perLine % 2 == 0)
                 {
-                    Vector3 offset = new Vector3(t_startPosition.x + m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
-                    positionList.Add(offset);
-                }
-                else
-                {
-                    Vector3 offset = new Vector3(t_startPosition.x - m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
-                    positionList.Add(offset);
-                }
 
+                }
             }
         }
 

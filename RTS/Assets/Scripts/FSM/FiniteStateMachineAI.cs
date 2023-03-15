@@ -38,10 +38,6 @@ public class FiniteStateMachineAI : MonoBehaviour
 
     private List<UnitRTS> m_selectedUnits;
 
-    bool m_idling = true;
-
-    bool m_ordersSent = false;
-
     [SerializeField]
     private int m_maxSoldiers;
 
@@ -84,29 +80,6 @@ public class FiniteStateMachineAI : MonoBehaviour
     //    }
     //}
 
-    void GatherForces()
-    {
-        Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, 75, 0), new Vector3(50, 55, 0), m_entityLayer);
-        m_selectedUnits.Clear();
-        if (collider2DArray.Length >= m_maxSoldiers)
-        {
-            foreach (Collider2D collider2D in collider2DArray)
-            {
-                UnitRTS unitRTS = collider2D.GetComponent<UnitRTS>();
-
-                if (unitRTS != null && unitRTS.gameObject.tag == "Team2")
-                {
-                    //unitRTS.SetSelectedVisible(true);
-                    m_selectedUnits.Add(unitRTS);
-                }
-            }
-            Debug.Log("The FSM has troopers rallied");
-
-            m_states = States.RallyPoint;
-
-        }
-    }
-
     IEnumerator Orders()
     {
         while (true)
@@ -118,8 +91,9 @@ public class FiniteStateMachineAI : MonoBehaviour
                 //    break;
 
                 case States.GatherForces:
+                    yield return new WaitForSeconds(m_ordersTimeDelay);
                     GatherForces();
-                    yield return new WaitForEndOfFrame();
+
                     break;
 
                 case States.RallyPoint:
@@ -133,13 +107,52 @@ public class FiniteStateMachineAI : MonoBehaviour
                 case States.MoveOut:
                     //m_states = States.Idle;
                     //StartCoroutine(MoveOut());
-                    MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-3, 3), Random.Range(-3, 3), 0));
+                    MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.GatherForces;
                     break;
             }
         }
     }
+
+
+    void GatherForces()
+    {
+        //Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, 75, 0), new Vector3(50, 55, 0), m_entityLayer);
+        Collider2D[] collider2DArray;
+
+        if (gameObject.tag == "Team1")
+        {
+            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, -75, 0), new Vector3(50, -55, 0), m_entityLayer);
+        }
+        else
+        {
+            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, 75, 0), new Vector3(50, 55, 0), m_entityLayer);
+        }
+
+        m_selectedUnits.Clear();
+
+        foreach (Collider2D collider2D in collider2DArray)
+        {
+            UnitRTS unitRTS = collider2D.GetComponent<UnitRTS>();
+
+            if (unitRTS != null && unitRTS.gameObject.tag == gameObject.tag)
+            {
+                //unitRTS.SetSelectedVisible(true);
+                m_selectedUnits.Add(unitRTS);
+            }
+        }
+        Debug.Log("The FSM has troopers rallied");
+
+        m_states = States.RallyPoint;
+
+        //if (collider2DArray.Length >= m_maxSoldiers)
+        //{
+
+
+        //}
+    }
+
 
     //IEnumerator MoveToRallyPoint()
     //{

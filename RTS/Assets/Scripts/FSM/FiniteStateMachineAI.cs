@@ -42,6 +42,12 @@ public class FiniteStateMachineAI : MonoBehaviour
 
     bool m_ordersSent = false;
 
+    [SerializeField]
+    private int m_maxSoldiers;
+
+    [SerializeField]
+    private int m_ordersTimeDelay;
+
     private void Awake()
     {
         m_selectedUnits = new List<UnitRTS>();
@@ -82,7 +88,7 @@ public class FiniteStateMachineAI : MonoBehaviour
     {
         Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, 75, 0), new Vector3(50, 55, 0), m_entityLayer);
         m_selectedUnits.Clear();
-        if (collider2DArray.Length >= 20)
+        if (collider2DArray.Length >= m_maxSoldiers)
         {
             foreach (Collider2D collider2D in collider2DArray)
             {
@@ -120,7 +126,7 @@ public class FiniteStateMachineAI : MonoBehaviour
                     //m_states = States.Idle;
                     //StartCoroutine(MoveToRallyPoint());
                     MoveToPoint(m_wayPoints[0].position);
-                    yield return new WaitForSeconds(5);
+                    yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.MoveOut;
                     break;
 
@@ -128,7 +134,7 @@ public class FiniteStateMachineAI : MonoBehaviour
                     //m_states = States.Idle;
                     //StartCoroutine(MoveOut());
                     MoveToPoint(m_wayPoints[1].position);
-                    yield return new WaitForSeconds(5);
+                    yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.GatherForces;
                     break;
             }

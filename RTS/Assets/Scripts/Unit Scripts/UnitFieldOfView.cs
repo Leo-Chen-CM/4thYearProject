@@ -16,6 +16,7 @@ public class UnitFieldOfView : MonoBehaviour
 
     public LayerMask m_targetLayer;
     public LayerMask m_obstructionLayer;
+    public LayerMask m_obstructionOnlyLayer;
 
     [HideInInspector]
     public List<Transform> visibleTargets = new List<Transform>();
@@ -34,6 +35,8 @@ public class UnitFieldOfView : MonoBehaviour
 
     private UnitShooting m_unitShooting;
 
+    List<Collider2D> m_targetsInView = new List<Collider2D>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,18 +51,32 @@ public class UnitFieldOfView : MonoBehaviour
     bool FindVisibleTargets()
     {
         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m_radius, m_targetLayer);
+        m_targetsInView.Clear();
 
-        if (targetsInViewRadius.Length > 1)
+        //m_targetsInView.AddRange(Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m_radius, m_targetLayer));
+
+        foreach (Collider2D collider2D in targetsInViewRadius)
         {
-            for (int i = 1; i < targetsInViewRadius.Length; i++)
+            if (collider2D.gameObject.tag != gameObject.tag)
             {
-                if (targetsInViewRadius[i].gameObject != gameObject)
+                m_targetsInView.Add(collider2D);
+            }
+        }
+
+
+        if (m_targetsInView.Count > 0)
+        {
+            int length = m_targetsInView.Count;
+
+            for (int i = 0; i < length; i++)
+            {
+                if (m_targetsInView[i].gameObject != gameObject)
                 {
-                    Transform target = targetsInViewRadius[i].transform;
+                    Transform target = m_targetsInView[i].transform;
                     Vector3 dirToTarget = (target.position - transform.position).normalized;
                     float dstToNewTarget = Vector3.Distance(transform.position, target.position);
 
-                    if (Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, m_targetLayer) && targetsInViewRadius[i].gameObject.tag != gameObject.tag && dstToNewTarget < m_radius)
+                    if (Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, m_obstructionLayer) && dstToNewTarget < m_radius)
                     {
                         if (m_target != null)
                         {
@@ -67,15 +84,14 @@ public class UnitFieldOfView : MonoBehaviour
 
                             if (dstToNewTarget < currentDstToTarget)
                             {
-                                m_target = targetsInViewRadius[i].transform;
+                                m_target = m_targetsInView[i].transform;
                                 m_enemySpotted = true;
                             }
-
                         }
                         else
                         {
-                            m_target = targetsInViewRadius[i].transform;
-                            m_enemySpotted = true;
+                            m_target = m_targetsInView[i].transform;
+                            m_enemySpotted = true;  
                         }
 
                     }
@@ -106,6 +122,8 @@ public class UnitFieldOfView : MonoBehaviour
                     //    m_target = null;
                     //}
                 }
+
+
             }
         }
         else

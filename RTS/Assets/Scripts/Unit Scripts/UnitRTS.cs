@@ -7,12 +7,12 @@ public class UnitRTS : MonoBehaviour
     private GameObject m_selectedGameObject;
     private GameObject m_viewVisualisation;
     //private UnitMovement m_movePosition;
-    public Agent m_agent;
+    public Trooper m_agent;
     [SerializeField]
     int m_health = 3;
     private void Awake()
     {
-        m_agent = GetComponent<Agent>();
+        m_agent = GetComponent<Trooper>();
         m_selectedGameObject = transform.Find("Selected").gameObject;
         m_viewVisualisation = transform.Find("View Visualisation").gameObject;
         //m_movePosition = GetComponent<UnitMovement>();

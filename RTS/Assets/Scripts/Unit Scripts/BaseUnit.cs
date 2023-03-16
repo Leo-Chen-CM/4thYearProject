@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using static UnityEditor.VersionControl.Asset;
 
-public class Agent : MonoBehaviour
+public class BaseUnit : MonoBehaviour
 {
     private Vector3 m_targetDestination;
     public Vector3 m_goal;
@@ -15,7 +16,7 @@ public class Agent : MonoBehaviour
     private float m_rotationModifier;
     [SerializeField]
     private UnitFieldOfView m_unitFieldOfView;
-    
+
     [SerializeField]
     private bool m_destinationReached = false;
 
@@ -35,7 +36,7 @@ public class Agent : MonoBehaviour
 
     private void Awake()
     {
-        m_rigidbody2D= GetComponent<Rigidbody2D>();
+        m_rigidbody2D = GetComponent<Rigidbody2D>();
         m_unitFieldOfView = GetComponent<UnitFieldOfView>();
         m_agent = GetComponent<NavMeshAgent>();
         m_agent.updateRotation = false;
@@ -43,9 +44,9 @@ public class Agent : MonoBehaviour
         m_agent.updatePosition = false;
         m_targetDestination = transform.position;
 
-        m_currentState = State.Move;
-        m_goal = new Vector3(0, 0, 0);
-        m_targetDestination = m_goal;
+        //m_currentState = State.Move;
+        //m_goal = new Vector3(0, 0, 0);
+        //m_targetDestination = m_goal;
     }
 
     private void Start()
@@ -59,33 +60,12 @@ public class Agent : MonoBehaviour
         SetAgentPosition();
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    //SetAgentPosition();
-
-
-    //}
-
     private void FixedUpdate()
     {
-        //switch (m_currentState)
-        //{
-        //    case State.Idle:
-        //        Idle();
-        //        break;
 
-        //    case State.Move:
-        //        MoveTo();
-        //        break;
-
-        //    case State.Shoot:
-
-        //        break;
-        //}
         m_agent.nextPosition = m_rigidbody2D.position;
         m_rigidbody2D.velocity = m_agent.velocity;
-        
+
         if (m_destinationReached == false)
         {
             CheckPosition();
@@ -141,7 +121,7 @@ public class Agent : MonoBehaviour
     void SetAgentPosition()
     {
         Vector3 moveDirection = (m_targetDestination - transform.position).normalized;
-        
+
         m_agent.velocity = moveDirection * 5;
 
         m_agent.SetDestination(new Vector3(m_targetDestination.x, m_targetDestination.y, 0));

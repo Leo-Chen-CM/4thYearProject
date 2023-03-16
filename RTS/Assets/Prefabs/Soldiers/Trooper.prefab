@@ -125,7 +125,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4623158510368895287}
   - component: {fileID: 4623158510368895280}
-  - component: {fileID: 4623158510368895286}
+  - component: {fileID: 6128588384141374375}
   - component: {fileID: 4623158510368895285}
   - component: {fileID: 4623158510368895284}
   - component: {fileID: 4623158510368895307}
@@ -210,7 +210,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4623158510368895286
+--- !u!114 &6128588384141374375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -219,17 +219,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 4623158510368895281}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2ca5dcc05f69fbf4eb3d6426f9c0fe87, type: 3}
+  m_Script: {fileID: 11500000, guid: 4ab56aef6bc53894cbc3c580436abd7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_goal: {x: 0, y: 0, z: 0}
   m_rotationSpeed: 1
   m_rotationModifier: 90
   m_unitFieldOfView: {fileID: 0}
-  m_destinationReached: 1
+  m_destinationReached: 0
   m_leader: 0
   m_toggleGoal: 0
-  m_currentState: 1
+  m_currentState: 0
 --- !u!195 &4623158510368895285
 NavMeshAgent:
   m_ObjectHideFlags: 0

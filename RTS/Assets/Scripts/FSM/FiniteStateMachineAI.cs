@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class FiniteStateMachineAI : MonoBehaviour
+public class FiniteStateMachineAI : RTSGameController
 {
     /// <summary>
     /// This AI is meant to represent Field Marhsal Douglas Haig
@@ -44,6 +44,9 @@ public class FiniteStateMachineAI : MonoBehaviour
     [SerializeField]
     private int m_ordersTimeDelay;
 
+    [SerializeField]
+    Formations m_formations = Formations.Line;
+
     private void Awake()
     {
         m_selectedUnits = new List<UnitRTS>();
@@ -52,6 +55,7 @@ public class FiniteStateMachineAI : MonoBehaviour
     void Start()
     {
         m_entityLayer = LayerMask.GetMask("EntityLayer");
+        m_AI = true;
         StartCoroutine(Orders());
     }
 
@@ -99,7 +103,8 @@ public class FiniteStateMachineAI : MonoBehaviour
                 case States.RallyPoint:
                     //m_states = States.Idle;
                     //StartCoroutine(MoveToRallyPoint());
-                    MoveToPoint(m_wayPoints[0].position);
+                    //MoveToPoint(m_wayPoints[0].position);
+                    SetFormationPosition(m_wayPoints[0].position);
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.MoveOut;
                     break;
@@ -107,7 +112,8 @@ public class FiniteStateMachineAI : MonoBehaviour
                 case States.MoveOut:
                     //m_states = States.Idle;
                     //StartCoroutine(MoveOut());
-                    MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
+                    SetFormationPosition(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
+                    //MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.GatherForces;
                     break;
@@ -144,70 +150,23 @@ public class FiniteStateMachineAI : MonoBehaviour
         }
         Debug.Log("The FSM has troopers rallied");
 
+        
+
         m_states = States.RallyPoint;
-
-        //if (collider2DArray.Length >= m_maxSoldiers)
-        //{
-
-
-        //}
     }
 
-
-    //IEnumerator MoveToRallyPoint()
+    //void MoveToPoint(Vector3 t_destination)
     //{
-    //    //Debug.Log("Troops are heading towards the rallying point");
-    //    MoveToPoint(m_wayPoints[0].position);
-    //    yield return new WaitForSeconds(30);
-    //    m_states = States.MoveOut;
+    //    List<Vector3> targetPositionList = GetLinePositionList(t_destination);
+
+    //    int targetPositionListIndex = 0;
+
+    //    foreach (UnitRTS unit in m_selectedUnits)
+    //    {
+    //        unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
+    //        targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
+    //    }
     //}
 
-    //IEnumerator MoveOut()
-    //{
-    //    //Debug.Log("Troops are now attacking the control point");
-    //    MoveToPoint(m_wayPoints[1].position);
-    //    yield return new WaitForSeconds(5);
-    //    m_states = States.GatherForces;
-    //}
-
-    void MoveToPoint(Vector3 t_destination)
-    {
-        List<Vector3> targetPositionList = GetLinePositionList(t_destination);
-
-        int targetPositionListIndex = 0;
-
-        foreach (UnitRTS unit in m_selectedUnits)
-        {
-            unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
-            targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
-        }
-    }
-
-
-    private List<Vector3> GetLinePositionList(Vector3 t_startPosition)
-    {
-        List<Vector3> positionList = new List<Vector3>();
-
-        float rowMax = Mathf.Ceil(m_selectedUnits.Count / 9f);
-
-        for (int j = 0; j < rowMax; j++)
-        {
-            for (int i = 0; i < 9; i++)
-            {
-                if (i % 2 != 0)
-                {
-                    Vector3 offset = new Vector3(t_startPosition.x + m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
-                    positionList.Add(offset);
-                }
-                else
-                {
-                    Vector3 offset = new Vector3(t_startPosition.x - m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
-                    positionList.Add(offset);
-                }
-            }
-        }
-
-        return positionList;
-    }
 
 }

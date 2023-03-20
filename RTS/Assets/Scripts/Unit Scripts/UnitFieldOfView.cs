@@ -100,27 +100,6 @@ public class UnitFieldOfView : MonoBehaviour
                         m_enemySpotted = false;
                         m_target = null;
                     }
-
-                    //if (Vector3.Angle(transform.up, dirToTarget) < m_angle / 2)
-                    //{
-                        
-
-                    //    //if (m_enemySpotted == false)
-                    //    //{
-
-
-                    //    //}
-                    //    //else
-                    //    //{
-                    //    //    m_enemySpotted = false;
-                    //    //    m_target = null;
-                    //    //}
-                    //}
-                    //else
-                    //{
-                    //    m_enemySpotted = false;
-                    //    m_target = null;
-                    //}
                 }
 
 

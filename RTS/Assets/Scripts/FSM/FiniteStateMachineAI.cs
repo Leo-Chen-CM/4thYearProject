@@ -23,9 +23,6 @@ public class FiniteStateMachineAI : RTSGameController
     }
 
     [SerializeField]
-    private float m_lineOffset;
-
-    [SerializeField]
     private States m_states = States.GatherForces;
 
     [SerializeField]
@@ -35,8 +32,6 @@ public class FiniteStateMachineAI : RTSGameController
     private UnitSpawner m_spawner;
 
     private LayerMask m_entityLayer;
-
-    private List<UnitRTS> m_selectedUnits;
 
     [SerializeField]
     private int m_maxSoldiers;

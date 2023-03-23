@@ -22,7 +22,7 @@ public class RTSGameController : MonoBehaviour
     [SerializeField]
     private Transform m_selectedAreaTransform;
     private Vector3 m_startPosition;
-    private List<UnitRTS> m_selectedUnits;
+    protected List<UnitRTS> m_selectedUnits;
     // Update is called once per frame
 
     [SerializeField]

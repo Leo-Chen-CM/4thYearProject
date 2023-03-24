@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 enum Teams
 {
@@ -36,12 +37,28 @@ public class RTSGameController : MonoBehaviour
 
     protected bool m_AI = false;
 
+
+
     private void Awake()
     {
         m_selectedUnits = new List<UnitRTS>();
         m_selectedAreaTransform.gameObject.SetActive(false);
     }
 
+
+
+    public void HandleInputData(int val)
+    {
+        
+        if (val == 0)
+        {
+            m_team = Teams.Team1;
+        }        
+        if (val == 1)
+        {
+            m_team = Teams.Team2;
+        }
+    }
     void Update()
     {
         if (!m_AI)
@@ -120,7 +137,6 @@ public class RTSGameController : MonoBehaviour
             {
                 SetFormationPosition(Utility.ReturnMousePosition2D());
             }
-
         }
 
 
@@ -194,8 +210,6 @@ public class RTSGameController : MonoBehaviour
             }
         }
 
-
-
         return positionList;
     }
 
@@ -215,63 +229,6 @@ public class RTSGameController : MonoBehaviour
                 }
             }
         }
-
-
-
         return positionList;
     }
-
-
-
-    //private List<Vector3> GetLinePositionList(Vector3 t_startPosition, float[] t_linePosition)
-    //{
-    //    List<Vector3> positionList = new List<Vector3>();
-
-    //    //positionList.Add(t_startPosition);
-    //    for (int i = 1; i < t_linePosition.Length; i++)
-    //    {
-    //        if (i % 2 != 0)
-    //        {
-    //            Vector3 offset = new Vector3(t_startPosition.x + m_lineOffset * i, t_startPosition.y - m_lineOffset * rowCount, 0);
-    //            positionList.Add(offset);
-    //        }
-    //        else
-    //        {
-    //            Vector3 offset = new Vector3(t_startPosition.x - m_lineOffset * i, t_startPosition.y - m_lineOffset * rowCount, 0);
-    //            positionList.Add(offset);
-    //        }
-    //    }
-
-    //    return positionList;
-    //}
-
-    //private List<Vector3> GetPositionListAround(Vector3 t_startPosition, float[] t_ringDistanceArray, int[] t_ringPositionCountArray)
-    //{
-    //    List<Vector3> positionList = new List<Vector3>();
-    //    positionList.Add(t_startPosition);
-    //    for (int i = 0; i < t_ringDistanceArray.Length; i++)
-    //    {
-    //        positionList.AddRange(GetPositionListAround(t_startPosition, t_ringDistanceArray[i], t_ringPositionCountArray[i]));
-    //    }
-    //    return positionList;
-    //}
-
-    //private List<Vector3> GetPositionListAround(Vector3 t_startPosition, float t_distance, int t_positionCount)
-    //{
-    //    List<Vector3> positionList = new List<Vector3>();
-    //    for (int i = 0; i < t_positionCount; i++)
-    //    {
-    //        float angle = i * (360f / t_positionCount);
-    //        Vector3 dir = ApplyRotationToVector(new Vector3(1, 0), angle);
-    //        Vector3 position = t_startPosition + dir * t_distance;
-    //        positionList.Add(position);
-    //    }
-    //    return positionList;
-    //}
-
-
-    //private Vector3 ApplyRotationToVector(Vector3 t_vector3, float t_angle)
-    //{
-    //    return Quaternion.Euler(0, 0, t_angle) * t_vector3;
-    //}
 }

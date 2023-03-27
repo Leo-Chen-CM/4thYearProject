@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.UI;
 public class UnitSpawner : MonoBehaviour
 {
@@ -21,21 +23,24 @@ public class UnitSpawner : MonoBehaviour
     int m_requisitionTime = 5;
 
     float m_time = 3;
-    //[SerializeField]
-    //GameGUI m_GameGUI;
 
     [SerializeField]
     Image m_overlay;
     [SerializeField]
     Image m_prefabImage;
 
+    [SerializeField]
+    GameObject m_unitProductionUI;
     int m_unitsQueued = 0;
+
+    [SerializeField]
+    GameObject m_unitsBeingBuiltText;
 
     bool m_coroutineInUse = false;
     private void Start()
     {
         StartCoroutine(GenerateReserves());
-
+        m_unitProductionUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -61,18 +66,27 @@ public class UnitSpawner : MonoBehaviour
     //    }
     //}
 
+    private void Update()
+    {
+        if (m_unitsQueued > 1)
+        {
+            m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "x" + m_unitsQueued;
+        }
+        else
+        {
+            m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "";
+        }
+    }
+
     IEnumerator GenerateReserves()
     {
         while(true)
         {
+            m_reserves += m_requisitionPoints;
 
             if (m_reserves > 1000)
             {
                 m_reserves = 1000;
-            }
-            else
-            {
-                m_reserves += m_requisitionPoints;
             }
 
             yield return new WaitForSeconds(m_requisitionTime);
@@ -89,10 +103,14 @@ public class UnitSpawner : MonoBehaviour
             //m_troopCount.Add(newUnit);
             //newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
             //m_reserves--;
+            if (m_unitsQueued < 9)
+            {
+                m_unitsQueued++;
+            }
 
-            m_unitsQueued++;
             if (!m_coroutineInUse)
             {
+                m_unitProductionUI.SetActive(true);
                 StartCoroutine(CreatingUnit());
             }
 
@@ -121,6 +139,7 @@ public class UnitSpawner : MonoBehaviour
 
         while (m_unitsQueued > 0)
         {
+
             while (m_time > -0.1f)
             {
                 m_overlay.fillAmount = m_time / m_spawnTime;
@@ -137,8 +156,12 @@ public class UnitSpawner : MonoBehaviour
 
             m_reserves--;
             m_unitsQueued--;
+            m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "x" + m_unitsQueued;
             m_time = m_spawnTime;
+
+
         }
         m_coroutineInUse = false;
+        m_unitProductionUI.SetActive(false);
     }
 }

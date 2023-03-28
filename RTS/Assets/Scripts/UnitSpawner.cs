@@ -148,7 +148,7 @@ public class UnitSpawner : MonoBehaviour
             }
 
             //Creates a new unit
-            Vector3 spawn = new Vector3(Random.Range(-45, 45), m_spawnPoint.position.y + Random.Range(-1, 1), 0);
+            Vector3 spawn = new Vector3(m_spawnPoint.position.x + Random.Range(-1, 1), m_spawnPoint.position.y + Random.Range(-45,45), 0);
             Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
             GameObject newUnit = Instantiate(m_unit, spawn, rotation);
             newUnit.GetComponent<UnitRTS>().SetupTeam(tag);

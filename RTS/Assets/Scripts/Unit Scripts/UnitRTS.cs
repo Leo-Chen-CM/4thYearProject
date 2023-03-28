@@ -6,7 +6,6 @@ public class UnitRTS : MonoBehaviour
 {
     private GameObject m_selectedGameObject;
     private GameObject m_viewVisualisation;
-    //private UnitMovement m_movePosition;
     public Trooper m_agent;
     [SerializeField]
     int m_health = 3;
@@ -15,7 +14,6 @@ public class UnitRTS : MonoBehaviour
         m_agent = GetComponent<Trooper>();
         m_selectedGameObject = transform.Find("Selected").gameObject;
         m_viewVisualisation = transform.Find("View Visualisation").gameObject;
-        //m_movePosition = GetComponent<UnitMovement>();
 
 
         SetSelectedVisible(false);
@@ -26,42 +24,19 @@ public class UnitRTS : MonoBehaviour
         m_viewVisualisation.SetActive(t_visible);
     }
 
-    //public void MoveTo(Vector3 t_targetPosition)
-    //{
-    //    m_movePosition.SetMovePosition(t_targetPosition);
-    //}
-
     public void SetupTeam(string t_teamTag)
     {
         gameObject.tag = t_teamTag;
         if (gameObject.tag == "Team1")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
         }
 
         if (gameObject.tag == "Team2")
         {
-            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
         }
     }
-
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "Bullet")
-    //    {
-    //        if (m_health > 1)
-    //        {
-    //            m_health--;
-    //            Destroy(collision.gameObject);
-    //        }
-    //        else
-    //        {
-    //            Destroy(gameObject);
-    //        }
-
-    //    }
-    //}
 
     public void LoseHealth()
     {

@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System;
 public class MapArea : MonoBehaviour
 {
-
+    public event EventHandler OnCaptured;
     public enum State
     {
         Neutral,
@@ -59,7 +59,7 @@ public class MapArea : MonoBehaviour
                 if (m_progress >= 1f)
                 {
                     m_state = State.Captured;
-
+                    OnCaptured?.Invoke(this, EventArgs.Empty);
                     Debug.Log("Captured");
                 }
 

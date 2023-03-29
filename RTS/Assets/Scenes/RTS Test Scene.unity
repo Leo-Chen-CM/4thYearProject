@@ -3241,11 +3241,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_mapAreaImages:
   - m_uiImage: {fileID: 1612302598}
-    m_mapArea: {fileID: 0}
+    m_mapArea: {fileID: 1566435132}
   - m_uiImage: {fileID: 1859928652}
-    m_mapArea: {fileID: 0}
+    m_mapArea: {fileID: 1756477733}
   - m_uiImage: {fileID: 922474403}
-    m_mapArea: {fileID: 0}
+    m_mapArea: {fileID: 502401511}
 --- !u!4 &1185028214
 Transform:
   m_ObjectHideFlags: 0

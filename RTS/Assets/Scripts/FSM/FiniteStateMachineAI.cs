@@ -53,32 +53,6 @@ public class FiniteStateMachineAI : RTSGameController
         m_AI = true;
         StartCoroutine(Orders());
     }
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    switch (m_states)
-    //    {
-    //        case States.Idle:
-    //            AwaitingOrders();
-    //            break;
-
-    //        case States.GatherForces:
-    //            GatherForces();
-    //            break;
-
-    //        case States.RallyPoint:
-    //            m_states = States.Idle;
-    //            //StartCoroutine(MoveToRallyPoint());
-    //            break;
-
-    //        case States.MoveOut:
-    //            m_states = States.Idle;
-    //            //StartCoroutine(MoveOut());
-    //            break;
-    //    }
-    //}
-
     IEnumerator Orders()
     {
         while (true)
@@ -119,16 +93,15 @@ public class FiniteStateMachineAI : RTSGameController
 
     void GatherForces()
     {
-        //Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, 75, 0), new Vector3(50, 55, 0), m_entityLayer);
         Collider2D[] collider2DArray;
 
         if (gameObject.tag == "Team1")
         {
-            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, -75, 0), new Vector3(50, -55, 0), m_entityLayer);
+            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-250, 75, 0), new Vector3(-175, -75, 0), m_entityLayer);
         }
         else
         {
-            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-50, 75, 0), new Vector3(50, 55, 0), m_entityLayer);
+            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(175, 75, 0), new Vector3(250, -75, 0), m_entityLayer);
         }
 
         m_selectedUnits.Clear();

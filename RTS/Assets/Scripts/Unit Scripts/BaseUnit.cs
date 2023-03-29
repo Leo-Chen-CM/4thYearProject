@@ -43,10 +43,6 @@ public class BaseUnit : MonoBehaviour
         m_agent.updateUpAxis = false;
         m_agent.updatePosition = false;
         m_targetDestination = transform.position;
-
-        //m_currentState = State.Move;
-        //m_goal = new Vector3(0, 0, 0);
-        //m_targetDestination = m_goal;
     }
 
     private void Start()

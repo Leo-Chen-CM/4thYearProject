@@ -35,7 +35,7 @@ public class RTSGameController : MonoBehaviour
     [SerializeField]
     private float m_lineOffset;
 
-    protected bool m_AI = false;
+    public bool m_AI = false;
 
 
 
@@ -190,9 +190,9 @@ public class RTSGameController : MonoBehaviour
 
         float rowMax = Mathf.Ceil(m_selectedUnits.Count / 9f);
 
-        for (int j = 0; j < rowMax; j++)
+        for (int i = 0; i < rowMax; i++)
         {
-            for (int i = 0; i < 9; i++)
+            for (int j = 0; j < 9; j++)
             {
                 //positionList.AddRange(GetLinePositionList(t_startPosition, new float[] {9}));
 

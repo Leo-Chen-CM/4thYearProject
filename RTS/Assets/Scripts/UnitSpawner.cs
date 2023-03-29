@@ -37,10 +37,20 @@ public class UnitSpawner : MonoBehaviour
     GameObject m_unitsBeingBuiltText;
 
     bool m_coroutineInUse = false;
-    private void Start()
+    [SerializeField]
+    float m_nextSpawn;
+
+    [SerializeField]
+    GameObject m_opponent;
+    protected virtual void Start()
     {
         StartCoroutine(GenerateReserves());
-        m_unitProductionUI.SetActive(false);
+
+        if (!m_opponent.GetComponent<RTSGameController>().m_AI)
+        {
+            m_unitProductionUI.SetActive(false);
+        }
+
     }
 
     // Update is called once per frame
@@ -56,25 +66,42 @@ public class UnitSpawner : MonoBehaviour
     //        newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
     //        m_reserves--;
     //    }
-
-    //    for (int i = 0; i < m_troopCount.Count; i++)
-    //    {
-    //        if (m_troopCount[i] == null)
-    //        {
-    //            m_troopCount.Remove(m_troopCount[i]);
-    //        }
-    //    }
     //}
 
     private void Update()
     {
-        if (m_unitsQueued > 1)
+        if (m_opponent.GetComponent<RTSGameController>().m_AI)
         {
-            m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "x" + m_unitsQueued;
+            if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && m_reserves != 0)
+            {
+                Vector3 spawn = new Vector3(m_spawnPoint.position.x + Random.Range(-1, 1), m_spawnPoint.position.y + Random.Range(-45, 45), 0);
+                m_nextSpawn = Time.time + m_spawnTime;
+                Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
+                GameObject newUnit = Instantiate(m_unit, spawn, rotation);
+                newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
+                m_troopCount.Add(newUnit);
+                m_reserves--;
+                m_unitsQueued--;
+            }
         }
         else
         {
-            m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "";
+            if (m_unitsQueued > 1)
+            {
+                m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "x" + m_unitsQueued;
+            }
+            else
+            {
+                m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "";
+            }
+        }
+
+        for (int i = 0; i < m_troopCount.Count; i++)
+        {
+            if (m_troopCount[i] == null)
+            {
+                m_troopCount.Remove(m_troopCount[i]);
+            }
         }
     }
 
@@ -97,12 +124,6 @@ public class UnitSpawner : MonoBehaviour
     {
         if (m_troopCount.Count < m_maxUnits && m_reserves != 0)
         {
-            //Vector3 spawn = new Vector3(Random.Range(-45, 45), m_spawnPoint.position.y + Random.Range(-1, 1), 0);
-            //Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
-            //GameObject newUnit = Instantiate(m_unit, spawn, rotation);
-            //m_troopCount.Add(newUnit);
-            //newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
-            //m_reserves--;
             if (m_unitsQueued < 9)
             {
                 m_unitsQueued++;
@@ -116,13 +137,6 @@ public class UnitSpawner : MonoBehaviour
 
         }
 
-        for (int i = 0; i < m_troopCount.Count; i++)
-        {
-            if (m_troopCount[i] == null)
-            {
-                m_troopCount.Remove(m_troopCount[i]);
-            }
-        }
     }
 
 
@@ -153,15 +167,19 @@ public class UnitSpawner : MonoBehaviour
             GameObject newUnit = Instantiate(m_unit, spawn, rotation);
             newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
             m_troopCount.Add(newUnit);
-
             m_reserves--;
             m_unitsQueued--;
-            m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "x" + m_unitsQueued;
+            SpawnUI();
             m_time = m_spawnTime;
 
 
         }
         m_coroutineInUse = false;
         m_unitProductionUI.SetActive(false);
+    }
+
+    void SpawnUI()
+    {
+        m_unitsBeingBuiltText.GetComponent<TextMeshProUGUI>().text = "x" + m_unitsQueued;
     }
 }

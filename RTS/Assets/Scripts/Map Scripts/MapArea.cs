@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 public class MapArea : MonoBehaviour
 {
-    public event EventHandler OnCaptured;
-    public event EventHandler OnUnitEnter;
-    public event EventHandler OnUnitExit;
+    //public event EventHandler OnCaptured;
+    //public event EventHandler OnUnitEnter;
+    //public event EventHandler OnUnitExit;
     public enum State
     {
         Neutral,
@@ -32,36 +32,36 @@ public class MapArea : MonoBehaviour
             if (mapAreaCollider != null)
             {
                 m_mapAreaColliderList.Add(mapAreaCollider);
-                mapAreaCollider.OnUnitEnter += MapAreaCollider_OnUnitEnter;
-                mapAreaCollider.OnUnitExit += MapAreaCollider_OnUnitExit;
+                //mapAreaCollider.OnUnitEnter += MapAreaCollider_OnUnitEnter;
+                //mapAreaCollider.OnUnitExit += MapAreaCollider_OnUnitExit;
             }
         }
 
         m_state = State.Neutral;
     }
 
-    private void MapAreaCollider_OnUnitExit(object sender, EventArgs e)
-    {
-        bool hasUnitInside = false;
-        foreach (MapAreaCollider mapAreaCollider in m_mapAreaColliderList)
-        {
+    //private void MapAreaCollider_OnUnitExit(object sender, EventArgs e)
+    //{
+    //    bool hasUnitInside = false;
+    //    foreach (MapAreaCollider mapAreaCollider in m_mapAreaColliderList)
+    //    {
 
-            if (mapAreaCollider.GetUnitMapAreas().Count > 0)
-            {
-                hasUnitInside = true;
-            }
-        }
+    //        if (mapAreaCollider.GetUnitMapAreas().Count > 0)
+    //        {
+    //            hasUnitInside = true;
+    //        }
+    //    }
 
-        if (!hasUnitInside)
-        {
-            OnUnitExit?.Invoke(this, EventArgs.Empty);
-        }
-    }
+    //    if (!hasUnitInside)
+    //    {
+    //        OnUnitExit?.Invoke(this, EventArgs.Empty);
+    //    }
+    //}
     
-    private void MapAreaCollider_OnUnitEnter(object sender, EventArgs e)
-    {
-        OnUnitEnter?.Invoke(this, EventArgs.Empty);
-    }
+    //private void MapAreaCollider_OnUnitEnter(object sender, EventArgs e)
+    //{
+    //    OnUnitEnter?.Invoke(this, EventArgs.Empty);
+    //}
     // Update is called once per frame
     void Update()
     {
@@ -114,7 +114,7 @@ public class MapArea : MonoBehaviour
                 if (m_progress >= 1f)
                 {
                     m_state = State.Captured;
-                    OnCaptured?.Invoke(this, EventArgs.Empty);
+                    //OnCaptured?.Invoke(this, EventArgs.Empty);
 
                 }
 
@@ -147,21 +147,20 @@ public class MapArea : MonoBehaviour
                 break;
         }
 
-        void CheckUnitsInArea()
+    }
+    void CheckUnitsInArea()
+    {
+        //Check if there's an enemy unit inside your capture point.
+        for (int i = 1; i < m_unitMapAreasInsideList.Count; i++)
         {
-            //Check if there's an enemy unit inside your capture point.
-            for (int i = 1; i < m_unitMapAreasInsideList.Count; i++)
+            if (m_unitMapAreasInsideList[0].tag != m_unitMapAreasInsideList[i].tag)
             {
-                if (m_unitMapAreasInsideList[0].tag != m_unitMapAreasInsideList[i].tag)
-                {
-                    m_state = State.Contested;
-                }
+                m_state = State.Contested;
             }
         }
-
-        float GetProgress()
-        {
-            return m_progress;
-        }
+    }
+    public float GetProgress()
+    {
+        return m_progress;
     }
 }

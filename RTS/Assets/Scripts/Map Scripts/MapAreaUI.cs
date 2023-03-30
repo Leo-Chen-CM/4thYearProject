@@ -21,10 +21,12 @@ public class MapAreaUI : MonoBehaviour
     {
         foreach(MapAreaImage mapAreaImage in m_mapAreaImages)
         {
-            mapAreaImage.m_mapArea.OnCaptured += (object sender, EventArgs e) =>
-            {
-                mapAreaImage.m_uiImage.color = Color.green;
-            };
+            //mapAreaImage.m_mapArea.OnCaptured += (object sender, EventArgs e) =>
+            //{
+            //    mapAreaImage.m_uiImage.color = Color.green;
+            //};
+
+
         }
     }
 }

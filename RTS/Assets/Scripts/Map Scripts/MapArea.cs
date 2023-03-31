@@ -12,13 +12,14 @@ public class MapArea : MonoBehaviour
         Neutral,
         Capturing,
         Captured,
-        Contested
+        Contested,
+        RevertCapture
     }
 
 
     private List<MapAreaCollider> m_mapAreaColliderList = new List<MapAreaCollider>();
     private float m_progress;
-
+    string m_teamAffiliation;
     State m_state;
     float m_progressSpeed = 0.1f;
     [SerializeField]
@@ -26,6 +27,7 @@ public class MapArea : MonoBehaviour
 
     private void Awake()
     {
+        m_teamAffiliation = string.Empty;
         foreach (Transform child in transform)
         {
             MapAreaCollider mapAreaCollider = child.GetComponent<MapAreaCollider>();
@@ -67,18 +69,18 @@ public class MapArea : MonoBehaviour
     {
         //List<UnitMapAreas> m_unitMapAreasInsideList = new List<UnitMapAreas>();
         m_unitMapAreasInsideList.Clear();
-        //foreach (MapAreaCollider mapAreaCollider in m_mapAreaColliderList)
-        //{
-        //    foreach (UnitMapAreas unitMapAreas in mapAreaCollider.GetUnitMapAreas())
-        //    {
-        //        if (!m_unitMapAreasInsideList.Contains(unitMapAreas))
-        //        {
-        //            m_unitMapAreasInsideList.Add(unitMapAreas);
+        foreach (MapAreaCollider mapAreaCollider in m_mapAreaColliderList)
+        {
+            foreach (UnitMapAreas unitMapAreas in mapAreaCollider.GetUnitMapAreas())
+            {
+                if (!m_unitMapAreasInsideList.Contains(unitMapAreas))
+                {
+                    m_unitMapAreasInsideList.Add(unitMapAreas);
 
-        //            Debug.Log("Adds unit map areas to the list");
-        //        }
-        //    }
-        //}
+                    Debug.Log("Adds unit map areas to the list");
+                }
+            }
+        }
 
 
 
@@ -102,6 +104,7 @@ public class MapArea : MonoBehaviour
                 }
                 else
                 {
+                    m_teamAffiliation = m_unitMapAreasInsideList[0].tag;
                     m_state = State.Capturing;
                 }
                 break;
@@ -122,6 +125,16 @@ public class MapArea : MonoBehaviour
                 break;
             case State.Captured:
                 Debug.Log("Control point captured");
+
+                CheckUnitsInArea();
+
+                break;
+
+            case State.RevertCapture:
+                Debug.Log("Reverting Capture point");
+
+
+
                 break;
             case State.Contested:
                 Debug.Log("Control point contested");
@@ -151,12 +164,29 @@ public class MapArea : MonoBehaviour
     void CheckUnitsInArea()
     {
         //Check if there's an enemy unit inside your capture point.
-        for (int i = 1; i < m_unitMapAreasInsideList.Count; i++)
+        for (int i = 0; i < m_unitMapAreasInsideList.Count; i++)
         {
-            if (m_unitMapAreasInsideList[0].tag != m_unitMapAreasInsideList[i].tag)
+            if (m_teamAffiliation != m_unitMapAreasInsideList[i].tag)
             {
-                m_state = State.Contested;
+                if (m_unitMapAreasInsideList.Count > 1)
+                {
+                    if (m_state == State.Neutral)
+                    {
+
+                    }
+                    m_state = State.RevertCapture;
+                }
+                else
+                {
+                    m_state = State.Contested;
+                }
+
             }
+        }
+
+        if (m_unitMapAreasInsideList.Count <= 0)
+        {
+            m_state = State.Neutral;
         }
     }
     public float GetProgress()

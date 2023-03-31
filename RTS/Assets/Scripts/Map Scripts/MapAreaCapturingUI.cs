@@ -24,13 +24,13 @@ public class MapAreaCapturingUI : MonoBehaviour
 
     private void Update()
     {
-        //foreach (MapArea mapArea in m_mapAreaList)
-        //{
-        //    //Check which specific mapArea has units in it
-        //    //mapArea.
-        //}
+        foreach (MapArea mapArea in m_mapAreaList)
+        {
+            //Check which specific mapArea has units in it
+            //mapArea.
+        }
 
-        m_progressImage.fillAmount = m_mapArea.GetProgress();
+        //m_progressImage.fillAmount = m_mapArea.GetProgress();
     }
 
     //private void MapArea_OnUnitExit(object sender, EventArgs e)

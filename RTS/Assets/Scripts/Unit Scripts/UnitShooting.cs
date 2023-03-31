@@ -19,6 +19,8 @@ public class UnitShooting : MonoBehaviour
     [SerializeField]
     private float m_offset;
 
+    [SerializeField]
+    LayerMask m_layerMask;
     private void Start()
     {
         if (gameObject.tag == "Team1")
@@ -42,7 +44,7 @@ public class UnitShooting : MonoBehaviour
             {
                 Vector3 offset = new Vector3(Random.Range(-m_offset, m_offset), 0, 0);
 
-                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.up + offset);
+                RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.up + offset, 200.0f, m_layerMask);
 
                 StartCoroutine(ShootLaser(m_firingPoint.position, hit.point));
 

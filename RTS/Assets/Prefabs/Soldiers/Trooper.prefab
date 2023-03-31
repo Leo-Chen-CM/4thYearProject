@@ -350,7 +350,10 @@ MonoBehaviour:
   m_firingPoint: {fileID: 4389229701348755439}
   m_lineRenderer: {fileID: 8303284807999659937}
   fireRate: 1
-  m_offset: 0.1
+  m_offset: 0.15
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!120 &8303284807999659937
 LineRenderer:
   m_ObjectHideFlags: 0

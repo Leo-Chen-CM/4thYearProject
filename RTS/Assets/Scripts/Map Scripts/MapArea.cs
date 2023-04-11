@@ -23,7 +23,7 @@ public class MapArea : MonoBehaviour
     State m_state;
     float m_progressSpeed = 0.1f;
     [SerializeField]
-    List<UnitMapAreas> m_unitMapAreasInsideList = new List<UnitMapAreas>();
+    List<UnitRTS> m_unitMapAreasInsideList = new List<UnitRTS>();
 
     private void Awake()
     {
@@ -71,7 +71,7 @@ public class MapArea : MonoBehaviour
         m_unitMapAreasInsideList.Clear();
         foreach (MapAreaCollider mapAreaCollider in m_mapAreaColliderList)
         {
-            foreach (UnitMapAreas unitMapAreas in mapAreaCollider.GetUnitMapAreas())
+            foreach (UnitRTS unitMapAreas in mapAreaCollider.GetUnitMapAreas())
             {
                 if (!m_unitMapAreasInsideList.Contains(unitMapAreas))
                 {
@@ -88,7 +88,12 @@ public class MapArea : MonoBehaviour
         {
             case State.Neutral:
 
-                if (m_unitMapAreasInsideList.Count <= 0)
+                if (m_unitMapAreasInsideList.Count > 0)
+                {
+                    m_teamAffiliation = m_unitMapAreasInsideList[0].tag;
+                    m_state = State.Capturing;
+                }
+                else
                 {
                     if (m_progress > 0)
                     {
@@ -101,11 +106,6 @@ public class MapArea : MonoBehaviour
                         m_progress = 0;
                         Debug.Log("Unit Count inside control point: " + m_unitMapAreasInsideList.Count + "\n Progress: " + m_progress);
                     }
-                }
-                else
-                {
-                    m_teamAffiliation = m_unitMapAreasInsideList[0].tag;
-                    m_state = State.Capturing;
                 }
                 break;
             case State.Capturing:
@@ -133,7 +133,22 @@ public class MapArea : MonoBehaviour
             case State.RevertCapture:
                 Debug.Log("Reverting Capture point");
 
+                if (m_progress > 0)
+                {
+                    m_progress -= m_progressSpeed * Time.deltaTime;
+                    Debug.Log("Taking capture point back from the enemy");
+                }
 
+                if (m_progress < 0)
+                {
+                    m_progress = 0;
+
+                    m_state = State.Neutral;
+
+                    Debug.Log("Capture point reset");
+                }
+
+                CheckUnitsInArea();
 
                 break;
             case State.Contested:

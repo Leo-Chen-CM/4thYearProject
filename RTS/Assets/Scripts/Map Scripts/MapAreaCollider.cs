@@ -8,25 +8,25 @@ public class MapAreaCollider : MonoBehaviour
     public event EventHandler OnUnitEnter;
     public event EventHandler OnUnitExit;
 
-    private List<UnitMapAreas> m_unitMapAreas = new List<UnitMapAreas>();
+    private List<UnitRTS> m_unitRTS = new List<UnitRTS>();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<UnitMapAreas>(out UnitMapAreas unitMapAreas))
+        if (collision.TryGetComponent<UnitRTS>(out UnitRTS unitMapAreas))
         {
-            m_unitMapAreas.Add(unitMapAreas);
+            m_unitRTS.Add(unitMapAreas);
             OnUnitEnter?.Invoke(this, EventArgs.Empty);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.TryGetComponent<UnitMapAreas>(out UnitMapAreas unitMapAreas))
+        if (collision.TryGetComponent<UnitRTS>(out UnitRTS unitMapAreas))
         {
-            m_unitMapAreas.Remove(unitMapAreas);
+            m_unitRTS.Remove(unitMapAreas);
             OnUnitExit?.Invoke(this, EventArgs.Empty);
         }
     }
 
-    public List<UnitMapAreas> GetUnitMapAreas() { return m_unitMapAreas; }
+    public List<UnitRTS> GetUnitMapAreas() { return m_unitRTS; }
 }

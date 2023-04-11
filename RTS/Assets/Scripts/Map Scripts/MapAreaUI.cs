@@ -11,6 +11,11 @@ public class MapAreaUI : MonoBehaviour
     {
         public Image m_uiImage;
         public MapArea m_mapArea;
+
+        [SerializeField]
+        private List<MapArea> m_mapAreaList = new List<MapArea>();
+        private List<Image> m_progressImages;
+        public Image m_progressImage;
     }
 
     [SerializeField]
@@ -21,10 +26,10 @@ public class MapAreaUI : MonoBehaviour
     {
         foreach(MapAreaImage mapAreaImage in m_mapAreaImages)
         {
-            //mapAreaImage.m_mapArea.OnCaptured += (object sender, EventArgs e) =>
-            //{
-            //    mapAreaImage.m_uiImage.color = Color.green;
-            //};
+            mapAreaImage.m_mapArea.OnCaptured += (object sender, EventArgs e) =>
+            {
+                mapAreaImage.m_uiImage.color = Color.green;
+            };
 
 
         }

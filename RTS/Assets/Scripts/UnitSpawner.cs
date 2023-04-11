@@ -4,6 +4,8 @@ using TMPro;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
+
+//[RequireComponent(typeof(AssetPreview))]
 public class UnitSpawner : MonoBehaviour
 {
 
@@ -41,6 +43,9 @@ public class UnitSpawner : MonoBehaviour
 
     [SerializeField]
     GameObject m_opponent;
+
+    [SerializeField]
+    GameObject m_spawnArea;
     protected virtual void Start()
     {
         StartCoroutine(GenerateReserves());
@@ -52,28 +57,13 @@ public class UnitSpawner : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    //void Update()
-    //{
-    //    if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && m_reserves != 0)
-    //    {
-    //        Vector3 spawn = new Vector3(Random.Range(-45, 45), m_spawnPoint.position.y + Random.Range(-1, 1), 0);
-    //        m_nextSpawn = Time.time + m_spawnTime;
-    //        Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
-    //        GameObject newUnit = Instantiate(m_unit, spawn, rotation);
-    //        m_troopCount.Add(newUnit);
-    //        newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
-    //        m_reserves--;
-    //    }
-    //}
-
     private void Update()
     {
         if (m_opponent.GetComponent<RTSGameController>().m_AI)
         {
             if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && m_reserves != 0)
             {
-                Vector3 spawn = new Vector3(m_spawnPoint.position.x + Random.Range(-1, 1), m_spawnPoint.position.y + Random.Range(-45, 45), 0);
+                Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 2, m_spawnArea.transform.localScale.x / 2), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
                 m_nextSpawn = Time.time + m_spawnTime;
                 Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
                 GameObject newUnit = Instantiate(m_unit, spawn, rotation);
@@ -161,7 +151,8 @@ public class UnitSpawner : MonoBehaviour
             }
 
             //Creates a new unit
-            Vector3 spawn = new Vector3(m_spawnPoint.position.x + Random.Range(-1, 1), m_spawnPoint.position.y + Random.Range(-45,45), 0);
+            //Vector3 spawn = new Vector3(m_spawnPoint.position.x + Random.Range(-1, 1), m_spawnPoint.position.y + Random.Range(-45,45), 0);
+            Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x/2, m_spawnArea.transform.localScale.x / 2), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
             Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
             GameObject newUnit = Instantiate(m_unit, spawn, rotation);
             newUnit.GetComponent<UnitRTS>().SetupTeam(tag);

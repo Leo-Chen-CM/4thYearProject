@@ -8,8 +8,6 @@ public class UnitShooting : MonoBehaviour
     //[SerializeField]
     //UnitFieldOfView m_unitFieldOfView;
     [SerializeField]
-    GameObject m_bullet;
-    [SerializeField]
     Transform m_firingPoint;
     private float nextFire = 0f;
     [SerializeField]
@@ -61,7 +59,6 @@ public class UnitShooting : MonoBehaviour
                     Debug.Log("Laser shot");
                 }
             }
-            //Instantiate(m_bullet, m_firingPoint.position, m_firingPoint.transform.rotation);
         }
     }
 

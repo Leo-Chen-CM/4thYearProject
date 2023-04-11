@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -23,7 +22,7 @@ public class RTSGameController : MonoBehaviour
     [SerializeField]
     private Transform m_selectedAreaTransform;
     private Vector3 m_startPosition;
-    protected List<UnitRTS> m_selectedUnits;
+    public List<UnitRTS> m_selectedUnits;
     // Update is called once per frame
 
     [SerializeField]

@@ -302,6 +302,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_radius: 15
+  m_engagementRanged: 0
   m_angle: 360
   m_targetLayer:
     serializedVersion: 2
@@ -345,7 +346,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29b140ed9a0173948b26dac7d94b78f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_bullet: {fileID: 3544468307600355149, guid: 06bdbac8b03c70348b592285cd9c626d, type: 3}
   m_firingPoint: {fileID: 4389229701348755439}
   m_lineRenderer: {fileID: 8303284807999659937}
   fireRate: 1

@@ -9,8 +9,8 @@ using static UnityEngine.GraphicsBuffer;
 /// </summary>
 public class UnitFieldOfView : MonoBehaviour
 {
-
-    public float m_radius = 10f;
+    public float m_radius;
+    public float m_engagementRanged;
 
     [Range(1, 360)] public float m_angle = 45f;
 

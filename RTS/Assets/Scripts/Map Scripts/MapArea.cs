@@ -4,9 +4,9 @@ using UnityEngine;
 using System;
 public class MapArea : MonoBehaviour
 {
-    //public event EventHandler OnCaptured;
-    //public event EventHandler OnUnitEnter;
-    //public event EventHandler OnUnitExit;
+    public event EventHandler OnCaptured;
+    public event EventHandler OnUnitEnter;
+    public event EventHandler OnUnitExit;
     public enum State
     {
         Neutral,
@@ -117,7 +117,7 @@ public class MapArea : MonoBehaviour
                 if (m_progress >= 1f)
                 {
                     m_state = State.Captured;
-                    //OnCaptured?.Invoke(this, EventArgs.Empty);
+                    OnCaptured?.Invoke(this, EventArgs.Empty);
 
                 }
 

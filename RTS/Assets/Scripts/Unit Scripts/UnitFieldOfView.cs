@@ -101,8 +101,6 @@ public class UnitFieldOfView : MonoBehaviour
                         m_target = null;
                     }
                 }
-
-
             }
         }
         else

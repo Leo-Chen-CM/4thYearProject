@@ -12,23 +12,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField]
     GameObject m_pauseTextObject;
-
-    [SerializeField]
-    int m_team1Reserves;
-    [SerializeField]
-    int m_team2Reserves;
-
-    [SerializeField]
-    int m_team1Score;
-
-    [SerializeField]
-    int m_team2Score;
-
     [SerializeField]
     int m_reserveGeneration = 1;
 
-    [SerializeField]
-    float m_timer;
 
     [SerializeField]
     List<ControlPointController> m_controlPointControllers = new List<ControlPointController>();
@@ -36,8 +22,39 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     List<ControlPointController> m_resourcePointControllers = new List<ControlPointController>();
 
-    int m_team1ControlPoints = 0;
-    int m_team2ControlPoints = 0;
+    [SerializeField]
+    float m_generationTimer;
+
+    [Header("Team 1 Attributes")]
+    public int m_team1Reserves;
+    [SerializeField]
+    int m_team1Score;
+    [SerializeField]
+    List<ControlPointController> m_team1ControlledPoints = new List<ControlPointController>();
+
+    [SerializeField]
+    List<ControlPointController> m_team1ControlledResources = new List<ControlPointController>();
+
+    [SerializeField]
+    TextMeshProUGUI m_team1ScoreText;
+
+
+
+    [Header("Team 2 Attributes")]
+
+    public int m_team2Reserves;
+
+    [SerializeField]
+    int m_team2Score;
+
+    [SerializeField]
+    List<ControlPointController> m_team2ControlledPoints = new List<ControlPointController>();
+
+    [SerializeField]
+    List<ControlPointController> m_team2ControlledResources = new List<ControlPointController>();
+
+    [SerializeField]
+    TextMeshProUGUI m_team2ScoreText;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,17 +84,58 @@ public class GameManager : MonoBehaviour
 
 
     //Need to check which control point belongs to who.
-    public void Points()
+    public void PointsCaptured()
     {
         foreach (ControlPointController controlPointController in m_controlPointControllers)
         {
-            if (controlPointController.GetTeamAffiliation() == "Team1")
+            if (controlPointController.GetTeamAffiliation() == "Team1" && !m_team1ControlledPoints.Contains(controlPointController))
             {
-                m_team1ControlPoints += 1;
+                m_team1ControlledPoints.Add(controlPointController);
             }
-            else if (controlPointController.GetTeamAffiliation() == "Team2")
+            else if (controlPointController.GetTeamAffiliation() == "Team2" && !m_team2ControlledPoints.Contains(controlPointController))
             {
-                m_team1ControlPoints += 1;
+                m_team2ControlledPoints.Add(controlPointController);
+            }
+        }
+
+        foreach (ControlPointController resourcePointController in m_resourcePointControllers)
+        {
+            if (resourcePointController.GetTeamAffiliation() == "Team1" && !m_team1ControlledResources.Contains(resourcePointController))
+            {
+                m_team1ControlledResources.Add(resourcePointController);
+            }
+            else if (resourcePointController.GetTeamAffiliation() == "Team2" && !m_team2ControlledResources.Contains(resourcePointController))
+            {
+                m_team2ControlledResources.Add(resourcePointController);
+            }
+        }
+    }
+
+    
+    //Need to check which control point were lost.
+    public void PointsLost()
+    {
+        foreach (ControlPointController controlPointController in m_controlPointControllers)
+        {
+            if (controlPointController.GetTeamAffiliation() != "Team1")
+            {
+                m_team1ControlledPoints.Remove(controlPointController);
+            }
+            else if (controlPointController.GetTeamAffiliation() != "Team2")
+            {
+                m_team2ControlledPoints.Remove(controlPointController);
+            }
+        }
+
+        foreach (ControlPointController resourcePointController in m_resourcePointControllers)
+        {
+            if (resourcePointController.GetTeamAffiliation() != "Team1")
+            {
+                m_team1ControlledResources.Remove(resourcePointController);
+            }
+            else if (resourcePointController.GetTeamAffiliation() != "Team2")
+            {
+                m_team2ControlledResources.Remove(resourcePointController);
             }
         }
     }
@@ -104,9 +162,9 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            m_team1Score += m_team1ControlPoints;
-
-            yield return new WaitForSeconds(m_timer);
+            m_team1Score += m_team1ControlledPoints.Count;
+            m_team1ScoreText.text = "Team 1 Score: " + m_team1Score;
+            yield return new WaitForSeconds(m_generationTimer);
         }
     }
 
@@ -114,23 +172,23 @@ public class GameManager : MonoBehaviour
     {
         while (true)
         {
-            m_team2Score += m_team2ControlPoints;
-
-            yield return new WaitForSeconds(m_timer);
+            m_team2Score += m_team2ControlledPoints.Count;
+            m_team2ScoreText.text = "Team 2 Score: " + m_team2Score;
+            yield return new WaitForSeconds(m_generationTimer);
         }
     }
     IEnumerator GenerateFunding1()
     {
         while (true) 
         {
-            m_team1Reserves += m_reserveGeneration;
+            m_team1Reserves += m_reserveGeneration + m_team1ControlledResources.Count;
 
             if (m_team1Reserves > 1000)
             {
                 m_team1Reserves = 1000;
             }
 
-            yield return new WaitForSeconds(m_timer);
+            yield return new WaitForSeconds(m_generationTimer);
         }
 
     }
@@ -138,14 +196,14 @@ public class GameManager : MonoBehaviour
     {
         while (true) 
         {
-            m_team2Reserves += m_reserveGeneration;
+            m_team2Reserves += m_reserveGeneration + m_team2ControlledResources.Count;
 
             if (m_team2Reserves > 1000)
             {
                 m_team2Reserves = 1000;
             }
 
-            yield return new WaitForSeconds(m_timer);
+            yield return new WaitForSeconds(m_generationTimer);
         }
 
     }

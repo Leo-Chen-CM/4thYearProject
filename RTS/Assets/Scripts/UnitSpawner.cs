@@ -13,15 +13,10 @@ public class UnitSpawner : MonoBehaviour
     public int m_maxUnits;
     //public int m_currentUnits;
     public GameObject m_unit;
-    public int m_reserves;
     public Transform m_spawnPoint;
     public int m_rotation;
     [SerializeField]
     List<GameObject> m_troopCount = new List<GameObject>();
-    [SerializeField]
-    int m_requisitionPoints = 5; 
-    [SerializeField]
-    int m_requisitionTime = 5;
 
     float m_time = 3;
 
@@ -48,7 +43,6 @@ public class UnitSpawner : MonoBehaviour
     GameObject m_spawnArea;
     protected virtual void Start()
     {
-        StartCoroutine(GenerateReserves());
 
         if (!m_opponent.GetComponent<RTSGameController>().m_AI)
         {
@@ -61,16 +55,33 @@ public class UnitSpawner : MonoBehaviour
     {
         if (m_opponent.GetComponent<RTSGameController>().m_AI)
         {
-            if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && m_reserves != 0)
+            if (gameObject.tag == "Team1")
             {
-                Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 2, m_spawnArea.transform.localScale.x / 2), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
-                m_nextSpawn = Time.time + m_spawnTime;
-                Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
-                GameObject newUnit = Instantiate(m_unit, spawn, rotation);
-                newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
-                m_troopCount.Add(newUnit);
-                m_reserves--;
-                m_unitsQueued--;
+                if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && GameManager.instance.m_team1Reserves != 0)
+                {
+                    Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
+                    m_nextSpawn = Time.time + m_spawnTime;
+                    Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
+                    GameObject newUnit = Instantiate(m_unit, spawn, rotation);
+                    newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
+                    m_troopCount.Add(newUnit);
+                    GameManager.instance.m_team1Reserves--;
+                    m_unitsQueued--;
+                }
+            }
+            else if (gameObject.tag == "Team2")
+            {
+                if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && GameManager.instance.m_team2Reserves != 0)
+                {
+                    Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
+                    m_nextSpawn = Time.time + m_spawnTime;
+                    Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
+                    GameObject newUnit = Instantiate(m_unit, spawn, rotation);
+                    newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
+                    m_troopCount.Add(newUnit);
+                    GameManager.instance.m_team2Reserves--;
+                    m_unitsQueued--;
+                }
             }
         }
         else
@@ -94,37 +105,43 @@ public class UnitSpawner : MonoBehaviour
         }
     }
 
-    IEnumerator GenerateReserves()
-    {
-        while(true)
-        {
-            m_reserves += m_requisitionPoints;
-
-            if (m_reserves > 1000)
-            {
-                m_reserves = 1000;
-            }
-
-            yield return new WaitForSeconds(m_requisitionTime);
-        }
-    }
-
     public void SpawnUnit()
     {
-        if (m_troopCount.Count < m_maxUnits && m_reserves != 0)
+        if (gameObject.tag == "Team1")
         {
-            if (m_unitsQueued < 9)
+            if (m_troopCount.Count < m_maxUnits && GameManager.instance.m_team1Reserves != 0)
             {
-                m_unitsQueued++;
-            }
+                if (m_unitsQueued < 9)
+                {
+                    m_unitsQueued++;
+                }
 
-            if (!m_coroutineInUse)
-            {
-                m_unitProductionUI.SetActive(true);
-                StartCoroutine(CreatingUnit());
-            }
+                if (!m_coroutineInUse)
+                {
+                    m_unitProductionUI.SetActive(true);
+                    StartCoroutine(CreatingUnit());
+                }
 
+            }
         }
+        //else if (gameObject.tag == "Team2")
+        //{
+        //    if (m_troopCount.Count < m_maxUnits && GameManager.instance.m_team2Reserves != 0)
+        //    {
+        //        if (m_unitsQueued < 9)
+        //        {
+        //            m_unitsQueued++;
+        //        }
+
+        //        if (!m_coroutineInUse)
+        //        {
+        //            m_unitProductionUI.SetActive(true);
+        //            StartCoroutine(CreatingUnit());
+        //        }
+
+        //    }
+        //}
+
 
     }
 
@@ -152,12 +169,13 @@ public class UnitSpawner : MonoBehaviour
 
             //Creates a new unit
             //Vector3 spawn = new Vector3(m_spawnPoint.position.x + Random.Range(-1, 1), m_spawnPoint.position.y + Random.Range(-45,45), 0);
-            Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x/2, m_spawnArea.transform.localScale.x / 2), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
+            Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), 
+                                                                Random.Range(-m_spawnArea.transform.localScale.y / 3, m_spawnArea.transform.localScale.y / 3), 0);
             Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
             GameObject newUnit = Instantiate(m_unit, spawn, rotation);
             newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
             m_troopCount.Add(newUnit);
-            m_reserves--;
+            GameManager.instance.m_team1Reserves--;
             m_unitsQueued--;
             SpawnUI();
             m_time = m_spawnTime;

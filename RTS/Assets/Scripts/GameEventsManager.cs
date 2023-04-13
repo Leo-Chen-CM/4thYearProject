@@ -33,4 +33,11 @@ public class GameEventsManager : MonoBehaviour
         OnControlPointCapture?.Invoke(id);
     }
 
+    public event Action<int> OnControlPointLoss;
+
+    public void ControlPointLoss(int id)
+    {
+        OnControlPointLoss?.Invoke(id);
+    }
+
 }

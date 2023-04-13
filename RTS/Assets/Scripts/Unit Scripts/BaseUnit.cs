@@ -23,15 +23,15 @@ public class BaseUnit : MonoBehaviour
 
     [SerializeField]
     private bool m_toggleGoal = false;
-    enum State
-    {
-        Idle,
-        Move,
-        Shoot
-    }
+    //enum State
+    //{
+    //    Idle,
+    //    Move,
+    //    Shoot
+    //}
 
-    [SerializeField]
-    private State m_currentState;
+    //[SerializeField]
+    //private State m_currentState;
 
     private void Awake()
     {

@@ -36,15 +36,11 @@ public class RTSGameController : MonoBehaviour
 
     public bool m_AI = false;
 
-
-
     private void Awake()
     {
         m_selectedUnits = new List<UnitRTS>();
         m_selectedAreaTransform.gameObject.SetActive(false);
     }
-
-
 
     public void HandleInputData(int val)
     {
@@ -128,7 +124,7 @@ public class RTSGameController : MonoBehaviour
                     }
 
                 }
-                Debug.Log(m_selectedUnits.Count);
+                //Debug.Log(m_selectedUnits.Count);
             }
 
 

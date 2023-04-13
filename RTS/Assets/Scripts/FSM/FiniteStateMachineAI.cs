@@ -29,7 +29,10 @@ public class FiniteStateMachineAI : RTSGameController
     private List<Transform> m_wayPoints = new List<Transform>();
 
     [SerializeField]
-    private UnitSpawner m_spawner;
+    private List<Transform> m_rallyPoints = new List<Transform>();
+
+    //[SerializeField]
+    //private UnitSpawner m_spawner;
 
     private LayerMask m_entityLayer;
 
@@ -38,6 +41,9 @@ public class FiniteStateMachineAI : RTSGameController
 
     [SerializeField]
     private int m_ordersTimeDelay;
+
+    [SerializeField]
+    private Transform[] m_selectionArea;
 
     [SerializeField]
     Formations m_formations = Formations.Line;
@@ -73,7 +79,7 @@ public class FiniteStateMachineAI : RTSGameController
                     //m_states = States.Idle;
                     //StartCoroutine(MoveToRallyPoint());
                     //MoveToPoint(m_wayPoints[0].position);
-                    SetFormationPosition(m_wayPoints[0].position);
+                    SetFormationPosition(m_rallyPoints[Random.Range(0,m_rallyPoints.Count)].position);
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.MoveOut;
                     break;
@@ -81,7 +87,7 @@ public class FiniteStateMachineAI : RTSGameController
                 case States.MoveOut:
                     //m_states = States.Idle;
                     //StartCoroutine(MoveOut());
-                    SetFormationPosition(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
+                    SetFormationPosition(m_wayPoints[Random.Range(0, m_wayPoints.Count)].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
                     //MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.GatherForces;
@@ -95,14 +101,18 @@ public class FiniteStateMachineAI : RTSGameController
     {
         Collider2D[] collider2DArray;
 
-        if (gameObject.tag == "Team1")
-        {
-            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-250, 75, 0), new Vector3(-175, -75, 0), m_entityLayer);
-        }
-        else
-        {
-            collider2DArray = Physics2D.OverlapAreaAll(new Vector3(175, 75, 0), new Vector3(250, -75, 0), m_entityLayer);
-        }
+        collider2DArray = Physics2D.OverlapAreaAll(m_selectionArea[0].position, m_selectionArea[1].position, m_entityLayer);
+
+        //if (gameObject.tag == "Team1")
+        //{
+
+
+        //    collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-250, 75, 0), new Vector3(-175, -75, 0), m_entityLayer);
+        //}
+        //else
+        //{
+        //    collider2DArray = Physics2D.OverlapAreaAll(new Vector3(175, 75, 0), new Vector3(250, -75, 0), m_entityLayer);
+        //}
 
         m_selectedUnits.Clear();
 

@@ -16,7 +16,7 @@ public class ControlPointController : MonoBehaviour
 
     public int id;
     private float m_progress;
-    float m_progressSpeed = 0.1f;
+    float m_progressSpeed = 0.2f;
     [SerializeField]
     string m_teamAffiliation;
     [SerializeField]
@@ -40,23 +40,24 @@ public class ControlPointController : MonoBehaviour
 
         GameEventsManager.instance.OnControlPointTriggerEnter += OnControlPointEnter;
         GameEventsManager.instance.OnControlPointTriggerExit += OnControlPointExit;
-        GameEventsManager.instance.OnControlPointTriggerExit += OnControlPointCapture;
+        GameEventsManager.instance.OnControlPointCapture+= OnControlPointCapture;
+        GameEventsManager.instance.OnControlPointLoss+= OnControlPointLoss;
         m_captureState = CaptureStates.Neutral;
     }
 
     private void OnControlPointEnter(int t_id)
     {
-        if (t_id == id)
-        {
-            Debug.Log("Units in control point " + id + ": " + m_unitInsideControlPointList.Count);
-        }
+        //if (t_id == id)
+        //{
+        //    Debug.Log("Units in control point " + id + ": " + m_unitInsideControlPointList.Count);
+        //}
     }
     private void OnControlPointExit(int t_id)
     {
-        if (t_id == id)
-        {
-            Debug.Log("Units in control point " + id + ": " + m_unitInsideControlPointList.Count);
-        }
+        //if (t_id == id)
+        //{
+        //    Debug.Log("Units in control point " + id + ": " + m_unitInsideControlPointList.Count);
+        //}
     }
 
     private void OnControlPointCapture(int t_id)
@@ -64,7 +65,15 @@ public class ControlPointController : MonoBehaviour
         if (t_id == id)
         {
             Debug.Log("Control point " + id + " was captured by " + m_teamAffiliation);
-            GameManager.instance.Points();
+            GameManager.instance.PointsCaptured();
+        }
+    }
+    private void OnControlPointLoss(int t_id)
+    {
+        if (t_id == id)
+        {
+            Debug.Log("Control point " + id + " was lost");
+            GameManager.instance.PointsLost();
         }
     }
 
@@ -148,9 +157,10 @@ public class ControlPointController : MonoBehaviour
             m_teamAffiliation = m_unitInsideControlPointList[0].gameObject.tag;
             m_capturedStatus = true;
             m_previouslyOwned = true;
+            GameEventsManager.instance.ControlPointCapture(id);
         }
 
-        Debug.Log("Control point " + id + " progress: " + m_progress);
+        //Debug.Log("Control point " + id + " progress: " + m_progress);
 
     }
 
@@ -206,9 +216,10 @@ public class ControlPointController : MonoBehaviour
             m_teamAffiliation = string.Empty;
             m_captureState = CaptureStates.Neutral;
             m_previouslyOwned = false;
+            GameEventsManager.instance.ControlPointLoss(id);
         }
 
-        Debug.Log("Reverting control point " + id + " progress: " + m_progress);
+        //Debug.Log("Reverting control point " + id + " progress: " + m_progress);
     }
 
     private void RevertBackToOtherTeam()

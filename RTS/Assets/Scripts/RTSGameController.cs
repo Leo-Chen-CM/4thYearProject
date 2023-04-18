@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 enum Teams
@@ -25,6 +27,8 @@ public class RTSGameController : MonoBehaviour
     public List<UnitRTS> m_selectedUnits;
     // Update is called once per frame
 
+    [SerializeField] private GameObject m_FormationPointPrefab = null;
+
     [SerializeField]
     Teams m_team = Teams.Team1;
 
@@ -32,9 +36,46 @@ public class RTSGameController : MonoBehaviour
     Formations m_formation = Formations.Line;
 
     [SerializeField]
-    private float m_lineOffset;
+    private float m_spacing;
+
+    [SerializeField]
+    private float m_lineSpacing;
 
     public bool m_AI = false;
+
+    private void HandleChange(TMP_Dropdown dropdown, int newIndex)
+    {
+        if (newIndex == 0)
+        {
+            if (dropdown.value == 0)
+            {
+                m_team = Teams.Team1;
+            }
+            if (dropdown.value == 1)
+            {
+                m_team = Teams.Team2;
+            }
+        }
+
+        if (newIndex == 1)
+        {
+            if (dropdown.value == 0)
+            {
+                m_formation = Formations.Line;
+            }
+            if (dropdown.value == 1)
+            {
+                m_formation = Formations.Box;
+            }
+            if (dropdown.value == 2)
+            {
+                m_formation = Formations.Cheveron;
+            }
+        }
+
+    }
+
+
 
     private void Awake()
     {
@@ -42,20 +83,60 @@ public class RTSGameController : MonoBehaviour
         m_selectedAreaTransform.gameObject.SetActive(false);
     }
 
-    public void HandleInputData(int val)
+    public TMP_Dropdown[] dropdowns;
+
+    //public void HandleInputData(int val)
+    //{
+
+    //    if (val == 0)
+    //    {
+    //        m_team = Teams.Team1;
+    //    }        
+    //    if (val == 1)
+    //    {
+    //        m_team = Teams.Team2;
+    //    }
+    //}
+
+    [SerializeField]
+    TMP_Dropdown TeamSelector;
+
+    [SerializeField]
+    TMP_Dropdown FormationSelector;
+
+    public void SetTeam()
     {
-        
-        if (val == 0)
+        if (TeamSelector.value == 0)
         {
             m_team = Teams.Team1;
-        }        
-        if (val == 1)
+        }
+        
+        if (TeamSelector.value == 1)
         {
             m_team = Teams.Team2;
         }
     }
+    public void SetFormation()
+    {
+        if (FormationSelector.value == 0)
+        {
+            m_formation = Formations.Line;
+        }
+        else
+        if (FormationSelector.value == 1)
+        {
+            m_formation = Formations.Box;
+        }
+        else
+        if (FormationSelector.value == 2)
+        {
+            m_formation = Formations.Cheveron;
+        }
+    }
+
     void Update()
     {
+
         if (!m_AI)
         {
             //Checks if any units selected has died and removes them from the list
@@ -142,23 +223,21 @@ public class RTSGameController : MonoBehaviour
 
     protected void SetFormationPosition(Vector3 t_destination)
     {
-        Vector3 moveToPosition = t_destination;
-
-        List<Vector3> targetPositionList = GetLinePositionList(moveToPosition);
+        List<Vector3> targetPositionList = new List<Vector3>();
 
         switch (m_formation)
         {
             case Formations.Line:
-                targetPositionList = GetLinePositionList(moveToPosition);
+                targetPositionList = GetLinePositionList(t_destination);
                 break;
             case Formations.Box:
-
+                targetPositionList = GetBoxFormation(t_destination);
                 break;
             case Formations.Cheveron:
 
                 break;
             default:
-                targetPositionList = GetLinePositionList(moveToPosition);
+                targetPositionList = GetLinePositionList(t_destination);
                 break;
         }
 
@@ -168,8 +247,17 @@ public class RTSGameController : MonoBehaviour
 
         foreach (UnitRTS unit in m_selectedUnits)
         {
-            unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
-            targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
+            //if (unit == m_selectedUnits[0])
+            //{
+            //    unit.m_agent.SetTargetPosition(t_destination);
+            //    targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
+            //}
+            //else
+            //{
+                unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
+                targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
+            //}
+
         }
 
         //if (unit.m_agent.m_leader)
@@ -181,27 +269,70 @@ public class RTSGameController : MonoBehaviour
     protected List<Vector3> GetLinePositionList(Vector3 t_startPosition)
     {
         List<Vector3> positionList = new List<Vector3>();
-        //positionList.Add(t_startPosition);
 
-        float rowMax = Mathf.Ceil(m_selectedUnits.Count / 9f);
+        // Store unit count
+        int amountUnits = m_selectedUnits.Count;
+        // Multiple rows
+        int minimumRowSize = 9;
+        int rows = 1;
 
-        for (int i = 0; i < rowMax; i++)
+        if (amountUnits > minimumRowSize)
         {
-            for (int j = 0; j < 9; j++)
+            rows = ((amountUnits - 1) / minimumRowSize) + 1;
+        }
+
+        // Define units per row
+        int unitsPerRow = ((amountUnits - 1) / rows) + 1;
+
+        float spacing = 5;
+
+        // Set start position
+        Vector2 bottomLeft = new Vector2(-spacing * (unitsPerRow / 2f) + (spacing / 2f), spacing * (rows / 2f) - (spacing / 2f));
+
+        Vector3 currentPosition = Vector3.zero;
+        currentPosition.x = bottomLeft.x;
+        currentPosition.y = bottomLeft.y;
+
+        // Loop to create formation
+        int currentRow = 1;
+        for (int index = 0; index < amountUnits; index++)
+        {
+            // Check if last row has a different size than other rows
+            if ((rows > 1) && (currentRow == rows) && (index % unitsPerRow == 0))
             {
-                //positionList.AddRange(GetLinePositionList(t_startPosition, new float[] {9}));
+                int unitsLastRow = amountUnits - (unitsPerRow * (rows - 1));
 
-                if (i % 2 != 0)
+                int unitDifference = unitsPerRow - unitsLastRow;
+                if (unitDifference > 0)
                 {
-                    Vector3 offset = new Vector3(t_startPosition.x + m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
-                    positionList.Add(offset);
+                    currentPosition.x += spacing * (unitDifference / 2f);
                 }
-                else
-                {
-                    Vector3 offset = new Vector3(t_startPosition.x - m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
-                    positionList.Add(offset);
-                }
+            }
 
+            // If we have transform already, set new position
+            if (positionList.Count > index)
+            {
+                positionList[index] = currentPosition;
+            }
+            else
+            {
+                // Instantiate a point parented to the leader, with a relative position
+                GameObject go = Instantiate(m_FormationPointPrefab, transform);
+                go.transform.localPosition = currentPosition;
+                positionList.Add(go.transform.position);
+            }
+
+            if (((index + 1) % unitsPerRow) == 0)
+            {
+                // Update Y position and reset X
+                currentPosition.y -= spacing;
+                currentPosition.x = bottomLeft.x;
+                currentRow++;
+            }
+            else
+            {
+                // Update X position
+                currentPosition.x += spacing;
             }
         }
 
@@ -211,19 +342,37 @@ public class RTSGameController : MonoBehaviour
     private List<Vector3> GetBoxFormation(Vector3 t_startPosition)
     {
         List<Vector3> positionList = new List<Vector3>();
-        //positionList.Add(t_startPosition);
-        float perLine = m_selectedUnits.Count / 4;
-        perLine = Mathf.Ceil(perLine);
-        for (int j = 0; j < 4; j++)
-        {
-            for (int i = 0; i < perLine; i++)
-            {
-                if (perLine % 2 == 0)
-                {
 
-                }
+        // Calculate number of units per side of box formation
+        int numUnitsPerSide = Mathf.CeilToInt(Mathf.Sqrt(m_selectedUnits.Count)) / 2;
+
+        // Set positions and rotations of units
+        int unitIndex = 0;
+
+        for (int i = 0; i < m_selectedUnits.Count; i++)
+        {
+            Transform unit = m_selectedUnits[i].transform;
+
+            if (unitIndex < numUnitsPerSide ||
+                unitIndex >= m_selectedUnits.Count - numUnitsPerSide ||
+                unitIndex % numUnitsPerSide == 0 ||
+                (unitIndex + 1) % numUnitsPerSide == 0)
+            {
+                // Calculate position of unit based on formation size
+                float x = (unitIndex % numUnitsPerSide) * m_spacing - (numUnitsPerSide - 1) * m_spacing / 2f;
+                float y = (unitIndex / numUnitsPerSide) * m_spacing - (numUnitsPerSide - 1) * m_spacing / 2f;
+
+                Vector3 offset = new Vector3(x, y, 0f);
+
+                // Set position and rotation of unit
+                unit.position = m_selectedUnits[0].transform.position + offset;
+
+                positionList.Add(unit.position);
             }
+
+            unitIndex++;
         }
+
         return positionList;
     }
 }

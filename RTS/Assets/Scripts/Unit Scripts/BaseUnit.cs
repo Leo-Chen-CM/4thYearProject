@@ -23,15 +23,11 @@ public class BaseUnit : MonoBehaviour
 
     [SerializeField]
     private bool m_toggleGoal = false;
-    //enum State
-    //{
-    //    Idle,
-    //    Move,
-    //    Shoot
-    //}
 
-    //[SerializeField]
-    //private State m_currentState;
+    private GameObject m_selectedGameObject;
+    private GameObject m_viewVisualisation;
+    [SerializeField]
+    int m_health = 3;
 
     private void Awake()
     {
@@ -42,16 +38,33 @@ public class BaseUnit : MonoBehaviour
         m_agent.updateUpAxis = false;
         m_agent.updatePosition = false;
         m_targetDestination = transform.position;
+
+        m_selectedGameObject = transform.Find("Selected").gameObject;
+        m_viewVisualisation = transform.Find("View Visualisation").gameObject;
+
+        SetSelectedVisible(false);
+    }
+    public void SetupTeam(string t_teamTag)
+    {
+        gameObject.tag = t_teamTag;
+        if (gameObject.tag == "Team1")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+
+        if (gameObject.tag == "Team2")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
+    public void SetSelectedVisible(bool t_visible)
+    {
+        m_selectedGameObject.SetActive(t_visible);
+        m_viewVisualisation.SetActive(t_visible);
     }
 
     private void Start()
     {
-        if (m_toggleGoal)
-        {
-            m_agent.Warp(transform.position);
-            SetTargetPosition(m_goal);
-        }
-
         SetAgentPosition();
     }
 
@@ -97,10 +110,6 @@ public class BaseUnit : MonoBehaviour
     {
         if (m_targetDestination != transform.position && !m_unitFieldOfView.m_enemySpotted)
         {
-            //Vector3 vectorToTarget = m_target - transform.position;
-            //float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - m_rotationModifier;
-            //Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            //transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * m_rotationSpeed);
             transform.rotation = Quaternion.LookRotation(Vector3.forward, m_rigidbody2D.velocity * m_rotationSpeed);
         }
     }
@@ -125,5 +134,19 @@ public class BaseUnit : MonoBehaviour
     public void ToggleLeader(bool t_toggle)
     {
         m_leader = t_toggle;
+    }
+
+
+    public void LoseHealth()
+    {
+        if (m_health > 1)
+        {
+            m_health--;
+        }
+        else
+        {
+            m_health--;
+            Destroy(gameObject);
+        }
     }
 }

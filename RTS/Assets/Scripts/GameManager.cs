@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float m_generationTimer;
 
+    [SerializeField]
+    int m_maximumReserves;
+
     [Header("Team 1 Attributes")]
     public int m_team1Reserves;
     [SerializeField]
@@ -183,9 +186,9 @@ public class GameManager : MonoBehaviour
         {
             m_team1Reserves += m_reserveGeneration + m_team1ControlledResources.Count;
 
-            if (m_team1Reserves > 1000)
+            if (m_team1Reserves > m_maximumReserves)
             {
-                m_team1Reserves = 1000;
+                m_team1Reserves = m_maximumReserves;
             }
 
             yield return new WaitForSeconds(m_generationTimer);
@@ -198,9 +201,9 @@ public class GameManager : MonoBehaviour
         {
             m_team2Reserves += m_reserveGeneration + m_team2ControlledResources.Count;
 
-            if (m_team2Reserves > 1000)
+            if (m_team2Reserves > m_maximumReserves)
             {
-                m_team2Reserves = 1000;
+                m_team2Reserves = m_maximumReserves;
             }
 
             yield return new WaitForSeconds(m_generationTimer);

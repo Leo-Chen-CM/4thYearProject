@@ -63,7 +63,7 @@ public class UnitSpawner : MonoBehaviour
                     m_nextSpawn = Time.time + m_spawnTime;
                     Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
                     GameObject newUnit = Instantiate(m_unit, spawn, rotation);
-                    newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
+                    newUnit.GetComponent<BaseUnit>().SetupTeam(tag);
                     m_troopCount.Add(newUnit);
                     GameManager.instance.m_team1Reserves--;
                     m_unitsQueued--;
@@ -77,7 +77,7 @@ public class UnitSpawner : MonoBehaviour
                     m_nextSpawn = Time.time + m_spawnTime;
                     Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
                     GameObject newUnit = Instantiate(m_unit, spawn, rotation);
-                    newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
+                    newUnit.GetComponent<BaseUnit>().SetupTeam(tag);
                     m_troopCount.Add(newUnit);
                     GameManager.instance.m_team2Reserves--;
                     m_unitsQueued--;
@@ -173,7 +173,7 @@ public class UnitSpawner : MonoBehaviour
                                                                 Random.Range(-m_spawnArea.transform.localScale.y / 3, m_spawnArea.transform.localScale.y / 3), 0);
             Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
             GameObject newUnit = Instantiate(m_unit, spawn, rotation);
-            newUnit.GetComponent<UnitRTS>().SetupTeam(tag);
+            newUnit.GetComponent<BaseUnit>().SetupTeam(tag);
             m_troopCount.Add(newUnit);
             GameManager.instance.m_team1Reserves--;
             m_unitsQueued--;

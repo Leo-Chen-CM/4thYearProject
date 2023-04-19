@@ -46,9 +46,9 @@ public class UnitShooting : MonoBehaviour
 
                 StartCoroutine(ShootLaser(m_firingPoint.position, hit.point));
 
-                if (hit.transform.gameObject.GetComponent<UnitRTS>())
+                if (hit.transform.gameObject.GetComponent<BaseUnit>())
                 {
-                    hit.transform.gameObject.GetComponent<UnitRTS>().LoseHealth();
+                    hit.transform.gameObject.GetComponent<BaseUnit>().LoseHealth();
                 }
                 else if (hit.transform.gameObject.name == "Dummy")
                 {

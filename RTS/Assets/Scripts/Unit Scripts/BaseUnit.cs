@@ -7,7 +7,7 @@ public class BaseUnit : MonoBehaviour
 {
     private Vector3 m_targetDestination;
     public Vector3 m_goal;
-    NavMeshAgent m_agent;
+    public NavMeshAgent m_agent;
     Rigidbody2D m_rigidbody2D;
     [SerializeField]
     private float m_rotationSpeed;

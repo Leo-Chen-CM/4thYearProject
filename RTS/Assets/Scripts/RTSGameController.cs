@@ -24,7 +24,7 @@ public class RTSGameController : MonoBehaviour
     [SerializeField]
     private Transform m_selectedAreaTransform;
     private Vector3 m_startPosition;
-    public List<UnitRTS> m_selectedUnits;
+    public List<BaseUnit> m_selectedUnits;
     // Update is called once per frame
 
     [SerializeField] private GameObject m_FormationPointPrefab = null;
@@ -79,7 +79,7 @@ public class RTSGameController : MonoBehaviour
 
     private void Awake()
     {
-        m_selectedUnits = new List<UnitRTS>();
+        m_selectedUnits = new List<BaseUnit>();
         m_selectedAreaTransform.gameObject.SetActive(false);
     }
 
@@ -182,16 +182,16 @@ public class RTSGameController : MonoBehaviour
                 Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(m_startPosition, Utility.ReturnMousePosition2D());
 
 
-                foreach (UnitRTS unitRTS in m_selectedUnits)
+                foreach (BaseUnit unitRTS in m_selectedUnits)
                 {
                     unitRTS.SetSelectedVisible(false);
-                    unitRTS.m_agent.ToggleLeader(false);
+                    //unitRTS.m_agent.ToggleLeader(false);
                 }
 
                 m_selectedUnits.Clear();
                 foreach (Collider2D collider2D in collider2DArray)
                 {
-                    UnitRTS unitRTS = collider2D.GetComponent<UnitRTS>();
+                    BaseUnit unitRTS = collider2D.GetComponent<BaseUnit>();
 
                     //if (collider2D == collider2DArray[0])
                     //{
@@ -243,22 +243,22 @@ public class RTSGameController : MonoBehaviour
 
        
 
-        int targetPositionListIndex = 0;
+        //int targetPositionListIndex = 0;
 
-        foreach (UnitRTS unit in m_selectedUnits)
-        {
-            //if (unit == m_selectedUnits[0])
-            //{
-            //    unit.m_agent.SetTargetPosition(t_destination);
-            //    targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
-            //}
-            //else
-            //{
-                unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
-                targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
-            //}
+        //foreach (BaseUnit unit in m_selectedUnits)
+        //{
+        //    //if (unit == m_selectedUnits[0])
+        //    //{
+        //    //    unit.m_agent.SetTargetPosition(t_destination);
+        //    //    targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
+        //    //}
+        //    //else
+        //    //{
+        //        unit.SetTargetPosition(targetPositionList[targetPositionListIndex]);
+        //        targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
+        //    //}
 
-        }
+        //}
 
         //if (unit.m_agent.m_leader)
         //{

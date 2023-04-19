@@ -19,19 +19,15 @@ public class BaseUnit : MonoBehaviour
     [SerializeField]
     private bool m_destinationReached = false;
 
-    public bool m_leader = false;
-
     [SerializeField]
     private bool m_toggleGoal = false;
-    //enum State
-    //{
-    //    Idle,
-    //    Move,
-    //    Shoot
-    //}
 
-    //[SerializeField]
-    //private State m_currentState;
+    private GameObject m_selectedGameObject;
+    private GameObject m_viewVisualisation;
+    [SerializeField]
+    int m_health = 3;
+
+    GroupLeader m_groupLeader = null;
 
     private void Awake()
     {
@@ -42,6 +38,12 @@ public class BaseUnit : MonoBehaviour
         m_agent.updateUpAxis = false;
         m_agent.updatePosition = false;
         m_targetDestination = transform.position;
+
+        m_selectedGameObject = transform.Find("Selected").gameObject;
+        m_viewVisualisation = transform.Find("View Visualisation").gameObject;
+
+
+        SetSelectedVisible(false);
     }
 
     private void Start()
@@ -122,8 +124,47 @@ public class BaseUnit : MonoBehaviour
         m_agent.SetDestination(new Vector3(m_targetDestination.x, m_targetDestination.y, 0));
     }
 
-    public void ToggleLeader(bool t_toggle)
+    public GroupLeader GetLeader()
     {
-        m_leader = t_toggle;
+        return m_groupLeader;
     }
+
+    public void AssignLeader(GroupLeader t_leader)
+    {
+        m_groupLeader = t_leader;
+    }
+
+    public void LoseHealth()
+    {
+        if (m_health > 1)
+        {
+            m_health--;
+        }
+        else
+        {
+            m_health--;
+            Destroy(gameObject);
+        }
+    }
+
+    public void SetupTeam(string t_teamTag)
+    {
+        gameObject.tag = t_teamTag;
+        if (gameObject.tag == "Team1")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.blue;
+        }
+
+        if (gameObject.tag == "Team2")
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
+    public void SetSelectedVisible(bool t_visible)
+    {
+        m_selectedGameObject.SetActive(t_visible);
+        m_viewVisualisation.SetActive(t_visible);
+    }
+
+
 }

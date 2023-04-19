@@ -4,13 +4,13 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-enum Teams
+public enum Teams
 {
     Team1,
     Team2
 };
 
-enum Formations
+public enum Formations
 {
     Line,
     Box,
@@ -22,42 +22,68 @@ public class RTSGameController : MonoBehaviour
     [SerializeField]
     private Transform m_selectedAreaTransform;
     private Vector3 m_startPosition;
-    public List<UnitRTS> m_selectedUnits;
+    public List<BaseUnit> m_selectedUnits;
     // Update is called once per frame
 
-    [SerializeField]
-    Teams m_team = Teams.Team1;
+
+    public Teams m_team = Teams.Team1;
 
     [SerializeField]
     Formations m_formation = Formations.Line;
 
     [SerializeField]
-    private float m_lineOffset;
+    private float m_offset;
 
     public bool m_AI = false;
 
+    public TMP_Dropdown[] dropdowns;
+
     private void Awake()
     {
-        m_selectedUnits = new List<UnitRTS>();
+        m_selectedUnits = new List<BaseUnit>();
         m_selectedAreaTransform.gameObject.SetActive(false);
     }
 
-    public void HandleInputData(int val)
+    [SerializeField]
+    TMP_Dropdown TeamSelector;
+
+    [SerializeField]
+    TMP_Dropdown FormationSelector;
+    public void SetTeam()
     {
-        
-        if (val == 0)
+        if (TeamSelector.value == 0)
         {
             m_team = Teams.Team1;
-        }        
-        if (val == 1)
+        }
+
+        if (TeamSelector.value == 1)
         {
             m_team = Teams.Team2;
         }
     }
+    public void SetFormation()
+    {
+        if (FormationSelector.value == 0)
+        {
+            m_formation = Formations.Line;
+        }
+        else
+        if (FormationSelector.value == 1)
+        {
+            m_formation = Formations.Box;
+        }
+        else
+        if (FormationSelector.value == 2)
+        {
+            m_formation = Formations.Cheveron;
+        }
+    }
+
     void Update()
     {
         if (!m_AI)
         {
+            /*
             //Checks if any units selected has died and removes them from the list
             for (int i = 0; i < m_selectedUnits.Count; i++)
             {
@@ -101,16 +127,16 @@ public class RTSGameController : MonoBehaviour
                 Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(m_startPosition, Utility.ReturnMousePosition2D());
 
 
-                foreach (UnitRTS unitRTS in m_selectedUnits)
+                foreach (BaseUnit unitRTS in m_selectedUnits)
                 {
                     unitRTS.SetSelectedVisible(false);
-                    unitRTS.m_agent.ToggleLeader(false);
+                    //unitRTS.ToggleLeader(false);
                 }
 
                 m_selectedUnits.Clear();
                 foreach (Collider2D collider2D in collider2DArray)
                 {
-                    UnitRTS unitRTS = collider2D.GetComponent<UnitRTS>();
+                    BaseUnit unitRTS = collider2D.GetComponent<BaseUnit>();
 
                     //if (collider2D == collider2DArray[0])
                     //{
@@ -124,7 +150,6 @@ public class RTSGameController : MonoBehaviour
                     }
 
                 }
-                //Debug.Log(m_selectedUnits.Count);
             }
 
 
@@ -132,13 +157,18 @@ public class RTSGameController : MonoBehaviour
             {
                 SetFormationPosition(Utility.ReturnMousePosition2D());
             }
+
+            */
         }
 
 
 
     }
 
-
+    public Formations GetCurrentFormation()
+    {
+        return m_formation;
+    }
 
     protected void SetFormationPosition(Vector3 t_destination)
     {
@@ -166,9 +196,9 @@ public class RTSGameController : MonoBehaviour
 
         int targetPositionListIndex = 0;
 
-        foreach (UnitRTS unit in m_selectedUnits)
+        foreach (BaseUnit unit in m_selectedUnits)
         {
-            unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
+            unit.SetTargetPosition(targetPositionList[targetPositionListIndex]);
             targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
         }
 
@@ -193,12 +223,12 @@ public class RTSGameController : MonoBehaviour
 
                 if (i % 2 != 0)
                 {
-                    Vector3 offset = new Vector3(t_startPosition.x + m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
+                    Vector3 offset = new Vector3(t_startPosition.x + m_offset * i, t_startPosition.y - m_offset * j, 0);
                     positionList.Add(offset);
                 }
                 else
                 {
-                    Vector3 offset = new Vector3(t_startPosition.x - m_lineOffset * i, t_startPosition.y - m_lineOffset * j, 0);
+                    Vector3 offset = new Vector3(t_startPosition.x - m_offset * i, t_startPosition.y - m_offset * j, 0);
                     positionList.Add(offset);
                 }
 

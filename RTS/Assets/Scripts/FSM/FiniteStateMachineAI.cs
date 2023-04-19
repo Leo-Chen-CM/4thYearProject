@@ -50,7 +50,7 @@ public class FiniteStateMachineAI : RTSGameController
 
     private void Awake()
     {
-        m_selectedUnits = new List<UnitRTS>();
+        m_selectedUnits = new List<BaseUnit>();
     }
 
     void Start()
@@ -118,7 +118,7 @@ public class FiniteStateMachineAI : RTSGameController
 
         foreach (Collider2D collider2D in collider2DArray)
         {
-            UnitRTS unitRTS = collider2D.GetComponent<UnitRTS>();
+            BaseUnit unitRTS = collider2D.GetComponent<BaseUnit>();
 
             if (unitRTS != null && unitRTS.gameObject.tag == gameObject.tag)
             {

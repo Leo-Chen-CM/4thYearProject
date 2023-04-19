@@ -23,7 +23,7 @@ public class ControlPointController : MonoBehaviour
     CaptureStates m_captureState;
 
     [SerializeField]
-    List<UnitRTS> m_unitInsideControlPointList = new List<UnitRTS>();
+    List<BaseUnit> m_unitInsideControlPointList = new List<BaseUnit>();
     ControlPointTrigger m_controlPointTrigger;
 
     bool m_previouslyOwned;
@@ -93,7 +93,7 @@ public class ControlPointController : MonoBehaviour
 
         if (m_controlPointTrigger.GetUnitInControlPoint().Count > 0)
         {
-            foreach (UnitRTS unit in m_controlPointTrigger.GetUnitInControlPoint())
+            foreach (BaseUnit unit in m_controlPointTrigger.GetUnitInControlPoint())
             {
 
                 if (!m_unitInsideControlPointList.Contains(unit))
@@ -239,7 +239,7 @@ public class ControlPointController : MonoBehaviour
     {
         if (m_unitInsideControlPointList.Count > 1)
         {
-            foreach (UnitRTS unit in m_unitInsideControlPointList)
+            foreach (BaseUnit unit in m_unitInsideControlPointList)
             {
                 if (unit != m_unitInsideControlPointList[0])
                 {

@@ -44,20 +44,22 @@ public class UnitShooting : MonoBehaviour
 
                 RaycastHit2D hit = Physics2D.Raycast(m_firingPoint.position, transform.up + offset, 200.0f, m_layerMask);
 
-                StartCoroutine(ShootLaser(m_firingPoint.position, hit.point));
 
-                if (hit.transform.gameObject.GetComponent<UnitRTS>())
+
+                if (hit.transform.gameObject.GetComponent<BaseUnit>())
                 {
-                    hit.transform.gameObject.GetComponent<UnitRTS>().LoseHealth();
+                    hit.transform.gameObject.GetComponent<BaseUnit>().LoseHealth();
                 }
                 else if (hit.transform.gameObject.name == "Dummy")
                 {
                     Debug.Log("Dummy hit");
                 }
-                else
+                else if (hit == false)
                 {
                     Debug.Log("Laser shot");
                 }
+
+                StartCoroutine(ShootLaser(m_firingPoint.position, hit.point));
             }
         }
     }

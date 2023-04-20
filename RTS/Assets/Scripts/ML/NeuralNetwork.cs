@@ -20,9 +20,17 @@ public class NeuralNetwork : MonoBehaviour
     public float learningRate = 0.01f;//learning rate
     public float cost = 0;
 
-    private float[][] deltaBiases;//biasses
-    private float[][][] deltaWeights;//weights
-    private int deltaCount;
+    public NeuralNetwork(int[] layers)
+    {
+        this.layers = new int[layers.Length];
+        for (int i = 0; i < layers.Length; i++)
+        {
+            this.layers[i] = layers[i];
+        }
+        InitNeurons();
+        InitBiases();
+        InitWeights();
+    }
 
     public NeuralNetwork(int[] layers, string[] layerActivations)
     {
@@ -72,10 +80,8 @@ public class NeuralNetwork : MonoBehaviour
 
     private void InitBiases()//initializes random array for the biases being held within the network.
     {
-
-
         List<float[]> biasList = new List<float[]>();
-        for (int i = 1; i < layers.Length; i++)
+        for (int i = 0; i < layers.Length; i++)
         {
             float[] bias = new float[layers[i]];
             for (int j = 0; j < layers[i]; j++)
@@ -107,6 +113,10 @@ public class NeuralNetwork : MonoBehaviour
         }
         weights = weightsList.ToArray();
     }
+    public float activate(float value)
+    {
+        return (float)Math.Tanh(value);
+    }
 
     public float[] FeedForward(float[] inputs)//feed forward, inputs >==> outputs.
     {
@@ -129,6 +139,8 @@ public class NeuralNetwork : MonoBehaviour
         }
         return neurons[layers.Length - 1];
     }
+
+
     //Backpropagation implemtation down until mutation.
     public float activate(float value, int layer)//all activation functions
     {
@@ -146,6 +158,9 @@ public class NeuralNetwork : MonoBehaviour
                 return relu(value);
         }
     }
+
+
+
     public float activateDer(float value, int layer)//all activation function derivatives
     {
         switch (activations[layer])

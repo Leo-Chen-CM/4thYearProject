@@ -16,24 +16,20 @@ public class GameManager : MonoBehaviour
     int m_reserveGeneration = 1;
 
 
-    [SerializeField]
-    List<ControlPointController> m_controlPointControllers = new List<ControlPointController>();
+    public List<ControlPointController> m_controlPointControllers = new List<ControlPointController>();
 
-    [SerializeField]
-    List<ControlPointController> m_resourcePointControllers = new List<ControlPointController>();
+    public List<ControlPointController> m_resourcePointControllers = new List<ControlPointController>();
 
     [SerializeField]
     float m_generationTimer;
 
     [Header("Team 1 Attributes")]
     public int m_team1Reserves;
-    [SerializeField]
-    int m_team1Score;
-    [SerializeField]
-    List<ControlPointController> m_team1ControlledPoints = new List<ControlPointController>();
+    public int m_team1Score;
 
-    [SerializeField]
-    List<ControlPointController> m_team1ControlledResources = new List<ControlPointController>();
+    public List<ControlPointController> m_team1ControlledPoints = new List<ControlPointController>();
+
+    public List<ControlPointController> m_team1ControlledResources = new List<ControlPointController>();
 
     [SerializeField]
     TextMeshProUGUI m_team1ScoreText;
@@ -44,14 +40,11 @@ public class GameManager : MonoBehaviour
 
     public int m_team2Reserves;
 
-    [SerializeField]
-    int m_team2Score;
+    public int m_team2Score;
 
-    [SerializeField]
-    List<ControlPointController> m_team2ControlledPoints = new List<ControlPointController>();
+    public List<ControlPointController> m_team2ControlledPoints = new List<ControlPointController>();
 
-    [SerializeField]
-    List<ControlPointController> m_team2ControlledResources = new List<ControlPointController>();
+    public List<ControlPointController> m_team2ControlledResources = new List<ControlPointController>();
 
     [SerializeField]
     TextMeshProUGUI m_team2ScoreText;

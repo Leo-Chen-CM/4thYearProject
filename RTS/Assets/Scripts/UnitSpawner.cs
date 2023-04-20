@@ -15,8 +15,7 @@ public class UnitSpawner : MonoBehaviour
     public GameObject m_unit;
     public Transform m_spawnPoint;
     public int m_rotation;
-    [SerializeField]
-    List<GameObject> m_troopCount = new List<GameObject>();
+    public List<GameObject> m_troopCount = new List<GameObject>();
 
     float m_time = 3;
 

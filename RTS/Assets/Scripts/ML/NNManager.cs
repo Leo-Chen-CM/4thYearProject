@@ -24,14 +24,14 @@ public class NNManager : MonoBehaviour
         }
         print("cost: " + net.cost);
 
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 0, 0, 0 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 1, 0, 0 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 0, 1, 0 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 0, 0, 1 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 1, 1, 0 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 0, 1, 1 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 1, 0, 1 })[0]);
-        UnityEngine.Debug.Log(net.FeedForward(new float[] { 1, 1, 1 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 0, 0, 0 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 1, 0, 0 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 0, 1, 0 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 0, 0, 1 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 1, 1, 0 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 0, 1, 1 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 1, 0, 1 })[0]);
+        Debug.Log(net.FeedForward(new float[] { 1, 1, 1 })[0]);
         //We want the gate to simulate 3 input or gate (A or B or C)
         // 0 0 0    => 0
         // 1 0 0    => 1

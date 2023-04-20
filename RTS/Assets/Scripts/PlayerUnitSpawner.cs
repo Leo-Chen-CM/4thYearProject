@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 //[RequireComponent(typeof(AssetPreview))]
-public class UnitSpawner : MonoBehaviour
+public class PlayerUnitSpawner : MonoBehaviour
 {
 
     public float m_spawnTime = 3;
@@ -58,7 +58,7 @@ public class UnitSpawner : MonoBehaviour
             {
                 if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && GameManager.instance.m_team1Reserves != 0)
                 {
-                    Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
+                    Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 3, m_spawnArea.transform.localScale.y / 3), 0);
                     m_nextSpawn = Time.time + m_spawnTime;
                     Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
                     GameObject newUnit = Instantiate(m_unit, spawn, rotation);
@@ -72,7 +72,7 @@ public class UnitSpawner : MonoBehaviour
             {
                 if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && GameManager.instance.m_team2Reserves != 0)
                 {
-                    Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 2, m_spawnArea.transform.localScale.y / 2), 0);
+                    Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 3, m_spawnArea.transform.localScale.y / 3), 0);
                     m_nextSpawn = Time.time + m_spawnTime;
                     Quaternion rotation = Quaternion.Euler(0, 0, m_rotation);
                     GameObject newUnit = Instantiate(m_unit, spawn, rotation);

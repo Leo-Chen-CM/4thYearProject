@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
@@ -31,8 +32,8 @@ public class GroupLeader : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        // If we are further away than stop distance
-        float targetDistance = Vector3.Distance(transform.position, m_Target);
+            // If we are further away than stop distance
+            float targetDistance = Vector3.Distance(transform.position, m_Target);
         if (targetDistance > m_StopDistance)
         {
             Vector3 v = new Vector3(transform.position.x, transform.position.y, 0);
@@ -56,7 +57,40 @@ public class GroupLeader : MonoBehaviour
             transform.position += (m_Speed * m_TargetDirection * Time.fixedDeltaTime);
         }
 
+        RemoveExcessTransformations();
         MoveUnits();
+
+        if (units.Count == 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    // Removes unecessary transformation points
+    private void RemoveExcessTransformations()
+    {
+        foreach (BaseUnit unit in units)
+        {
+            if (unit == null)
+            {
+                units.Remove(unit);
+            }
+        }
+
+        // If we have more transforms than needed, remove last ones
+        if (m_positions.Count > units.Count)
+        {
+            for (int index = m_positions.Count; index < m_positions.Count; index++)
+            {
+                if (units[index] == null)
+                {
+                    units.RemoveAt(index);
+                    Destroy(m_positions[index].gameObject);
+                    m_positions.RemoveAt(index);
+                }
+
+            }
+        }
     }
     private void MoveUnits()
     {

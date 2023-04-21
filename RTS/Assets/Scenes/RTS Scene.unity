@@ -1722,6 +1722,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 659e9a22b3c4c93478d0e141b12e6589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_maxResources: 500
   m_pauseTextObject: {fileID: 1327735686}
   m_reserveGeneration: 1
   m_controlPointControllers:

@@ -37,7 +37,6 @@ public class NNCommanderBrain : MonoBehaviour
         /*
          
         3 basic outputs once all inputs are accounted for
-
         Make more units and then group them up
         Send group to control point
         Send group to resource point

@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     bool m_gamePaused;
 
     [SerializeField]
+    int m_maxResources;
+
+    [SerializeField]
     GameObject m_pauseTextObject;
     [SerializeField]
     int m_reserveGeneration = 1;
@@ -176,9 +179,9 @@ public class GameManager : MonoBehaviour
         {
             m_team1Reserves += m_reserveGeneration + m_team1ControlledResources.Count;
 
-            if (m_team1Reserves > 1000)
+            if (m_team1Reserves > m_maxResources)
             {
-                m_team1Reserves = 1000;
+                m_team1Reserves = m_maxResources;
             }
 
             yield return new WaitForSeconds(m_generationTimer);
@@ -191,9 +194,9 @@ public class GameManager : MonoBehaviour
         {
             m_team2Reserves += m_reserveGeneration + m_team2ControlledResources.Count;
 
-            if (m_team2Reserves > 1000)
+            if (m_team2Reserves > m_maxResources)
             {
-                m_team2Reserves = 1000;
+                m_team2Reserves = m_maxResources;
             }
 
             yield return new WaitForSeconds(m_generationTimer);

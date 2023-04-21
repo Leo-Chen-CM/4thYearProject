@@ -14,7 +14,6 @@ public class AIUnitSpawner : MonoBehaviour
 
     [SerializeField]
     GameObject m_spawnArea;
-    int m_unitsQueued = 0;
     [SerializeField]
     float m_nextSpawn;
 
@@ -32,7 +31,7 @@ public class AIUnitSpawner : MonoBehaviour
 
     public void SpawnUnit()
     {
-        if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && GameManager.instance.m_team1Reserves != 0 && m_unitsQueued < 9)
+        if (m_troopCount.Count < m_maxUnits && Time.time > m_nextSpawn && GameManager.instance.m_team1Reserves != 0)
         {
             Vector3 spawn = m_spawnPoint.position + new Vector3(Random.Range(-m_spawnArea.transform.localScale.x / 3, m_spawnArea.transform.localScale.x / 3), Random.Range(-m_spawnArea.transform.localScale.y / 3, m_spawnArea.transform.localScale.y / 3), 0);
             m_nextSpawn = Time.time + m_spawnTime;
@@ -41,7 +40,6 @@ public class AIUnitSpawner : MonoBehaviour
             newUnit.GetComponent<BaseUnit>().SetupTeam(tag);
             m_troopCount.Add(newUnit);
             GameManager.instance.m_team1Reserves--;
-            m_unitsQueued--;
         }
     }
 }

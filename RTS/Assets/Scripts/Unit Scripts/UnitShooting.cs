@@ -46,7 +46,7 @@ public class UnitShooting : MonoBehaviour
 
 
 
-                if (hit.transform.gameObject.GetComponent<BaseUnit>())
+                if (hit.transform.gameObject.TryGetComponent(out BaseUnit unit))
                 {
                     hit.transform.gameObject.GetComponent<BaseUnit>().LoseHealth();
                 }

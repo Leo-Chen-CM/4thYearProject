@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     float m_generationTimer;
 
+    [SerializeField]
+    [Range(0,2)] float m_timeScale;
+
     [Header("Team 1 Attributes")]
     public int m_team1Reserves;
     public int m_team1Score;
@@ -76,6 +79,8 @@ public class GameManager : MonoBehaviour
         {
             ToggleGamePause();
         }
+
+        Time.timeScale = m_timeScale;
     }
 
 

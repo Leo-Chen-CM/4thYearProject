@@ -1735,6 +1735,7 @@ MonoBehaviour:
   - {fileID: 1697976577}
   - {fileID: 1910791933}
   m_generationTimer: 1
+  m_timeScale: 1
   m_team1Reserves: 100
   m_team1Score: 0
   m_team1ControlledPoints: []
@@ -6424,7 +6425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1128613800
 Transform:
   m_ObjectHideFlags: 0
@@ -10527,7 +10528,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1593705421
 Transform:
   m_ObjectHideFlags: 0
@@ -12294,7 +12295,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1869360474
 Transform:
   m_ObjectHideFlags: 0

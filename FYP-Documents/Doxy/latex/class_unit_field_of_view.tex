@@ -1,0 +1,168 @@
+\hypertarget{class_unit_field_of_view}{}\doxysection{Unit\+Field\+Of\+View Class Reference}
+\label{class_unit_field_of_view}\index{UnitFieldOfView@{UnitFieldOfView}}
+
+
+Field of view of a single unit   
+
+
+
+
+Inheritance diagram for Unit\+Field\+Of\+View\+:
+% FIG 0
+
+
+Collaboration diagram for Unit\+Field\+Of\+View\+:
+% FIG 1
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{Edge\+Info}}
+\item 
+struct \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{Dir\+From\+Angle}} (float angle\+In\+Degrees, bool angle\+Is\+Global)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\+\_\+radius}}
+\item 
+float \mbox{\hyperlink{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}{m\+\_\+engagement\+Ranged}}
+\item 
+float \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\+\_\+angle}} = 45f
+\item 
+Layer\+Mask \mbox{\hyperlink{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}{m\+\_\+target\+Layer}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{m\+\_\+obstruction\+Layer}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}{m\+\_\+obstruction\+Only\+Layer}}
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}{visible\+Targets}} = new List$<$Transform$>$()
+\item 
+float \mbox{\hyperlink{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}{m\+\_\+mesh\+Resolution}}
+\item 
+int \mbox{\hyperlink{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}{edge\+Resolve\+Iterations}}
+\item 
+float \mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{edge\+Dst\+Threshold}}
+\item 
+float \mbox{\hyperlink{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}{mask\+Cutaway\+Dst}} = .\+1f
+\item 
+Mesh\+Filter \mbox{\hyperlink{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}{view\+Mesh\+Filter}}
+\item 
+Transform \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\+\_\+target}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\+\_\+enemy\+Spotted}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Field of view of a single unit  
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}\label{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!DirFromAngle@{DirFromAngle}}
+\index{DirFromAngle@{DirFromAngle}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{DirFromAngle()}{DirFromAngle()}}
+{\footnotesize\ttfamily Vector3 Unit\+Field\+Of\+View.\+Dir\+From\+Angle (\begin{DoxyParamCaption}\item[{float}]{angle\+In\+Degrees,  }\item[{bool}]{angle\+Is\+Global }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}\label{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!edgeDstThreshold@{edgeDstThreshold}}
+\index{edgeDstThreshold@{edgeDstThreshold}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{edgeDstThreshold}{edgeDstThreshold}}
+{\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+edge\+Dst\+Threshold}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}\label{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!edgeResolveIterations@{edgeResolveIterations}}
+\index{edgeResolveIterations@{edgeResolveIterations}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{edgeResolveIterations}{edgeResolveIterations}}
+{\footnotesize\ttfamily int Unit\+Field\+Of\+View.\+edge\+Resolve\+Iterations}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}\label{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_angle@{m\_angle}}
+\index{m\_angle@{m\_angle}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_angle}{m\_angle}}
+{\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+angle = 45f}
+
+\mbox{\Hypertarget{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}\label{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_engagementRanged@{m\_engagementRanged}}
+\index{m\_engagementRanged@{m\_engagementRanged}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_engagementRanged}{m\_engagementRanged}}
+{\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+engagement\+Ranged}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}\label{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_meshResolution@{m\_meshResolution}}
+\index{m\_meshResolution@{m\_meshResolution}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_meshResolution}{m\_meshResolution}}
+{\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+mesh\+Resolution}
+
+\mbox{\Hypertarget{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}\label{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_obstructionLayer@{m\_obstructionLayer}}
+\index{m\_obstructionLayer@{m\_obstructionLayer}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_obstructionLayer}{m\_obstructionLayer}}
+{\footnotesize\ttfamily Layer\+Mask Unit\+Field\+Of\+View.\+m\+\_\+obstruction\+Layer}
+
+\mbox{\Hypertarget{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}\label{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_obstructionOnlyLayer@{m\_obstructionOnlyLayer}}
+\index{m\_obstructionOnlyLayer@{m\_obstructionOnlyLayer}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_obstructionOnlyLayer}{m\_obstructionOnlyLayer}}
+{\footnotesize\ttfamily Layer\+Mask Unit\+Field\+Of\+View.\+m\+\_\+obstruction\+Only\+Layer}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}\label{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_radius@{m\_radius}}
+\index{m\_radius@{m\_radius}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_radius}{m\_radius}}
+{\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+radius}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}\label{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_target@{m\_target}}
+\index{m\_target@{m\_target}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_target}{m\_target}}
+{\footnotesize\ttfamily Transform Unit\+Field\+Of\+View.\+m\+\_\+target}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}\label{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_targetLayer@{m\_targetLayer}}
+\index{m\_targetLayer@{m\_targetLayer}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_targetLayer}{m\_targetLayer}}
+{\footnotesize\ttfamily Layer\+Mask Unit\+Field\+Of\+View.\+m\+\_\+target\+Layer}
+
+\mbox{\Hypertarget{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}\label{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!maskCutawayDst@{maskCutawayDst}}
+\index{maskCutawayDst@{maskCutawayDst}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{maskCutawayDst}{maskCutawayDst}}
+{\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+mask\+Cutaway\+Dst = .\+1f}
+
+\mbox{\Hypertarget{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}\label{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!viewMeshFilter@{viewMeshFilter}}
+\index{viewMeshFilter@{viewMeshFilter}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{viewMeshFilter}{viewMeshFilter}}
+{\footnotesize\ttfamily Mesh\+Filter Unit\+Field\+Of\+View.\+view\+Mesh\+Filter}
+
+\mbox{\Hypertarget{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}\label{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!visibleTargets@{visibleTargets}}
+\index{visibleTargets@{visibleTargets}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{visibleTargets}{visibleTargets}}
+{\footnotesize\ttfamily List$<$Transform$>$ Unit\+Field\+Of\+View.\+visible\+Targets = new List$<$Transform$>$()}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}\label{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_enemySpotted@{m\_enemySpotted}}
+\index{m\_enemySpotted@{m\_enemySpotted}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_enemySpotted}{m\_enemySpotted}}
+{\footnotesize\ttfamily bool Unit\+Field\+Of\+View.\+m\+\_\+enemy\+Spotted\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Unit Scripts/\mbox{\hyperlink{_unit_field_of_view_8cs}{Unit\+Field\+Of\+View.\+cs}}\end{DoxyCompactItemize}

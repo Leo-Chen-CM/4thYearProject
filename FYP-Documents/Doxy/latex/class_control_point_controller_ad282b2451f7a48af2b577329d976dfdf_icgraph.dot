@@ -1,0 +1,13 @@
+digraph "ControlPointController.GetTeamAffiliation"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [label="ControlPointController.Get\lTeamAffiliation",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="GameManager.PointsCaptured",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_manager.html#a5964d11250b55f52fa6cf70e679d8803",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="GameManager.PointsLost",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_game_manager.html#abcc8946199734dd26f829e767d265ac1",tooltip=" "];
+}

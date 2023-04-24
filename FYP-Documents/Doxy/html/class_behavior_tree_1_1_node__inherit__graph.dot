@@ -1,0 +1,21 @@
+digraph "BehaviorTree.Node"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="BehaviorTree.Node",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [dir="back",color="steelblue1",style="solid"];
+  Node2 [label="BehaviorTree.Inverter",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_behavior_tree_1_1_inverter.html",tooltip=" "];
+  Node1 -> Node3 [dir="back",color="steelblue1",style="solid"];
+  Node3 [label="BehaviorTree.Parallel",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_behavior_tree_1_1_parallel.html",tooltip=" "];
+  Node1 -> Node4 [dir="back",color="steelblue1",style="solid"];
+  Node4 [label="BehaviorTree.Selector",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_behavior_tree_1_1_selector.html",tooltip=" "];
+  Node1 -> Node5 [dir="back",color="steelblue1",style="solid"];
+  Node5 [label="BehaviorTree.Sequence",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_behavior_tree_1_1_sequence.html",tooltip=" "];
+  Node1 -> Node6 [dir="back",color="steelblue1",style="solid"];
+  Node6 [label="CheckUnitOwnership",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_check_unit_ownership.html",tooltip=" "];
+  Node1 -> Node7 [dir="back",color="steelblue1",style="solid"];
+  Node7 [label="TaskPatrol",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$class_task_patrol.html",tooltip=" "];
+}

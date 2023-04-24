@@ -1,0 +1,85 @@
+\hypertarget{class_a_i_unit_spawner}{}\doxysection{AIUnit\+Spawner Class Reference}
+\label{class_a_i_unit_spawner}\index{AIUnitSpawner@{AIUnitSpawner}}
+
+
+Inheritance diagram for AIUnit\+Spawner\+:
+% FIG 0
+
+
+Collaboration diagram for AIUnit\+Spawner\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}{Spawn\+Unit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}{m\+\_\+spawn\+Time}} = 3
+\item 
+int \mbox{\hyperlink{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}{m\+\_\+max\+Units}}
+\item 
+Game\+Object \mbox{\hyperlink{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}{m\+\_\+unit}}
+\item 
+Transform \mbox{\hyperlink{class_a_i_unit_spawner_ac0fa5a92ca485787cd899c089edd2318}{m\+\_\+spawn\+Point}}
+\item 
+int \mbox{\hyperlink{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}{m\+\_\+rotation}}
+\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\+\_\+troop\+Count}} = new List$<$Game\+Object$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}\label{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!SpawnUnit@{SpawnUnit}}
+\index{SpawnUnit@{SpawnUnit}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{SpawnUnit()}{SpawnUnit()}}
+{\footnotesize\ttfamily void AIUnit\+Spawner.\+Spawn\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 2
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}\label{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_maxUnits@{m\_maxUnits}}
+\index{m\_maxUnits@{m\_maxUnits}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_maxUnits}{m\_maxUnits}}
+{\footnotesize\ttfamily int AIUnit\+Spawner.\+m\+\_\+max\+Units}
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}\label{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily int AIUnit\+Spawner.\+m\+\_\+rotation}
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_ac0fa5a92ca485787cd899c089edd2318}\label{class_a_i_unit_spawner_ac0fa5a92ca485787cd899c089edd2318}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_spawnPoint@{m\_spawnPoint}}
+\index{m\_spawnPoint@{m\_spawnPoint}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_spawnPoint}{m\_spawnPoint}}
+{\footnotesize\ttfamily Transform AIUnit\+Spawner.\+m\+\_\+spawn\+Point}
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}\label{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_spawnTime@{m\_spawnTime}}
+\index{m\_spawnTime@{m\_spawnTime}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_spawnTime}{m\_spawnTime}}
+{\footnotesize\ttfamily float AIUnit\+Spawner.\+m\+\_\+spawn\+Time = 3}
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}\label{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_troopCount@{m\_troopCount}}
+\index{m\_troopCount@{m\_troopCount}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_troopCount}{m\_troopCount}}
+{\footnotesize\ttfamily List$<$Game\+Object$>$ AIUnit\+Spawner.\+m\+\_\+troop\+Count = new List$<$Game\+Object$>$()}
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}\label{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_unit@{m\_unit}}
+\index{m\_unit@{m\_unit}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_unit}{m\_unit}}
+{\footnotesize\ttfamily Game\+Object AIUnit\+Spawner.\+m\+\_\+unit}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_a_i_unit_spawner_8cs}{AIUnit\+Spawner.\+cs}}\end{DoxyCompactItemize}

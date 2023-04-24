@@ -1,0 +1,17 @@
+digraph "Selection.GroupSelection"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [label="Selection.GroupSelection",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="steelblue1",style="solid"];
+  Node2 [label="BaseUnit.AssignLeader",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b",tooltip=" "];
+  Node1 -> Node3 [color="steelblue1",style="solid"];
+  Node3 [label="RTSGameController.GetCurrent\lFormation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46",tooltip=" "];
+  Node1 -> Node4 [color="steelblue1",style="solid"];
+  Node4 [label="GroupLeader.SetFormation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_group_leader.html#ae39ef3c1f8e4b7a9676b72e491203354",tooltip=" "];
+  Node4 -> Node5 [color="steelblue1",style="solid"];
+  Node5 [label="GroupLeader.SetLinePosition",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_group_leader.html#a0b68f07858de9d6574628c0a6674ed38",tooltip=" "];
+}

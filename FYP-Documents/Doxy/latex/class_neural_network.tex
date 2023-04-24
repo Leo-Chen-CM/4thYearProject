@@ -1,0 +1,228 @@
+\hypertarget{class_neural_network}{}\doxysection{Neural\+Network Class Reference}
+\label{class_neural_network}\index{NeuralNetwork@{NeuralNetwork}}
+
+
+Inheritance diagram for Neural\+Network\+:
+% FIG 0
+
+
+Collaboration diagram for Neural\+Network\+:
+% FIG 1
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec}{Neural\+Network}} (int\mbox{[}$\,$\mbox{]} layers, string\mbox{[}$\,$\mbox{]} layer\+Activations)
+\item 
+float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}{Feed\+Forward}} (float\mbox{[}$\,$\mbox{]} inputs)
+\item 
+float \mbox{\hyperlink{class_neural_network_ab75f7019c882965d1a3361a10936a039}{activate}} (float value, int layer)
+\item 
+float \mbox{\hyperlink{class_neural_network_aaad3fd52ff6697bc570352b116192c61}{activate\+Der}} (float value, int layer)
+\item 
+float \mbox{\hyperlink{class_neural_network_aed31a3307f2f89363ded205f77c60225}{sigmoid}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_a9516c0b3aedb1322e7a09b3786e21989}{tanh}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}{relu}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d}{leakyrelu}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_ab53de5941d235bca92ef79b5063290db}{sigmoid\+Der}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06}{tanh\+Der}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_aaae5996212041a89a97bbeed3732398a}{relu\+Der}} (float x)
+\item 
+float \mbox{\hyperlink{class_neural_network_a16703e78a01afa1ffaa78848e134899f}{leakyrelu\+Der}} (float x)
+\item 
+void \mbox{\hyperlink{class_neural_network_a0848cf60f63eb03cff313c6b48edbeae}{Back\+Propagate}} (float\mbox{[}$\,$\mbox{]} inputs, float\mbox{[}$\,$\mbox{]} expected)
+\item 
+void \mbox{\hyperlink{class_neural_network_a3b8b31c453188bfbfa70de7fc006c10a}{Mutate}} (int high, float val)
+\item 
+int \mbox{\hyperlink{class_neural_network_a3728469d6e92c970ac88fead80cce79a}{Compare\+To}} (\mbox{\hyperlink{class_neural_network}{Neural\+Network}} other)
+\item 
+\mbox{\hyperlink{class_neural_network}{Neural\+Network}} \mbox{\hyperlink{class_neural_network_acc343fa84553ce4a90a4be4d60358eef}{copy}} (\mbox{\hyperlink{class_neural_network}{Neural\+Network}} nn)
+\item 
+void \mbox{\hyperlink{class_neural_network_a17787f616e3fd5ecc4f19150ee351592}{Load}} (string path)
+\item 
+void \mbox{\hyperlink{class_neural_network_a2b6dde455e1cc871fc8bebfd9878b8e2}{Save}} (string path)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{fitness}} = 0
+\item 
+float \mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{learning\+Rate}} = 0.\+01f
+\item 
+float \mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{cost}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec}\label{class_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec}} 
+\index{NeuralNetwork@{NeuralNetwork}!NeuralNetwork@{NeuralNetwork}}
+\index{NeuralNetwork@{NeuralNetwork}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{NeuralNetwork()}{NeuralNetwork()}}
+{\footnotesize\ttfamily Neural\+Network.\+Neural\+Network (\begin{DoxyParamCaption}\item[{int\mbox{[}$\,$\mbox{]}}]{layers,  }\item[{string\mbox{[}$\,$\mbox{]}}]{layer\+Activations }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_neural_network_ab75f7019c882965d1a3361a10936a039}\label{class_neural_network_ab75f7019c882965d1a3361a10936a039}} 
+\index{NeuralNetwork@{NeuralNetwork}!activate@{activate}}
+\index{activate@{activate}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{activate()}{activate()}}
+{\footnotesize\ttfamily float Neural\+Network.\+activate (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{int}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{class_neural_network_aaad3fd52ff6697bc570352b116192c61}\label{class_neural_network_aaad3fd52ff6697bc570352b116192c61}} 
+\index{NeuralNetwork@{NeuralNetwork}!activateDer@{activateDer}}
+\index{activateDer@{activateDer}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{activateDer()}{activateDer()}}
+{\footnotesize\ttfamily float Neural\+Network.\+activate\+Der (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{int}]{layer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{class_neural_network_a0848cf60f63eb03cff313c6b48edbeae}\label{class_neural_network_a0848cf60f63eb03cff313c6b48edbeae}} 
+\index{NeuralNetwork@{NeuralNetwork}!BackPropagate@{BackPropagate}}
+\index{BackPropagate@{BackPropagate}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{BackPropagate()}{BackPropagate()}}
+{\footnotesize\ttfamily void Neural\+Network.\+Back\+Propagate (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{inputs,  }\item[{float\mbox{[}$\,$\mbox{]}}]{expected }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{class_neural_network_a3728469d6e92c970ac88fead80cce79a}\label{class_neural_network_a3728469d6e92c970ac88fead80cce79a}} 
+\index{NeuralNetwork@{NeuralNetwork}!CompareTo@{CompareTo}}
+\index{CompareTo@{CompareTo}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{CompareTo()}{CompareTo()}}
+{\footnotesize\ttfamily int Neural\+Network.\+Compare\+To (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_neural_network}{Neural\+Network}}}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_neural_network_acc343fa84553ce4a90a4be4d60358eef}\label{class_neural_network_acc343fa84553ce4a90a4be4d60358eef}} 
+\index{NeuralNetwork@{NeuralNetwork}!copy@{copy}}
+\index{copy@{copy}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_neural_network}{Neural\+Network}} Neural\+Network.\+copy (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_neural_network}{Neural\+Network}}}]{nn }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}\label{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}} 
+\index{NeuralNetwork@{NeuralNetwork}!FeedForward@{FeedForward}}
+\index{FeedForward@{FeedForward}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{FeedForward()}{FeedForward()}}
+{\footnotesize\ttfamily float\mbox{[}$\,$\mbox{]} Neural\+Network.\+Feed\+Forward (\begin{DoxyParamCaption}\item[{float\mbox{[}$\,$\mbox{]}}]{inputs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
+\mbox{\Hypertarget{class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d}\label{class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d}} 
+\index{NeuralNetwork@{NeuralNetwork}!leakyrelu@{leakyrelu}}
+\index{leakyrelu@{leakyrelu}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{leakyrelu()}{leakyrelu()}}
+{\footnotesize\ttfamily float Neural\+Network.\+leakyrelu (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 9
+\mbox{\Hypertarget{class_neural_network_a16703e78a01afa1ffaa78848e134899f}\label{class_neural_network_a16703e78a01afa1ffaa78848e134899f}} 
+\index{NeuralNetwork@{NeuralNetwork}!leakyreluDer@{leakyreluDer}}
+\index{leakyreluDer@{leakyreluDer}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{leakyreluDer()}{leakyreluDer()}}
+{\footnotesize\ttfamily float Neural\+Network.\+leakyrelu\+Der (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 10
+\mbox{\Hypertarget{class_neural_network_a17787f616e3fd5ecc4f19150ee351592}\label{class_neural_network_a17787f616e3fd5ecc4f19150ee351592}} 
+\index{NeuralNetwork@{NeuralNetwork}!Load@{Load}}
+\index{Load@{Load}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{Load()}{Load()}}
+{\footnotesize\ttfamily void Neural\+Network.\+Load (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_neural_network_a3b8b31c453188bfbfa70de7fc006c10a}\label{class_neural_network_a3b8b31c453188bfbfa70de7fc006c10a}} 
+\index{NeuralNetwork@{NeuralNetwork}!Mutate@{Mutate}}
+\index{Mutate@{Mutate}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{Mutate()}{Mutate()}}
+{\footnotesize\ttfamily void Neural\+Network.\+Mutate (\begin{DoxyParamCaption}\item[{int}]{high,  }\item[{float}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}\label{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}} 
+\index{NeuralNetwork@{NeuralNetwork}!relu@{relu}}
+\index{relu@{relu}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{relu()}{relu()}}
+{\footnotesize\ttfamily float Neural\+Network.\+relu (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 11
+\mbox{\Hypertarget{class_neural_network_aaae5996212041a89a97bbeed3732398a}\label{class_neural_network_aaae5996212041a89a97bbeed3732398a}} 
+\index{NeuralNetwork@{NeuralNetwork}!reluDer@{reluDer}}
+\index{reluDer@{reluDer}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{reluDer()}{reluDer()}}
+{\footnotesize\ttfamily float Neural\+Network.\+relu\+Der (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 12
+\mbox{\Hypertarget{class_neural_network_a2b6dde455e1cc871fc8bebfd9878b8e2}\label{class_neural_network_a2b6dde455e1cc871fc8bebfd9878b8e2}} 
+\index{NeuralNetwork@{NeuralNetwork}!Save@{Save}}
+\index{Save@{Save}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{Save()}{Save()}}
+{\footnotesize\ttfamily void Neural\+Network.\+Save (\begin{DoxyParamCaption}\item[{string}]{path }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{class_neural_network_aed31a3307f2f89363ded205f77c60225}\label{class_neural_network_aed31a3307f2f89363ded205f77c60225}} 
+\index{NeuralNetwork@{NeuralNetwork}!sigmoid@{sigmoid}}
+\index{sigmoid@{sigmoid}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{sigmoid()}{sigmoid()}}
+{\footnotesize\ttfamily float Neural\+Network.\+sigmoid (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 13
+\mbox{\Hypertarget{class_neural_network_ab53de5941d235bca92ef79b5063290db}\label{class_neural_network_ab53de5941d235bca92ef79b5063290db}} 
+\index{NeuralNetwork@{NeuralNetwork}!sigmoidDer@{sigmoidDer}}
+\index{sigmoidDer@{sigmoidDer}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{sigmoidDer()}{sigmoidDer()}}
+{\footnotesize\ttfamily float Neural\+Network.\+sigmoid\+Der (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 14
+\mbox{\Hypertarget{class_neural_network_a9516c0b3aedb1322e7a09b3786e21989}\label{class_neural_network_a9516c0b3aedb1322e7a09b3786e21989}} 
+\index{NeuralNetwork@{NeuralNetwork}!tanh@{tanh}}
+\index{tanh@{tanh}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{tanh()}{tanh()}}
+{\footnotesize\ttfamily float Neural\+Network.\+tanh (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 15
+\mbox{\Hypertarget{class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06}\label{class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06}} 
+\index{NeuralNetwork@{NeuralNetwork}!tanhDer@{tanhDer}}
+\index{tanhDer@{tanhDer}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{tanhDer()}{tanhDer()}}
+{\footnotesize\ttfamily float Neural\+Network.\+tanh\+Der (\begin{DoxyParamCaption}\item[{float}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+Here is the caller graph for this function\+:
+% FIG 16
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}\label{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}} 
+\index{NeuralNetwork@{NeuralNetwork}!cost@{cost}}
+\index{cost@{cost}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{cost}{cost}}
+{\footnotesize\ttfamily float Neural\+Network.\+cost = 0}
+
+\mbox{\Hypertarget{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}\label{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}} 
+\index{NeuralNetwork@{NeuralNetwork}!fitness@{fitness}}
+\index{fitness@{fitness}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{fitness}{fitness}}
+{\footnotesize\ttfamily float Neural\+Network.\+fitness = 0}
+
+\mbox{\Hypertarget{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}\label{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}} 
+\index{NeuralNetwork@{NeuralNetwork}!learningRate@{learningRate}}
+\index{learningRate@{learningRate}!NeuralNetwork@{NeuralNetwork}}
+\doxysubsubsection{\texorpdfstring{learningRate}{learningRate}}
+{\footnotesize\ttfamily float Neural\+Network.\+learning\+Rate = 0.\+01f}
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ML/\mbox{\hyperlink{_neural_network_8cs}{Neural\+Network.\+cs}}\end{DoxyCompactItemize}

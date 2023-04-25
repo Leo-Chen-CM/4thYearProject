@@ -3,13 +3,107 @@
 
 
 Inheritance diagram for Game\+GUI\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_game_g_u_i__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Game\+GUI\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_game_g_u_i__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_g_u_i_af758a1f70d65c6fbe4315bf2f4f447cd}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_game_g_u_i_a984e034511e2b4fb6e1e9a6073bada5c}{Create\+Unit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Canvas \mbox{\hyperlink{class_game_g_u_i_a96d03eb913a7d9a4e15d023d023111a5}{m\+\_\+canvas}}
+\item 
+Game\+Object \mbox{\hyperlink{class_game_g_u_i_ab8e903bd4347aec3c7486b7794290a18}{m\+\_\+image}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_game_g_u_i_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_game_g_u_i_8cs_source}{Game\+GUI.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_g_u_i_a984e034511e2b4fb6e1e9a6073bada5c}\label{class_game_g_u_i_a984e034511e2b4fb6e1e9a6073bada5c}} 
+\index{GameGUI@{GameGUI}!CreateUnit@{CreateUnit}}
+\index{CreateUnit@{CreateUnit}!GameGUI@{GameGUI}}
+\doxysubsubsection{\texorpdfstring{CreateUnit()}{CreateUnit()}}
+{\footnotesize\ttfamily void Game\+GUI.\+Create\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_g_u_i_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_game_g_u_i_8cs_source}{Game\+GUI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018     \{}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_game_g_u_i_af758a1f70d65c6fbe4315bf2f4f447cd}\label{class_game_g_u_i_af758a1f70d65c6fbe4315bf2f4f447cd}} 
+\index{GameGUI@{GameGUI}!Start@{Start}}
+\index{Start@{Start}!GameGUI@{GameGUI}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Game\+GUI.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_g_u_i_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_game_g_u_i_8cs_source}{Game\+GUI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012     \{}
+\DoxyCodeLine{00013         \mbox{\hyperlink{class_game_g_u_i_a96d03eb913a7d9a4e15d023d023111a5}{m\_canvas}} = FindObjectOfType<Canvas>();}
+\DoxyCodeLine{00014         \mbox{\hyperlink{class_game_g_u_i_ab8e903bd4347aec3c7486b7794290a18}{m\_image}} = GameObject.Find(\textcolor{stringliteral}{"{}Unit Being Built"{}});}
+\DoxyCodeLine{00015     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_g_u_i_a96d03eb913a7d9a4e15d023d023111a5}\label{class_game_g_u_i_a96d03eb913a7d9a4e15d023d023111a5}} 
+\index{GameGUI@{GameGUI}!m\_canvas@{m\_canvas}}
+\index{m\_canvas@{m\_canvas}!GameGUI@{GameGUI}}
+\doxysubsubsection{\texorpdfstring{m\_canvas}{m\_canvas}}
+{\footnotesize\ttfamily Canvas Game\+GUI.\+m\+\_\+canvas\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_g_u_i_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_game_g_u_i_8cs_source}{Game\+GUI.\+cs}}.
+
+\mbox{\Hypertarget{class_game_g_u_i_ab8e903bd4347aec3c7486b7794290a18}\label{class_game_g_u_i_ab8e903bd4347aec3c7486b7794290a18}} 
+\index{GameGUI@{GameGUI}!m\_image@{m\_image}}
+\index{m\_image@{m\_image}!GameGUI@{GameGUI}}
+\doxysubsubsection{\texorpdfstring{m\_image}{m\_image}}
+{\footnotesize\ttfamily Game\+Object Game\+GUI.\+m\+\_\+image\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_g_u_i_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_game_g_u_i_8cs_source}{Game\+GUI.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Player\+NBase\+Scripts/\mbox{\hyperlink{_game_g_u_i_8cs}{Game\+GUI.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Player\+NBase\+Scripts/\mbox{\hyperlink{_game_g_u_i_8cs}{Game\+GUI.\+cs}}\end{DoxyCompactItemize}

@@ -92,6 +92,8 @@ $(document).ready(function(){initNavTree('class_selection.html',''); initResizab
   <div class="summary">
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_selection-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Selection Class Reference</div></div>
 </div><!--header-->
@@ -100,12 +102,23 @@ $(document).ready(function(){initNavTree('class_selection.html',''); initResizab
 Inheritance diagram for Selection:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_selection__inherit__graph.png" border="0" usemap="#a_selection_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_selection_inherit__map" id="a_selection_inherit__map">
+<area shape="rect" title=" " alt="" coords="18,93,177,265"/>
+<area shape="rect" href="class_player_selection.html" title="Adapted from EezehDev Coordinated Formations" alt="" coords="5,313,189,383"/>
+<area shape="rect" title=" " alt="" coords="40,5,155,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for Selection:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_selection__coll__graph.png" border="0" usemap="#a_selection_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_selection_coll__map" id="a_selection_coll__map">
+<area shape="rect" title=" " alt="" coords="71,461,230,604"/>
+<area shape="rect" title=" " alt="" coords="93,5,208,45"/>
+<area shape="rect" href="class_unit_manager.html" title=" " alt="" coords="59,190,242,303"/>
+<area shape="rect" href="class_r_t_s_game_controller.html" title=" " alt="" coords="267,95,448,399"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -122,8 +135,101 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a0ef5aeac1d3a5d302e60d8891e32028b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a86399849291d22e74b3e5c0dbcd687eb"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a></td></tr>
 <tr class="separator:a86399849291d22e74b3e5c0dbcd687eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a02fd2feccc176d75f1455e42c74c4f45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selection.html#a02fd2feccc176d75f1455e42c74c4f45">Start</a> ()</td></tr>
+<tr class="separator:a02fd2feccc176d75f1455e42c74c4f45"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a129eaf19e641d6a1bcf380fc873c183f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selection.html#a129eaf19e641d6a1bcf380fc873c183f">ClearSelection</a> ()</td></tr>
+<tr class="separator:a129eaf19e641d6a1bcf380fc873c183f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a909f76da31e5eab07f29c232be40ca13"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selection.html#a909f76da31e5eab07f29c232be40ca13">m_GroupLeaderPrefab</a></td></tr>
+<tr class="separator:a909f76da31e5eab07f29c232be40ca13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf3163ca46d826b099a7584beb4cc243"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_r_t_s_game_controller.html">RTSGameController</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_selection.html#acf3163ca46d826b099a7584beb4cc243">m_controller</a></td></tr>
+<tr class="separator:acf3163ca46d826b099a7584beb4cc243"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00006">6</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a129eaf19e641d6a1bcf380fc873c183f" name="a129eaf19e641d6a1bcf380fc873c183f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a129eaf19e641d6a1bcf380fc873c183f">&#9670;&#160;</a></span>ClearSelection()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Selection.ClearSelection </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00145">145</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>    {</div>
+<div class="line"><span class="lineno">  147</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Count == 0 &amp;&amp; <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Count == 0)</div>
+<div class="line"><span class="lineno">  148</span>        {</div>
+<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+<div class="line"><span class="lineno">  151</span> </div>
+<div class="line"><span class="lineno">  152</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unit <span class="keywordflow">in</span> <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>)</div>
+<div class="line"><span class="lineno">  153</span>        {</div>
+<div class="line"><span class="lineno">  154</span>            unit.<a class="code hl_function" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69">SetSelectedVisible</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  155</span>        }</div>
+<div class="line"><span class="lineno">  156</span>        <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Clear();</div>
+<div class="line"><span class="lineno">  157</span> </div>
+<div class="line"><span class="lineno">  158</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_group_leader.html">GroupLeader</a> leader <span class="keywordflow">in</span> <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>)</div>
+<div class="line"><span class="lineno">  159</span>        {</div>
+<div class="line"><span class="lineno">  160</span>            <span class="comment">// Loop over all units in group</span></div>
+<div class="line"><span class="lineno">  161</span>            <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unit <span class="keywordflow">in</span> leader.<a class="code hl_variable" href="class_group_leader.html#a9ed1939ca322e7b2c1038adaadfaca28">units</a>)</div>
+<div class="line"><span class="lineno">  162</span>            {</div>
+<div class="line"><span class="lineno">  163</span>                unit.<a class="code hl_function" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69">SetSelectedVisible</a>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  164</span>            }</div>
+<div class="line"><span class="lineno">  165</span>        }</div>
+<div class="line"><span class="lineno">  166</span> </div>
+<div class="line"><span class="lineno">  167</span>        <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Clear();</div>
+<div class="line"><span class="lineno">  168</span>    }</div>
+<div class="ttc" id="aclass_base_unit_html"><div class="ttname"><a href="class_base_unit.html">BaseUnit</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00006">BaseUnit.cs:7</a></div></div>
+<div class="ttc" id="aclass_base_unit_html_a01b7cb41c2be087426e622fa4e57fc69"><div class="ttname"><a href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69">BaseUnit.SetSelectedVisible</a></div><div class="ttdeci">void SetSelectedVisible(bool t_visible)</div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00163">BaseUnit.cs:163</a></div></div>
+<div class="ttc" id="aclass_group_leader_html"><div class="ttname"><a href="class_group_leader.html">GroupLeader</a></div><div class="ttdoc">Adapted from EezehDev Coordinated Formations: https://github.com/EezehDev/AI-Formations</div><div class="ttdef"><b>Definition:</b> <a href="_group_leader_8cs_source.html#l00011">GroupLeader.cs:12</a></div></div>
+<div class="ttc" id="aclass_group_leader_html_a9ed1939ca322e7b2c1038adaadfaca28"><div class="ttname"><a href="class_group_leader.html#a9ed1939ca322e7b2c1038adaadfaca28">GroupLeader.units</a></div><div class="ttdeci">List&lt; BaseUnit &gt; units</div><div class="ttdef"><b>Definition:</b> <a href="_group_leader_8cs_source.html#l00017">GroupLeader.cs:17</a></div></div>
+<div class="ttc" id="aclass_selection_html_a0ef5aeac1d3a5d302e60d8891e32028b"><div class="ttname"><a href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">Selection.m_unitManager</a></div><div class="ttdeci">UnitManager m_unitManager</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00008">Selection.cs:8</a></div></div>
+<div class="ttc" id="aclass_unit_manager_html_a41ed6c79982363c306738d9fcaf26c14"><div class="ttname"><a href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">UnitManager.m_selectedUnits</a></div><div class="ttdeci">List&lt; BaseUnit &gt; m_selectedUnits</div><div class="ttdef"><b>Definition:</b> <a href="_unit_manager_8cs_source.html#l00007">UnitManager.cs:7</a></div></div>
+<div class="ttc" id="aclass_unit_manager_html_aaea901c23ae0ae6a8903c36f3eb6fb0b"><div class="ttname"><a href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">UnitManager.m_selectedGroupLeaders</a></div><div class="ttdeci">List&lt; GroupLeader &gt; m_selectedGroupLeaders</div><div class="ttdef"><b>Definition:</b> <a href="_unit_manager_8cs_source.html#l00008">UnitManager.cs:8</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_selection_a129eaf19e641d6a1bcf380fc873c183f_cgraph.png" border="0" usemap="#aclass_selection_a129eaf19e641d6a1bcf380fc873c183f_cgraph" alt=""/></div>
+<map name="aclass_selection_a129eaf19e641d6a1bcf380fc873c183f_cgraph" id="aclass_selection_a129eaf19e641d6a1bcf380fc873c183f_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,169,31"/>
+<area shape="rect" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69" title=" " alt="" coords="217,5,407,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_selection_a129eaf19e641d6a1bcf380fc873c183f_icgraph.png" border="0" usemap="#aclass_selection_a129eaf19e641d6a1bcf380fc873c183f_icgraph" alt=""/></div>
+<map name="aclass_selection_a129eaf19e641d6a1bcf380fc873c183f_icgraph" id="aclass_selection_a129eaf19e641d6a1bcf380fc873c183f_icgraph">
+<area shape="rect" title=" " alt="" coords="407,5,571,31"/>
+<area shape="rect" href="class_selection.html#a5d24db948b630a237b811f4734cbe868" title=" " alt="" coords="212,5,359,31"/>
+<area shape="rect" href="class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,5,164,31"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a1fd845df495405452cda91ff8cea543d" name="a1fd845df495405452cda91ff8cea543d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1fd845df495405452cda91ff8cea543d">&#9670;&#160;</a></span>GroupSelection()</h2>
 
@@ -146,10 +252,134 @@ Protected Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00170">170</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>        <span class="comment">// Only execute when we have a selection</span></div>
+<div class="line"><span class="lineno">  173</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Count == 0 &amp;&amp; <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Count == 0)</div>
+<div class="line"><span class="lineno">  174</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordtype">bool</span> newLeader = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  177</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Count == 0 || <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Count &gt;= 2)</div>
+<div class="line"><span class="lineno">  178</span>            newLeader = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  179</span> </div>
+<div class="line"><span class="lineno">  180</span>        <span class="comment">// Set invalid index</span></div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordtype">int</span> freeIndex = -1;</div>
+<div class="line"><span class="lineno">  182</span> </div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">if</span> (newLeader)</div>
+<div class="line"><span class="lineno">  185</span>        {</div>
+<div class="line"><span class="lineno">  186</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> index = 0; index &lt; <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30">groups</a>.Length; index++)</div>
+<div class="line"><span class="lineno">  187</span>            {</div>
+<div class="line"><span class="lineno">  188</span>                <span class="comment">// Get the first free index</span></div>
+<div class="line"><span class="lineno">  189</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30">groups</a>[index] == <span class="keyword">false</span>)</div>
+<div class="line"><span class="lineno">  190</span>                {</div>
+<div class="line"><span class="lineno">  191</span>                    freeIndex = index;</div>
+<div class="line"><span class="lineno">  192</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  193</span>                }</div>
+<div class="line"><span class="lineno">  194</span>            }</div>
+<div class="line"><span class="lineno">  195</span>        }</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  197</span>        {</div>
+<div class="line"><span class="lineno">  198</span>            freeIndex = <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>[0].groupID;</div>
+<div class="line"><span class="lineno">  199</span>        }</div>
+<div class="line"><span class="lineno">  200</span>        <span class="comment">// Do not execute if we don&#39;t have a free index</span></div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordflow">if</span> (freeIndex == -1)</div>
+<div class="line"><span class="lineno">  202</span>        {</div>
+<div class="line"><span class="lineno">  203</span>            Debug.LogError(<span class="stringliteral">&quot;Group limit reached.&quot;</span>);</div>
+<div class="line"><span class="lineno">  204</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  205</span>        }</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>        <span class="comment">// Set minimum and maximum to opposite values</span></div>
+<div class="line"><span class="lineno">  208</span>        Vector3 minimum = <span class="keyword">new</span> Vector3(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity);</div>
+<div class="line"><span class="lineno">  209</span>        Vector3 maximum = <span class="keyword">new</span> Vector3(-Mathf.Infinity, -Mathf.Infinity, -Mathf.Infinity);</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>        <span class="comment">// Loop over all units</span></div>
+<div class="line"><span class="lineno">  212</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unit <span class="keywordflow">in</span> <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>)</div>
+<div class="line"><span class="lineno">  213</span>        {</div>
+<div class="line"><span class="lineno">  214</span>            Vector3 unitPosition = unit.transform.position;</div>
+<div class="line"><span class="lineno">  215</span> </div>
+<div class="line"><span class="lineno">  216</span>            <span class="keywordflow">if</span> (unitPosition.x &lt; minimum.x)</div>
+<div class="line"><span class="lineno">  217</span>                minimum.x = unitPosition.x;</div>
+<div class="line"><span class="lineno">  218</span>            <span class="keywordflow">if</span> (unitPosition.x &gt; maximum.x)</div>
+<div class="line"><span class="lineno">  219</span>                maximum.x = unitPosition.x;</div>
+<div class="line"><span class="lineno">  220</span> </div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordflow">if</span> (unitPosition.y &lt; minimum.y)</div>
+<div class="line"><span class="lineno">  222</span>                minimum.y = unitPosition.y;</div>
+<div class="line"><span class="lineno">  223</span>            <span class="keywordflow">if</span> (unitPosition.y &gt; maximum.y)</div>
+<div class="line"><span class="lineno">  224</span>                maximum.y = unitPosition.y;</div>
+<div class="line"><span class="lineno">  225</span> </div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">if</span> (unitPosition.z &lt; minimum.z)</div>
+<div class="line"><span class="lineno">  227</span>                minimum.z = unitPosition.z;</div>
+<div class="line"><span class="lineno">  228</span>            <span class="keywordflow">if</span> (unitPosition.z &gt; maximum.z)</div>
+<div class="line"><span class="lineno">  229</span>                maximum.z = unitPosition.z;</div>
+<div class="line"><span class="lineno">  230</span>        }</div>
+<div class="line"><span class="lineno">  231</span> </div>
+<div class="line"><span class="lineno">  232</span>        Vector3 middle = (minimum + maximum) / 2f;</div>
+<div class="line"><span class="lineno">  233</span> </div>
+<div class="line"><span class="lineno">  234</span>        <a class="code hl_class" href="class_group_leader.html">GroupLeader</a> leader;</div>
+<div class="line"><span class="lineno">  235</span>        <span class="keywordflow">if</span> (newLeader)</div>
+<div class="line"><span class="lineno">  236</span>        {</div>
+<div class="line"><span class="lineno">  237</span>            <span class="comment">// Instantiate a leader in middle of furthest units</span></div>
+<div class="line"><span class="lineno">  238</span>            GameObject go = Instantiate(<a class="code hl_variable" href="class_selection.html#a909f76da31e5eab07f29c232be40ca13">m_GroupLeaderPrefab</a>, middle, Quaternion.identity);</div>
+<div class="line"><span class="lineno">  239</span>            leader = go.GetComponent&lt;<a class="code hl_class" href="class_group_leader.html">GroupLeader</a>&gt;();</div>
+<div class="line"><span class="lineno">  240</span> </div>
+<div class="line"><span class="lineno">  241</span>            <span class="comment">// Assign group ID</span></div>
+<div class="line"><span class="lineno">  242</span>            leader.groupID = freeIndex;</div>
+<div class="line"><span class="lineno">  243</span>            <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30">groups</a>[freeIndex] = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  244</span>        }</div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  246</span>        {</div>
+<div class="line"><span class="lineno">  247</span>            leader = <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>[0];</div>
+<div class="line"><span class="lineno">  248</span>            <span class="comment">//leader.SetLocation(middle);</span></div>
+<div class="line"><span class="lineno">  249</span>            <span class="comment">//leader.units.Clear();</span></div>
+<div class="line"><span class="lineno">  250</span>        }</div>
+<div class="line"><span class="lineno">  251</span> </div>
+<div class="line"><span class="lineno">  252</span>        <span class="comment">// Loop over all units</span></div>
+<div class="line"><span class="lineno">  253</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unit <span class="keywordflow">in</span> <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>)</div>
+<div class="line"><span class="lineno">  254</span>        {</div>
+<div class="line"><span class="lineno">  255</span>            <span class="comment">// Add to leader list of units, set unit leader and material to group color</span></div>
+<div class="line"><span class="lineno">  256</span>            leader.<a class="code hl_variable" href="class_group_leader.html#a9ed1939ca322e7b2c1038adaadfaca28">units</a>.Add(unit);</div>
+<div class="line"><span class="lineno">  257</span>            unit.<a class="code hl_function" href="class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b">AssignLeader</a>(leader);</div>
+<div class="line"><span class="lineno">  258</span>        }</div>
+<div class="line"><span class="lineno">  259</span> </div>
+<div class="line"><span class="lineno">  260</span> </div>
+<div class="line"><span class="lineno">  261</span>        leader.<a class="code hl_function" href="class_group_leader.html#ae39ef3c1f8e4b7a9676b72e491203354">SetFormation</a>(<a class="code hl_variable" href="class_selection.html#acf3163ca46d826b099a7584beb4cc243">m_controller</a>.<a class="code hl_function" href="class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46">GetCurrentFormation</a>());</div>
+<div class="line"><span class="lineno">  262</span> </div>
+<div class="line"><span class="lineno">  263</span>        <span class="keywordflow">if</span> (newLeader)</div>
+<div class="line"><span class="lineno">  264</span>        {</div>
+<div class="line"><span class="lineno">  265</span>            <span class="comment">// Add leader to selected leaders</span></div>
+<div class="line"><span class="lineno">  266</span>            <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Add(leader);</div>
+<div class="line"><span class="lineno">  267</span>        }</div>
+<div class="line"><span class="lineno">  268</span> </div>
+<div class="line"><span class="lineno">  269</span>        <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Clear();</div>
+<div class="line"><span class="lineno">  270</span>    }</div>
+<div class="ttc" id="aclass_base_unit_html_a00e0b72a818116d6ca14ffec46e8d69b"><div class="ttname"><a href="class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b">BaseUnit.AssignLeader</a></div><div class="ttdeci">void AssignLeader(GroupLeader t_leader)</div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00132">BaseUnit.cs:132</a></div></div>
+<div class="ttc" id="aclass_group_leader_html_ae39ef3c1f8e4b7a9676b72e491203354"><div class="ttname"><a href="class_group_leader.html#ae39ef3c1f8e4b7a9676b72e491203354">GroupLeader.SetFormation</a></div><div class="ttdeci">void SetFormation(Formations t_formation)</div><div class="ttdef"><b>Definition:</b> <a href="_group_leader_8cs_source.html#l00127">GroupLeader.cs:127</a></div></div>
+<div class="ttc" id="aclass_r_t_s_game_controller_html_a21338ade1d9507648d239ba534541a46"><div class="ttname"><a href="class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46">RTSGameController.GetCurrentFormation</a></div><div class="ttdeci">Formations GetCurrentFormation()</div><div class="ttdef"><b>Definition:</b> <a href="_r_t_s_game_controller_8cs_source.html#l00168">RTSGameController.cs:168</a></div></div>
+<div class="ttc" id="aclass_selection_html_a909f76da31e5eab07f29c232be40ca13"><div class="ttname"><a href="class_selection.html#a909f76da31e5eab07f29c232be40ca13">Selection.m_GroupLeaderPrefab</a></div><div class="ttdeci">GameObject m_GroupLeaderPrefab</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00011">Selection.cs:11</a></div></div>
+<div class="ttc" id="aclass_selection_html_acf3163ca46d826b099a7584beb4cc243"><div class="ttname"><a href="class_selection.html#acf3163ca46d826b099a7584beb4cc243">Selection.m_controller</a></div><div class="ttdeci">RTSGameController m_controller</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00013">Selection.cs:13</a></div></div>
+<div class="ttc" id="aclass_unit_manager_html_a1665d7c36c29ebabd3fd92de409e4f30"><div class="ttname"><a href="class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30">UnitManager.groups</a></div><div class="ttdeci">bool[] groups</div><div class="ttdef"><b>Definition:</b> <a href="_unit_manager_8cs_source.html#l00012">UnitManager.cs:12</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_selection_a1fd845df495405452cda91ff8cea543d_cgraph.png" border="0" usemap="#aclass_selection_a1fd845df495405452cda91ff8cea543d_cgraph" alt=""/></div>
+<map name="aclass_selection_a1fd845df495405452cda91ff8cea543d_cgraph" id="aclass_selection_a1fd845df495405452cda91ff8cea543d_cgraph">
+<area shape="rect" title=" " alt="" coords="5,63,175,88"/>
+<area shape="rect" href="class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b" title=" " alt="" coords="245,5,404,31"/>
+<area shape="rect" href="class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46" title=" " alt="" coords="223,55,427,95"/>
+<area shape="rect" href="class_group_leader.html#ae39ef3c1f8e4b7a9676b72e491203354" title=" " alt="" coords="235,120,414,145"/>
+<area shape="rect" href="class_group_leader.html#a0b68f07858de9d6574628c0a6674ed38" title=" " alt="" coords="475,120,665,145"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_selection_a1fd845df495405452cda91ff8cea543d_icgraph.png" border="0" usemap="#aclass_selection_a1fd845df495405452cda91ff8cea543d_icgraph" alt=""/></div>
+<map name="aclass_selection_a1fd845df495405452cda91ff8cea543d_icgraph" id="aclass_selection_a1fd845df495405452cda91ff8cea543d_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,381,31"/>
+<area shape="rect" href="class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,5,164,31"/>
+</map>
 </div>
 
 </div>
@@ -177,10 +407,44 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00129">129</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>        <span class="comment">// Loop over all agents</span></div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unit <span class="keywordflow">in</span> <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>)</div>
+<div class="line"><span class="lineno">  133</span>        {</div>
+<div class="line"><span class="lineno">  134</span>            <span class="comment">// Set a new target</span></div>
+<div class="line"><span class="lineno">  135</span>            unit.<a class="code hl_function" href="class_base_unit.html#a5444c924c7be68b4d0ee5ba3396219f4">SetTargetPosition</a>(target);</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+<div class="line"><span class="lineno">  137</span> </div>
+<div class="line"><span class="lineno">  138</span>        <span class="comment">// Loop over all leaders</span></div>
+<div class="line"><span class="lineno">  139</span>        <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_group_leader.html">GroupLeader</a> leader <span class="keywordflow">in</span> <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>)</div>
+<div class="line"><span class="lineno">  140</span>        {</div>
+<div class="line"><span class="lineno">  141</span>            <span class="comment">// Set a new target</span></div>
+<div class="line"><span class="lineno">  142</span>            leader.<a class="code hl_function" href="class_group_leader.html#a54e85d2941924c0c4c77032829f8d7f3">SetTarget</a>(target);</div>
+<div class="line"><span class="lineno">  143</span>        }</div>
+<div class="line"><span class="lineno">  144</span>    }</div>
+<div class="ttc" id="aclass_base_unit_html_a5444c924c7be68b4d0ee5ba3396219f4"><div class="ttname"><a href="class_base_unit.html#a5444c924c7be68b4d0ee5ba3396219f4">BaseUnit.SetTargetPosition</a></div><div class="ttdeci">void SetTargetPosition(Vector3 t_position)</div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00110">BaseUnit.cs:110</a></div></div>
+<div class="ttc" id="aclass_group_leader_html_a54e85d2941924c0c4c77032829f8d7f3"><div class="ttname"><a href="class_group_leader.html#a54e85d2941924c0c4c77032829f8d7f3">GroupLeader.SetTarget</a></div><div class="ttdeci">void SetTarget(Vector3 target)</div><div class="ttdef"><b>Definition:</b> <a href="_group_leader_8cs_source.html#l00122">GroupLeader.cs:122</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_selection_ad1e91cc8fc1d6f1d658052162e474760_cgraph.png" border="0" usemap="#aclass_selection_ad1e91cc8fc1d6f1d658052162e474760_cgraph" alt=""/></div>
+<map name="aclass_selection_ad1e91cc8fc1d6f1d658052162e474760_cgraph" id="aclass_selection_ad1e91cc8fc1d6f1d658052162e474760_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,169,56"/>
+<area shape="rect" href="class_group_leader.html#a54e85d2941924c0c4c77032829f8d7f3" title=" " alt="" coords="231,5,387,31"/>
+<area shape="rect" href="class_base_unit.html#a5444c924c7be68b4d0ee5ba3396219f4" title=" " alt="" coords="217,55,400,80"/>
+<area shape="rect" href="class_base_unit.html#a830123965148423ef24de24bec716137" title=" " alt="" coords="448,55,628,80"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_selection_ad1e91cc8fc1d6f1d658052162e474760_icgraph.png" border="0" usemap="#aclass_selection_ad1e91cc8fc1d6f1d658052162e474760_icgraph" alt=""/></div>
+<map name="aclass_selection_ad1e91cc8fc1d6f1d658052162e474760_icgraph" id="aclass_selection_ad1e91cc8fc1d6f1d658052162e474760_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,376,31"/>
+<area shape="rect" href="class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,5,164,31"/>
+</map>
 </div>
 
 </div>
@@ -207,15 +471,169 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00075">75</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   76</span>    {</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>        Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(<a class="code hl_variable" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a>, <a class="code hl_class" href="class_utility.html">Utility</a>.<a class="code hl_function" href="class_utility.html#ae371e10730332ffe8c695c8401effd37">ReturnMousePosition2D</a>());</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>        <span class="keywordflow">if</span> (collider2DArray.Length &gt; 0)</div>
+<div class="line"><span class="lineno">   81</span>        {</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>            <span class="comment">//foreach (BaseUnit unitRTS in m_unitManager.m_selectedUnits)</span></div>
+<div class="line"><span class="lineno">   84</span>            <span class="comment">//{</span></div>
+<div class="line"><span class="lineno">   85</span>            <span class="comment">//    unitRTS.SetSelectedVisible(false);</span></div>
+<div class="line"><span class="lineno">   86</span>            <span class="comment">//}</span></div>
+<div class="line"><span class="lineno">   87</span>            <span class="keywordflow">foreach</span> (Collider2D collider2D <span class="keywordflow">in</span> collider2DArray)</div>
+<div class="line"><span class="lineno">   88</span>            {</div>
+<div class="line"><span class="lineno">   89</span>                <a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unitRTS = collider2D.GetComponent&lt;<a class="code hl_class" href="class_base_unit.html">BaseUnit</a>&gt;();</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>                <span class="keywordflow">if</span> (unitRTS == <span class="keyword">null</span> || unitRTS.gameObject.tag != <a class="code hl_variable" href="class_selection.html#acf3163ca46d826b099a7584beb4cc243">m_controller</a>.<a class="code hl_variable" href="class_r_t_s_game_controller.html#a8e00b8e77adbe804cebaed4dab418836">m_team</a>.ToString())</div>
+<div class="line"><span class="lineno">   92</span>                {</div>
+<div class="line"><span class="lineno">   93</span>                    <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">   94</span>                }</div>
+<div class="line"><span class="lineno">   95</span> </div>
+<div class="line"><span class="lineno">   96</span>                <a class="code hl_class" href="class_group_leader.html">GroupLeader</a> leader = unitRTS.<a class="code hl_function" href="class_base_unit.html#a9cd35c425549c36834a8606c86b15d49">GetLeader</a>();</div>
+<div class="line"><span class="lineno">   97</span>                <span class="comment">//Has no group then keep it loose</span></div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordflow">if</span> (leader == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   99</span>                {</div>
+<div class="line"><span class="lineno">  100</span>                    <span class="keywordflow">if</span> (!<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Contains(unitRTS))</div>
+<div class="line"><span class="lineno">  101</span>                    {</div>
+<div class="line"><span class="lineno">  102</span>                        <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Add(unitRTS);</div>
+<div class="line"><span class="lineno">  103</span>                        unitRTS.<a class="code hl_function" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69">SetSelectedVisible</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  104</span>                    }</div>
+<div class="line"><span class="lineno">  105</span>                }</div>
+<div class="line"><span class="lineno">  106</span>                <span class="comment">//Has a group so get everyone from that group</span></div>
+<div class="line"><span class="lineno">  107</span>                <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  108</span>                {</div>
+<div class="line"><span class="lineno">  109</span>                    <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Contains(leader))</div>
+<div class="line"><span class="lineno">  110</span>                        <span class="keywordflow">continue</span>;</div>
+<div class="line"><span class="lineno">  111</span> </div>
+<div class="line"><span class="lineno">  112</span>                    <span class="keywordflow">foreach</span> (<a class="code hl_class" href="class_base_unit.html">BaseUnit</a> unit <span class="keywordflow">in</span> leader.<a class="code hl_variable" href="class_group_leader.html#a9ed1939ca322e7b2c1038adaadfaca28">units</a>)</div>
+<div class="line"><span class="lineno">  113</span>                    {</div>
+<div class="line"><span class="lineno">  114</span>                        unit.<a class="code hl_function" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69">SetSelectedVisible</a>(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  115</span>                    }</div>
+<div class="line"><span class="lineno">  116</span>                    <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a>.Add(leader);</div>
+<div class="line"><span class="lineno">  117</span>                }</div>
+<div class="line"><span class="lineno">  118</span>            }</div>
+<div class="line"><span class="lineno">  119</span> </div>
+<div class="line"><span class="lineno">  120</span>        }</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  122</span>        {</div>
+<div class="line"><span class="lineno">  123</span>            <a class="code hl_function" href="class_selection.html#a129eaf19e641d6a1bcf380fc873c183f">ClearSelection</a>();</div>
+<div class="line"><span class="lineno">  124</span>        }</div>
+<div class="line"><span class="lineno">  125</span> </div>
+<div class="line"><span class="lineno">  126</span>    }</div>
+<div class="ttc" id="aclass_base_unit_html_a9cd35c425549c36834a8606c86b15d49"><div class="ttname"><a href="class_base_unit.html#a9cd35c425549c36834a8606c86b15d49">BaseUnit.GetLeader</a></div><div class="ttdeci">GroupLeader GetLeader()</div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00127">BaseUnit.cs:127</a></div></div>
+<div class="ttc" id="aclass_r_t_s_game_controller_html_a8e00b8e77adbe804cebaed4dab418836"><div class="ttname"><a href="class_r_t_s_game_controller.html#a8e00b8e77adbe804cebaed4dab418836">RTSGameController.m_team</a></div><div class="ttdeci">Teams m_team</div><div class="ttdef"><b>Definition:</b> <a href="_r_t_s_game_controller_8cs_source.html#l00029">RTSGameController.cs:29</a></div></div>
+<div class="ttc" id="aclass_selection_html_a129eaf19e641d6a1bcf380fc873c183f"><div class="ttname"><a href="class_selection.html#a129eaf19e641d6a1bcf380fc873c183f">Selection.ClearSelection</a></div><div class="ttdeci">void ClearSelection()</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00145">Selection.cs:145</a></div></div>
+<div class="ttc" id="aclass_selection_html_a86399849291d22e74b3e5c0dbcd687eb"><div class="ttname"><a href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">Selection.m_startPosition</a></div><div class="ttdeci">Vector3 m_startPosition</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00009">Selection.cs:9</a></div></div>
+<div class="ttc" id="aclass_utility_html"><div class="ttname"><a href="class_utility.html">Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cs_source.html#l00005">Utility.cs:6</a></div></div>
+<div class="ttc" id="aclass_utility_html_ae371e10730332ffe8c695c8401effd37"><div class="ttname"><a href="class_utility.html#ae371e10730332ffe8c695c8401effd37">Utility.ReturnMousePosition2D</a></div><div class="ttdeci">static Vector3 ReturnMousePosition2D()</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cs_source.html#l00007">Utility.cs:7</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_selection_a5d24db948b630a237b811f4734cbe868_cgraph.png" border="0" usemap="#aclass_selection_a5d24db948b630a237b811f4734cbe868_cgraph" alt=""/></div>
+<map name="aclass_selection_a5d24db948b630a237b811f4734cbe868_cgraph" id="aclass_selection_a5d24db948b630a237b811f4734cbe868_cgraph">
+<area shape="rect" title=" " alt="" coords="5,81,152,107"/>
+<area shape="rect" href="class_selection.html#a129eaf19e641d6a1bcf380fc873c183f" title=" " alt="" coords="217,5,381,31"/>
+<area shape="rect" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69" title=" " alt="" coords="447,31,636,56"/>
+<area shape="rect" href="class_base_unit.html#a9cd35c425549c36834a8606c86b15d49" title=" " alt="" coords="230,107,369,132"/>
+<area shape="rect" href="class_utility.html#ae371e10730332ffe8c695c8401effd37" title=" " alt="" coords="200,156,399,181"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_selection_a5d24db948b630a237b811f4734cbe868_icgraph.png" border="0" usemap="#aclass_selection_a5d24db948b630a237b811f4734cbe868_icgraph" alt=""/></div>
+<map name="aclass_selection_a5d24db948b630a237b811f4734cbe868_icgraph" id="aclass_selection_a5d24db948b630a237b811f4734cbe868_icgraph">
+<area shape="rect" title=" " alt="" coords="212,5,359,31"/>
+<area shape="rect" href="class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,5,164,31"/>
+</map>
 </div>
 
 </div>
 </div>
+<a id="a02fd2feccc176d75f1455e42c74c4f45" name="a02fd2feccc176d75f1455e42c74c4f45"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02fd2feccc176d75f1455e42c74c4f45">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Selection.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00015">15</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a> = GetComponent&lt;UnitManager&gt;();</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="class_selection.html#acf3163ca46d826b099a7584beb4cc243">m_controller</a> = GetComponent&lt;RTSGameController&gt;();</div>
+<div class="line"><span class="lineno">   19</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="acf3163ca46d826b099a7584beb4cc243" name="acf3163ca46d826b099a7584beb4cc243"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3163ca46d826b099a7584beb4cc243">&#9670;&#160;</a></span>m_controller</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_r_t_s_game_controller.html">RTSGameController</a> Selection.m_controller</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00013">13</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+
+</div>
+</div>
+<a id="a909f76da31e5eab07f29c232be40ca13" name="a909f76da31e5eab07f29c232be40ca13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a909f76da31e5eab07f29c232be40ca13">&#9670;&#160;</a></span>m_GroupLeaderPrefab</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject Selection.m_GroupLeaderPrefab</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00011">11</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+
+</div>
+</div>
 <a id="a86399849291d22e74b3e5c0dbcd687eb" name="a86399849291d22e74b3e5c0dbcd687eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a86399849291d22e74b3e5c0dbcd687eb">&#9670;&#160;</a></span>m_startPosition</h2>
 
@@ -235,6 +653,8 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00009">9</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
 
 </div>
 </div>
@@ -258,10 +678,12 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_selection_8cs_source.html#l00008">8</a> of file <a class="el" href="_selection_8cs_source.html">Selection.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>PlayerNBaseScripts/<a class="el" href="_selection_8cs.html">Selection.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/PlayerNBaseScripts/<a class="el" href="_selection_8cs_source.html">Selection.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

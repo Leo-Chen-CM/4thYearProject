@@ -3,13 +3,189 @@
 
 
 Inheritance diagram for Camera\+Movement\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_camera_movement__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Camera\+Movement\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=178pt]{class_camera_movement__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_camera_movement_a3d5bf0407152d0e16efafa655bfc15e9}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_camera_movement_a6d70b582440500fff98506ebd3e9050e}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Vector3 \mbox{\hyperlink{class_camera_movement_a80d9080700d836e23b9b022e3fe99b94}{m\+\_\+direction}}
+\item 
+Vector3 \mbox{\hyperlink{class_camera_movement_ab64c4f708fe6edc2b111991c7c2207a5}{m\+\_\+move\+Dir}}
+\item 
+int \mbox{\hyperlink{class_camera_movement_ad7f11bea51ba2baa934055bfab29d782}{m\+\_\+speed}} = 10
+\item 
+float \mbox{\hyperlink{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}{m\+\_\+field\+Of\+View}}
+\item 
+float \mbox{\hyperlink{class_camera_movement_ad05c04a934451afe0fa2f9aa83d807ab}{m\+\_\+sensitivity}} = 10f
+\item 
+int \mbox{\hyperlink{class_camera_movement_a2d895f1d24b3eb7b97da2b00ac4a7a28}{m\+\_\+min\+Zoom}} = 10
+\item 
+int \mbox{\hyperlink{class_camera_movement_a4380fbd22f78fa4379bd519ab61c48d2}{m\+\_\+max\+Zoom}} = 30
+\item 
+Camera \mbox{\hyperlink{class_camera_movement_af2ee6c572c3fd3c3594a2e2c9495d946}{m\+\_\+camera}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_camera_movement_a3d5bf0407152d0e16efafa655bfc15e9}\label{class_camera_movement_a3d5bf0407152d0e16efafa655bfc15e9}} 
+\index{CameraMovement@{CameraMovement}!Start@{Start}}
+\index{Start@{Start}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Camera\+Movement.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025     \{}
+\DoxyCodeLine{00026         \mbox{\hyperlink{class_camera_movement_af2ee6c572c3fd3c3594a2e2c9495d946}{m\_camera}} = gameObject.GetComponent<Camera>();}
+\DoxyCodeLine{00027         \mbox{\hyperlink{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}{m\_fieldOfView}} = \mbox{\hyperlink{class_camera_movement_af2ee6c572c3fd3c3594a2e2c9495d946}{m\_camera}}.orthographicSize;}
+\DoxyCodeLine{00028     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_camera_movement_a6d70b582440500fff98506ebd3e9050e}\label{class_camera_movement_a6d70b582440500fff98506ebd3e9050e}} 
+\index{CameraMovement@{CameraMovement}!Update@{Update}}
+\index{Update@{Update}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Camera\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00031     \{}
+\DoxyCodeLine{00032         \mbox{\hyperlink{class_camera_movement_a80d9080700d836e23b9b022e3fe99b94}{m\_direction}} = \textcolor{keyword}{new} Vector3(Input.GetAxis(\textcolor{stringliteral}{"{}Horizontal"{}}), Input.GetAxis(\textcolor{stringliteral}{"{}Vertical"{}}), 0f);}
+\DoxyCodeLine{00033 }
+\DoxyCodeLine{00034         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_camera_movement_a80d9080700d836e23b9b022e3fe99b94}{m\_direction}}.magnitude >= 0.1f)}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036             \mbox{\hyperlink{class_camera_movement_ab64c4f708fe6edc2b111991c7c2207a5}{m\_moveDir}} = Quaternion.Euler(0f, transform.eulerAngles.y, 0f) * \mbox{\hyperlink{class_camera_movement_a80d9080700d836e23b9b022e3fe99b94}{m\_direction}};}
+\DoxyCodeLine{00037             transform.position += (m\_moveDir.normalized * \mbox{\hyperlink{class_camera_movement_ad7f11bea51ba2baa934055bfab29d782}{m\_speed}} * Time.deltaTime);}
+\DoxyCodeLine{00038         \}}
+\DoxyCodeLine{00039 }
+\DoxyCodeLine{00040         \mbox{\hyperlink{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}{m\_fieldOfView}} -\/= Input.GetAxis(\textcolor{stringliteral}{"{}Mouse ScrollWheel"{}}) * \mbox{\hyperlink{class_camera_movement_ad05c04a934451afe0fa2f9aa83d807ab}{m\_sensitivity}};}
+\DoxyCodeLine{00041         \mbox{\hyperlink{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}{m\_fieldOfView}} = Mathf.Clamp(\mbox{\hyperlink{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}{m\_fieldOfView}}, \mbox{\hyperlink{class_camera_movement_a2d895f1d24b3eb7b97da2b00ac4a7a28}{m\_minZoom}}, \mbox{\hyperlink{class_camera_movement_a4380fbd22f78fa4379bd519ab61c48d2}{m\_maxZoom}});}
+\DoxyCodeLine{00042         m\_camera.orthographicSize = \mbox{\hyperlink{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}{m\_fieldOfView}};}
+\DoxyCodeLine{00043     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_camera_movement_af2ee6c572c3fd3c3594a2e2c9495d946}\label{class_camera_movement_af2ee6c572c3fd3c3594a2e2c9495d946}} 
+\index{CameraMovement@{CameraMovement}!m\_camera@{m\_camera}}
+\index{m\_camera@{m\_camera}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_camera}{m\_camera}}
+{\footnotesize\ttfamily Camera Camera\+Movement.\+m\+\_\+camera\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_a80d9080700d836e23b9b022e3fe99b94}\label{class_camera_movement_a80d9080700d836e23b9b022e3fe99b94}} 
+\index{CameraMovement@{CameraMovement}!m\_direction@{m\_direction}}
+\index{m\_direction@{m\_direction}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_direction}{m\_direction}}
+{\footnotesize\ttfamily Vector3 Camera\+Movement.\+m\+\_\+direction\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}\label{class_camera_movement_a460b873e20d2142bec4b6bef5e9f7f20}} 
+\index{CameraMovement@{CameraMovement}!m\_fieldOfView@{m\_fieldOfView}}
+\index{m\_fieldOfView@{m\_fieldOfView}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_fieldOfView}{m\_fieldOfView}}
+{\footnotesize\ttfamily float Camera\+Movement.\+m\+\_\+field\+Of\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_a4380fbd22f78fa4379bd519ab61c48d2}\label{class_camera_movement_a4380fbd22f78fa4379bd519ab61c48d2}} 
+\index{CameraMovement@{CameraMovement}!m\_maxZoom@{m\_maxZoom}}
+\index{m\_maxZoom@{m\_maxZoom}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_maxZoom}{m\_maxZoom}}
+{\footnotesize\ttfamily int Camera\+Movement.\+m\+\_\+max\+Zoom = 30\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_a2d895f1d24b3eb7b97da2b00ac4a7a28}\label{class_camera_movement_a2d895f1d24b3eb7b97da2b00ac4a7a28}} 
+\index{CameraMovement@{CameraMovement}!m\_minZoom@{m\_minZoom}}
+\index{m\_minZoom@{m\_minZoom}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_minZoom}{m\_minZoom}}
+{\footnotesize\ttfamily int Camera\+Movement.\+m\+\_\+min\+Zoom = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_ab64c4f708fe6edc2b111991c7c2207a5}\label{class_camera_movement_ab64c4f708fe6edc2b111991c7c2207a5}} 
+\index{CameraMovement@{CameraMovement}!m\_moveDir@{m\_moveDir}}
+\index{m\_moveDir@{m\_moveDir}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_moveDir}{m\_moveDir}}
+{\footnotesize\ttfamily Vector3 Camera\+Movement.\+m\+\_\+move\+Dir\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_ad05c04a934451afe0fa2f9aa83d807ab}\label{class_camera_movement_ad05c04a934451afe0fa2f9aa83d807ab}} 
+\index{CameraMovement@{CameraMovement}!m\_sensitivity@{m\_sensitivity}}
+\index{m\_sensitivity@{m\_sensitivity}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_sensitivity}{m\_sensitivity}}
+{\footnotesize\ttfamily float Camera\+Movement.\+m\+\_\+sensitivity = 10f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_camera_movement_ad7f11bea51ba2baa934055bfab29d782}\label{class_camera_movement_ad7f11bea51ba2baa934055bfab29d782}} 
+\index{CameraMovement@{CameraMovement}!m\_speed@{m\_speed}}
+\index{m\_speed@{m\_speed}!CameraMovement@{CameraMovement}}
+\doxysubsubsection{\texorpdfstring{m\_speed}{m\_speed}}
+{\footnotesize\ttfamily int Camera\+Movement.\+m\+\_\+speed = 10\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_camera_movement_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_camera_movement_8cs_source}{Camera\+Movement.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Player\+NBase\+Scripts/\mbox{\hyperlink{_camera_movement_8cs}{Camera\+Movement.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Player\+NBase\+Scripts/\mbox{\hyperlink{_camera_movement_8cs}{Camera\+Movement.\+cs}}\end{DoxyCompactItemize}

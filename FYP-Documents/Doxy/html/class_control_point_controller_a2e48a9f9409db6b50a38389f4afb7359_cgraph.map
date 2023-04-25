@@ -1,0 +1,10 @@
+<map id="ControlPointController.Start" name="ControlPointController.Start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,109,185,134"/>
+<area shape="rect" id="node2" href="$class_control_point_controller.html#a0e8a3d2a7455c74dcd08ea894e2dab3a" title=" " alt="" coords="233,5,403,45"/>
+<area shape="rect" id="node5" href="$class_control_point_controller.html#ab7128039064f721e1b235de6493ad1dc" title=" " alt="" coords="233,69,403,109"/>
+<area shape="rect" id="node6" href="$class_control_point_controller.html#ae5a3856aae2dd6b5fdacce5a2f78c10f" title=" " alt="" coords="233,133,403,173"/>
+<area shape="rect" id="node7" href="$class_control_point_controller.html#a55b00975caa4ad7a84cf72636ee566eb" title=" " alt="" coords="233,197,403,237"/>
+<area shape="rect" id="node3" href="$class_game_manager.html#a5964d11250b55f52fa6cf70e679d8803" title=" " alt="" coords="451,49,651,74"/>
+<area shape="rect" id="node4" href="$class_control_point_controller.html#ad282b2451f7a48af2b577329d976dfdf" title=" " alt="" coords="699,103,872,143"/>
+<area shape="rect" id="node8" href="$class_game_manager.html#abcc8946199734dd26f829e767d265ac1" title=" " alt="" coords="464,134,637,159"/>
+</map>

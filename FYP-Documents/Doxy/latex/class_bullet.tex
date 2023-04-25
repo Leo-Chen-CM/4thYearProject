@@ -3,13 +3,114 @@
 
 
 Inheritance diagram for Bullet\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{class_bullet__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Bullet\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{class_bullet__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_bullet_a4862c6392cf36c5c20f2ace5b1d8d484}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_bullet_a1b38a4898a82b48238c9dd8ddde46aeb}{On\+Collision\+Enter2D}} (Collision2D collision)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}{m\+\_\+speed}}
+\item 
+Rigidbody2D \mbox{\hyperlink{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}{m\+\_\+rigidbody2D}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_bullet_8cs_source}{Bullet.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bullet_a1b38a4898a82b48238c9dd8ddde46aeb}\label{class_bullet_a1b38a4898a82b48238c9dd8ddde46aeb}} 
+\index{Bullet@{Bullet}!OnCollisionEnter2D@{OnCollisionEnter2D}}
+\index{OnCollisionEnter2D@{OnCollisionEnter2D}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{OnCollisionEnter2D()}{OnCollisionEnter2D()}}
+{\footnotesize\ttfamily void Bullet.\+On\+Collision\+Enter2D (\begin{DoxyParamCaption}\item[{Collision2D}]{collision }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_bullet_8cs_source}{Bullet.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00019     \{}
+\DoxyCodeLine{00020         \textcolor{keywordflow}{if} (collision.gameObject.tag == \textcolor{stringliteral}{"{}Cover"{}} || collision.gameObject.tag == \textcolor{stringliteral}{"{}Wall"{}})}
+\DoxyCodeLine{00021         \{}
+\DoxyCodeLine{00022             Destroy(gameObject);}
+\DoxyCodeLine{00023         \}}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             Destroy(gameObject);}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_bullet_a4862c6392cf36c5c20f2ace5b1d8d484}\label{class_bullet_a4862c6392cf36c5c20f2ace5b1d8d484}} 
+\index{Bullet@{Bullet}!Start@{Start}}
+\index{Start@{Start}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Bullet.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_bullet_8cs_source}{Bullet.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00013     \{}
+\DoxyCodeLine{00014         \mbox{\hyperlink{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}{m\_rigidbody2D}}.velocity= transform.up * \mbox{\hyperlink{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}{m\_speed}};}
+\DoxyCodeLine{00015         Destroy(gameObject, 5f);}
+\DoxyCodeLine{00016     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}\label{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}} 
+\index{Bullet@{Bullet}!m\_rigidbody2D@{m\_rigidbody2D}}
+\index{m\_rigidbody2D@{m\_rigidbody2D}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_rigidbody2D}{m\_rigidbody2D}}
+{\footnotesize\ttfamily Rigidbody2D Bullet.\+m\+\_\+rigidbody2D\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_bullet_8cs_source}{Bullet.\+cs}}.
+
+\mbox{\Hypertarget{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}\label{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}} 
+\index{Bullet@{Bullet}!m\_speed@{m\_speed}}
+\index{m\_speed@{m\_speed}!Bullet@{Bullet}}
+\doxysubsubsection{\texorpdfstring{m\_speed}{m\_speed}}
+{\footnotesize\ttfamily int Bullet.\+m\+\_\+speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_bullet_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_bullet_8cs_source}{Bullet.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Unused/\mbox{\hyperlink{_bullet_8cs}{Bullet.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Unused/\mbox{\hyperlink{_bullet_8cs}{Bullet.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,6 @@
+<map id="BaseUnit.GetLeader" name="BaseUnit.GetLeader">
+<area shape="rect" id="node1" title=" " alt="" coords="433,31,572,56"/>
+<area shape="rect" id="node2" href="$class_n_n_commander_body.html#a2afec130389784c182207a570071c180" title=" " alt="" coords="212,5,385,31"/>
+<area shape="rect" id="node3" href="$class_selection.html#a5d24db948b630a237b811f4734cbe868" title=" " alt="" coords="225,55,372,80"/>
+<area shape="rect" id="node4" href="$class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,55,164,80"/>
+</map>

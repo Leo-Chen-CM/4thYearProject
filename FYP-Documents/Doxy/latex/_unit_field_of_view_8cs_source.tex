@@ -1,0 +1,293 @@
+\hypertarget{_unit_field_of_view_8cs_source}{}\doxysection{Unit\+Field\+Of\+View.\+cs}
+\label{_unit_field_of_view_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/UnitFieldOfView.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/UnitFieldOfView.cs}}
+\mbox{\hyperlink{_unit_field_of_view_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00001}00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00003}00003 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00004}00004 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00005}00005 \textcolor{keyword}{using }static UnityEngine.GraphicsBuffer;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00010}\mbox{\hyperlink{class_unit_field_of_view}{00010}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_unit_field_of_view}{UnitFieldOfView}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00012}\mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{00012}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00013}\mbox{\hyperlink{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}{00013}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}{m\_engagementRanged}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00015}\mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{00015}}     [Range(1, 360)] \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} = 45f;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00017}\mbox{\hyperlink{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}{00017}}     \textcolor{keyword}{public} LayerMask \mbox{\hyperlink{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}{m\_targetLayer}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00018}\mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{00018}}     \textcolor{keyword}{public} LayerMask \mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{m\_obstructionLayer}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00019}\mbox{\hyperlink{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}{00019}}     \textcolor{keyword}{public} LayerMask \mbox{\hyperlink{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}{m\_obstructionOnlyLayer}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00021}00021     [HideInInspector]}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00022}\mbox{\hyperlink{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}{00022}}     \textcolor{keyword}{public} List<Transform> \mbox{\hyperlink{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}{visibleTargets}} = \textcolor{keyword}{new} List<Transform>();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00024}\mbox{\hyperlink{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}{00024}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}{m\_meshResolution}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00025}\mbox{\hyperlink{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}{00025}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}{edgeResolveIterations}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00026}\mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{00026}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{edgeDstThreshold}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00028}\mbox{\hyperlink{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}{00028}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}{maskCutawayDst}} = .1f;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00030}\mbox{\hyperlink{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}{00030}}     \textcolor{keyword}{public} MeshFilter \mbox{\hyperlink{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}{viewMeshFilter}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00031}\mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{00031}}     Mesh \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00032}\mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{00032}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00034}\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{00034}}     \textcolor{keyword}{public} Transform \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00036}\mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{00036}}     \textcolor{keyword}{private} \mbox{\hyperlink{class_unit_shooting}{UnitShooting}} \mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{m\_unitShooting}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00038}\mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{00038}}     List<Collider2D> \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}} = \textcolor{keyword}{new} List<Collider2D>();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00040}00040     \textcolor{comment}{// Start is called before the first frame update}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00041}\mbox{\hyperlink{class_unit_field_of_view_a72da8d225e419b6e764e00cb7719fcf4}{00041}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_unit_field_of_view_a72da8d225e419b6e764e00cb7719fcf4}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00042}00042     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00043}00043         \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}} = \textcolor{keyword}{new} Mesh();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00044}00044         viewMesh.name = \textcolor{stringliteral}{"{}View Mesh"{}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00045}00045         viewMeshFilter.mesh = \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00047}00047         \mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{m\_unitShooting}} = GetComponent<UnitShooting>();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00048}00048         StartCoroutine(\textcolor{stringliteral}{"{}FindTargetsWithDelay"{}}, .1f);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00049}00049     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00051}\mbox{\hyperlink{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}{00051}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}{FindVisibleTargets}}()}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00052}00052     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00053}00053         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(\textcolor{keyword}{new} Vector2(transform.position.x, transform.position.y), \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, \mbox{\hyperlink{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}{m\_targetLayer}});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00054}00054         \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00056}00056         \textcolor{comment}{//m\_targetsInView.AddRange(Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m\_radius, m\_targetLayer));}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00057}00057 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00058}00058         \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} targetsInViewRadius)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00059}00059         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00060}00060             \textcolor{keywordflow}{if} (collider2D.gameObject.tag != gameObject.tag)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00061}00061             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00062}00062                 \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Add(collider2D);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00063}00063             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00064}00064         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00067}00067         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Count > 0)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00068}00068         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00069}00069             \textcolor{keywordtype}{int} length = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Count;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00071}00071             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; i++)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00072}00072             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00073}00073                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].gameObject != gameObject)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00074}00074                 \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00075}00075                     Transform target = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].transform;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00076}00076                     Vector3 dirToTarget = (target.position -\/ transform.position).normalized;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00077}00077                     \textcolor{keywordtype}{float} dstToNewTarget = Vector3.Distance(transform.position, target.position);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00078}00078 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00079}00079                     \textcolor{keywordflow}{if} (Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, \mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{m\_obstructionLayer}}) \&\& dstToNewTarget < \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}})}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00080}00080                     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00081}00081                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00082}00082                         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00083}00083                             \textcolor{keywordtype}{float} currentDstToTarget = Vector3.Distance(transform.position, \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}}.position);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00085}00085                             \textcolor{keywordflow}{if} (dstToNewTarget < currentDstToTarget)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00086}00086                             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00087}00087                                 \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].transform;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00088}00088                                 \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00089}00089                             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00090}00090                         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00091}00091                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00092}00092                         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00093}00093                             \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].transform;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00094}00094                             \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{true};  }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00095}00095                         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00097}00097                     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00098}00098                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00099}00099                     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00100}00100                         \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00101}00101                         \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00102}00102                     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00103}00103                 \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00104}00104             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00105}00105         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00106}00106         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00107}00107         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00108}00108             \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00109}00109             \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00110}00110         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00111}00111         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00112}00112      }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00113}00113     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00114}00114 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00115}00115 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00119}\mbox{\hyperlink{class_unit_field_of_view_a2653f6e4cda86e44e35143f00438cd5c}{00119}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_unit_field_of_view_a2653f6e4cda86e44e35143f00438cd5c}{OnDrawGizmos}}()}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00120}00120     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00121}00121         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00122}00122         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00123}00123             Gizmos.color = Color.green;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00124}00124             Gizmos.DrawLine(transform.position, \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}}.position);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00125}00125         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00126}00126 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00127}00127     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00128}00128 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00129}\mbox{\hyperlink{class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19}{00129}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19}{LateUpdate}}()}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00130}00130     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00131}00131         \mbox{\hyperlink{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}{DrawFieldOfView}}();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00132}00132         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00133}00133         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00134}00134             transform.up = Vector3.Lerp(transform.up, (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}}.position -\/ transform.position), 1);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00135}00135             \mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{m\_unitShooting}}.\mbox{\hyperlink{class_unit_shooting_a5aefa0727af95304f04cbeec44fccfd6}{Shoot}}();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00136}00136         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00137}00137     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00138}00138 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00139}\mbox{\hyperlink{class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1}{00139}}     IEnumerator \mbox{\hyperlink{class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1}{FindTargetsWithDelay}}(\textcolor{keywordtype}{float} delay)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00140}00140     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00141}00141         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00142}00142         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00143}00143             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(delay);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00144}00144             \mbox{\hyperlink{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}{FindVisibleTargets}}();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00145}00145         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00146}00146     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00147}00147 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00151}\mbox{\hyperlink{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}{00151}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}{DrawFieldOfView}}()}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00152}00152     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00153}00153         \textcolor{keywordtype}{int} stepCount = Mathf.RoundToInt(\mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} * \mbox{\hyperlink{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}{m\_meshResolution}});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00154}00154         \textcolor{keywordtype}{float} stepAngleSize = \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} / stepCount;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00155}00155 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00156}00156         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= stepCount; i++)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00157}00157         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00158}00158             \textcolor{keywordtype}{float} angle = transform.eulerAngles.z -\/ \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} / 2 + stepAngleSize * i;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00159}00159             Debug.DrawLine(transform.position, transform.position + \mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{DirFromAngle}}(angle, \textcolor{keyword}{true}) * \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, Color.red);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00160}00160         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00161}00161 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00162}00162         List<Vector3> viewPoints = \textcolor{keyword}{new} List<Vector3>();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00163}00163         \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}} oldViewCast = \textcolor{keyword}{new} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}}();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00164}00164         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= stepCount; i++)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00165}00165         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00166}00166             \textcolor{keywordtype}{float} angle = transform.eulerAngles.z -\/ \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} / 2 + stepAngleSize * i;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00167}00167             \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}} newViewCast = \mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{ViewCast}}(angle);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00168}00168             viewPoints.Add(newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a1b1f2e2109970fc8417591ac72f3bc4c}{point}});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00169}00169             \textcolor{keywordflow}{if} (i > 0)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00170}00170             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00171}00171                 \textcolor{keywordtype}{bool} edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{dst}} -\/ newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{dst}}) > \mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{edgeDstThreshold}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00172}00172                 \textcolor{keywordflow}{if} (oldViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} != newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} || (oldViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} \&\& newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} \&\& edgeDstThresholdExceeded))}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00173}00173                 \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00174}00174                     \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{EdgeInfo}} edge = \mbox{\hyperlink{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}{FindEdge}}(oldViewCast, newViewCast);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00175}00175                     \textcolor{keywordflow}{if} (edge.\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a7b076f7b2b1c053930574052cc754c4a}{pointA}} != Vector3.zero)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00176}00176                     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00177}00177                         viewPoints.Add(edge.\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a7b076f7b2b1c053930574052cc754c4a}{pointA}});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00178}00178                     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00179}00179                     \textcolor{keywordflow}{if} (edge.\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_ac7791791aa813c701adf776d3e15d200}{pointB}} != Vector3.zero)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00180}00180                     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00181}00181                         viewPoints.Add(edge.\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_ac7791791aa813c701adf776d3e15d200}{pointB}});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00182}00182                     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00183}00183                 \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00184}00184             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00185}00185             oldViewCast = newViewCast;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00186}00186         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00187}00187 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00188}00188         \textcolor{keywordtype}{int} vertexCount = viewPoints.Count + 1;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00189}00189         Vector3[] vertices = \textcolor{keyword}{new} Vector3[vertexCount];}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00190}00190         \textcolor{keywordtype}{int}[] triangles = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[(vertexCount -\/ 2) * 3];}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00191}00191 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00192}00192         vertices[0] = Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00193}00193         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vertexCount -\/ 1; i++)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00194}00194         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00195}00195             vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00197}00197             \textcolor{keywordflow}{if} (i < vertexCount -\/ 2)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00198}00198             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00199}00199                 triangles[i * 3] = 0;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00200}00200                 triangles[i * 3 + 1] = i + 1;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00201}00201                 triangles[i * 3 + 2] = i + 2;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00202}00202             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00203}00203         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00205}00205         \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00207}00207         viewMesh.vertices = vertices;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00208}00208         viewMesh.triangles = triangles;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00209}00209         \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}}.RecalculateNormals();}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00210}00210     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00211}00211 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00212}\mbox{\hyperlink{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}{00212}}     \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{EdgeInfo}} \mbox{\hyperlink{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}{FindEdge}}(\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}} minViewCast, \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}} maxViewCast)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00213}00213     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00214}00214         \textcolor{keywordtype}{float} minAngle = minViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_ac7404a74262b6813cd021f6ff5b598cd}{angle}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00215}00215         \textcolor{keywordtype}{float} maxAngle = maxViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_ac7404a74262b6813cd021f6ff5b598cd}{angle}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00216}00216         Vector3 minPoint = Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00217}00217         Vector3 maxPoint = Vector3.zero;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00218}00218 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00219}00219         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}{edgeResolveIterations}}; i++)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00220}00220         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00221}00221             \textcolor{keywordtype}{float} angle = (minAngle + maxAngle) / 2;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00222}00222             \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}} newViewCast = \mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{ViewCast}}(angle);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00224}00224             \textcolor{keywordtype}{bool} edgeDstThresholdExceeded = Mathf.Abs(minViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{dst}} -\/ newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{dst}}) > \mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{edgeDstThreshold}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00225}00225             \textcolor{keywordflow}{if} (newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} == minViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} \&\& !edgeDstThresholdExceeded)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00226}00226             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00227}00227                 minAngle = angle;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00228}00228                 minPoint = newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a1b1f2e2109970fc8417591ac72f3bc4c}{point}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00229}00229             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00230}00230             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00231}00231             \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00232}00232                 maxAngle = angle;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00233}00233                 maxPoint = newViewCast.\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a1b1f2e2109970fc8417591ac72f3bc4c}{point}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00234}00234             \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00235}00235         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00236}00236 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00237}00237         \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{EdgeInfo}}(minPoint, maxPoint);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00238}00238     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00239}00239 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00240}\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{00240}}     \textcolor{keyword}{public} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00241}00241     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00242}\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{00242}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00243}\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a1b1f2e2109970fc8417591ac72f3bc4c}{00243}}         \textcolor{keyword}{public} Vector3 \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a1b1f2e2109970fc8417591ac72f3bc4c}{point}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00244}\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{00244}}         \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{dst}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00245}\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_ac7404a74262b6813cd021f6ff5b598cd}{00245}}         \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_ac7404a74262b6813cd021f6ff5b598cd}{angle}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00246}00246 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00247}\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a9aa81927d6a4181f8e02a1551d1064f1}{00247}}         \textcolor{keyword}{public} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a9aa81927d6a4181f8e02a1551d1064f1}{ViewCastInfo}}(\textcolor{keywordtype}{bool} \_hit, Vector3 \_point, \textcolor{keywordtype}{float} \_dst, \textcolor{keywordtype}{float} \_angle)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00248}00248         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00249}00249             \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a6cfa1f71af0fbf034b4041f45145afcf}{hit}} = \_hit;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00250}00250             \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_a1b1f2e2109970fc8417591ac72f3bc4c}{point}} = \_point;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00251}00251             \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_afa2b40e2fa3f0d40cf1a8fa89f23d86e}{dst}} = \_dst;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00252}00252             \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info_ac7404a74262b6813cd021f6ff5b598cd}{angle}} = \_angle;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00253}00253         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00254}00254     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00255}\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{00255}}     \textcolor{keyword}{public} \textcolor{keyword}{struct }\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{EdgeInfo}}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00256}00256     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00257}\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a7b076f7b2b1c053930574052cc754c4a}{00257}}         \textcolor{keyword}{public} Vector3 \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a7b076f7b2b1c053930574052cc754c4a}{pointA}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00258}\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_ac7791791aa813c701adf776d3e15d200}{00258}}         \textcolor{keyword}{public} Vector3 \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_ac7791791aa813c701adf776d3e15d200}{pointB}};}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00260}\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a3a72ee7736ae4c02e338613635484a35}{00260}}         \textcolor{keyword}{public} \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a3a72ee7736ae4c02e338613635484a35}{EdgeInfo}}(Vector3 \_pointA, Vector3 \_pointB)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00261}00261         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00262}00262             \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_a7b076f7b2b1c053930574052cc754c4a}{pointA}} = \_pointA;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00263}00263             \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info_ac7791791aa813c701adf776d3e15d200}{pointB}} = \_pointB;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00264}00264         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00265}00265     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00266}00266 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00267}\mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{00267}}     \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}} \mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{ViewCast}}(\textcolor{keywordtype}{float} globalAngle)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00268}00268     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00269}00269         Vector3 dir = \mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{DirFromAngle}}(globalAngle, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00270}00270 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00271}00271         \textcolor{comment}{//int combinedMask = m\_targetLayer | m\_obstructionLayer;}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00272}00272 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00273}00273         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, \mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{m\_obstructionLayer}});}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00274}00274 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00275}00275         \textcolor{keywordflow}{if} (hit)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00276}00276         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00277}00277             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}}(\textcolor{keyword}{true}, hit.point, hit.distance, globalAngle);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00278}00278         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00279}00279         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00280}00280         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00281}00281             \textcolor{keywordflow}{return} \textcolor{keyword}{new} \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{ViewCastInfo}}(\textcolor{keyword}{false}, transform.position + dir * \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, globalAngle);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00282}00282         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00283}00283 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00284}00284     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00285}00285 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00286}\mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{00286}}     \textcolor{keyword}{public} Vector3 \mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{DirFromAngle}}(\textcolor{keywordtype}{float} angleInDegrees, \textcolor{keywordtype}{bool} angleIsGlobal)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00287}00287     \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00288}00288         \textcolor{keywordflow}{if} (!angleIsGlobal)}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00289}00289         \{}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00290}00290             angleInDegrees += transform.eulerAngles.z;}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00291}00291         \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00292}00292         \textcolor{keywordflow}{return} \textcolor{keyword}{new} Vector3(Mathf.Sin(-\/angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(-\/angleInDegrees * Mathf.Deg2Rad), 0);}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00293}00293     \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00294}00294 \}}
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00295}00295 }
+\DoxyCodeLine{\Hypertarget{_unit_field_of_view_8cs_source_l00296}00296 }
+
+\end{DoxyCode}

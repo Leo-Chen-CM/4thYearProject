@@ -1,14 +1,20 @@
 var searchData=
 [
-  ['getcolor_0',['GetColor',['../class_control_point_controller.html#a736104b71f044d3a5312633098d87759',1,'ControlPointController']]],
-  ['getcurrentformation_1',['GetCurrentFormation',['../class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46',1,'RTSGameController']]],
-  ['getdata_2',['GetData',['../class_behavior_tree_1_1_node.html#a4173116aa4eda60bf82e562ef2f77655',1,'BehaviorTree::Node']]],
-  ['getinputs_3',['GetInputs',['../class_n_n_commander_body.html#a3f97d0759691e6ace10f2611f1f9d122',1,'NNCommanderBody']]],
-  ['getleader_4',['GetLeader',['../class_base_unit.html#a9cd35c425549c36834a8606c86b15d49',1,'BaseUnit']]],
-  ['getlinepositionlist_5',['GetLinePositionList',['../class_r_t_s_game_controller.html#adad534c012cc53d327b9b4a46e94cc75',1,'RTSGameController']]],
-  ['getmaxgroupcount_6',['GetMaxGroupCount',['../class_unit_manager.html#ae75def4bf292d0162f6aea179875867d',1,'UnitManager']]],
-  ['getprogress_7',['GetProgress',['../class_control_point_controller.html#a0d8497a71a7f1aa9e303eaccf3bdbe9e',1,'ControlPointController']]],
-  ['getteamaffiliation_8',['GetTeamAffiliation',['../class_control_point_controller.html#ad282b2451f7a48af2b577329d976dfdf',1,'ControlPointController']]],
-  ['getunitincontrolpoint_9',['GetUnitInControlPoint',['../class_control_point_trigger.html#a41f331530d6531c280fc3101e90fb391',1,'ControlPointTrigger']]],
-  ['groupselection_10',['GroupSelection',['../class_selection.html#a1fd845df495405452cda91ff8cea543d',1,'Selection']]]
+  ['gatherforces_0',['GatherForces',['../class_finite_state_machine_a_i.html#a570480bf4417ac162f3d2cbf9f105ce2',1,'FiniteStateMachineAI']]],
+  ['generatefunding1_1',['GenerateFunding1',['../class_game_manager.html#a19bd26cc4e0e878c193a42f3dbe19655',1,'GameManager']]],
+  ['generatefunding2_2',['GenerateFunding2',['../class_game_manager.html#a3b41c5a58b2eb8a984e210ced57827f1',1,'GameManager']]],
+  ['generatescore1_3',['GenerateScore1',['../class_game_manager.html#a9a6fcf8f109cf1cfd00a156024d01f31',1,'GameManager']]],
+  ['generatescore2_4',['GenerateScore2',['../class_game_manager.html#a1fba451617ab45e6f68c974cf0972618',1,'GameManager']]],
+  ['getboxformation_5',['GetBoxFormation',['../class_r_t_s_game_controller.html#a8e16a67c14cd86f9bbb6aff2172cdf3d',1,'RTSGameController']]],
+  ['getcolor_6',['GetColor',['../class_control_point_controller.html#a736104b71f044d3a5312633098d87759',1,'ControlPointController']]],
+  ['getcurrentformation_7',['GetCurrentFormation',['../class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46',1,'RTSGameController']]],
+  ['getdata_8',['GetData',['../class_behavior_tree_1_1_node.html#a4173116aa4eda60bf82e562ef2f77655',1,'BehaviorTree::Node']]],
+  ['getinputs_9',['GetInputs',['../class_n_n_commander_body.html#a3f97d0759691e6ace10f2611f1f9d122',1,'NNCommanderBody']]],
+  ['getleader_10',['GetLeader',['../class_base_unit.html#a9cd35c425549c36834a8606c86b15d49',1,'BaseUnit']]],
+  ['getlinepositionlist_11',['GetLinePositionList',['../class_r_t_s_game_controller.html#adad534c012cc53d327b9b4a46e94cc75',1,'RTSGameController']]],
+  ['getmaxgroupcount_12',['GetMaxGroupCount',['../class_unit_manager.html#ae75def4bf292d0162f6aea179875867d',1,'UnitManager']]],
+  ['getprogress_13',['GetProgress',['../class_control_point_controller.html#a0d8497a71a7f1aa9e303eaccf3bdbe9e',1,'ControlPointController']]],
+  ['getteamaffiliation_14',['GetTeamAffiliation',['../class_control_point_controller.html#ad282b2451f7a48af2b577329d976dfdf',1,'ControlPointController']]],
+  ['getunitincontrolpoint_15',['GetUnitInControlPoint',['../class_control_point_trigger.html#a41f331530d6531c280fc3101e90fb391',1,'ControlPointTrigger']]],
+  ['groupselection_16',['GroupSelection',['../class_selection.html#a1fd845df495405452cda91ff8cea543d',1,'Selection']]]
 ];

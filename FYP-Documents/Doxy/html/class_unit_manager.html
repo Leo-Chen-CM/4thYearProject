@@ -92,6 +92,7 @@ $(document).ready(function(){initNavTree('class_unit_manager.html',''); initResi
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-static-attribs">Static Private Attributes</a> &#124;
 <a href="class_unit_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">UnitManager Class Reference</div></div>
 </div><!--header-->
@@ -100,12 +101,20 @@ $(document).ready(function(){initNavTree('class_unit_manager.html',''); initResi
 Inheritance diagram for UnitManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_manager__inherit__graph.png" border="0" usemap="#a_unit_manager_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_unit_manager_inherit__map" id="a_unit_manager_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,93,188,207"/>
+<area shape="rect" title=" " alt="" coords="39,5,154,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for UnitManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_manager__coll__graph.png" border="0" usemap="#a_unit_manager_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_unit_manager_coll__map" id="a_unit_manager_coll__map">
+<area shape="rect" title=" " alt="" coords="5,93,188,207"/>
+<area shape="rect" title=" " alt="" coords="39,5,154,45"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -118,10 +127,18 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a41ed6c79982363c306738d9fcaf26c14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaea901c23ae0ae6a8903c36f3eb6fb0b"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_group_leader.html">GroupLeader</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_manager.html#aaea901c23ae0ae6a8903c36f3eb6fb0b">m_selectedGroupLeaders</a> = new List&lt;<a class="el" href="class_group_leader.html">GroupLeader</a>&gt;()</td></tr>
 <tr class="separator:aaea901c23ae0ae6a8903c36f3eb6fb0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1665d7c36c29ebabd3fd92de409e4f30"><td class="memItemLeft" align="right" valign="top">bool[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30">groups</a> = new bool[maxGroups]</td></tr>
+<tr class="memitem:a1665d7c36c29ebabd3fd92de409e4f30"><td class="memItemLeft" align="right" valign="top">bool[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30">groups</a> = new bool[<a class="el" href="class_unit_manager.html#a45f7502a1aeac66e5f9baaaf612dcbfc">maxGroups</a>]</td></tr>
 <tr class="separator:a1665d7c36c29ebabd3fd92de409e4f30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-static-attribs" name="pri-static-attribs"></a>
+Static Private Attributes</h2></td></tr>
+<tr class="memitem:a45f7502a1aeac66e5f9baaaf612dcbfc"><td class="memItemLeft" align="right" valign="top">const int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_manager.html#a45f7502a1aeac66e5f9baaaf612dcbfc">maxGroups</a> = 9</td></tr>
+<tr class="separator:a45f7502a1aeac66e5f9baaaf612dcbfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_unit_manager_8cs_source.html#l00005">5</a> of file <a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae75def4bf292d0162f6aea179875867d" name="ae75def4bf292d0162f6aea179875867d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae75def4bf292d0162f6aea179875867d">&#9670;&#160;</a></span>GetMaxGroupCount()</h2>
 
@@ -145,6 +162,12 @@ Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_manager_8cs_source.html#l00017">17</a> of file <a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_unit_manager.html#a45f7502a1aeac66e5f9baaaf612dcbfc">maxGroups</a>;</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="ttc" id="aclass_unit_manager_html_a45f7502a1aeac66e5f9baaaf612dcbfc"><div class="ttname"><a href="class_unit_manager.html#a45f7502a1aeac66e5f9baaaf612dcbfc">UnitManager.maxGroups</a></div><div class="ttdeci">const int maxGroups</div><div class="ttdef"><b>Definition:</b> <a href="_unit_manager_8cs_source.html#l00011">UnitManager.cs:11</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -155,10 +178,12 @@ Public Attributes</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool [] UnitManager.groups = new bool[maxGroups]</td>
+          <td class="memname">bool [] UnitManager.groups = new bool[<a class="el" href="class_unit_manager.html#a45f7502a1aeac66e5f9baaaf612dcbfc">maxGroups</a>]</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_manager_8cs_source.html#l00012">12</a> of file <a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a>.</p>
 
 </div>
 </div>
@@ -174,6 +199,8 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_manager_8cs_source.html#l00008">8</a> of file <a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a>.</p>
+
 </div>
 </div>
 <a id="a41ed6c79982363c306738d9fcaf26c14" name="a41ed6c79982363c306738d9fcaf26c14"></a>
@@ -188,10 +215,36 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_manager_8cs_source.html#l00007">7</a> of file <a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a>.</p>
+
+</div>
+</div>
+<a id="a45f7502a1aeac66e5f9baaaf612dcbfc" name="a45f7502a1aeac66e5f9baaaf612dcbfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45f7502a1aeac66e5f9baaaf612dcbfc">&#9670;&#160;</a></span>maxGroups</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const int UnitManager.maxGroups = 9</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_manager_8cs_source.html#l00011">11</a> of file <a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Unit Scripts/<a class="el" href="_unit_manager_8cs.html">UnitManager.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/<a class="el" href="_unit_manager_8cs_source.html">UnitManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

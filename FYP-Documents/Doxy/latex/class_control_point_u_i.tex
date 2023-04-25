@@ -3,18 +3,93 @@
 
 
 Inheritance diagram for Control\+Point\+UI\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_control_point_u_i__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Control\+Point\+UI\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_control_point_u_i__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
 class \mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{Map\+Area\+Image}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_control_point_u_i_aad129fc640c18161f257660d5590550f}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{Map\+Area\+Image}} $>$ \mbox{\hyperlink{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}{m\+\_\+map\+Area\+Images}} = new List$<$\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{Map\+Area\+Image}}$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_control_point_u_i_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_control_point_u_i_8cs_source}{Control\+Point\+UI.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_control_point_u_i_aad129fc640c18161f257660d5590550f}\label{class_control_point_u_i_aad129fc640c18161f257660d5590550f}} 
+\index{ControlPointUI@{ControlPointUI}!Update@{Update}}
+\index{Update@{Update}!ControlPointUI@{ControlPointUI}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Control\+Point\+UI.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_u_i_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_control_point_u_i_8cs_source}{Control\+Point\+UI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020     \{}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{foreach} (MapAreaImage mapAreaImage \textcolor{keywordflow}{in} \mbox{\hyperlink{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}{m\_mapAreaImages}})}
+\DoxyCodeLine{00022         \{}
+\DoxyCodeLine{00023             mapAreaImage.m\_progressImage.fillAmount = mapAreaImage.m\_capturePoint.GetProgress();}
+\DoxyCodeLine{00024             \textcolor{comment}{//mapAreaImage.m\_progressImage.fillAmount = 0;}}
+\DoxyCodeLine{00025             mapAreaImage.m\_progressImage.color = mapAreaImage.m\_capturePoint.GetColor();}
+\DoxyCodeLine{00026         \}}
+\DoxyCodeLine{00027     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_u_i_aad129fc640c18161f257660d5590550f_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}\label{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}} 
+\index{ControlPointUI@{ControlPointUI}!m\_mapAreaImages@{m\_mapAreaImages}}
+\index{m\_mapAreaImages@{m\_mapAreaImages}!ControlPointUI@{ControlPointUI}}
+\doxysubsubsection{\texorpdfstring{m\_mapAreaImages}{m\_mapAreaImages}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{Map\+Area\+Image}}$>$ Control\+Point\+UI.\+m\+\_\+map\+Area\+Images = new List$<$\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{Map\+Area\+Image}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_u_i_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_control_point_u_i_8cs_source}{Control\+Point\+UI.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Map Scripts/\mbox{\hyperlink{_control_point_u_i_8cs}{Control\+Point\+UI.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Map Scripts/\mbox{\hyperlink{_control_point_u_i_8cs}{Control\+Point\+UI.\+cs}}\end{DoxyCompactItemize}

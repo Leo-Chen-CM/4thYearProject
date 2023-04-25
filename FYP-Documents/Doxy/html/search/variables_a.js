@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['point_0',['point',['../struct_unit_field_of_view_1_1_view_cast_info.html#a1b1f2e2109970fc8417591ac72f3bc4c',1,'UnitFieldOfView::ViewCastInfo']]],
-  ['pointa_1',['pointA',['../struct_unit_field_of_view_1_1_edge_info.html#a7b076f7b2b1c053930574052cc754c4a',1,'UnitFieldOfView::EdgeInfo']]],
-  ['pointb_2',['pointB',['../struct_unit_field_of_view_1_1_edge_info.html#ac7791791aa813c701adf776d3e15d200',1,'UnitFieldOfView::EdgeInfo']]]
+  ['layers_0',['layers',['../class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa',1,'NeuralNetwork.layers()'],['../class_n_n_commander_brain.html#aabf0194d9e4cec75a2a936381235fc15',1,'NNCommanderBrain.layers()']]],
+  ['learningrate_1',['learningRate',['../class_neural_network.html#aed5371f4eca4f4fd5b38d69e33d29bcf',1,'NeuralNetwork']]]
 ];

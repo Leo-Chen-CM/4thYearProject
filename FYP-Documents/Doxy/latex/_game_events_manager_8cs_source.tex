@@ -1,0 +1,49 @@
+\hypertarget{_game_events_manager_8cs_source}{}\doxysection{Game\+Events\+Manager.\+cs}
+\label{_game_events_manager_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Game Management/GameEventsManager.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Game Management/GameEventsManager.cs}}
+\mbox{\hyperlink{_game_events_manager_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00001}00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00003}00003 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00004}00004 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00006}\mbox{\hyperlink{class_game_events_manager}{00006}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_game_events_manager}{GameEventsManager}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00008}\mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{00008}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_game_events_manager}{GameEventsManager}} \mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{instance}};}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00010}\mbox{\hyperlink{class_game_events_manager_a8e24f5a7a46b5933c7173fb16b31a306}{00010}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_events_manager_a8e24f5a7a46b5933c7173fb16b31a306}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00012}00012         \mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{instance}} = \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00013}00013     \}}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00015}\mbox{\hyperlink{class_game_events_manager_a269165ca52b5767bcce21fc3028fedb5}{00015}}     \textcolor{keyword}{public} \textcolor{keyword}{event} Action<int> \mbox{\hyperlink{class_game_events_manager_a269165ca52b5767bcce21fc3028fedb5}{OnControlPointTriggerEnter}};}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00017}\mbox{\hyperlink{class_game_events_manager_a855511803acce0d0b1506e95913c2249}{00017}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_events_manager_a855511803acce0d0b1506e95913c2249}{ControlPointTriggerEnter}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00018}00018     \{}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00019}00019         \mbox{\hyperlink{class_game_events_manager_a269165ca52b5767bcce21fc3028fedb5}{OnControlPointTriggerEnter}}?.Invoke(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00020}00020     \}}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00022}\mbox{\hyperlink{class_game_events_manager_a24746a96a5d165eaa6456ac17ea01a26}{00022}}     \textcolor{keyword}{public} \textcolor{keyword}{event} Action<int> \mbox{\hyperlink{class_game_events_manager_a24746a96a5d165eaa6456ac17ea01a26}{OnControlPointTriggerExit}};}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00024}\mbox{\hyperlink{class_game_events_manager_a73dc5c8eeb8850bc660070510921a724}{00024}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_events_manager_a73dc5c8eeb8850bc660070510921a724}{ControlPointTriggerExit}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00025}00025     \{}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00026}00026         \mbox{\hyperlink{class_game_events_manager_a24746a96a5d165eaa6456ac17ea01a26}{OnControlPointTriggerExit}}?.Invoke(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00029}\mbox{\hyperlink{class_game_events_manager_acc5878bd9b8d2c6819a91e4c0787a993}{00029}}     \textcolor{keyword}{public} \textcolor{keyword}{event} Action<int> \mbox{\hyperlink{class_game_events_manager_acc5878bd9b8d2c6819a91e4c0787a993}{OnControlPointCapture}};}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00031}\mbox{\hyperlink{class_game_events_manager_af80523eb9a911e4222f023d5afa0813a}{00031}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_events_manager_af80523eb9a911e4222f023d5afa0813a}{ControlPointCapture}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00032}00032     \{}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00033}00033         \mbox{\hyperlink{class_game_events_manager_acc5878bd9b8d2c6819a91e4c0787a993}{OnControlPointCapture}}?.Invoke(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00034}00034     \}}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00035}00035 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00036}\mbox{\hyperlink{class_game_events_manager_a1761272121be1b41d7340c76ec4d9426}{00036}}     \textcolor{keyword}{public} \textcolor{keyword}{event} Action<int> \mbox{\hyperlink{class_game_events_manager_a1761272121be1b41d7340c76ec4d9426}{OnControlPointLoss}};}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00038}\mbox{\hyperlink{class_game_events_manager_a8afa09993b2e227921b92f2eb6988c07}{00038}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_events_manager_a8afa09993b2e227921b92f2eb6988c07}{ControlPointLoss}}(\textcolor{keywordtype}{int} \textcolor{keywordtype}{id})}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00039}00039     \{}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00040}00040         \mbox{\hyperlink{class_game_events_manager_a1761272121be1b41d7340c76ec4d9426}{OnControlPointLoss}}?.Invoke(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00041}00041     \}}
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_game_events_manager_8cs_source_l00043}00043 \}}
+
+\end{DoxyCode}

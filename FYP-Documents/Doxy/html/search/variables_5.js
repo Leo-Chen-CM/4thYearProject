@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['groupid_0',['groupID',['../class_group_leader.html#a5cda7a4eb66250d8b73ffef64ec059c4',1,'GroupLeader']]],
-  ['groups_1',['groups',['../class_unit_manager.html#a1665d7c36c29ebabd3fd92de409e4f30',1,'UnitManager']]]
+  ['edgedstthreshold_0',['edgeDstThreshold',['../class_unit_field_of_view.html#a62b23f33c2df6262804a1439fa85bd30',1,'UnitFieldOfView']]],
+  ['edgeresolveiterations_1',['edgeResolveIterations',['../class_unit_field_of_view.html#a1b6475a6d78679eb4b0f5b85fb1174b8',1,'UnitFieldOfView']]]
 ];

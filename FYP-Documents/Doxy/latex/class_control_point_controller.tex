@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Control\+Point\+Controller\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_control_point_controller__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Control\+Point\+Controller\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_control_point_controller__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
@@ -27,6 +39,61 @@ string \mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329
 \item 
 int \mbox{\hyperlink{class_control_point_controller_ad44757d9759a51a931b7004598a64570}{id}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_control_point_controller_a2e48a9f9409db6b50a38389f4afb7359}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_control_point_controller_ab7128039064f721e1b235de6493ad1dc}{On\+Control\+Point\+Enter}} (int t\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_control_point_controller_ae5a3856aae2dd6b5fdacce5a2f78c10f}{On\+Control\+Point\+Exit}} (int t\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_control_point_controller_a0e8a3d2a7455c74dcd08ea894e2dab3a}{On\+Control\+Point\+Capture}} (int t\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_control_point_controller_a55b00975caa4ad7a84cf72636ee566eb}{On\+Control\+Point\+Loss}} (int t\+\_\+id)
+\item 
+void \mbox{\hyperlink{class_control_point_controller_acfa3bd5eade314bc9e83f10bdb0411c3}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_control_point_controller_a5af986726a8b9cbf06defc475b7eb9d4}{Capture}} ()
+\item 
+void \mbox{\hyperlink{class_control_point_controller_aeb42846316735068ef9819eda8ce3ec4}{Contested}} ()
+\item 
+void \mbox{\hyperlink{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9}{Reverting}} ()
+\begin{DoxyCompactList}\small\item\em Two types of reverting captures A\+: Enemy unit is taking the point and then leaves/dies before it\textquotesingle{}s fully captured. Goes back to neutral B\+: Enemy unit is taking an already captured point and then leaves/dies. Reverts capture back to original team  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_control_point_controller_a7ec711e0769f85aa65b3986bf6dd3b2e}{Revert\+Back\+To\+Other\+Team}} ()
+\item 
+void \mbox{\hyperlink{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}{Check\+Whos\+In\+Control\+Point}} ()
+\item 
+void \mbox{\hyperlink{class_control_point_controller_a4e0e2f0c0904d1dbe4132fd85cb69c61}{set\+Color}} (Color t\+\_\+color)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\+\_\+progress}}
+\item 
+float \mbox{\hyperlink{class_control_point_controller_ad5ec28ce7135804c861606055f137f18}{m\+\_\+progress\+Speed}} = 0.\+2f
+\item 
+string \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\+\_\+team\+Affiliation}}
+\item 
+\mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{Capture\+States}} \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\+\_\+capture\+State}}
+\item 
+List$<$ \mbox{\hyperlink{class_base_unit}{Base\+Unit}} $>$ \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\+\_\+unit\+Inside\+Control\+Point\+List}} = new List$<$\mbox{\hyperlink{class_base_unit}{Base\+Unit}}$>$()
+\item 
+\mbox{\hyperlink{class_control_point_trigger}{Control\+Point\+Trigger}} \mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\+\_\+control\+Point\+Trigger}}
+\item 
+bool \mbox{\hyperlink{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}{m\+\_\+previously\+Owned}}
+\item 
+bool \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\+\_\+captured\+Status}}
+\item 
+Color \mbox{\hyperlink{class_control_point_controller_a27f8fa10514e6df66a9614ab525551d2}{m\+\_\+control\+Point\+Color}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
 
 
 \doxysubsection{Member Enumeration Documentation}
@@ -38,27 +105,629 @@ int \mbox{\hyperlink{class_control_point_controller_ad44757d9759a51a931b7004598a
 
 
 
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009         Neutral,}
+\DoxyCodeLine{00010         Capturing,}
+\DoxyCodeLine{00011         Captured,}
+\DoxyCodeLine{00012         \mbox{\hyperlink{class_control_point_controller_aeb42846316735068ef9819eda8ce3ec4}{Contested}},}
+\DoxyCodeLine{00013         \mbox{\hyperlink{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9}{Reverting}},}
+\DoxyCodeLine{00014         RevertingBackToOtherTeam,}
+\DoxyCodeLine{00015     \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_control_point_controller_a5af986726a8b9cbf06defc475b7eb9d4}\label{class_control_point_controller_a5af986726a8b9cbf06defc475b7eb9d4}} 
+\index{ControlPointController@{ControlPointController}!Capture@{Capture}}
+\index{Capture@{Capture}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{Capture()}{Capture()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Capture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00147}{147}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00148     \{}
+\DoxyCodeLine{00149         \mbox{\hyperlink{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}{CheckWhosInControlPoint}}();}
+\DoxyCodeLine{00150 }
+\DoxyCodeLine{00151         \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} += \mbox{\hyperlink{class_control_point_controller_ad5ec28ce7135804c861606055f137f18}{m\_progressSpeed}} * Time.deltaTime;}
+\DoxyCodeLine{00152 }
+\DoxyCodeLine{00153         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} >= 1)}
+\DoxyCodeLine{00154         \{}
+\DoxyCodeLine{00155             \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} = 1;}
+\DoxyCodeLine{00156             \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Captured;}
+\DoxyCodeLine{00157             \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}} = \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].gameObject.tag;}
+\DoxyCodeLine{00158             \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00159             \mbox{\hyperlink{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}{m\_previouslyOwned}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00160             \mbox{\hyperlink{class_game_events_manager}{GameEventsManager}}.\mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{instance}}.\mbox{\hyperlink{class_game_events_manager_af80523eb9a911e4222f023d5afa0813a}{ControlPointCapture}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00161         \}}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163         \textcolor{comment}{//Debug.Log("{}Control point "{} + id + "{} progress: "{} + m\_progress);}}
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a5af986726a8b9cbf06defc475b7eb9d4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a5af986726a8b9cbf06defc475b7eb9d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}\label{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}} 
+\index{ControlPointController@{ControlPointController}!CheckWhosInControlPoint@{CheckWhosInControlPoint}}
+\index{CheckWhosInControlPoint@{CheckWhosInControlPoint}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{CheckWhosInControlPoint()}{CheckWhosInControlPoint()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Check\+Whos\+In\+Control\+Point (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00238}{238}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00239     \{}
+\DoxyCodeLine{00240         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count > 1)}
+\DoxyCodeLine{00241         \{}
+\DoxyCodeLine{00242             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}})}
+\DoxyCodeLine{00243             \{}
+\DoxyCodeLine{00244                 \textcolor{keywordflow}{if} (unit != \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0])}
+\DoxyCodeLine{00245                 \{}
+\DoxyCodeLine{00246                     \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Contested;}
+\DoxyCodeLine{00247                 \}}
+\DoxyCodeLine{00248             \}}
+\DoxyCodeLine{00249         \}}
+\DoxyCodeLine{00250         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count == 1)}
+\DoxyCodeLine{00251         \{}
+\DoxyCodeLine{00252             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].tag == \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}} \&\& \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{00253             \{}
+\DoxyCodeLine{00254                 \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Capturing;}
+\DoxyCodeLine{00255             \}}
+\DoxyCodeLine{00256             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].tag != \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}})}
+\DoxyCodeLine{00257             \{}
+\DoxyCodeLine{00258                 \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Reverting;}
+\DoxyCodeLine{00259                 \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00260             \}}
+\DoxyCodeLine{00261         \}}
+\DoxyCodeLine{00262         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00263         \{}
+\DoxyCodeLine{00264             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count == 0 \&\& \mbox{\hyperlink{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}{m\_previouslyOwned}} == \textcolor{keyword}{true} \&\& \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{00265             \{}
+\DoxyCodeLine{00266                 \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.RevertingBackToOtherTeam;}
+\DoxyCodeLine{00267             \}}
+\DoxyCodeLine{00268             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count == 0 \&\& \mbox{\hyperlink{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}{m\_previouslyOwned}} == \textcolor{keyword}{false} \&\& \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} == \textcolor{keyword}{false})}
+\DoxyCodeLine{00269             \{}
+\DoxyCodeLine{00270                 \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Reverting;}
+\DoxyCodeLine{00271             \}}
+\DoxyCodeLine{00272         \}}
+\DoxyCodeLine{00273     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_aeb42846316735068ef9819eda8ce3ec4}\label{class_control_point_controller_aeb42846316735068ef9819eda8ce3ec4}} 
+\index{ControlPointController@{ControlPointController}!Contested@{Contested}}
+\index{Contested@{Contested}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{Contested()}{Contested()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Contested (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00167}{167}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00168     \{}
+\DoxyCodeLine{00169 }
+\DoxyCodeLine{00170 }
+\DoxyCodeLine{00171         \textcolor{comment}{//Unit 1 continues capturing if Unit 2 dies}}
+\DoxyCodeLine{00172         \textcolor{comment}{//Go back to capturing}}
+\DoxyCodeLine{00173         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count > 1)}
+\DoxyCodeLine{00174         \{}
+\DoxyCodeLine{00175             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count; i++)}
+\DoxyCodeLine{00176             \{}
+\DoxyCodeLine{00177                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].tag == \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[i].tag)}
+\DoxyCodeLine{00178                 \{}
+\DoxyCodeLine{00179                     \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Capturing;}
+\DoxyCodeLine{00180                 \}}
+\DoxyCodeLine{00181             \}}
+\DoxyCodeLine{00182         \}}
+\DoxyCodeLine{00183         \textcolor{comment}{//Unit 2 reverts the capture if Unit 1 dies.}}
+\DoxyCodeLine{00184         \textcolor{comment}{//Unit 2 then starts capturing for their team}}
+\DoxyCodeLine{00185         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00186         \{}
+\DoxyCodeLine{00187             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].tag == \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}})}
+\DoxyCodeLine{00188             \{}
+\DoxyCodeLine{00189                 \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Capturing;}
+\DoxyCodeLine{00190             \}}
+\DoxyCodeLine{00191             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00192             \{}
+\DoxyCodeLine{00193                 \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Reverting;}
+\DoxyCodeLine{00194                 \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00195             \}}
+\DoxyCodeLine{00196         \}}
+\DoxyCodeLine{00197     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_aeb42846316735068ef9819eda8ce3ec4_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_control_point_controller_a736104b71f044d3a5312633098d87759}\label{class_control_point_controller_a736104b71f044d3a5312633098d87759}} 
 \index{ControlPointController@{ControlPointController}!GetColor@{GetColor}}
 \index{GetColor@{GetColor}!ControlPointController@{ControlPointController}}
 \doxysubsubsection{\texorpdfstring{GetColor()}{GetColor()}}
 {\footnotesize\ttfamily Color Control\+Point\+Controller.\+Get\+Color (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00289}{289}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00290     \{}
+\DoxyCodeLine{00291         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_control_point_controller_a27f8fa10514e6df66a9614ab525551d2}{m\_controlPointColor}};}
+\DoxyCodeLine{00292     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a736104b71f044d3a5312633098d87759_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_control_point_controller_a0d8497a71a7f1aa9e303eaccf3bdbe9e}\label{class_control_point_controller_a0d8497a71a7f1aa9e303eaccf3bdbe9e}} 
 \index{ControlPointController@{ControlPointController}!GetProgress@{GetProgress}}
 \index{GetProgress@{GetProgress}!ControlPointController@{ControlPointController}}
 \doxysubsubsection{\texorpdfstring{GetProgress()}{GetProgress()}}
 {\footnotesize\ttfamily float Control\+Point\+Controller.\+Get\+Progress (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00275}{275}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00276     \{}
+\DoxyCodeLine{00277         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}};}
+\DoxyCodeLine{00278     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a0d8497a71a7f1aa9e303eaccf3bdbe9e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}\label{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}} 
 \index{ControlPointController@{ControlPointController}!GetTeamAffiliation@{GetTeamAffiliation}}
 \index{GetTeamAffiliation@{GetTeamAffiliation}!ControlPointController@{ControlPointController}}
 \doxysubsubsection{\texorpdfstring{GetTeamAffiliation()}{GetTeamAffiliation()}}
 {\footnotesize\ttfamily string Control\+Point\+Controller.\+Get\+Team\+Affiliation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00294}{294}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00295     \{}
+\DoxyCodeLine{00296         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}};}
+\DoxyCodeLine{00297     \}}
+
+\end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_a0e8a3d2a7455c74dcd08ea894e2dab3a}\label{class_control_point_controller_a0e8a3d2a7455c74dcd08ea894e2dab3a}} 
+\index{ControlPointController@{ControlPointController}!OnControlPointCapture@{OnControlPointCapture}}
+\index{OnControlPointCapture@{OnControlPointCapture}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{OnControlPointCapture()}{OnControlPointCapture()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+On\+Control\+Point\+Capture (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00063}{63}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00064     \{}
+\DoxyCodeLine{00065         \textcolor{keywordflow}{if} (t\_id == \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00066         \{}
+\DoxyCodeLine{00067             Debug.Log(\textcolor{stringliteral}{"{}Control point "{}} + \textcolor{keywordtype}{id} + \textcolor{stringliteral}{"{} was captured by "{}} + \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}});}
+\DoxyCodeLine{00068             \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_a5964d11250b55f52fa6cf70e679d8803}{PointsCaptured}}();}
+\DoxyCodeLine{00069         \}}
+\DoxyCodeLine{00070     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a0e8a3d2a7455c74dcd08ea894e2dab3a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a0e8a3d2a7455c74dcd08ea894e2dab3a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_ab7128039064f721e1b235de6493ad1dc}\label{class_control_point_controller_ab7128039064f721e1b235de6493ad1dc}} 
+\index{ControlPointController@{ControlPointController}!OnControlPointEnter@{OnControlPointEnter}}
+\index{OnControlPointEnter@{OnControlPointEnter}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{OnControlPointEnter()}{OnControlPointEnter()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+On\+Control\+Point\+Enter (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00049     \{}
+\DoxyCodeLine{00050         \textcolor{comment}{//if (t\_id == id)}}
+\DoxyCodeLine{00051         \textcolor{comment}{//\{}}
+\DoxyCodeLine{00052         \textcolor{comment}{//    Debug.Log("{}Units in control point "{} + id + "{}: "{} + m\_unitInsideControlPointList.Count);}}
+\DoxyCodeLine{00053         \textcolor{comment}{//\}}}
+\DoxyCodeLine{00054     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_ab7128039064f721e1b235de6493ad1dc_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_ae5a3856aae2dd6b5fdacce5a2f78c10f}\label{class_control_point_controller_ae5a3856aae2dd6b5fdacce5a2f78c10f}} 
+\index{ControlPointController@{ControlPointController}!OnControlPointExit@{OnControlPointExit}}
+\index{OnControlPointExit@{OnControlPointExit}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{OnControlPointExit()}{OnControlPointExit()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+On\+Control\+Point\+Exit (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056     \{}
+\DoxyCodeLine{00057         \textcolor{comment}{//if (t\_id == id)}}
+\DoxyCodeLine{00058         \textcolor{comment}{//\{}}
+\DoxyCodeLine{00059         \textcolor{comment}{//    Debug.Log("{}Units in control point "{} + id + "{}: "{} + m\_unitInsideControlPointList.Count);}}
+\DoxyCodeLine{00060         \textcolor{comment}{//\}}}
+\DoxyCodeLine{00061     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_ae5a3856aae2dd6b5fdacce5a2f78c10f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_a55b00975caa4ad7a84cf72636ee566eb}\label{class_control_point_controller_a55b00975caa4ad7a84cf72636ee566eb}} 
+\index{ControlPointController@{ControlPointController}!OnControlPointLoss@{OnControlPointLoss}}
+\index{OnControlPointLoss@{OnControlPointLoss}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{OnControlPointLoss()}{OnControlPointLoss()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+On\+Control\+Point\+Loss (\begin{DoxyParamCaption}\item[{int}]{t\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00071}{71}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00072     \{}
+\DoxyCodeLine{00073         \textcolor{keywordflow}{if} (t\_id == \textcolor{keywordtype}{id})}
+\DoxyCodeLine{00074         \{}
+\DoxyCodeLine{00075             Debug.Log(\textcolor{stringliteral}{"{}Control point "{}} + \textcolor{keywordtype}{id} + \textcolor{stringliteral}{"{} was lost"{}});}
+\DoxyCodeLine{00076             \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_abcc8946199734dd26f829e767d265ac1}{PointsLost}}();}
+\DoxyCodeLine{00077         \}}
+\DoxyCodeLine{00078     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a55b00975caa4ad7a84cf72636ee566eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a55b00975caa4ad7a84cf72636ee566eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_a7ec711e0769f85aa65b3986bf6dd3b2e}\label{class_control_point_controller_a7ec711e0769f85aa65b3986bf6dd3b2e}} 
+\index{ControlPointController@{ControlPointController}!RevertBackToOtherTeam@{RevertBackToOtherTeam}}
+\index{RevertBackToOtherTeam@{RevertBackToOtherTeam}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{RevertBackToOtherTeam()}{RevertBackToOtherTeam()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Revert\+Back\+To\+Other\+Team (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00225}{225}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00226     \{}
+\DoxyCodeLine{00227         \mbox{\hyperlink{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}{CheckWhosInControlPoint}}();}
+\DoxyCodeLine{00228         \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} += \mbox{\hyperlink{class_control_point_controller_ad5ec28ce7135804c861606055f137f18}{m\_progressSpeed}} * Time.deltaTime;}
+\DoxyCodeLine{00229 }
+\DoxyCodeLine{00230         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} >= 1)}
+\DoxyCodeLine{00231         \{}
+\DoxyCodeLine{00232             \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} = 1;}
+\DoxyCodeLine{00233             \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Captured;}
+\DoxyCodeLine{00234             \mbox{\hyperlink{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}{m\_capturedStatus}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00235         \}}
+\DoxyCodeLine{00236     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a7ec711e0769f85aa65b3986bf6dd3b2e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a7ec711e0769f85aa65b3986bf6dd3b2e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9}\label{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9}} 
+\index{ControlPointController@{ControlPointController}!Reverting@{Reverting}}
+\index{Reverting@{Reverting}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{Reverting()}{Reverting()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Reverting (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Two types of reverting captures A\+: Enemy unit is taking the point and then leaves/dies before it\textquotesingle{}s fully captured. Goes back to neutral B\+: Enemy unit is taking an already captured point and then leaves/dies. Reverts capture back to original team  
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00203}{203}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00204     \{}
+\DoxyCodeLine{00205         \mbox{\hyperlink{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}{CheckWhosInControlPoint}}();}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} > 0)}
+\DoxyCodeLine{00208         \{}
+\DoxyCodeLine{00209             \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} -\/= \mbox{\hyperlink{class_control_point_controller_ad5ec28ce7135804c861606055f137f18}{m\_progressSpeed}} * Time.deltaTime;}
+\DoxyCodeLine{00210         \}}
+\DoxyCodeLine{00211 }
+\DoxyCodeLine{00212         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} <= 0)}
+\DoxyCodeLine{00213         \{}
+\DoxyCodeLine{00214             \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} = 0;}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216             \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}} = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00217             \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Neutral;}
+\DoxyCodeLine{00218             \mbox{\hyperlink{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}{m\_previouslyOwned}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00219             \mbox{\hyperlink{class_game_events_manager}{GameEventsManager}}.\mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{instance}}.\mbox{\hyperlink{class_game_events_manager_a8afa09993b2e227921b92f2eb6988c07}{ControlPointLoss}}(\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00220         \}}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222         \textcolor{comment}{//Debug.Log("{}Reverting control point "{} + id + "{} progress: "{} + m\_progress);}}
+\DoxyCodeLine{00223     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_a4e0e2f0c0904d1dbe4132fd85cb69c61}\label{class_control_point_controller_a4e0e2f0c0904d1dbe4132fd85cb69c61}} 
+\index{ControlPointController@{ControlPointController}!setColor@{setColor}}
+\index{setColor@{setColor}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{setColor()}{setColor()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+set\+Color (\begin{DoxyParamCaption}\item[{Color}]{t\+\_\+color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00280}{280}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00281     \{}
+\DoxyCodeLine{00282         Color c = t\_color;}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284         c.a = 0.25f;}
+\DoxyCodeLine{00285 }
+\DoxyCodeLine{00286         \mbox{\hyperlink{class_control_point_controller_a27f8fa10514e6df66a9614ab525551d2}{m\_controlPointColor}} = c;}
+\DoxyCodeLine{00287     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a4e0e2f0c0904d1dbe4132fd85cb69c61_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_a2e48a9f9409db6b50a38389f4afb7359}\label{class_control_point_controller_a2e48a9f9409db6b50a38389f4afb7359}} 
+\index{ControlPointController@{ControlPointController}!Start@{Start}}
+\index{Start@{Start}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00035     \{}
+\DoxyCodeLine{00036         \mbox{\hyperlink{class_control_point_controller_a27f8fa10514e6df66a9614ab525551d2}{m\_controlPointColor}} = Color.white;}
+\DoxyCodeLine{00037         \mbox{\hyperlink{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}{m\_progress}} = 0f;}
+\DoxyCodeLine{00038         \mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\_controlPointTrigger}} = GetComponentInChildren<ControlPointTrigger>();}
+\DoxyCodeLine{00039         \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}} = \textcolor{keywordtype}{string}.Empty;}
+\DoxyCodeLine{00040 }
+\DoxyCodeLine{00041         GameEventsManager.instance.OnControlPointTriggerEnter += \mbox{\hyperlink{class_control_point_controller_ab7128039064f721e1b235de6493ad1dc}{OnControlPointEnter}};}
+\DoxyCodeLine{00042         GameEventsManager.instance.OnControlPointTriggerExit += \mbox{\hyperlink{class_control_point_controller_ae5a3856aae2dd6b5fdacce5a2f78c10f}{OnControlPointExit}};}
+\DoxyCodeLine{00043         \mbox{\hyperlink{class_game_events_manager}{GameEventsManager}}.\mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{instance}}.\mbox{\hyperlink{class_game_events_manager_acc5878bd9b8d2c6819a91e4c0787a993}{OnControlPointCapture}}+= \mbox{\hyperlink{class_control_point_controller_a0e8a3d2a7455c74dcd08ea894e2dab3a}{OnControlPointCapture}};}
+\DoxyCodeLine{00044         \mbox{\hyperlink{class_game_events_manager}{GameEventsManager}}.\mbox{\hyperlink{class_game_events_manager_a1064a13fbcad613c37dd46cd94f38bfd}{instance}}.\mbox{\hyperlink{class_game_events_manager_a1761272121be1b41d7340c76ec4d9426}{OnControlPointLoss}}+= \mbox{\hyperlink{class_control_point_controller_a55b00975caa4ad7a84cf72636ee566eb}{OnControlPointLoss}};}
+\DoxyCodeLine{00045         \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Neutral;}
+\DoxyCodeLine{00046     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_a2e48a9f9409db6b50a38389f4afb7359_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_control_point_controller_acfa3bd5eade314bc9e83f10bdb0411c3}\label{class_control_point_controller_acfa3bd5eade314bc9e83f10bdb0411c3}} 
+\index{ControlPointController@{ControlPointController}!Update@{Update}}
+\index{Update@{Update}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Control\+Point\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00081}{81}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00082     \{}
+\DoxyCodeLine{00083         \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Clear();}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085         \textcolor{comment}{//Checks if any of them are null}}
+\DoxyCodeLine{00086         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\_controlPointTrigger}}.\mbox{\hyperlink{class_control_point_trigger_a41f331530d6531c280fc3101e90fb391}{GetUnitInControlPoint}}().Count; i++)}
+\DoxyCodeLine{00087         \{}
+\DoxyCodeLine{00088             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\_controlPointTrigger}}.\mbox{\hyperlink{class_control_point_trigger_a41f331530d6531c280fc3101e90fb391}{GetUnitInControlPoint}}()[i] == \textcolor{keyword}{null})}
+\DoxyCodeLine{00089             \{}
+\DoxyCodeLine{00090                 \mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\_controlPointTrigger}}.\mbox{\hyperlink{class_control_point_trigger_a41f331530d6531c280fc3101e90fb391}{GetUnitInControlPoint}}().RemoveAt(i);}
+\DoxyCodeLine{00091             \}}
+\DoxyCodeLine{00092         \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\_controlPointTrigger}}.\mbox{\hyperlink{class_control_point_trigger_a41f331530d6531c280fc3101e90fb391}{GetUnitInControlPoint}}().Count > 0)}
+\DoxyCodeLine{00095         \{}
+\DoxyCodeLine{00096             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}{m\_controlPointTrigger}}.\mbox{\hyperlink{class_control_point_trigger_a41f331530d6531c280fc3101e90fb391}{GetUnitInControlPoint}}())}
+\DoxyCodeLine{00097             \{}
+\DoxyCodeLine{00098 }
+\DoxyCodeLine{00099                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Contains(unit))}
+\DoxyCodeLine{00100                 \{}
+\DoxyCodeLine{00101                     \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Add(unit);}
+\DoxyCodeLine{00102                 \}}
+\DoxyCodeLine{00103             \}}
+\DoxyCodeLine{00104         \}}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106 }
+\DoxyCodeLine{00107         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}})}
+\DoxyCodeLine{00108         \{}
+\DoxyCodeLine{00109             \textcolor{keywordflow}{case} \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Neutral:}
+\DoxyCodeLine{00110                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}.Count > 0)}
+\DoxyCodeLine{00111                 \{}
+\DoxyCodeLine{00112                     \mbox{\hyperlink{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}{m\_captureState}} = \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Capturing;}
+\DoxyCodeLine{00113                     \mbox{\hyperlink{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}{m\_teamAffiliation}} = \mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].gameObject.tag;}
+\DoxyCodeLine{00114                     \mbox{\hyperlink{class_control_point_controller_a4e0e2f0c0904d1dbe4132fd85cb69c61}{setColor}}(\mbox{\hyperlink{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}{m\_unitInsideControlPointList}}[0].gameObject.GetComponent<SpriteRenderer>().color);}
+\DoxyCodeLine{00115                 \}}
+\DoxyCodeLine{00116                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00117             \textcolor{keywordflow}{case} \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Capturing:}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119                 \mbox{\hyperlink{class_control_point_controller_a5af986726a8b9cbf06defc475b7eb9d4}{Capture}}();}
+\DoxyCodeLine{00120 }
+\DoxyCodeLine{00121                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00122             \textcolor{keywordflow}{case} \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Captured:}
+\DoxyCodeLine{00123                 \mbox{\hyperlink{class_control_point_controller_aea2419d1590ba1bb6f09632edb4df14d}{CheckWhosInControlPoint}}();}
+\DoxyCodeLine{00124                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00125             \textcolor{keywordflow}{case} \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Contested:}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127                 \mbox{\hyperlink{class_control_point_controller_aeb42846316735068ef9819eda8ce3ec4}{Contested}}();}
+\DoxyCodeLine{00128 }
+\DoxyCodeLine{00129                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00130             \textcolor{keywordflow}{case} \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.Reverting:}
+\DoxyCodeLine{00131 }
+\DoxyCodeLine{00132                 \mbox{\hyperlink{class_control_point_controller_a8f0d654cdba56d6f88b19542d48890f9}{Reverting}}();}
+\DoxyCodeLine{00133 }
+\DoxyCodeLine{00134                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00135             \textcolor{keywordflow}{case} \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{CaptureStates}}.RevertingBackToOtherTeam:}
+\DoxyCodeLine{00136 }
+\DoxyCodeLine{00137                 \mbox{\hyperlink{class_control_point_controller_a7ec711e0769f85aa65b3986bf6dd3b2e}{RevertBackToOtherTeam}}();}
+\DoxyCodeLine{00138 }
+\DoxyCodeLine{00139                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00140             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00143         \}}
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_control_point_controller_acfa3bd5eade314bc9e83f10bdb0411c3_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -70,6 +739,100 @@ Here is the caller graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}\label{class_control_point_controller_ad72e452e202b0e433525ea4b93d10aae}} 
+\index{ControlPointController@{ControlPointController}!m\_capturedStatus@{m\_capturedStatus}}
+\index{m\_capturedStatus@{m\_capturedStatus}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_capturedStatus}{m\_capturedStatus}}
+{\footnotesize\ttfamily bool Control\+Point\+Controller.\+m\+\_\+captured\+Status\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}\label{class_control_point_controller_aba95d57352c7ff1c490a758cb7521788}} 
+\index{ControlPointController@{ControlPointController}!m\_captureState@{m\_captureState}}
+\index{m\_captureState@{m\_captureState}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_captureState}{m\_captureState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_control_point_controller_acaa0700ffa588154ee307995af85094d}{Capture\+States}} Control\+Point\+Controller.\+m\+\_\+capture\+State\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_a27f8fa10514e6df66a9614ab525551d2}\label{class_control_point_controller_a27f8fa10514e6df66a9614ab525551d2}} 
+\index{ControlPointController@{ControlPointController}!m\_controlPointColor@{m\_controlPointColor}}
+\index{m\_controlPointColor@{m\_controlPointColor}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_controlPointColor}{m\_controlPointColor}}
+{\footnotesize\ttfamily Color Control\+Point\+Controller.\+m\+\_\+control\+Point\+Color\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00033}{33}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}\label{class_control_point_controller_a8bbd12b1a11c27d89b0fd3446f0a90c3}} 
+\index{ControlPointController@{ControlPointController}!m\_controlPointTrigger@{m\_controlPointTrigger}}
+\index{m\_controlPointTrigger@{m\_controlPointTrigger}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_controlPointTrigger}{m\_controlPointTrigger}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_control_point_trigger}{Control\+Point\+Trigger}} Control\+Point\+Controller.\+m\+\_\+control\+Point\+Trigger\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00027}{27}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}\label{class_control_point_controller_a80918ab4a9290f2a8c79bee2cf8d809e}} 
+\index{ControlPointController@{ControlPointController}!m\_previouslyOwned@{m\_previouslyOwned}}
+\index{m\_previouslyOwned@{m\_previouslyOwned}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_previouslyOwned}{m\_previouslyOwned}}
+{\footnotesize\ttfamily bool Control\+Point\+Controller.\+m\+\_\+previously\+Owned\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}\label{class_control_point_controller_aaa4c4d599cc4c6b0089f7bac957ff339}} 
+\index{ControlPointController@{ControlPointController}!m\_progress@{m\_progress}}
+\index{m\_progress@{m\_progress}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_progress}{m\_progress}}
+{\footnotesize\ttfamily float Control\+Point\+Controller.\+m\+\_\+progress\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_ad5ec28ce7135804c861606055f137f18}\label{class_control_point_controller_ad5ec28ce7135804c861606055f137f18}} 
+\index{ControlPointController@{ControlPointController}!m\_progressSpeed@{m\_progressSpeed}}
+\index{m\_progressSpeed@{m\_progressSpeed}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_progressSpeed}{m\_progressSpeed}}
+{\footnotesize\ttfamily float Control\+Point\+Controller.\+m\+\_\+progress\+Speed = 0.\+2f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}\label{class_control_point_controller_aa08d5aaa4c9e0820134cebf9a51d9403}} 
+\index{ControlPointController@{ControlPointController}!m\_teamAffiliation@{m\_teamAffiliation}}
+\index{m\_teamAffiliation@{m\_teamAffiliation}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_teamAffiliation}{m\_teamAffiliation}}
+{\footnotesize\ttfamily string Control\+Point\+Controller.\+m\+\_\+team\+Affiliation\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}\label{class_control_point_controller_af5ebcb8df5f72ae117a10b837bb8dfa7}} 
+\index{ControlPointController@{ControlPointController}!m\_unitInsideControlPointList@{m\_unitInsideControlPointList}}
+\index{m\_unitInsideControlPointList@{m\_unitInsideControlPointList}!ControlPointController@{ControlPointController}}
+\doxysubsubsection{\texorpdfstring{m\_unitInsideControlPointList}{m\_unitInsideControlPointList}}
+{\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_base_unit}{Base\+Unit}}$>$ Control\+Point\+Controller.\+m\+\_\+unit\+Inside\+Control\+Point\+List = new List$<$\mbox{\hyperlink{class_base_unit}{Base\+Unit}}$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_control_point_controller_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_control_point_controller_8cs_source}{Control\+Point\+Controller.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Map Scripts/\mbox{\hyperlink{_control_point_controller_8cs}{Control\+Point\+Controller.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Map Scripts/\mbox{\hyperlink{_control_point_controller_8cs}{Control\+Point\+Controller.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,35 @@
+\hypertarget{_bullet_8cs_source}{}\doxysection{Bullet.\+cs}
+\label{_bullet_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unused/Bullet.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unused/Bullet.cs}}
+\mbox{\hyperlink{_bullet_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00005}\mbox{\hyperlink{class_bullet}{00005}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_bullet}{Bullet}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00007}00007     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00008}\mbox{\hyperlink{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}{00008}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00009}00009     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00010}\mbox{\hyperlink{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}{00010}}     Rigidbody2D \mbox{\hyperlink{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}{m\_rigidbody2D}};}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00012}\mbox{\hyperlink{class_bullet_a4862c6392cf36c5c20f2ace5b1d8d484}{00012}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_bullet_a4862c6392cf36c5c20f2ace5b1d8d484}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00013}00013     \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00014}00014         \mbox{\hyperlink{class_bullet_a22ead5c6bfe5794cb880e034a1f56641}{m\_rigidbody2D}}.velocity= transform.up * \mbox{\hyperlink{class_bullet_a89cc2e4854b86c4c02907268f102c3fd}{m\_speed}};}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00015}00015         Destroy(gameObject, 5f);}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00016}00016     \}}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00017}00017 }
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00018}\mbox{\hyperlink{class_bullet_a1b38a4898a82b48238c9dd8ddde46aeb}{00018}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_bullet_a1b38a4898a82b48238c9dd8ddde46aeb}{OnCollisionEnter2D}}(Collision2D collision)}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00019}00019     \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00020}00020         \textcolor{keywordflow}{if} (collision.gameObject.tag == \textcolor{stringliteral}{"{}Cover"{}} || collision.gameObject.tag == \textcolor{stringliteral}{"{}Wall"{}})}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00021}00021         \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00022}00022             Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00023}00023         \}}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00024}00024         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00026}00026             Destroy(gameObject);}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00027}00027         \}}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00028}00028     \}}
+\DoxyCodeLine{\Hypertarget{_bullet_8cs_source_l00029}00029 \}}
+
+\end{DoxyCode}

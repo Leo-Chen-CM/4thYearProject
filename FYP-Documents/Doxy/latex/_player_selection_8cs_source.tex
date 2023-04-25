@@ -1,0 +1,68 @@
+\hypertarget{_player_selection_8cs_source}{}\doxysection{Player\+Selection.\+cs}
+\label{_player_selection_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/PlayerNBaseScripts/PlayerSelection.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/PlayerNBaseScripts/PlayerSelection.cs}}
+\mbox{\hyperlink{_player_selection_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00007}\mbox{\hyperlink{class_player_selection}{00007}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_player_selection}{PlayerSelection}} : \mbox{\hyperlink{class_selection}{Selection}}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00009}00009     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00010}\mbox{\hyperlink{class_player_selection_a0d62f8f3e0eea42284b03c4b6ed5f498}{00010}}     \textcolor{keyword}{private} Transform \mbox{\hyperlink{class_player_selection_a0d62f8f3e0eea42284b03c4b6ed5f498}{m\_selectedAreaTransform}};}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00011}00011 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00012}00012     \textcolor{comment}{// Update is called once per frame}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00013}\mbox{\hyperlink{class_player_selection_a97b2a113b76f6a2aad581f0261b64bcb}{00013}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_player_selection_a97b2a113b76f6a2aad581f0261b64bcb}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00014}00014     \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00015}00015         \textcolor{comment}{//Checks if any units selected has died and removes them from the list}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00016}00016         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Count; i++)}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00017}00017         \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00018}00018             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}[i] == \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00019}00019             \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00020}00020                 \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Remove(\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}[i]);}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00021}00021             \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00022}00022         \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00024}00024         \textcolor{keywordflow}{if} (Input.GetMouseButtonDown(0))}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00026}00026             \mbox{\hyperlink{class_player_selection_a0d62f8f3e0eea42284b03c4b6ed5f498}{m\_selectedAreaTransform}}.gameObject.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00027}00027             \mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}} = \mbox{\hyperlink{class_utility}{Utility}}.\mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}{ReturnMousePosition2D}}();}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00028}00028         \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00030}00030         \textcolor{keywordflow}{if} (Input.GetMouseButton(0))}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00031}00031         \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00033}00033             Vector3 currentMousePosition = \mbox{\hyperlink{class_utility}{Utility}}.\mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}{ReturnMousePosition2D}}();}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00034}00034             Vector3 lowerLeft = \textcolor{keyword}{new} Vector3}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00035}00035                 (}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00036}00036                     Mathf.Min(\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}}.x, currentMousePosition.x),}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00037}00037                     Mathf.Min(\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}}.y, currentMousePosition.y)}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00038}00038                 );}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00040}00040             Vector3 upperRight = \textcolor{keyword}{new} Vector3}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00041}00041                 (}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00042}00042                     Mathf.Max(\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}}.x, currentMousePosition.x),}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00043}00043                     Mathf.Max(\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}}.y, currentMousePosition.y)}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00044}00044                 );}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00045}00045 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00046}00046             m\_selectedAreaTransform.position = lowerLeft;}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00047}00047             m\_selectedAreaTransform.localScale = upperRight -\/ lowerLeft;}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00048}00048         \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00051}00051         \textcolor{keywordflow}{if} (Input.GetMouseButtonUp(0))}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00052}00052         \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00053}00053             \mbox{\hyperlink{class_player_selection_a0d62f8f3e0eea42284b03c4b6ed5f498}{m\_selectedAreaTransform}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00055}00055             \mbox{\hyperlink{class_selection_a5d24db948b630a237b811f4734cbe868}{SelectUnits}}();}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00056}00056             \mbox{\hyperlink{class_selection_a1fd845df495405452cda91ff8cea543d}{GroupSelection}}();}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00060}00060         \textcolor{keywordflow}{if} (Input.GetMouseButtonDown(1))}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00061}00061         \{}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00062}00062             \mbox{\hyperlink{class_selection_ad1e91cc8fc1d6f1d658052162e474760}{MoveSelection}}(\mbox{\hyperlink{class_utility}{Utility}}.\mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}{ReturnMousePosition2D}}());}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00063}00063         \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00064}00064     \}}
+\DoxyCodeLine{\Hypertarget{_player_selection_8cs_source_l00065}00065 \}}
+
+\end{DoxyCode}

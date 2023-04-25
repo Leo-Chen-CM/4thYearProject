@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Behavior\+Tree.\+Parallel\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_behavior_tree_1_1_parallel__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Behavior\+Tree.\+Parallel\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_behavior_tree_1_1_parallel__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +32,13 @@ override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_parallel_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_parallel_8cs_source}{Parallel.\+cs}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_behavior_tree_1_1_parallel_ac03e9034cf3c37496a6cd01694905cc5}\label{class_behavior_tree_1_1_parallel_ac03e9034cf3c37496a6cd01694905cc5}} 
 \index{BehaviorTree.Parallel@{BehaviorTree.Parallel}!Parallel@{Parallel}}
@@ -27,12 +46,30 @@ override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6
 \doxysubsubsection{\texorpdfstring{Parallel()}{Parallel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Behavior\+Tree.\+Parallel.\+Parallel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_parallel_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_parallel_8cs_source}{Parallel.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008 : base() \{ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_parallel_a673ab14600439bc44f43ec7f2698bbd8}\label{class_behavior_tree_1_1_parallel_a673ab14600439bc44f43ec7f2698bbd8}} 
 \index{BehaviorTree.Parallel@{BehaviorTree.Parallel}!Parallel@{Parallel}}
 \index{Parallel@{Parallel}!BehaviorTree.Parallel@{BehaviorTree.Parallel}}
 \doxysubsubsection{\texorpdfstring{Parallel()}{Parallel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Behavior\+Tree.\+Parallel.\+Parallel (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$}]{children }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_parallel_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_parallel_8cs_source}{Parallel.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00009 : base(\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}) \{ \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -46,10 +83,50 @@ override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6
 
 Reimplemented from \mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{Behavior\+Tree.\+Node}}.
 
+
+
+Definition at line \mbox{\hyperlink{_parallel_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_parallel_8cs_source}{Parallel.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00012         \{}
+\DoxyCodeLine{00013             \textcolor{keywordtype}{bool} anyChildIsRunning = \textcolor{keyword}{false};}
+\DoxyCodeLine{00014             \textcolor{keywordtype}{int} nFailedChildren = 0;}
+\DoxyCodeLine{00015             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_behavior_tree_1_1_node_ae767172c49022857cb397e68bc279ff1}{Node}} node \textcolor{keywordflow}{in} \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})}
+\DoxyCodeLine{00016             \{}
+\DoxyCodeLine{00017                 \textcolor{keywordflow}{switch} (node.Evaluate())}
+\DoxyCodeLine{00018                 \{}
+\DoxyCodeLine{00019                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE:}
+\DoxyCodeLine{00020                         nFailedChildren++;}
+\DoxyCodeLine{00021                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00022                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS:}
+\DoxyCodeLine{00023                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00024                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.RUNNING:}
+\DoxyCodeLine{00025                         anyChildIsRunning = \textcolor{keyword}{true};}
+\DoxyCodeLine{00026                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00027                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00028                         \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS;}
+\DoxyCodeLine{00029                         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00030                 \}}
+\DoxyCodeLine{00031             \}}
+\DoxyCodeLine{00032             \textcolor{keywordflow}{if} (nFailedChildren == \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}.Count)}
+\DoxyCodeLine{00033                 \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{00034             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00035                 \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = anyChildIsRunning ? NodeState.RUNNING : \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS;}
+\DoxyCodeLine{00036             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00037         \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_behavior_tree_1_1_parallel_a1252f4fae398c06e72022b5dda75b7ff_cgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Behaviour Tree/\+Basics/\mbox{\hyperlink{_parallel_8cs}{Parallel.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Behaviour Tree/\+Basics/\mbox{\hyperlink{_parallel_8cs}{Parallel.\+cs}}\end{DoxyCompactItemize}

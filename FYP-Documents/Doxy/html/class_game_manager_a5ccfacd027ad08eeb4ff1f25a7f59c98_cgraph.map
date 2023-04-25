@@ -1,0 +1,7 @@
+<map id="GameManager.Start" name="GameManager.Start">
+<area shape="rect" id="node1" title=" " alt="" coords="5,80,144,105"/>
+<area shape="rect" id="node2" href="$class_game_manager.html#a19bd26cc4e0e878c193a42f3dbe19655" title=" " alt="" coords="192,5,409,31"/>
+<area shape="rect" id="node3" href="$class_game_manager.html#a3b41c5a58b2eb8a984e210ced57827f1" title=" " alt="" coords="192,55,409,80"/>
+<area shape="rect" id="node4" href="$class_game_manager.html#a9a6fcf8f109cf1cfd00a156024d01f31" title=" " alt="" coords="198,104,403,129"/>
+<area shape="rect" id="node5" href="$class_game_manager.html#a1fba451617ab45e6f68c974cf0972618" title=" " alt="" coords="198,153,403,179"/>
+</map>

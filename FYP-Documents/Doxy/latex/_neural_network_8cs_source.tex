@@ -1,0 +1,373 @@
+\hypertarget{_neural_network_8cs_source}{}\doxysection{Neural\+Network.\+cs}
+\label{_neural_network_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/ML/NeuralNetwork.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/ML/NeuralNetwork.cs}}
+\mbox{\hyperlink{_neural_network_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00002}00002 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00003}00003 \textcolor{keyword}{using }System.IO;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00004}00004 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00010}\mbox{\hyperlink{class_neural_network}{00010}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_neural_network}{NeuralNetwork}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00011}00011 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00012}00012     \textcolor{comment}{//fundamental }}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00013}\mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{00013}}     \textcolor{keyword}{private} \textcolor{keywordtype}{int}[] \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}};\textcolor{comment}{//layers}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00014}\mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{00014}}     \textcolor{keyword}{private} \textcolor{keywordtype}{float}[][] \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}};\textcolor{comment}{//neurons}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00015}\mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{00015}}     \textcolor{keyword}{private} \textcolor{keywordtype}{float}[][] \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}};\textcolor{comment}{//biasses}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00016}\mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{00016}}     \textcolor{keyword}{private} \textcolor{keywordtype}{float}[][][] \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}};\textcolor{comment}{//weights}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00017}\mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{00017}}     \textcolor{keyword}{private} \textcolor{keywordtype}{int}[] \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}};\textcolor{comment}{//layers}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00019}00019     \textcolor{comment}{//genetic}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00020}\mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{00020}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{fitness}} = 0;\textcolor{comment}{//fitness}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00021}00021 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00022}00022     \textcolor{comment}{//backprop}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00023}\mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{00023}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{learningRate}} = 0.01f;\textcolor{comment}{//learning rate}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00024}\mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{00024}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{cost}} = 0;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00025}00025 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00026}\mbox{\hyperlink{class_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec}{00026}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec}{NeuralNetwork}}(\textcolor{keywordtype}{int}[] \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}, \textcolor{keywordtype}{string}[] layerActivations)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00027}00027     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00028}00028         this.layers = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[\mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00029}00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00030}00030         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00031}00031             this.layers[i] = \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00032}00032         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00033}00033         \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[layers.Length -\/ 1];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00034}00034         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < layers.Length -\/ 1; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00035}00035         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00036}00036             \textcolor{keywordtype}{string} action = layerActivations[i];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00037}00037             \textcolor{keywordflow}{switch} (action)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00038}00038             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00039}00039                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}sigmoid"{}}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00040}00040                     \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[i] = 0;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00041}00041                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00042}00042                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}tanh"{}}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00043}00043                     \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[i] = 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00044}00044                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00045}00045                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}relu"{}}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00046}00046                     \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[i] = 2;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00047}00047                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00048}00048                 \textcolor{keywordflow}{case} \textcolor{stringliteral}{"{}leakyrelu"{}}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00049}00049                     \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[i] = 3;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00050}00050                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00051}00051                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00052}00052                     \mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[i] = 2;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00053}00053                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00054}00054             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00055}00055         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00056}00056         \mbox{\hyperlink{class_neural_network_a69ec02e17369b50881e720b900f7d68d}{InitNeurons}}();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00057}00057         \mbox{\hyperlink{class_neural_network_af180eacfb0f911b1e6b091f7e5744690}{InitBiases}}();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00058}00058         \mbox{\hyperlink{class_neural_network_a7a9c3989a617754ce777e4440a42ba1d}{InitWeights}}();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00062}\mbox{\hyperlink{class_neural_network_a69ec02e17369b50881e720b900f7d68d}{00062}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_a69ec02e17369b50881e720b900f7d68d}{InitNeurons}}()\textcolor{comment}{//create empty storage array for the neurons in the network.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00063}00063     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00064}00064         List<float[]> neuronsList = \textcolor{keyword}{new} List<float[]>();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00065}00065         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00066}00066         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00067}00067             neuronsList.Add(\textcolor{keyword}{new} \textcolor{keywordtype}{float}[\mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]]);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00068}00068         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00069}00069         \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}} = neuronsList.ToArray();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00070}00070     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00072}\mbox{\hyperlink{class_neural_network_af180eacfb0f911b1e6b091f7e5744690}{00072}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_af180eacfb0f911b1e6b091f7e5744690}{InitBiases}}()\textcolor{comment}{//initializes random array for the biases being held within the network.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00073}00073     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00076}00076         List<float[]> biasList = \textcolor{keyword}{new} List<float[]>();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00077}00077         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00078}00078         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00079}00079             \textcolor{keywordtype}{float}[] bias = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[\mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00080}00080             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00081}00081             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00082}00082                 bias[j] = UnityEngine.Random.Range(-\/0.5f, 0.5f);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00083}00083             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00084}00084             biasList.Add(bias);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00085}00085         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00086}00086         \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}} = biasList.ToArray();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00087}00087     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00089}\mbox{\hyperlink{class_neural_network_a7a9c3989a617754ce777e4440a42ba1d}{00089}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_a7a9c3989a617754ce777e4440a42ba1d}{InitWeights}}()\textcolor{comment}{//initializes random array for the weights being held in the network.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00090}00090     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00091}00091         List<float[][]> weightsList = \textcolor{keyword}{new} List<float[][]>();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00092}00092         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00093}00093         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00094}00094             List<float[]> layerWeightsList = \textcolor{keyword}{new} List<float[]>();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00095}00095             \textcolor{keywordtype}{int} neuronsInPreviousLayer = \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i -\/ 1];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00096}00096             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00097}00097             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00098}00098                 \textcolor{keywordtype}{float}[] neuronWeights = \textcolor{keyword}{new} \textcolor{keywordtype}{float}[neuronsInPreviousLayer];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00099}00099                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < neuronsInPreviousLayer; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00100}00100                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00101}00101                     neuronWeights[k] = UnityEngine.Random.Range(-\/0.5f, 0.5f);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00102}00102                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00103}00103                 layerWeightsList.Add(neuronWeights);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00104}00104             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00105}00105             weightsList.Add(layerWeightsList.ToArray());}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00106}00106         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00107}00107         \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}} = weightsList.ToArray();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00108}00108     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00110}\mbox{\hyperlink{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}{00110}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float}[] \mbox{\hyperlink{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}{FeedForward}}(\textcolor{keywordtype}{float}[] inputs)\textcolor{comment}{//feed forward, inputs >==> outputs.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00111}00111     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00112}00112         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < inputs.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00113}00113         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00114}00114             \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[0][i] = inputs[i];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00115}00115         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00116}00116         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00117}00117         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00118}00118             \textcolor{keywordtype}{int} layer = i -\/ 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00119}00119             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00120}00120             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00121}00121                 \textcolor{keywordtype}{float} value = 0f;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00122}00122                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i -\/ 1]; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00123}00123                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00124}00124                     value += \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i -\/ 1][j][k] * \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[i -\/ 1][k];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00125}00125                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00126}00126                 \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[i][j] = \mbox{\hyperlink{class_neural_network_ab75f7019c882965d1a3361a10936a039}{activate}}(value + \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i -\/ 1][j], layer);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00127}00127             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00128}00128         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00129}00129         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[layers.Length -\/ 1];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00130}00130     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00131}00131     \textcolor{comment}{//Backpropagation implemtation down until mutation.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00132}\mbox{\hyperlink{class_neural_network_ab75f7019c882965d1a3361a10936a039}{00132}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_ab75f7019c882965d1a3361a10936a039}{activate}}(\textcolor{keywordtype}{float} value, \textcolor{keywordtype}{int} layer)\textcolor{comment}{//all activation functions}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00133}00133     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00134}00134         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[layer])}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00135}00135         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00136}00136             \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00137}00137                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_aed31a3307f2f89363ded205f77c60225}{sigmoid}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00138}00138             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00139}00139                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_a9516c0b3aedb1322e7a09b3786e21989}{tanh}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00140}00140             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00141}00141                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}{relu}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00142}00142             \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00143}00143                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d}{leakyrelu}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00144}00144             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00145}00145                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}{relu}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00146}00146         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00147}00147     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00148}\mbox{\hyperlink{class_neural_network_aaad3fd52ff6697bc570352b116192c61}{00148}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_aaad3fd52ff6697bc570352b116192c61}{activateDer}}(\textcolor{keywordtype}{float} value, \textcolor{keywordtype}{int} layer)\textcolor{comment}{//all activation function derivatives}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00149}00149     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00150}00150         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_neural_network_aee737b111f3364ed41efd1383a28d2a8}{activations}}[layer])}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00151}00151         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00152}00152             \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00153}00153                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_ab53de5941d235bca92ef79b5063290db}{sigmoidDer}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00154}00154             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00155}00155                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06}{tanhDer}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00156}00156             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00157}00157                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_aaae5996212041a89a97bbeed3732398a}{reluDer}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00158}00158             \textcolor{keywordflow}{case} 3:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00159}00159                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_a16703e78a01afa1ffaa78848e134899f}{leakyreluDer}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00160}00160             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00161}00161                 \textcolor{keywordflow}{return} \mbox{\hyperlink{class_neural_network_aaae5996212041a89a97bbeed3732398a}{reluDer}}(value);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00162}00162         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00163}00163     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00165}\mbox{\hyperlink{class_neural_network_aed31a3307f2f89363ded205f77c60225}{00165}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_aed31a3307f2f89363ded205f77c60225}{sigmoid}}(\textcolor{keywordtype}{float} x)\textcolor{comment}{//activation functions and their corrosponding derivatives}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00166}00166     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00167}00167         \textcolor{keywordtype}{float} k = Mathf.Exp(-\/x);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00168}00168         \textcolor{keywordflow}{return} k / (1.0f + k);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00169}00169     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00170}\mbox{\hyperlink{class_neural_network_a9516c0b3aedb1322e7a09b3786e21989}{00170}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_a9516c0b3aedb1322e7a09b3786e21989}{tanh}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00171}00171     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00172}00172         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{float})Math.Tanh(x);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00173}00173     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00174}\mbox{\hyperlink{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}{00174}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4}{relu}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00175}00175     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00176}00176         \textcolor{keywordflow}{return} (0 >= x) ? 0 : x;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00177}00177     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00178}\mbox{\hyperlink{class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d}{00178}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d}{leakyrelu}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00179}00179     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00180}00180         \textcolor{keywordflow}{return} (0 >= x) ? 0.01f * x : x;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00181}00181     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00182}\mbox{\hyperlink{class_neural_network_ab53de5941d235bca92ef79b5063290db}{00182}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_ab53de5941d235bca92ef79b5063290db}{sigmoidDer}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00183}00183     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00184}00184         \textcolor{keywordflow}{return} x * (1 -\/ x);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00185}00185     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00186}\mbox{\hyperlink{class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06}{00186}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06}{tanhDer}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00187}00187     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00188}00188         \textcolor{keywordflow}{return} 1 -\/ (x * x);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00189}00189     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00190}\mbox{\hyperlink{class_neural_network_aaae5996212041a89a97bbeed3732398a}{00190}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_aaae5996212041a89a97bbeed3732398a}{reluDer}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00191}00191     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00192}00192         \textcolor{keywordflow}{return} (0 >= x) ? 0 : 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00193}00193     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00194}\mbox{\hyperlink{class_neural_network_a16703e78a01afa1ffaa78848e134899f}{00194}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_neural_network_a16703e78a01afa1ffaa78848e134899f}{leakyreluDer}}(\textcolor{keywordtype}{float} x)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00195}00195     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00196}00196         \textcolor{keywordflow}{return} (0 >= x) ? 0.01f : 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00197}00197     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00199}\mbox{\hyperlink{class_neural_network_a0848cf60f63eb03cff313c6b48edbeae}{00199}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_a0848cf60f63eb03cff313c6b48edbeae}{BackPropagate}}(\textcolor{keywordtype}{float}[] inputs, \textcolor{keywordtype}{float}[] expected)\textcolor{comment}{//backpropogation;}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00200}00200     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00201}00201         \textcolor{keywordtype}{float}[] output = \mbox{\hyperlink{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}{FeedForward}}(inputs);\textcolor{comment}{//runs feed forward to ensure neurons are populated correctly}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00203}00203         \mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{cost}} = 0;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00204}00204         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.Length; i++) \mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{cost}} += (\textcolor{keywordtype}{float})Math.Pow(output[i] -\/ expected[i], 2);\textcolor{comment}{//calculated cost of network}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00205}00205         \mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{cost}} = \mbox{\hyperlink{class_neural_network_ad540552e0c6605dcdb5b1f3b38580aa1}{cost}} / 2;\textcolor{comment}{//this value is not used in calculions, rather used to identify the performance of the network}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00207}00207         \textcolor{keywordtype}{float}[][] gamma;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00208}00208 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00210}00210         List<float[]> gammaList = \textcolor{keyword}{new} List<float[]>();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00211}00211         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00212}00212         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00213}00213             gammaList.Add(\textcolor{keyword}{new} \textcolor{keywordtype}{float}[\mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]]);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00214}00214         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00215}00215         gamma = gammaList.ToArray();\textcolor{comment}{//gamma initialization}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00216}00216 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00217}00217         \textcolor{keywordtype}{int} layer = layers.Length -\/ 2;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00218}00218         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < output.Length; i++) gamma[\mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length -\/ 1][i] = (output[i] -\/ expected[i]) * \mbox{\hyperlink{class_neural_network_aaad3fd52ff6697bc570352b116192c61}{activateDer}}(output[i], layer);\textcolor{comment}{//Gamma calculation}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00219}00219         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[layers.Length -\/ 1]; i++)\textcolor{comment}{//calculates the w' and b' for the last layer in the network}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00220}00220         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00221}00221             \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[layers.Length -\/ 2][i] -\/= gamma[layers.Length -\/ 1][i] * \mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{learningRate}};}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00222}00222             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[layers.Length -\/ 2]; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00223}00223             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00224}00224 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00225}00225                 \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[layers.Length -\/ 2][i][j] -\/= gamma[layers.Length -\/ 1][i] * \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[layers.Length -\/ 2][j] * \mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{learningRate}};\textcolor{comment}{//*learning }}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00226}00226             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00227}00227         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00228}00228 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00229}00229         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}.Length -\/ 2; i > 0; i-\/-\/)\textcolor{comment}{//runs on all hidden layers}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00230}00230         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00231}00231             layer = i -\/ 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00232}00232             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]; j++)\textcolor{comment}{//outputs}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00233}00233             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00234}00234                 gamma[i][j] = 0;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00235}00235                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < gamma[i + 1].Length; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00236}00236                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00237}00237                     gamma[i][j] += gamma[i + 1][k] * \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][k][j];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00238}00238                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00239}00239                 gamma[i][j] *= \mbox{\hyperlink{class_neural_network_aaad3fd52ff6697bc570352b116192c61}{activateDer}}(\mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[i][j], layer);\textcolor{comment}{//calculate gamma}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00240}00240             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00241}00241             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i]; j++)\textcolor{comment}{//itterate over outputs of layer}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00242}00242             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00243}00243                 \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i -\/ 1][j] -\/= gamma[i][j] * \mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{learningRate}};\textcolor{comment}{//modify biases of network}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00244}00244                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_neural_network_a5675ef00bb514a731ddad698c342cdaa}{layers}}[i -\/ 1]; k++)\textcolor{comment}{//itterate over inputs to layer}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00245}00245                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00246}00246                     \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i -\/ 1][j][k] -\/= gamma[i][j] * \mbox{\hyperlink{class_neural_network_a13905970284bb4d0c6623cf477c12da9}{neurons}}[i -\/ 1][k] * \mbox{\hyperlink{class_neural_network_aed5371f4eca4f4fd5b38d69e33d29bcf}{learningRate}};\textcolor{comment}{//modify weights of network}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00247}00247                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00248}00248             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00249}00249         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00250}00250     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00252}00252     \textcolor{comment}{//Genetic implementations down onwards until save.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00254}\mbox{\hyperlink{class_neural_network_a3b8b31c453188bfbfa70de7fc006c10a}{00254}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_a3b8b31c453188bfbfa70de7fc006c10a}{Mutate}}(\textcolor{keywordtype}{int} high, \textcolor{keywordtype}{float} val)\textcolor{comment}{//used as a simple mutation function for any genetic implementations.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00255}00255     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00256}00256         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00257}00257         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00258}00258             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00259}00259             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00260}00260                 \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j] = (UnityEngine.Random.Range(0f, high) <= 2) ? \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j] += UnityEngine.Random.Range(-\/val, val) : \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00261}00261             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00262}00262         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00263}00263 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00264}00264         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00265}00265         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00266}00266             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00267}00267             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00268}00268                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j].Length; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00269}00269                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00270}00270                     \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k] = (UnityEngine.Random.Range(0f, high) <= 2) ? \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k] += UnityEngine.Random.Range(-\/val, val) : \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00271}00271                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00272}00272             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00273}00273         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00274}00274     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00275}00275 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00276}\mbox{\hyperlink{class_neural_network_a3728469d6e92c970ac88fead80cce79a}{00276}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_neural_network_a3728469d6e92c970ac88fead80cce79a}{CompareTo}}(\mbox{\hyperlink{class_neural_network}{NeuralNetwork}} other) \textcolor{comment}{//Comparing For Genetic implementations. Used for sorting based on the fitness of the network}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00277}00277     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00278}00278         \textcolor{keywordflow}{if} (other == \textcolor{keyword}{null}) \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00279}00279 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00280}00280         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{fitness}} > other.\mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{fitness}})}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00281}00281             \textcolor{keywordflow}{return} 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00282}00282         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{fitness}} < other.\mbox{\hyperlink{class_neural_network_acade3068094daeb0d2f6e0a63a1428cd}{fitness}})}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00283}00283             \textcolor{keywordflow}{return} -\/1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00284}00284         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00285}00285             \textcolor{keywordflow}{return} 0;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00286}00286     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00287}00287 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00288}\mbox{\hyperlink{class_neural_network_acc343fa84553ce4a90a4be4d60358eef}{00288}}     \textcolor{keyword}{public} \mbox{\hyperlink{class_neural_network}{NeuralNetwork}} \mbox{\hyperlink{class_neural_network_acc343fa84553ce4a90a4be4d60358eef}{copy}}(\mbox{\hyperlink{class_neural_network}{NeuralNetwork}} nn) \textcolor{comment}{//For creatinga deep copy, to ensure arrays are serialzed.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00289}00289     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00290}00290         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00291}00291         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00292}00292             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00293}00293             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00294}00294                 nn.\mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j] = \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00295}00295             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00296}00296         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00297}00297         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00298}00298         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00299}00299             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00300}00300             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00301}00301                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j].Length; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00302}00302                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00303}00303                     nn.\mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k] = \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00304}00304                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00305}00305             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00306}00306         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00307}00307         \textcolor{keywordflow}{return} nn;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00308}00308     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00309}00309 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00310}00310     \textcolor{comment}{//save and load functions}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00311}\mbox{\hyperlink{class_neural_network_a17787f616e3fd5ecc4f19150ee351592}{00311}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_a17787f616e3fd5ecc4f19150ee351592}{Load}}(\textcolor{keywordtype}{string} path)\textcolor{comment}{//this loads the biases and weights from within a file into the neural network.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00312}00312     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00313}00313         TextReader tr = \textcolor{keyword}{new} StreamReader(path);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00314}00314         \textcolor{keywordtype}{int} NumberOfLines = (int)\textcolor{keyword}{new} FileInfo(path).Length;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00315}00315         \textcolor{keywordtype}{string}[] ListLines = \textcolor{keyword}{new} \textcolor{keywordtype}{string}[NumberOfLines];}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00316}00316         \textcolor{keywordtype}{int} index = 1;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00317}00317         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < NumberOfLines; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00318}00318         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00319}00319             ListLines[i] = tr.ReadLine();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00320}00320         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00321}00321         tr.Close();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00322}00322         \textcolor{keywordflow}{if} (\textcolor{keyword}{new} FileInfo(path).Length > 0)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00323}00323         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00324}00324             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00325}00325             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00326}00326                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00327}00327                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00328}00328                     \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j] = \textcolor{keywordtype}{float}.Parse(ListLines[index]);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00329}00329                     index++;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00330}00330                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00331}00331             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00332}00332 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00333}00333             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00334}00334             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00335}00335                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00336}00336                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00337}00337                     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j].Length; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00338}00338                     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00339}00339                         \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k] = \textcolor{keywordtype}{float}.Parse(ListLines[index]); ;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00340}00340                         index++;}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00341}00341                     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00342}00342                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00343}00343             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00344}00344         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00345}00345     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00346}\mbox{\hyperlink{class_neural_network_a2b6dde455e1cc871fc8bebfd9878b8e2}{00346}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_neural_network_a2b6dde455e1cc871fc8bebfd9878b8e2}{Save}}(\textcolor{keywordtype}{string} path)\textcolor{comment}{//this is used for saving the biases and weights within the network to a file.}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00347}00347     \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00348}00348         File.Create(path).Close();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00349}00349         StreamWriter writer = \textcolor{keyword}{new} StreamWriter(path, \textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00350}00350 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00351}00351         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00352}00352         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00353}00353             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00354}00354             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00355}00355                 writer.WriteLine(\mbox{\hyperlink{class_neural_network_a774edc22743a6d8718671cdee9f7ddfb}{biases}}[i][j]);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00356}00356             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00357}00357         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00358}00358 }
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00359}00359         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00360}00360         \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00361}00361             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i].Length; j++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00362}00362             \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00363}00363                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} k = 0; k < \mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j].Length; k++)}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00364}00364                 \{}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00365}00365                     writer.WriteLine(\mbox{\hyperlink{class_neural_network_aae75802f501ae2682cfd5ff7ca127c27}{weights}}[i][j][k]);}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00366}00366                 \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00367}00367             \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00368}00368         \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00369}00369         writer.Close();}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00370}00370     \}}
+\DoxyCodeLine{\Hypertarget{_neural_network_8cs_source_l00371}00371 \}}
+
+\end{DoxyCode}

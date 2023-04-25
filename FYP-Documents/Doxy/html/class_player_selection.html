@@ -90,6 +90,8 @@ $(document).ready(function(){initNavTree('class_player_selection.html',''); init
 
 <div class="header">
   <div class="summary">
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_player_selection-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PlayerSelection Class Reference</div></div>
 </div><!--header-->
@@ -101,13 +103,35 @@ $(document).ready(function(){initNavTree('class_player_selection.html',''); init
 Inheritance diagram for PlayerSelection:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player_selection__inherit__graph.png" border="0" usemap="#a_player_selection_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_player_selection_inherit__map" id="a_player_selection_inherit__map">
+<area shape="rect" title="Adapted from EezehDev Coordinated Formations" alt="" coords="5,313,189,383"/>
+<area shape="rect" href="class_selection.html" title=" " alt="" coords="18,93,177,265"/>
+<area shape="rect" title=" " alt="" coords="40,5,155,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for PlayerSelection:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_player_selection__coll__graph.png" border="0" usemap="#a_player_selection_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_player_selection_coll__map" id="a_player_selection_coll__map">
+<area shape="rect" title="Adapted from EezehDev Coordinated Formations" alt="" coords="59,653,243,723"/>
+<area shape="rect" href="class_selection.html" title=" " alt="" coords="71,461,230,604"/>
+<area shape="rect" title=" " alt="" coords="93,5,208,45"/>
+<area shape="rect" href="class_unit_manager.html" title=" " alt="" coords="59,190,242,303"/>
+<area shape="rect" href="class_r_t_s_game_controller.html" title=" " alt="" coords="267,95,448,399"/>
+</map>
+</div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a97b2a113b76f6a2aad581f0261b64bcb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb">Update</a> ()</td></tr>
+<tr class="separator:a97b2a113b76f6a2aad581f0261b64bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a0d62f8f3e0eea42284b03c4b6ed5f498"><td class="memItemLeft" align="right" valign="top">Transform&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_player_selection.html#a0d62f8f3e0eea42284b03c4b6ed5f498">m_selectedAreaTransform</a></td></tr>
+<tr class="separator:a0d62f8f3e0eea42284b03c4b6ed5f498"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_class_selection"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_selection')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_selection.html">Selection</a></td></tr>
@@ -125,8 +149,145 @@ Additional Inherited Members</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Adapted from EezehDev Coordinated Formations  </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
-<li>PlayerNBaseScripts/<a class="el" href="_player_selection_8cs.html">PlayerSelection.cs</a></li>
+
+<p class="definition">Definition at line <a class="el" href="_player_selection_8cs_source.html#l00007">7</a> of file <a class="el" href="_player_selection_8cs_source.html">PlayerSelection.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a97b2a113b76f6a2aad581f0261b64bcb" name="a97b2a113b76f6a2aad581f0261b64bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97b2a113b76f6a2aad581f0261b64bcb">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PlayerSelection.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_player_selection_8cs_source.html#l00013">13</a> of file <a class="el" href="_player_selection_8cs_source.html">PlayerSelection.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   14</span>    {</div>
+<div class="line"><span class="lineno">   15</span>        <span class="comment">//Checks if any units selected has died and removes them from the list</span></div>
+<div class="line"><span class="lineno">   16</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Count; i++)</div>
+<div class="line"><span class="lineno">   17</span>        {</div>
+<div class="line"><span class="lineno">   18</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>[i] == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   19</span>            {</div>
+<div class="line"><span class="lineno">   20</span>                <a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>.Remove(<a class="code hl_variable" href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">m_unitManager</a>.<a class="code hl_variable" href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">m_selectedUnits</a>[i]);</div>
+<div class="line"><span class="lineno">   21</span>            }</div>
+<div class="line"><span class="lineno">   22</span>        }</div>
+<div class="line"><span class="lineno">   23</span> </div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (Input.GetMouseButtonDown(0))</div>
+<div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            <a class="code hl_variable" href="class_player_selection.html#a0d62f8f3e0eea42284b03c4b6ed5f498">m_selectedAreaTransform</a>.gameObject.SetActive(<span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">   27</span>            <a class="code hl_variable" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a> = <a class="code hl_class" href="class_utility.html">Utility</a>.<a class="code hl_function" href="class_utility.html#ae371e10730332ffe8c695c8401effd37">ReturnMousePosition2D</a>();</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
+<div class="line"><span class="lineno">   29</span> </div>
+<div class="line"><span class="lineno">   30</span>        <span class="keywordflow">if</span> (Input.GetMouseButton(0))</div>
+<div class="line"><span class="lineno">   31</span>        {</div>
+<div class="line"><span class="lineno">   32</span> </div>
+<div class="line"><span class="lineno">   33</span>            Vector3 currentMousePosition = <a class="code hl_class" href="class_utility.html">Utility</a>.<a class="code hl_function" href="class_utility.html#ae371e10730332ffe8c695c8401effd37">ReturnMousePosition2D</a>();</div>
+<div class="line"><span class="lineno">   34</span>            Vector3 lowerLeft = <span class="keyword">new</span> Vector3</div>
+<div class="line"><span class="lineno">   35</span>                (</div>
+<div class="line"><span class="lineno">   36</span>                    Mathf.Min(<a class="code hl_variable" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a>.x, currentMousePosition.x),</div>
+<div class="line"><span class="lineno">   37</span>                    Mathf.Min(<a class="code hl_variable" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a>.y, currentMousePosition.y)</div>
+<div class="line"><span class="lineno">   38</span>                );</div>
+<div class="line"><span class="lineno">   39</span> </div>
+<div class="line"><span class="lineno">   40</span>            Vector3 upperRight = <span class="keyword">new</span> Vector3</div>
+<div class="line"><span class="lineno">   41</span>                (</div>
+<div class="line"><span class="lineno">   42</span>                    Mathf.Max(<a class="code hl_variable" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a>.x, currentMousePosition.x),</div>
+<div class="line"><span class="lineno">   43</span>                    Mathf.Max(<a class="code hl_variable" href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">m_startPosition</a>.y, currentMousePosition.y)</div>
+<div class="line"><span class="lineno">   44</span>                );</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>            m_selectedAreaTransform.position = lowerLeft;</div>
+<div class="line"><span class="lineno">   47</span>            m_selectedAreaTransform.localScale = upperRight - lowerLeft;</div>
+<div class="line"><span class="lineno">   48</span>        }</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span> </div>
+<div class="line"><span class="lineno">   51</span>        <span class="keywordflow">if</span> (Input.GetMouseButtonUp(0))</div>
+<div class="line"><span class="lineno">   52</span>        {</div>
+<div class="line"><span class="lineno">   53</span>            <a class="code hl_variable" href="class_player_selection.html#a0d62f8f3e0eea42284b03c4b6ed5f498">m_selectedAreaTransform</a>.gameObject.SetActive(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">   54</span> </div>
+<div class="line"><span class="lineno">   55</span>            <a class="code hl_function" href="class_selection.html#a5d24db948b630a237b811f4734cbe868">SelectUnits</a>();</div>
+<div class="line"><span class="lineno">   56</span>            <a class="code hl_function" href="class_selection.html#a1fd845df495405452cda91ff8cea543d">GroupSelection</a>();</div>
+<div class="line"><span class="lineno">   57</span>        }</div>
+<div class="line"><span class="lineno">   58</span> </div>
+<div class="line"><span class="lineno">   59</span> </div>
+<div class="line"><span class="lineno">   60</span>        <span class="keywordflow">if</span> (Input.GetMouseButtonDown(1))</div>
+<div class="line"><span class="lineno">   61</span>        {</div>
+<div class="line"><span class="lineno">   62</span>            <a class="code hl_function" href="class_selection.html#ad1e91cc8fc1d6f1d658052162e474760">MoveSelection</a>(<a class="code hl_class" href="class_utility.html">Utility</a>.<a class="code hl_function" href="class_utility.html#ae371e10730332ffe8c695c8401effd37">ReturnMousePosition2D</a>());</div>
+<div class="line"><span class="lineno">   63</span>        }</div>
+<div class="line"><span class="lineno">   64</span>    }</div>
+<div class="ttc" id="aclass_player_selection_html_a0d62f8f3e0eea42284b03c4b6ed5f498"><div class="ttname"><a href="class_player_selection.html#a0d62f8f3e0eea42284b03c4b6ed5f498">PlayerSelection.m_selectedAreaTransform</a></div><div class="ttdeci">Transform m_selectedAreaTransform</div><div class="ttdef"><b>Definition:</b> <a href="_player_selection_8cs_source.html#l00010">PlayerSelection.cs:10</a></div></div>
+<div class="ttc" id="aclass_selection_html_a0ef5aeac1d3a5d302e60d8891e32028b"><div class="ttname"><a href="class_selection.html#a0ef5aeac1d3a5d302e60d8891e32028b">Selection.m_unitManager</a></div><div class="ttdeci">UnitManager m_unitManager</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00008">Selection.cs:8</a></div></div>
+<div class="ttc" id="aclass_selection_html_a1fd845df495405452cda91ff8cea543d"><div class="ttname"><a href="class_selection.html#a1fd845df495405452cda91ff8cea543d">Selection.GroupSelection</a></div><div class="ttdeci">void GroupSelection()</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00170">Selection.cs:170</a></div></div>
+<div class="ttc" id="aclass_selection_html_a5d24db948b630a237b811f4734cbe868"><div class="ttname"><a href="class_selection.html#a5d24db948b630a237b811f4734cbe868">Selection.SelectUnits</a></div><div class="ttdeci">void SelectUnits()</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00075">Selection.cs:75</a></div></div>
+<div class="ttc" id="aclass_selection_html_a86399849291d22e74b3e5c0dbcd687eb"><div class="ttname"><a href="class_selection.html#a86399849291d22e74b3e5c0dbcd687eb">Selection.m_startPosition</a></div><div class="ttdeci">Vector3 m_startPosition</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00009">Selection.cs:9</a></div></div>
+<div class="ttc" id="aclass_selection_html_ad1e91cc8fc1d6f1d658052162e474760"><div class="ttname"><a href="class_selection.html#ad1e91cc8fc1d6f1d658052162e474760">Selection.MoveSelection</a></div><div class="ttdeci">void MoveSelection(Vector3 target)</div><div class="ttdef"><b>Definition:</b> <a href="_selection_8cs_source.html#l00129">Selection.cs:129</a></div></div>
+<div class="ttc" id="aclass_unit_manager_html_a41ed6c79982363c306738d9fcaf26c14"><div class="ttname"><a href="class_unit_manager.html#a41ed6c79982363c306738d9fcaf26c14">UnitManager.m_selectedUnits</a></div><div class="ttdeci">List&lt; BaseUnit &gt; m_selectedUnits</div><div class="ttdef"><b>Definition:</b> <a href="_unit_manager_8cs_source.html#l00007">UnitManager.cs:7</a></div></div>
+<div class="ttc" id="aclass_utility_html"><div class="ttname"><a href="class_utility.html">Utility</a></div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cs_source.html#l00005">Utility.cs:6</a></div></div>
+<div class="ttc" id="aclass_utility_html_ae371e10730332ffe8c695c8401effd37"><div class="ttname"><a href="class_utility.html#ae371e10730332ffe8c695c8401effd37">Utility.ReturnMousePosition2D</a></div><div class="ttdeci">static Vector3 ReturnMousePosition2D()</div><div class="ttdef"><b>Definition:</b> <a href="_utility_8cs_source.html#l00007">Utility.cs:7</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_player_selection_a97b2a113b76f6a2aad581f0261b64bcb_cgraph.png" border="0" usemap="#aclass_player_selection_a97b2a113b76f6a2aad581f0261b64bcb_cgraph" alt=""/></div>
+<map name="aclass_player_selection_a97b2a113b76f6a2aad581f0261b64bcb_cgraph" id="aclass_player_selection_a97b2a113b76f6a2aad581f0261b64bcb_cgraph">
+<area shape="rect" title=" " alt="" coords="5,243,164,268"/>
+<area shape="rect" href="class_selection.html#a1fd845df495405452cda91ff8cea543d" title=" " alt="" coords="212,92,381,117"/>
+<area shape="rect" href="class_selection.html#ad1e91cc8fc1d6f1d658052162e474760" title=" " alt="" coords="215,217,379,243"/>
+<area shape="rect" href="class_utility.html#ae371e10730332ffe8c695c8401effd37" title=" " alt="" coords="432,268,631,293"/>
+<area shape="rect" href="class_selection.html#a5d24db948b630a237b811f4734cbe868" title=" " alt="" coords="223,319,370,344"/>
+<area shape="rect" href="class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b" title=" " alt="" coords="452,5,611,31"/>
+<area shape="rect" href="class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46" title=" " alt="" coords="429,55,633,95"/>
+<area shape="rect" href="class_group_leader.html#ae39ef3c1f8e4b7a9676b72e491203354" title=" " alt="" coords="442,120,621,145"/>
+<area shape="rect" href="class_group_leader.html#a0b68f07858de9d6574628c0a6674ed38" title=" " alt="" coords="681,120,872,145"/>
+<area shape="rect" href="class_group_leader.html#a54e85d2941924c0c4c77032829f8d7f3" title=" " alt="" coords="453,169,609,195"/>
+<area shape="rect" href="class_base_unit.html#a5444c924c7be68b4d0ee5ba3396219f4" title=" " alt="" coords="440,219,623,244"/>
+<area shape="rect" href="class_base_unit.html#a830123965148423ef24de24bec716137" title=" " alt="" coords="687,219,867,244"/>
+<area shape="rect" href="class_selection.html#a129eaf19e641d6a1bcf380fc873c183f" title=" " alt="" coords="449,317,613,343"/>
+<area shape="rect" href="class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69" title=" " alt="" coords="682,343,871,368"/>
+<area shape="rect" href="class_base_unit.html#a9cd35c425549c36834a8606c86b15d49" title=" " alt="" coords="462,419,601,444"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0d62f8f3e0eea42284b03c4b6ed5f498" name="a0d62f8f3e0eea42284b03c4b6ed5f498"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d62f8f3e0eea42284b03c4b6ed5f498">&#9670;&#160;</a></span>m_selectedAreaTransform</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Transform PlayerSelection.m_selectedAreaTransform</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_player_selection_8cs_source.html#l00010">10</a> of file <a class="el" href="_player_selection_8cs_source.html">PlayerSelection.cs</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/PlayerNBaseScripts/<a class="el" href="_player_selection_8cs_source.html">PlayerSelection.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

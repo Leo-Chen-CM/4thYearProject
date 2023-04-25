@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Unit\+Movement\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_unit_movement__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Unit\+Movement\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_unit_movement__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,27 +27,239 @@ void \mbox{\hyperlink{class_unit_movement_a9139aec755afad2f5408ef784f562284}{Set
 \item 
 void \mbox{\hyperlink{class_unit_movement_ab46ad5198a06fedfccded69ee70875ec}{Set\+Velocity}} (Vector3 t\+\_\+velocity\+Vector)
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_unit_movement_a5627a7a6209ab00c6660d9cfa8a676cf}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_unit_movement_a9402f2841d6133860dec19f2c42d569d}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_unit_movement_ae1a44dc6bf889b8210f08e7c47f0e901}{Fixed\+Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_unit_movement_a4c228685b3bc09af7280d5eb49d8b96e}{m\+\_\+movement\+Speed}}
+\item 
+float \mbox{\hyperlink{class_unit_movement_a3414700913795d2be84be288fa5f2631}{m\+\_\+rotation\+Speed}}
+\item 
+float \mbox{\hyperlink{class_unit_movement_ac68c00725a14e2f4d87092397684d257}{m\+\_\+rotation\+Modifier}}
+\item 
+Vector3 \mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\+\_\+move\+Position}}
+\item 
+Rigidbody2D \mbox{\hyperlink{class_unit_movement_a37bf9230462fde0612356056809d3774}{m\+\_\+rigidbody2D}}
+\item 
+Vector3 \mbox{\hyperlink{class_unit_movement_aea24ff10af51a1f5ceb96ea158a72d79}{m\+\_\+velocity\+Vector}}
+\item 
+\mbox{\hyperlink{class_unit_field_of_view}{Unit\+Field\+Of\+View}} \mbox{\hyperlink{class_unit_movement_a0ea4b32aef6db3115e826dd971fd025e}{Unit\+Field\+Of\+View}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_unit_movement_a5627a7a6209ab00c6660d9cfa8a676cf}\label{class_unit_movement_a5627a7a6209ab00c6660d9cfa8a676cf}} 
+\index{UnitMovement@{UnitMovement}!Awake@{Awake}}
+\index{Awake@{Awake}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Unit\+Movement.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00025     \{}
+\DoxyCodeLine{00026         \mbox{\hyperlink{class_unit_movement_a37bf9230462fde0612356056809d3774}{m\_rigidbody2D}}= GetComponent<Rigidbody2D>();}
+\DoxyCodeLine{00027         \mbox{\hyperlink{class_unit_field_of_view}{UnitFieldOfView}}= GetComponent<UnitFieldOfView>();}
+\DoxyCodeLine{00028         \mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}} = transform.position;   }
+\DoxyCodeLine{00029     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_unit_movement_ae1a44dc6bf889b8210f08e7c47f0e901}\label{class_unit_movement_ae1a44dc6bf889b8210f08e7c47f0e901}} 
+\index{UnitMovement@{UnitMovement}!FixedUpdate@{FixedUpdate}}
+\index{FixedUpdate@{FixedUpdate}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{FixedUpdate()}{FixedUpdate()}}
+{\footnotesize\ttfamily void Unit\+Movement.\+Fixed\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00056     \{}
+\DoxyCodeLine{00057         \textcolor{keywordflow}{if} (Vector3.Distance(\mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}}, transform.position) < 2f)}
+\DoxyCodeLine{00058         \{}
+\DoxyCodeLine{00059             m\_rigidbody2D.velocity = m\_rigidbody2D.velocity * 0.9f;}
+\DoxyCodeLine{00060         \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}} != transform.position \&\& !\mbox{\hyperlink{class_unit_field_of_view}{UnitFieldOfView}}.\mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}})}
+\DoxyCodeLine{00063         \{}
+\DoxyCodeLine{00064              Vector3 vectorToTarget = \mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}} -\/ transform.position;}
+\DoxyCodeLine{00065              \textcolor{keywordtype}{float} angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg -\/ \mbox{\hyperlink{class_unit_movement_ac68c00725a14e2f4d87092397684d257}{m\_rotationModifier}};}
+\DoxyCodeLine{00066              Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);}
+\DoxyCodeLine{00067              transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * \mbox{\hyperlink{class_unit_movement_a3414700913795d2be84be288fa5f2631}{m\_rotationSpeed}});}
+\DoxyCodeLine{00068         \}}
+\DoxyCodeLine{00069     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_unit_movement_a9139aec755afad2f5408ef784f562284}\label{class_unit_movement_a9139aec755afad2f5408ef784f562284}} 
 \index{UnitMovement@{UnitMovement}!SetMovePosition@{SetMovePosition}}
 \index{SetMovePosition@{SetMovePosition}!UnitMovement@{UnitMovement}}
 \doxysubsubsection{\texorpdfstring{SetMovePosition()}{SetMovePosition()}}
 {\footnotesize\ttfamily void Unit\+Movement.\+Set\+Move\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{t\+\_\+move\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033     \{}
+\DoxyCodeLine{00034         \mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}} = t\_movePosition;}
+\DoxyCodeLine{00035         Vector3 moveDirection = (\mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}} -\/ transform.position).normalized;}
+\DoxyCodeLine{00036         \mbox{\hyperlink{class_unit_movement_ab46ad5198a06fedfccded69ee70875ec}{SetVelocity}}(moveDirection);}
+\DoxyCodeLine{00037     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_movement_a9139aec755afad2f5408ef784f562284_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_unit_movement_ab46ad5198a06fedfccded69ee70875ec}\label{class_unit_movement_ab46ad5198a06fedfccded69ee70875ec}} 
 \index{UnitMovement@{UnitMovement}!SetVelocity@{SetVelocity}}
 \index{SetVelocity@{SetVelocity}!UnitMovement@{UnitMovement}}
 \doxysubsubsection{\texorpdfstring{SetVelocity()}{SetVelocity()}}
 {\footnotesize\ttfamily void Unit\+Movement.\+Set\+Velocity (\begin{DoxyParamCaption}\item[{Vector3}]{t\+\_\+velocity\+Vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00040     \{}
+\DoxyCodeLine{00041         \mbox{\hyperlink{class_unit_movement_aea24ff10af51a1f5ceb96ea158a72d79}{m\_velocityVector}} = t\_velocityVector;}
+\DoxyCodeLine{00042         m\_rigidbody2D.velocity = \mbox{\hyperlink{class_unit_movement_aea24ff10af51a1f5ceb96ea158a72d79}{m\_velocityVector}} * \mbox{\hyperlink{class_unit_movement_a4c228685b3bc09af7280d5eb49d8b96e}{m\_movementSpeed}};}
+\DoxyCodeLine{00043     \}}
+
+\end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_movement_ab46ad5198a06fedfccded69ee70875ec_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_movement_a9402f2841d6133860dec19f2c42d569d}\label{class_unit_movement_a9402f2841d6133860dec19f2c42d569d}} 
+\index{UnitMovement@{UnitMovement}!Update@{Update}}
+\index{Update@{Update}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Unit\+Movement.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00046     \{}
+\DoxyCodeLine{00047         \textcolor{keywordflow}{if} (Vector3.Distance(\mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}}, transform.position) < 0.5f)}
+\DoxyCodeLine{00048         \{}
+\DoxyCodeLine{00049             \mbox{\hyperlink{class_unit_movement_aea24ff10af51a1f5ceb96ea158a72d79}{m\_velocityVector}} = Vector3.zero;}
+\DoxyCodeLine{00050             m\_rigidbody2D.velocity = Vector3.zero;}
+\DoxyCodeLine{00051             \mbox{\hyperlink{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}{m\_movePosition}}= transform.position;}
+\DoxyCodeLine{00052         \}}
+\DoxyCodeLine{00053     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_unit_movement_a4c228685b3bc09af7280d5eb49d8b96e}\label{class_unit_movement_a4c228685b3bc09af7280d5eb49d8b96e}} 
+\index{UnitMovement@{UnitMovement}!m\_movementSpeed@{m\_movementSpeed}}
+\index{m\_movementSpeed@{m\_movementSpeed}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{m\_movementSpeed}{m\_movementSpeed}}
+{\footnotesize\ttfamily float Unit\+Movement.\+m\+\_\+movement\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}\label{class_unit_movement_a4104bf79a3a219723bab21374cc1101c}} 
+\index{UnitMovement@{UnitMovement}!m\_movePosition@{m\_movePosition}}
+\index{m\_movePosition@{m\_movePosition}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{m\_movePosition}{m\_movePosition}}
+{\footnotesize\ttfamily Vector3 Unit\+Movement.\+m\+\_\+move\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_movement_a37bf9230462fde0612356056809d3774}\label{class_unit_movement_a37bf9230462fde0612356056809d3774}} 
+\index{UnitMovement@{UnitMovement}!m\_rigidbody2D@{m\_rigidbody2D}}
+\index{m\_rigidbody2D@{m\_rigidbody2D}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{m\_rigidbody2D}{m\_rigidbody2D}}
+{\footnotesize\ttfamily Rigidbody2D Unit\+Movement.\+m\+\_\+rigidbody2D\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_movement_ac68c00725a14e2f4d87092397684d257}\label{class_unit_movement_ac68c00725a14e2f4d87092397684d257}} 
+\index{UnitMovement@{UnitMovement}!m\_rotationModifier@{m\_rotationModifier}}
+\index{m\_rotationModifier@{m\_rotationModifier}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{m\_rotationModifier}{m\_rotationModifier}}
+{\footnotesize\ttfamily float Unit\+Movement.\+m\+\_\+rotation\+Modifier\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_movement_a3414700913795d2be84be288fa5f2631}\label{class_unit_movement_a3414700913795d2be84be288fa5f2631}} 
+\index{UnitMovement@{UnitMovement}!m\_rotationSpeed@{m\_rotationSpeed}}
+\index{m\_rotationSpeed@{m\_rotationSpeed}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{m\_rotationSpeed}{m\_rotationSpeed}}
+{\footnotesize\ttfamily float Unit\+Movement.\+m\+\_\+rotation\+Speed\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_movement_aea24ff10af51a1f5ceb96ea158a72d79}\label{class_unit_movement_aea24ff10af51a1f5ceb96ea158a72d79}} 
+\index{UnitMovement@{UnitMovement}!m\_velocityVector@{m\_velocityVector}}
+\index{m\_velocityVector@{m\_velocityVector}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{m\_velocityVector}{m\_velocityVector}}
+{\footnotesize\ttfamily Vector3 Unit\+Movement.\+m\+\_\+velocity\+Vector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_movement_a0ea4b32aef6db3115e826dd971fd025e}\label{class_unit_movement_a0ea4b32aef6db3115e826dd971fd025e}} 
+\index{UnitMovement@{UnitMovement}!UnitFieldOfView@{UnitFieldOfView}}
+\index{UnitFieldOfView@{UnitFieldOfView}!UnitMovement@{UnitMovement}}
+\doxysubsubsection{\texorpdfstring{UnitFieldOfView}{UnitFieldOfView}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_field_of_view}{Unit\+Field\+Of\+View}} Unit\+Movement.\+Unit\+Field\+Of\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_movement_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_unit_movement_8cs_source}{Unit\+Movement.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Unused/\mbox{\hyperlink{_unit_movement_8cs}{Unit\+Movement.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Unused/\mbox{\hyperlink{_unit_movement_8cs}{Unit\+Movement.\+cs}}\end{DoxyCompactItemize}

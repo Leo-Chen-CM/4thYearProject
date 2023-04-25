@@ -91,6 +91,8 @@ $(document).ready(function(){initNavTree('class_unit_movement.html',''); initRes
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_unit_movement-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">UnitMovement Class Reference</div></div>
 </div><!--header-->
@@ -99,12 +101,22 @@ $(document).ready(function(){initNavTree('class_unit_movement.html',''); initRes
 Inheritance diagram for UnitMovement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_movement__inherit__graph.png" border="0" usemap="#a_unit_movement_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_unit_movement_inherit__map" id="a_unit_movement_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,93,152,309"/>
+<area shape="rect" title=" " alt="" coords="21,5,136,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for UnitMovement:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_movement__coll__graph.png" border="0" usemap="#a_unit_movement_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_unit_movement_coll__map" id="a_unit_movement_coll__map">
+<area shape="rect" title=" " alt="" coords="5,799,152,1000"/>
+<area shape="rect" title=" " alt="" coords="51,5,165,45"/>
+<area shape="rect" href="class_unit_field_of_view.html" title="Field of view of a single unit" alt="" coords="95,329,270,736"/>
+<area shape="rect" href="class_unit_shooting.html" title=" " alt="" coords="145,95,265,267"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -112,8 +124,116 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9139aec755afad2f5408ef784f562284"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab46ad5198a06fedfccded69ee70875ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#ab46ad5198a06fedfccded69ee70875ec">SetVelocity</a> (Vector3 t_velocityVector)</td></tr>
 <tr class="separator:ab46ad5198a06fedfccded69ee70875ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a5627a7a6209ab00c6660d9cfa8a676cf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a5627a7a6209ab00c6660d9cfa8a676cf">Awake</a> ()</td></tr>
+<tr class="separator:a5627a7a6209ab00c6660d9cfa8a676cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9402f2841d6133860dec19f2c42d569d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a9402f2841d6133860dec19f2c42d569d">Update</a> ()</td></tr>
+<tr class="separator:a9402f2841d6133860dec19f2c42d569d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae1a44dc6bf889b8210f08e7c47f0e901"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#ae1a44dc6bf889b8210f08e7c47f0e901">FixedUpdate</a> ()</td></tr>
+<tr class="separator:ae1a44dc6bf889b8210f08e7c47f0e901"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4c228685b3bc09af7280d5eb49d8b96e"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a4c228685b3bc09af7280d5eb49d8b96e">m_movementSpeed</a></td></tr>
+<tr class="separator:a4c228685b3bc09af7280d5eb49d8b96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3414700913795d2be84be288fa5f2631"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a3414700913795d2be84be288fa5f2631">m_rotationSpeed</a></td></tr>
+<tr class="separator:a3414700913795d2be84be288fa5f2631"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac68c00725a14e2f4d87092397684d257"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#ac68c00725a14e2f4d87092397684d257">m_rotationModifier</a></td></tr>
+<tr class="separator:ac68c00725a14e2f4d87092397684d257"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4104bf79a3a219723bab21374cc1101c"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a></td></tr>
+<tr class="separator:a4104bf79a3a219723bab21374cc1101c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37bf9230462fde0612356056809d3774"><td class="memItemLeft" align="right" valign="top">Rigidbody2D&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a37bf9230462fde0612356056809d3774">m_rigidbody2D</a></td></tr>
+<tr class="separator:a37bf9230462fde0612356056809d3774"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea24ff10af51a1f5ceb96ea158a72d79"><td class="memItemLeft" align="right" valign="top">Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#aea24ff10af51a1f5ceb96ea158a72d79">m_velocityVector</a></td></tr>
+<tr class="separator:aea24ff10af51a1f5ceb96ea158a72d79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ea4b32aef6db3115e826dd971fd025e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit_field_of_view.html">UnitFieldOfView</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_movement.html#a0ea4b32aef6db3115e826dd971fd025e">UnitFieldOfView</a></td></tr>
+<tr class="separator:a0ea4b32aef6db3115e826dd971fd025e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00008">8</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a5627a7a6209ab00c6660d9cfa8a676cf" name="a5627a7a6209ab00c6660d9cfa8a676cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5627a7a6209ab00c6660d9cfa8a676cf">&#9670;&#160;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitMovement.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00024">24</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <a class="code hl_variable" href="class_unit_movement.html#a37bf9230462fde0612356056809d3774">m_rigidbody2D</a>= GetComponent&lt;Rigidbody2D&gt;();</div>
+<div class="line"><span class="lineno">   27</span>        <a class="code hl_class" href="class_unit_field_of_view.html">UnitFieldOfView</a>= GetComponent&lt;UnitFieldOfView&gt;();</div>
+<div class="line"><span class="lineno">   28</span>        <a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a> = transform.position;   </div>
+<div class="line"><span class="lineno">   29</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html"><div class="ttname"><a href="class_unit_field_of_view.html">UnitFieldOfView</a></div><div class="ttdoc">Field of view of a single unit</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00010">UnitFieldOfView.cs:11</a></div></div>
+<div class="ttc" id="aclass_unit_movement_html_a37bf9230462fde0612356056809d3774"><div class="ttname"><a href="class_unit_movement.html#a37bf9230462fde0612356056809d3774">UnitMovement.m_rigidbody2D</a></div><div class="ttdeci">Rigidbody2D m_rigidbody2D</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00019">UnitMovement.cs:19</a></div></div>
+<div class="ttc" id="aclass_unit_movement_html_a4104bf79a3a219723bab21374cc1101c"><div class="ttname"><a href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">UnitMovement.m_movePosition</a></div><div class="ttdeci">Vector3 m_movePosition</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00018">UnitMovement.cs:18</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ae1a44dc6bf889b8210f08e7c47f0e901" name="ae1a44dc6bf889b8210f08e7c47f0e901"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1a44dc6bf889b8210f08e7c47f0e901">&#9670;&#160;</a></span>FixedUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitMovement.FixedUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00055">55</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        <span class="keywordflow">if</span> (Vector3.Distance(<a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a>, transform.position) &lt; 2f)</div>
+<div class="line"><span class="lineno">   58</span>        {</div>
+<div class="line"><span class="lineno">   59</span>            m_rigidbody2D.velocity = m_rigidbody2D.velocity * 0.9f;</div>
+<div class="line"><span class="lineno">   60</span>        }</div>
+<div class="line"><span class="lineno">   61</span> </div>
+<div class="line"><span class="lineno">   62</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a> != transform.position &amp;&amp; !<a class="code hl_class" href="class_unit_field_of_view.html">UnitFieldOfView</a>.<a class="code hl_property" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a>)</div>
+<div class="line"><span class="lineno">   63</span>        {</div>
+<div class="line"><span class="lineno">   64</span>             Vector3 vectorToTarget = <a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a> - transform.position;</div>
+<div class="line"><span class="lineno">   65</span>             <span class="keywordtype">float</span> angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - <a class="code hl_variable" href="class_unit_movement.html#ac68c00725a14e2f4d87092397684d257">m_rotationModifier</a>;</div>
+<div class="line"><span class="lineno">   66</span>             Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);</div>
+<div class="line"><span class="lineno">   67</span>             transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * <a class="code hl_variable" href="class_unit_movement.html#a3414700913795d2be84be288fa5f2631">m_rotationSpeed</a>);</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a8ca058efa6085d032e312058abe7bafd"><div class="ttname"><a href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">UnitFieldOfView.m_enemySpotted</a></div><div class="ttdeci">bool m_enemySpotted</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00032">UnitFieldOfView.cs:32</a></div></div>
+<div class="ttc" id="aclass_unit_movement_html_a3414700913795d2be84be288fa5f2631"><div class="ttname"><a href="class_unit_movement.html#a3414700913795d2be84be288fa5f2631">UnitMovement.m_rotationSpeed</a></div><div class="ttdeci">float m_rotationSpeed</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00014">UnitMovement.cs:14</a></div></div>
+<div class="ttc" id="aclass_unit_movement_html_ac68c00725a14e2f4d87092397684d257"><div class="ttname"><a href="class_unit_movement.html#ac68c00725a14e2f4d87092397684d257">UnitMovement.m_rotationModifier</a></div><div class="ttdeci">float m_rotationModifier</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00016">UnitMovement.cs:16</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="a9139aec755afad2f5408ef784f562284" name="a9139aec755afad2f5408ef784f562284"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9139aec755afad2f5408ef784f562284">&#9670;&#160;</a></span>SetMovePosition()</h2>
 
@@ -137,10 +257,22 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00032">32</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>        <a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a> = t_movePosition;</div>
+<div class="line"><span class="lineno">   35</span>        Vector3 moveDirection = (<a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a> - transform.position).normalized;</div>
+<div class="line"><span class="lineno">   36</span>        <a class="code hl_function" href="class_unit_movement.html#ab46ad5198a06fedfccded69ee70875ec">SetVelocity</a>(moveDirection);</div>
+<div class="line"><span class="lineno">   37</span>    }</div>
+<div class="ttc" id="aclass_unit_movement_html_ab46ad5198a06fedfccded69ee70875ec"><div class="ttname"><a href="class_unit_movement.html#ab46ad5198a06fedfccded69ee70875ec">UnitMovement.SetVelocity</a></div><div class="ttdeci">void SetVelocity(Vector3 t_velocityVector)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00039">UnitMovement.cs:39</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_movement_a9139aec755afad2f5408ef784f562284_cgraph.png" border="0" usemap="#aclass_unit_movement_a9139aec755afad2f5408ef784f562284_cgraph" alt=""/></div>
+<map name="aclass_unit_movement_a9139aec755afad2f5408ef784f562284_cgraph" id="aclass_unit_movement_a9139aec755afad2f5408ef784f562284_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,211,31"/>
+<area shape="rect" href="class_unit_movement.html#ab46ad5198a06fedfccded69ee70875ec" title=" " alt="" coords="259,5,433,31"/>
+</map>
 </div>
 
 </div>
@@ -168,16 +300,232 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00039">39</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>    {</div>
+<div class="line"><span class="lineno">   41</span>        <a class="code hl_variable" href="class_unit_movement.html#aea24ff10af51a1f5ceb96ea158a72d79">m_velocityVector</a> = t_velocityVector;</div>
+<div class="line"><span class="lineno">   42</span>        m_rigidbody2D.velocity = <a class="code hl_variable" href="class_unit_movement.html#aea24ff10af51a1f5ceb96ea158a72d79">m_velocityVector</a> * <a class="code hl_variable" href="class_unit_movement.html#a4c228685b3bc09af7280d5eb49d8b96e">m_movementSpeed</a>;</div>
+<div class="line"><span class="lineno">   43</span>    }</div>
+<div class="ttc" id="aclass_unit_movement_html_a4c228685b3bc09af7280d5eb49d8b96e"><div class="ttname"><a href="class_unit_movement.html#a4c228685b3bc09af7280d5eb49d8b96e">UnitMovement.m_movementSpeed</a></div><div class="ttdeci">float m_movementSpeed</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00012">UnitMovement.cs:12</a></div></div>
+<div class="ttc" id="aclass_unit_movement_html_aea24ff10af51a1f5ceb96ea158a72d79"><div class="ttname"><a href="class_unit_movement.html#aea24ff10af51a1f5ceb96ea158a72d79">UnitMovement.m_velocityVector</a></div><div class="ttdeci">Vector3 m_velocityVector</div><div class="ttdef"><b>Definition:</b> <a href="_unit_movement_8cs_source.html#l00020">UnitMovement.cs:20</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_movement_ab46ad5198a06fedfccded69ee70875ec_icgraph.png" border="0" usemap="#aclass_unit_movement_ab46ad5198a06fedfccded69ee70875ec_icgraph" alt=""/></div>
+<map name="aclass_unit_movement_ab46ad5198a06fedfccded69ee70875ec_icgraph" id="aclass_unit_movement_ab46ad5198a06fedfccded69ee70875ec_icgraph">
+<area shape="rect" title=" " alt="" coords="259,5,433,31"/>
+<area shape="rect" href="class_unit_movement.html#a9139aec755afad2f5408ef784f562284" title=" " alt="" coords="5,5,211,31"/>
+</map>
 </div>
 
 </div>
 </div>
+<a id="a9402f2841d6133860dec19f2c42d569d" name="a9402f2841d6133860dec19f2c42d569d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9402f2841d6133860dec19f2c42d569d">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitMovement.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00045">45</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>    {</div>
+<div class="line"><span class="lineno">   47</span>        <span class="keywordflow">if</span> (Vector3.Distance(<a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a>, transform.position) &lt; 0.5f)</div>
+<div class="line"><span class="lineno">   48</span>        {</div>
+<div class="line"><span class="lineno">   49</span>            <a class="code hl_variable" href="class_unit_movement.html#aea24ff10af51a1f5ceb96ea158a72d79">m_velocityVector</a> = Vector3.zero;</div>
+<div class="line"><span class="lineno">   50</span>            m_rigidbody2D.velocity = Vector3.zero;</div>
+<div class="line"><span class="lineno">   51</span>            <a class="code hl_variable" href="class_unit_movement.html#a4104bf79a3a219723bab21374cc1101c">m_movePosition</a>= transform.position;</div>
+<div class="line"><span class="lineno">   52</span>        }</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a4c228685b3bc09af7280d5eb49d8b96e" name="a4c228685b3bc09af7280d5eb49d8b96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c228685b3bc09af7280d5eb49d8b96e">&#9670;&#160;</a></span>m_movementSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UnitMovement.m_movementSpeed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00012">12</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a4104bf79a3a219723bab21374cc1101c" name="a4104bf79a3a219723bab21374cc1101c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4104bf79a3a219723bab21374cc1101c">&#9670;&#160;</a></span>m_movePosition</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 UnitMovement.m_movePosition</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00018">18</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a37bf9230462fde0612356056809d3774" name="a37bf9230462fde0612356056809d3774"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37bf9230462fde0612356056809d3774">&#9670;&#160;</a></span>m_rigidbody2D</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Rigidbody2D UnitMovement.m_rigidbody2D</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00019">19</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac68c00725a14e2f4d87092397684d257" name="ac68c00725a14e2f4d87092397684d257"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac68c00725a14e2f4d87092397684d257">&#9670;&#160;</a></span>m_rotationModifier</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UnitMovement.m_rotationModifier</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00016">16</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a3414700913795d2be84be288fa5f2631" name="a3414700913795d2be84be288fa5f2631"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3414700913795d2be84be288fa5f2631">&#9670;&#160;</a></span>m_rotationSpeed</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UnitMovement.m_rotationSpeed</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00014">14</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
+<a id="aea24ff10af51a1f5ceb96ea158a72d79" name="aea24ff10af51a1f5ceb96ea158a72d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea24ff10af51a1f5ceb96ea158a72d79">&#9670;&#160;</a></span>m_velocityVector</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Vector3 UnitMovement.m_velocityVector</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00020">20</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
+<a id="a0ea4b32aef6db3115e826dd971fd025e" name="a0ea4b32aef6db3115e826dd971fd025e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ea4b32aef6db3115e826dd971fd025e">&#9670;&#160;</a></span>UnitFieldOfView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit_field_of_view.html">UnitFieldOfView</a> UnitMovement.UnitFieldOfView</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_movement_8cs_source.html#l00023">23</a> of file <a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Unused/<a class="el" href="_unit_movement_8cs.html">UnitMovement.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unused/<a class="el" href="_unit_movement_8cs_source.html">UnitMovement.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

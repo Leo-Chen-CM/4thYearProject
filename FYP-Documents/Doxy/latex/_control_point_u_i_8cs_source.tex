@@ -1,0 +1,40 @@
+\hypertarget{_control_point_u_i_8cs_source}{}\doxysection{Control\+Point\+UI.\+cs}
+\label{_control_point_u_i_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Map Scripts/ControlPointUI.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Map Scripts/ControlPointUI.cs}}
+\mbox{\hyperlink{_control_point_u_i_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00001}00001 \textcolor{keyword}{using }System;}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00003}00003 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00004}00004 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00005}00005 \textcolor{keyword}{using }UnityEngine.UI;}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00007}\mbox{\hyperlink{class_control_point_u_i}{00007}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_control_point_u_i}{ControlPointUI}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00009}00009     [Serializable]}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00010}\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{00010}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{MapAreaImage}}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00012}\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image_acd3b03d0d4e6e2ee986f997830f83214}{00012}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_control_point_controller}{ControlPointController}} \mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image_acd3b03d0d4e6e2ee986f997830f83214}{m\_capturePoint}};}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00013}\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image_a5a246162a3093abff9c1b20dfb0ee712}{00013}}         \textcolor{keyword}{public} Image \mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image_a5a246162a3093abff9c1b20dfb0ee712}{m\_progressImage}};}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00016}00016     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00017}\mbox{\hyperlink{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}{00017}}     \textcolor{keyword}{private} List<MapAreaImage> \mbox{\hyperlink{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}{m\_mapAreaImages}} = \textcolor{keyword}{new} List<MapAreaImage>();}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00019}\mbox{\hyperlink{class_control_point_u_i_aad129fc640c18161f257660d5590550f}{00019}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_control_point_u_i_aad129fc640c18161f257660d5590550f}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00020}00020     \{}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00021}00021         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image}{MapAreaImage}} mapAreaImage \textcolor{keywordflow}{in} \mbox{\hyperlink{class_control_point_u_i_ac13c21c9d37ba1429d0fa416a579aafd}{m\_mapAreaImages}})}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00022}00022         \{}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00023}00023             mapAreaImage.m\_progressImage.fillAmount = mapAreaImage.\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image_acd3b03d0d4e6e2ee986f997830f83214}{m\_capturePoint}}.\mbox{\hyperlink{class_control_point_controller_a0d8497a71a7f1aa9e303eaccf3bdbe9e}{GetProgress}}();}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00024}00024             \textcolor{comment}{//mapAreaImage.m\_progressImage.fillAmount = 0;}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00025}00025             mapAreaImage.m\_progressImage.color = mapAreaImage.\mbox{\hyperlink{class_control_point_u_i_1_1_map_area_image_acd3b03d0d4e6e2ee986f997830f83214}{m\_capturePoint}}.\mbox{\hyperlink{class_control_point_controller_a736104b71f044d3a5312633098d87759}{GetColor}}();}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00026}00026         \}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00027}00027     \}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00029}00029     \textcolor{comment}{//Capturing UI needs two things.}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00030}00030     \textcolor{comment}{//The progress}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00031}00031     \textcolor{comment}{//The color of the team}}
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_control_point_u_i_8cs_source_l00034}00034 \}}
+
+\end{DoxyCode}

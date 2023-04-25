@@ -95,13 +95,24 @@ $(document).ready(function(){initNavTree('class_utility.html',''); initResizable
   <div class="headertitle"><div class="title">Utility Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for Utility:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_utility__coll__graph.png" border="0" usemap="#a_utility_coll__map" alt="Collaboration graph"/></div>
+<map name="a_utility_coll__map" id="a_utility_coll__map">
+<area shape="rect" title=" " alt="" coords="5,5,193,60"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae371e10730332ffe8c695c8401effd37"><td class="memItemLeft" align="right" valign="top">static Vector3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_utility.html#ae371e10730332ffe8c695c8401effd37">ReturnMousePosition2D</a> ()</td></tr>
 <tr class="separator:ae371e10730332ffe8c695c8401effd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_utility_8cs_source.html#l00005">5</a> of file <a class="el" href="_utility_8cs_source.html">Utility.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="ae371e10730332ffe8c695c8401effd37" name="ae371e10730332ffe8c695c8401effd37"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ae371e10730332ffe8c695c8401effd37">&#9670;&#160;</a></span>ReturnMousePosition2D()</h2>
 
@@ -124,16 +135,27 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_utility_8cs_source.html#l00007">7</a> of file <a class="el" href="_utility_8cs_source.html">Utility.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    8</span>    {</div>
+<div class="line"><span class="lineno">    9</span>        Vector3 mousePosition2D = Camera.main.ScreenToWorldPoint(Input.mousePosition);</div>
+<div class="line"><span class="lineno">   10</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Vector3(mousePosition2D.x, mousePosition2D.y, 0);</div>
+<div class="line"><span class="lineno">   11</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_utility_ae371e10730332ffe8c695c8401effd37_icgraph.png" border="0" usemap="#aclass_utility_ae371e10730332ffe8c695c8401effd37_icgraph" alt=""/></div>
+<map name="aclass_utility_ae371e10730332ffe8c695c8401effd37_icgraph" id="aclass_utility_ae371e10730332ffe8c695c8401effd37_icgraph">
+<area shape="rect" title=" " alt="" coords="407,31,605,56"/>
+<area shape="rect" href="class_selection.html#a5d24db948b630a237b811f4734cbe868" title=" " alt="" coords="212,5,359,31"/>
+<area shape="rect" href="class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,31,164,56"/>
+</map>
 </div>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Unit Scripts/<a class="el" href="_utility_8cs.html">Utility.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/<a class="el" href="_utility_8cs_source.html">Utility.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

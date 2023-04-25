@@ -1,0 +1,236 @@
+\hypertarget{_game_manager_8cs_source}{}\doxysection{Game\+Manager.\+cs}
+\label{_game_manager_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Game Management/GameManager.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Game Management/GameManager.cs}}
+\mbox{\hyperlink{_game_manager_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00004}00004 \textcolor{keyword}{using }TMPro;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00005}\mbox{\hyperlink{class_game_manager}{00005}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_game_manager}{GameManager}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00007}00007     \textcolor{comment}{//Singleton instance of game manager}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00008}\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{00008}}     \textcolor{keyword}{public} \textcolor{keyword}{static} \mbox{\hyperlink{class_game_manager}{GameManager}} \mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00010}00010     [Header(\textcolor{stringliteral}{"{}Game Attributes"{}})]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00011}\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{00011}}     \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}}; \textcolor{comment}{//Checks if the game is paused or not}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00013}00013     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00014}\mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{00014}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}}; \textcolor{comment}{//Maximum resources a player can have at a time.}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00016}00016     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00017}\mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{00017}}     GameObject \mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{m\_pauseTextObject}};\textcolor{comment}{//Gameobject that holds the pause text}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00018}00018     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00019}\mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{00019}}     \textcolor{keywordtype}{int} \mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{m\_reserveGeneration}} = 1;\textcolor{comment}{//Passive amount of resources generated}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00021}\mbox{\hyperlink{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}{00021}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}{m\_debugMode}};\textcolor{comment}{//Debug mode showing unit formation points}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00023}\mbox{\hyperlink{class_game_manager_abc368543a1efb98498b81138b349a64b}{00023}}     \textcolor{keyword}{public} List<ControlPointController> \mbox{\hyperlink{class_game_manager_abc368543a1efb98498b81138b349a64b}{m\_controlPointControllers}} = \textcolor{keyword}{new} List<ControlPointController>();\textcolor{comment}{//List of all control points}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00024}00024 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00025}\mbox{\hyperlink{class_game_manager_a9d14bb218cd302efecb6720a676710a5}{00025}}     \textcolor{keyword}{public} List<ControlPointController> \mbox{\hyperlink{class_game_manager_a9d14bb218cd302efecb6720a676710a5}{m\_resourcePointControllers}} = \textcolor{keyword}{new} List<ControlPointController>();\textcolor{comment}{//List of all resource points}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00026}00026 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00027}00027     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00028}\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{00028}}     \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}};\textcolor{comment}{//Time it takes to generate score or funding}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00029}00029 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00030}00030     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00031}\mbox{\hyperlink{class_game_manager_aac17958bb4e503d2dda20988909e4560}{00031}}     [Range(0,2)] \textcolor{keywordtype}{float} \mbox{\hyperlink{class_game_manager_aac17958bb4e503d2dda20988909e4560}{m\_timeScale}};\textcolor{comment}{//Manages how fast the game is running}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00033}00033     \textcolor{comment}{//Attributes for Team 1}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00034}00034     [Header(\textcolor{stringliteral}{"{}Team 1 Attributes"{}})]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00035}\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{00035}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00036}\mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{00036}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00038}\mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{00038}}     \textcolor{keyword}{public} List<ControlPointController> \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}} = \textcolor{keyword}{new} List<ControlPointController>();}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00039}00039 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00040}\mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{00040}}     \textcolor{keyword}{public} List<ControlPointController> \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}} = \textcolor{keyword}{new} List<ControlPointController>();}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00042}00042     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00043}\mbox{\hyperlink{class_game_manager_aade8c4f079ebc83ea8050f560d29cf71}{00043}}     TextMeshProUGUI \mbox{\hyperlink{class_game_manager_aade8c4f079ebc83ea8050f560d29cf71}{m\_team1ScoreText}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00044}00044     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00045}\mbox{\hyperlink{class_game_manager_a23787afc2d7f92525836eb3e7084809c}{00045}}     TextMeshProUGUI \mbox{\hyperlink{class_game_manager_a23787afc2d7f92525836eb3e7084809c}{m\_team1ResourceText}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00047}00047 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00048}00048     \textcolor{comment}{//Attributes for Team 2}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00049}00049     [Header(\textcolor{stringliteral}{"{}Team 2 Attributes"{}})]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00050}00050 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00051}\mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{00051}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00052}00052 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00053}\mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{00053}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00055}\mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{00055}}     \textcolor{keyword}{public} List<ControlPointController> \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}} = \textcolor{keyword}{new} List<ControlPointController>();}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00056}00056 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00057}\mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{00057}}     \textcolor{keyword}{public} List<ControlPointController> \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}} = \textcolor{keyword}{new} List<ControlPointController>();}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00059}00059     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00060}\mbox{\hyperlink{class_game_manager_a0ab54f7dd8b41e115b999015c19f5fd5}{00060}}     TextMeshProUGUI \mbox{\hyperlink{class_game_manager_a0ab54f7dd8b41e115b999015c19f5fd5}{m\_team2ScoreText}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00061}00061     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00062}\mbox{\hyperlink{class_game_manager_a76c2bd4f76af5479947b019836901c58}{00062}}     TextMeshProUGUI \mbox{\hyperlink{class_game_manager_a76c2bd4f76af5479947b019836901c58}{m\_team2ResourceText}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00063}00063     \textcolor{comment}{// Start is called before the first frame update}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00064}\mbox{\hyperlink{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}{00064}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00065}00065     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00066}00066         \mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}} = \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00068}00068         \mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00069}00069 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00070}00070         \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}} = 0;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00071}00071         \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}} = 0;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00072}00072 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00073}00073         \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} = 0;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00074}00074         \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} = 0;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00075}00075 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00076}00076         StartCoroutine(\mbox{\hyperlink{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}{GenerateFunding1}}());}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00077}00077         StartCoroutine(\mbox{\hyperlink{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}{GenerateFunding2}}());}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00078}00078         StartCoroutine(\mbox{\hyperlink{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}{GenerateScore1}}());}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00079}00079         StartCoroutine(\mbox{\hyperlink{class_game_manager_a1fba451617ab45e6f68c974cf0972618}{GenerateScore2}}());}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00080}00080     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00082}\mbox{\hyperlink{class_game_manager_a44c79b205dec16bfe650e21259860c5b}{00082}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a44c79b205dec16bfe650e21259860c5b}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00084}00084         \textcolor{keywordflow}{if} (Input.GetKeyDown(KeyCode.P))}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00085}00085         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00086}00086             \mbox{\hyperlink{class_game_manager_a27c11cd9c091286098fd251a2423040a}{ToggleGamePause}}();}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00087}00087         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00088}00088 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00089}00089         \textcolor{keywordflow}{if} (Input.GetKeyDown(KeyCode.O))}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00090}00090         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00091}00091             \mbox{\hyperlink{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}{m\_debugMode}} = !\mbox{\hyperlink{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}{m\_debugMode}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00092}00092         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00093}00093 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00094}00094         Time.timeScale = \mbox{\hyperlink{class_game_manager_aac17958bb4e503d2dda20988909e4560}{m\_timeScale}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00095}00095     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00096}00096 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00097}00097 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00098}00098     \textcolor{comment}{//Need to check which control point belongs to who.}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00099}\mbox{\hyperlink{class_game_manager_a5964d11250b55f52fa6cf70e679d8803}{00099}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a5964d11250b55f52fa6cf70e679d8803}{PointsCaptured}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00100}00100     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00101}00101         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} controlPointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_abc368543a1efb98498b81138b349a64b}{m\_controlPointControllers}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00102}00102         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00103}00103             \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team1"{}} \&\& !\mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Contains(controlPointController))}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00104}00104             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00105}00105                 \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Add(controlPointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00106}00106             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00107}00107             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team2"{}} \&\& !\mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Contains(controlPointController))}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00108}00108             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00109}00109                 \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Add(controlPointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00110}00110             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00111}00111         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00112}00112 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00113}00113         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} resourcePointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_a9d14bb218cd302efecb6720a676710a5}{m\_resourcePointControllers}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00114}00114         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00115}00115             \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team1"{}} \&\& !\mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Contains(resourcePointController))}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00116}00116             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00117}00117                 \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Add(resourcePointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00118}00118             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00119}00119             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team2"{}} \&\& !\mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Contains(resourcePointController))}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00120}00120             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00121}00121                 \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Add(resourcePointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00122}00122             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00123}00123         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00124}00124     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00126}00126     }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00127}00127     \textcolor{comment}{//Need to check which control points were lost.}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00128}\mbox{\hyperlink{class_game_manager_abcc8946199734dd26f829e767d265ac1}{00128}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_abcc8946199734dd26f829e767d265ac1}{PointsLost}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00129}00129     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00130}00130         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} controlPointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_abc368543a1efb98498b81138b349a64b}{m\_controlPointControllers}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00131}00131         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00132}00132             \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00133}00133             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00134}00134                 \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Remove(controlPointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00135}00135             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00136}00136             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team2"{}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00137}00137             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00138}00138                 \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Remove(controlPointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00139}00139             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00140}00140         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00141}00141 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00142}00142         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} resourcePointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_a9d14bb218cd302efecb6720a676710a5}{m\_resourcePointControllers}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00143}00143         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00144}00144             \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00145}00145             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00146}00146                 \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Remove(resourcePointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00147}00147             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00148}00148             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team2"{}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00149}00149             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00150}00150                 \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Remove(resourcePointController);}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00151}00151             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00152}00152         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00153}00153     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00154}00154 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00155}00155     }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00159}\mbox{\hyperlink{class_game_manager_a27c11cd9c091286098fd251a2423040a}{00159}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_game_manager_a27c11cd9c091286098fd251a2423040a}{ToggleGamePause}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00160}00160     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00161}00161         \mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}} = !\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00162}00162 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00163}00163         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00164}00164         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00165}00165             Time.timeScale = 0;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00166}00166             \mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{m\_pauseTextObject}}.SetActive(\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}});}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00167}00167         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00168}00168         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00169}00169         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00170}00170             Time.timeScale = 1;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00171}00171             \mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{m\_pauseTextObject}}.SetActive(\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}});}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00172}00172         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00173}00173     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00174}00174 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00175}00175     \textcolor{comment}{//Generates Team 1's score}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00176}\mbox{\hyperlink{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}{00176}}     IEnumerator \mbox{\hyperlink{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}{GenerateScore1}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00177}00177     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00178}00178         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00179}00179         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00180}00180             \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}} += \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Count;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00181}00181             m\_team1ScoreText.text = \textcolor{stringliteral}{"{}Team 1 Score: "{}} + \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00182}00182             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00183}00183         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00184}00184     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00185}00185     \textcolor{comment}{//Generates Team 2's score}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00186}\mbox{\hyperlink{class_game_manager_a1fba451617ab45e6f68c974cf0972618}{00186}}     IEnumerator \mbox{\hyperlink{class_game_manager_a1fba451617ab45e6f68c974cf0972618}{GenerateScore2}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00187}00187     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00188}00188         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00189}00189         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00190}00190             \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}} += \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Count;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00191}00191             m\_team2ScoreText.text = \textcolor{stringliteral}{"{}Team 2 Score: "{}} + \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00192}00192             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00193}00193         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00194}00194     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00195}00195 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00196}00196     \textcolor{comment}{//Generates Team 1's resources/funding}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00197}\mbox{\hyperlink{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}{00197}}     IEnumerator \mbox{\hyperlink{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}{GenerateFunding1}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00198}00198     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00199}00199         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00200}00200         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00201}00201             \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} += \mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{m\_reserveGeneration}} + \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Count;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00202}00202 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00203}00203             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} > \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00204}00204             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00205}00205                 \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} = \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00206}00206             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00207}00207 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00208}00208             m\_team1ResourceText.text = \textcolor{stringliteral}{"{}Team 1 Resources: "{}} + \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00209}00209 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00210}00210             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00211}00211         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00212}00212 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00213}00213     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00214}00214 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00215}00215     \textcolor{comment}{//Generates Team 2's resources/funding}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00216}\mbox{\hyperlink{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}{00216}}     IEnumerator \mbox{\hyperlink{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}{GenerateFunding2}}()}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00217}00217     \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00218}00218         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00219}00219         \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00220}00220             \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} += \mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{m\_reserveGeneration}} + \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Count;}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00221}00221 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00222}00222             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} > \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}})}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00223}00223             \{}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00224}00224                 \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} = \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00225}00225             \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00226}00226 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00227}00227             m\_team2ResourceText.text = \textcolor{stringliteral}{"{}Team 2 Resources: "{}} + \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}};}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00228}00228 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00229}00229             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00230}00230         \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00232}00232     \}}
+\DoxyCodeLine{\Hypertarget{_game_manager_8cs_source_l00233}00233 \}}
+
+\end{DoxyCode}

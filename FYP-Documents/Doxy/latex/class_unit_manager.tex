@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Unit\+Manager\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_unit_manager__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Unit\+Manager\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_unit_manager__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,8 +32,20 @@ List$<$ \mbox{\hyperlink{class_base_unit}{Base\+Unit}} $>$ \mbox{\hyperlink{clas
 \item 
 List$<$ \mbox{\hyperlink{class_group_leader}{Group\+Leader}} $>$ \mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\+\_\+selected\+Group\+Leaders}} = new List$<$\mbox{\hyperlink{class_group_leader}{Group\+Leader}}$>$()
 \item 
-bool\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}} = new bool\mbox{[}max\+Groups\mbox{]}
+bool\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}} = new bool\mbox{[}\mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{max\+Groups}}\mbox{]}
 \end{DoxyCompactItemize}
+\doxysubsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{max\+Groups}} = 9
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_unit_manager_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_unit_manager_8cs_source}{Unit\+Manager.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -33,18 +57,37 @@ bool\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3
 
 
 
+Definition at line \mbox{\hyperlink{_unit_manager_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_unit_manager_8cs_source}{Unit\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018     \{}
+\DoxyCodeLine{00019         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{maxGroups}};}
+\DoxyCodeLine{00020     \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}\label{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}} 
 \index{UnitManager@{UnitManager}!groups@{groups}}
 \index{groups@{groups}!UnitManager@{UnitManager}}
 \doxysubsubsection{\texorpdfstring{groups}{groups}}
-{\footnotesize\ttfamily bool \mbox{[}$\,$\mbox{]} Unit\+Manager.\+groups = new bool\mbox{[}max\+Groups\mbox{]}}
+{\footnotesize\ttfamily bool \mbox{[}$\,$\mbox{]} Unit\+Manager.\+groups = new bool\mbox{[}\mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{max\+Groups}}\mbox{]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_manager_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_unit_manager_8cs_source}{Unit\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}\label{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}} 
 \index{UnitManager@{UnitManager}!m\_selectedGroupLeaders@{m\_selectedGroupLeaders}}
 \index{m\_selectedGroupLeaders@{m\_selectedGroupLeaders}!UnitManager@{UnitManager}}
 \doxysubsubsection{\texorpdfstring{m\_selectedGroupLeaders}{m\_selectedGroupLeaders}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_group_leader}{Group\+Leader}}$>$ Unit\+Manager.\+m\+\_\+selected\+Group\+Leaders = new List$<$\mbox{\hyperlink{class_group_leader}{Group\+Leader}}$>$()}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_manager_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_unit_manager_8cs_source}{Unit\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}\label{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}} 
 \index{UnitManager@{UnitManager}!m\_selectedUnits@{m\_selectedUnits}}
@@ -54,6 +97,20 @@ bool\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3
 
 
 
+Definition at line \mbox{\hyperlink{_unit_manager_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_unit_manager_8cs_source}{Unit\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}\label{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}} 
+\index{UnitManager@{UnitManager}!maxGroups@{maxGroups}}
+\index{maxGroups@{maxGroups}!UnitManager@{UnitManager}}
+\doxysubsubsection{\texorpdfstring{maxGroups}{maxGroups}}
+{\footnotesize\ttfamily const int Unit\+Manager.\+max\+Groups = 9\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_manager_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_unit_manager_8cs_source}{Unit\+Manager.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Unit Scripts/\mbox{\hyperlink{_unit_manager_8cs}{Unit\+Manager.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Unit Scripts/\mbox{\hyperlink{_unit_manager_8cs}{Unit\+Manager.\+cs}}\end{DoxyCompactItemize}

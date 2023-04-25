@@ -3,14 +3,346 @@
 
 
 Inheritance diagram for Finite\+State\+Machine\+AI\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finite_state_machine_a_i__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Finite\+State\+Machine\+AI\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_finite_state_machine_a_i__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}} 
+\begin{DoxyCompactList}\small\item\em This AI is meant to represent Field Marhsal Douglas Haig The Blackadder representation of him. Where he has devised a brilliant tactical plan to secure final victory in the field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_finite_state_machine_a_i_a07a5fc264d3ee3a5f970b2df742f3e1d}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_finite_state_machine_a_i_ada3ec96738596c694204a2f6e6354451}{Start}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_finite_state_machine_a_i_af3ee83f57d4c7f15260aeb4be694e0f4}{Orders}} ()
+\item 
+void \mbox{\hyperlink{class_finite_state_machine_a_i_a570480bf4417ac162f3d2cbf9f105ce2}{Gather\+Forces}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}} \mbox{\hyperlink{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}{m\+\_\+states}} = States.\+Gather\+Forces
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_finite_state_machine_a_i_a0f856a50fa00e7fc21947f3e0ccd233f}{m\+\_\+way\+Points}} = new List$<$Transform$>$()
+\item 
+List$<$ Transform $>$ \mbox{\hyperlink{class_finite_state_machine_a_i_a6e52db73e6f0c9df5da11ade69b84b82}{m\+\_\+rally\+Points}} = new List$<$Transform$>$()
+\item 
+Layer\+Mask \mbox{\hyperlink{class_finite_state_machine_a_i_a7ec6040ae4d7edecd1dd109030cfd95a}{m\+\_\+entity\+Layer}}
+\item 
+int \mbox{\hyperlink{class_finite_state_machine_a_i_adb4ffb02b7de2de610f3b03cb7e669a1}{m\+\_\+max\+Soldiers}}
+\item 
+int \mbox{\hyperlink{class_finite_state_machine_a_i_a068bb1c41c489d71d4c483bdda1e92a9}{m\+\_\+orders\+Time\+Delay}}
+\item 
+Transform\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_finite_state_machine_a_i_a110c675dea65d4093d07eee25036b287}{m\+\_\+selection\+Area}}
+\item 
+\mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} \mbox{\hyperlink{class_finite_state_machine_a_i_ab44233c444c17f7a5be88bf3b33b2a47}{m\+\_\+formations}} = Formations.\+Line
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+
+
+\doxysubsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}\label{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!States@{States}}
+\index{States@{States}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{States}{States}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{Finite\+State\+Machine\+AI.\+States}}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+This AI is meant to represent Field Marhsal Douglas Haig The Blackadder representation of him. Where he has devised a brilliant tactical plan to secure final victory in the field. 
+
+Unfortunately that plan is for the troopers to march in to the field in lines of 9 to the capture point  
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00018     \{}
+\DoxyCodeLine{00019         \textcolor{comment}{//Idle,}}
+\DoxyCodeLine{00020         \mbox{\hyperlink{class_finite_state_machine_a_i_a570480bf4417ac162f3d2cbf9f105ce2}{GatherForces}},}
+\DoxyCodeLine{00021         RallyPoint,}
+\DoxyCodeLine{00022         MoveOut}
+\DoxyCodeLine{00023     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a07a5fc264d3ee3a5f970b2df742f3e1d}\label{class_finite_state_machine_a_i_a07a5fc264d3ee3a5f970b2df742f3e1d}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!Awake@{Awake}}
+\index{Awake@{Awake}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void Finite\+State\+Machine\+AI.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052     \{}
+\DoxyCodeLine{00053         \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}} = \textcolor{keyword}{new} List<BaseUnit>();}
+\DoxyCodeLine{00054     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a570480bf4417ac162f3d2cbf9f105ce2}\label{class_finite_state_machine_a_i_a570480bf4417ac162f3d2cbf9f105ce2}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!GatherForces@{GatherForces}}
+\index{GatherForces@{GatherForces}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{GatherForces()}{GatherForces()}}
+{\footnotesize\ttfamily void Finite\+State\+Machine\+AI.\+Gather\+Forces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00100}{100}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00101     \{}
+\DoxyCodeLine{00102         Collider2D[] collider2DArray;}
+\DoxyCodeLine{00103 }
+\DoxyCodeLine{00104         collider2DArray = Physics2D.OverlapAreaAll(\mbox{\hyperlink{class_finite_state_machine_a_i_a110c675dea65d4093d07eee25036b287}{m\_selectionArea}}[0].position, \mbox{\hyperlink{class_finite_state_machine_a_i_a110c675dea65d4093d07eee25036b287}{m\_selectionArea}}[1].position, \mbox{\hyperlink{class_finite_state_machine_a_i_a7ec6040ae4d7edecd1dd109030cfd95a}{m\_entityLayer}});}
+\DoxyCodeLine{00105 }
+\DoxyCodeLine{00106         \textcolor{comment}{//if (gameObject.tag == "{}Team1"{})}}
+\DoxyCodeLine{00107         \textcolor{comment}{//\{}}
+\DoxyCodeLine{00108 }
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110         \textcolor{comment}{//    collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-\/250, 75, 0), new Vector3(-\/175, -\/75, 0), m\_entityLayer);}}
+\DoxyCodeLine{00111         \textcolor{comment}{//\}}}
+\DoxyCodeLine{00112         \textcolor{comment}{//else}}
+\DoxyCodeLine{00113         \textcolor{comment}{//\{}}
+\DoxyCodeLine{00114         \textcolor{comment}{//    collider2DArray = Physics2D.OverlapAreaAll(new Vector3(175, 75, 0), new Vector3(250, -\/75, 0), m\_entityLayer);}}
+\DoxyCodeLine{00115         \textcolor{comment}{//\}}}
+\DoxyCodeLine{00116 }
+\DoxyCodeLine{00117         \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}}.Clear();}
+\DoxyCodeLine{00118 }
+\DoxyCodeLine{00119         \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} collider2DArray)}
+\DoxyCodeLine{00120         \{}
+\DoxyCodeLine{00121             \mbox{\hyperlink{class_base_unit}{BaseUnit}} unitRTS = collider2D.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>();}
+\DoxyCodeLine{00122 }
+\DoxyCodeLine{00123             \textcolor{keywordflow}{if} (unitRTS != \textcolor{keyword}{null} \&\& unitRTS.gameObject.tag == gameObject.tag)}
+\DoxyCodeLine{00124             \{}
+\DoxyCodeLine{00125                 \textcolor{comment}{//unitRTS.SetSelectedVisible(true);}}
+\DoxyCodeLine{00126                 \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}}.Add(unitRTS);}
+\DoxyCodeLine{00127             \}}
+\DoxyCodeLine{00128         \}}
+\DoxyCodeLine{00129         Debug.Log(\textcolor{stringliteral}{"{}The FSM has troopers rallied"{}});}
+\DoxyCodeLine{00130 }
+\DoxyCodeLine{00131         }
+\DoxyCodeLine{00132 }
+\DoxyCodeLine{00133         \mbox{\hyperlink{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}{m\_states}} = \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}}.RallyPoint;}
+\DoxyCodeLine{00134     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finite_state_machine_a_i_a570480bf4417ac162f3d2cbf9f105ce2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finite_state_machine_a_i_af3ee83f57d4c7f15260aeb4be694e0f4}\label{class_finite_state_machine_a_i_af3ee83f57d4c7f15260aeb4be694e0f4}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!Orders@{Orders}}
+\index{Orders@{Orders}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{Orders()}{Orders()}}
+{\footnotesize\ttfamily IEnumerator Finite\+State\+Machine\+AI.\+Orders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063     \{}
+\DoxyCodeLine{00064         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{00065         \{}
+\DoxyCodeLine{00066             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}{m\_states}})}
+\DoxyCodeLine{00067             \{}
+\DoxyCodeLine{00068                 \textcolor{comment}{//case States.Idle:}}
+\DoxyCodeLine{00069                 \textcolor{comment}{//    //AwaitingOrders();}}
+\DoxyCodeLine{00070                 \textcolor{comment}{//    break;}}
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072                 \textcolor{keywordflow}{case} \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}}.GatherForces:}
+\DoxyCodeLine{00073                     yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_finite_state_machine_a_i_a068bb1c41c489d71d4c483bdda1e92a9}{m\_ordersTimeDelay}});}
+\DoxyCodeLine{00074                     \mbox{\hyperlink{class_finite_state_machine_a_i_a570480bf4417ac162f3d2cbf9f105ce2}{GatherForces}}();}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078                 \textcolor{keywordflow}{case} \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}}.RallyPoint:}
+\DoxyCodeLine{00079                     \textcolor{comment}{//m\_states = States.Idle;}}
+\DoxyCodeLine{00080                     \textcolor{comment}{//StartCoroutine(MoveToRallyPoint());}}
+\DoxyCodeLine{00081                     \textcolor{comment}{//MoveToPoint(m\_wayPoints[0].position);}}
+\DoxyCodeLine{00082                     \mbox{\hyperlink{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52}{SetFormationPosition}}(\mbox{\hyperlink{class_finite_state_machine_a_i_a6e52db73e6f0c9df5da11ade69b84b82}{m\_rallyPoints}}[Random.Range(0,\mbox{\hyperlink{class_finite_state_machine_a_i_a6e52db73e6f0c9df5da11ade69b84b82}{m\_rallyPoints}}.Count)].position);}
+\DoxyCodeLine{00083                     yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_finite_state_machine_a_i_a068bb1c41c489d71d4c483bdda1e92a9}{m\_ordersTimeDelay}});}
+\DoxyCodeLine{00084                     \mbox{\hyperlink{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}{m\_states}} = \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}}.MoveOut;}
+\DoxyCodeLine{00085                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00086 }
+\DoxyCodeLine{00087                 \textcolor{keywordflow}{case} \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}}.MoveOut:}
+\DoxyCodeLine{00088                     \textcolor{comment}{//m\_states = States.Idle;}}
+\DoxyCodeLine{00089                     \textcolor{comment}{//StartCoroutine(MoveOut());}}
+\DoxyCodeLine{00090                     \mbox{\hyperlink{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52}{SetFormationPosition}}(\mbox{\hyperlink{class_finite_state_machine_a_i_a0f856a50fa00e7fc21947f3e0ccd233f}{m\_wayPoints}}[Random.Range(0, \mbox{\hyperlink{class_finite_state_machine_a_i_a0f856a50fa00e7fc21947f3e0ccd233f}{m\_wayPoints}}.Count)].position + \textcolor{keyword}{new} Vector3(Random.Range(-\/5, 5), Random.Range(-\/5, 5), 0));}
+\DoxyCodeLine{00091                     \textcolor{comment}{//MoveToPoint(m\_wayPoints[1].position + new Vector3(Random.Range(-\/5, 5), Random.Range(-\/5, 5), 0));}}
+\DoxyCodeLine{00092                     yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_finite_state_machine_a_i_a068bb1c41c489d71d4c483bdda1e92a9}{m\_ordersTimeDelay}});}
+\DoxyCodeLine{00093                     \mbox{\hyperlink{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}{m\_states}} = \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}}.GatherForces;}
+\DoxyCodeLine{00094                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00095             \}}
+\DoxyCodeLine{00096         \}}
+\DoxyCodeLine{00097     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finite_state_machine_a_i_af3ee83f57d4c7f15260aeb4be694e0f4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finite_state_machine_a_i_af3ee83f57d4c7f15260aeb4be694e0f4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_finite_state_machine_a_i_ada3ec96738596c694204a2f6e6354451}\label{class_finite_state_machine_a_i_ada3ec96738596c694204a2f6e6354451}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!Start@{Start}}
+\index{Start@{Start}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Finite\+State\+Machine\+AI.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00056}{56}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00057     \{}
+\DoxyCodeLine{00058         \mbox{\hyperlink{class_finite_state_machine_a_i_a7ec6040ae4d7edecd1dd109030cfd95a}{m\_entityLayer}} = LayerMask.GetMask(\textcolor{stringliteral}{"{}EntityLayer"{}});}
+\DoxyCodeLine{00059         \mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{m\_AI}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00060         StartCoroutine(\mbox{\hyperlink{class_finite_state_machine_a_i_af3ee83f57d4c7f15260aeb4be694e0f4}{Orders}}());}
+\DoxyCodeLine{00061     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_finite_state_machine_a_i_ada3ec96738596c694204a2f6e6354451_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a7ec6040ae4d7edecd1dd109030cfd95a}\label{class_finite_state_machine_a_i_a7ec6040ae4d7edecd1dd109030cfd95a}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_entityLayer@{m\_entityLayer}}
+\index{m\_entityLayer@{m\_entityLayer}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_entityLayer}{m\_entityLayer}}
+{\footnotesize\ttfamily Layer\+Mask Finite\+State\+Machine\+AI.\+m\+\_\+entity\+Layer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_ab44233c444c17f7a5be88bf3b33b2a47}\label{class_finite_state_machine_a_i_ab44233c444c17f7a5be88bf3b33b2a47}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_formations@{m\_formations}}
+\index{m\_formations@{m\_formations}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_formations}{m\_formations}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} Finite\+State\+Machine\+AI.\+m\+\_\+formations = Formations.\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_adb4ffb02b7de2de610f3b03cb7e669a1}\label{class_finite_state_machine_a_i_adb4ffb02b7de2de610f3b03cb7e669a1}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_maxSoldiers@{m\_maxSoldiers}}
+\index{m\_maxSoldiers@{m\_maxSoldiers}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_maxSoldiers}{m\_maxSoldiers}}
+{\footnotesize\ttfamily int Finite\+State\+Machine\+AI.\+m\+\_\+max\+Soldiers\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a068bb1c41c489d71d4c483bdda1e92a9}\label{class_finite_state_machine_a_i_a068bb1c41c489d71d4c483bdda1e92a9}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_ordersTimeDelay@{m\_ordersTimeDelay}}
+\index{m\_ordersTimeDelay@{m\_ordersTimeDelay}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_ordersTimeDelay}{m\_ordersTimeDelay}}
+{\footnotesize\ttfamily int Finite\+State\+Machine\+AI.\+m\+\_\+orders\+Time\+Delay\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a6e52db73e6f0c9df5da11ade69b84b82}\label{class_finite_state_machine_a_i_a6e52db73e6f0c9df5da11ade69b84b82}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_rallyPoints@{m\_rallyPoints}}
+\index{m\_rallyPoints@{m\_rallyPoints}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_rallyPoints}{m\_rallyPoints}}
+{\footnotesize\ttfamily List$<$Transform$>$ Finite\+State\+Machine\+AI.\+m\+\_\+rally\+Points = new List$<$Transform$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a110c675dea65d4093d07eee25036b287}\label{class_finite_state_machine_a_i_a110c675dea65d4093d07eee25036b287}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_selectionArea@{m\_selectionArea}}
+\index{m\_selectionArea@{m\_selectionArea}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_selectionArea}{m\_selectionArea}}
+{\footnotesize\ttfamily Transform \mbox{[}$\,$\mbox{]} Finite\+State\+Machine\+AI.\+m\+\_\+selection\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00046}{46}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}\label{class_finite_state_machine_a_i_a786323aaa5af0c028c2660f33e1f6923}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_states@{m\_states}}
+\index{m\_states@{m\_states}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_states}{m\_states}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_finite_state_machine_a_i_a76eb081caa6069f299264a32c0e0b605}{States}} Finite\+State\+Machine\+AI.\+m\+\_\+states = States.\+Gather\+Forces\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
+\mbox{\Hypertarget{class_finite_state_machine_a_i_a0f856a50fa00e7fc21947f3e0ccd233f}\label{class_finite_state_machine_a_i_a0f856a50fa00e7fc21947f3e0ccd233f}} 
+\index{FiniteStateMachineAI@{FiniteStateMachineAI}!m\_wayPoints@{m\_wayPoints}}
+\index{m\_wayPoints@{m\_wayPoints}!FiniteStateMachineAI@{FiniteStateMachineAI}}
+\doxysubsubsection{\texorpdfstring{m\_wayPoints}{m\_wayPoints}}
+{\footnotesize\ttfamily List$<$Transform$>$ Finite\+State\+Machine\+AI.\+m\+\_\+way\+Points = new List$<$Transform$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_finite_state_machine_a_i_8cs_source}{Finite\+State\+Machine\+AI.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-FSM/\mbox{\hyperlink{_finite_state_machine_a_i_8cs}{Finite\+State\+Machine\+AI.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+FSM/\mbox{\hyperlink{_finite_state_machine_a_i_8cs}{Finite\+State\+Machine\+AI.\+cs}}\end{DoxyCompactItemize}

@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('class_game_events_manager.html',''); i
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#events">Events</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="class_game_events_manager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">GameEventsManager Class Reference</div></div>
 </div><!--header-->
@@ -101,12 +102,21 @@ $(document).ready(function(){initNavTree('class_game_events_manager.html',''); i
 Inheritance diagram for GameEventsManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_events_manager__inherit__graph.png" border="0" usemap="#a_game_events_manager_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_game_events_manager_inherit__map" id="a_game_events_manager_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,93,192,221"/>
+<area shape="rect" title=" " alt="" coords="41,5,156,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for GameEventsManager:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_game_events_manager__coll__graph.png" border="0" usemap="#a_game_events_manager_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_game_events_manager_coll__map" id="a_game_events_manager_coll__map">
+<area shape="rect" title=" " alt="" coords="23,108,212,221"/>
+<area shape="rect" title=" " alt="" coords="5,5,120,45"/>
+<area shape="rect" title=" " alt="" coords="144,5,203,45"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -126,16 +136,55 @@ Static Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="events" name="events"></a>
 Events</h2></td></tr>
-<tr class="memitem:a04a1448b88f47e24a63f891ae5341daa"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a04a1448b88f47e24a63f891ae5341daa">OnControlPointTriggerEnter</a></td></tr>
-<tr class="separator:a04a1448b88f47e24a63f891ae5341daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a541960264cdeb24685ef6fddba7e0f21"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a541960264cdeb24685ef6fddba7e0f21">OnControlPointTriggerExit</a></td></tr>
-<tr class="separator:a541960264cdeb24685ef6fddba7e0f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7db25aef2c3964da791b1ebe71d9af11"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a7db25aef2c3964da791b1ebe71d9af11">OnControlPointCapture</a></td></tr>
-<tr class="separator:a7db25aef2c3964da791b1ebe71d9af11"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9698d5ec2a252551b7041581cb463cf7"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a9698d5ec2a252551b7041581cb463cf7">OnControlPointLoss</a></td></tr>
-<tr class="separator:a9698d5ec2a252551b7041581cb463cf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269165ca52b5767bcce21fc3028fedb5"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a269165ca52b5767bcce21fc3028fedb5">OnControlPointTriggerEnter</a></td></tr>
+<tr class="separator:a269165ca52b5767bcce21fc3028fedb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24746a96a5d165eaa6456ac17ea01a26"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a24746a96a5d165eaa6456ac17ea01a26">OnControlPointTriggerExit</a></td></tr>
+<tr class="separator:a24746a96a5d165eaa6456ac17ea01a26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc5878bd9b8d2c6819a91e4c0787a993"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#acc5878bd9b8d2c6819a91e4c0787a993">OnControlPointCapture</a></td></tr>
+<tr class="separator:acc5878bd9b8d2c6819a91e4c0787a993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1761272121be1b41d7340c76ec4d9426"><td class="memItemLeft" align="right" valign="top">Action&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a1761272121be1b41d7340c76ec4d9426">OnControlPointLoss</a></td></tr>
+<tr class="separator:a1761272121be1b41d7340c76ec4d9426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a8e24f5a7a46b5933c7173fb16b31a306"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_events_manager.html#a8e24f5a7a46b5933c7173fb16b31a306">Awake</a> ()</td></tr>
+<tr class="separator:a8e24f5a7a46b5933c7173fb16b31a306"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00006">6</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8e24f5a7a46b5933c7173fb16b31a306" name="a8e24f5a7a46b5933c7173fb16b31a306"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e24f5a7a46b5933c7173fb16b31a306">&#9670;&#160;</a></span>Awake()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void GameEventsManager.Awake </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00010">10</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>    {</div>
+<div class="line"><span class="lineno">   12</span>        <a class="code hl_variable" href="class_game_events_manager.html#a1064a13fbcad613c37dd46cd94f38bfd">instance</a> = <span class="keyword">this</span>;</div>
+<div class="line"><span class="lineno">   13</span>    }</div>
+<div class="ttc" id="aclass_game_events_manager_html_a1064a13fbcad613c37dd46cd94f38bfd"><div class="ttname"><a href="class_game_events_manager.html#a1064a13fbcad613c37dd46cd94f38bfd">GameEventsManager.instance</a></div><div class="ttdeci">static GameEventsManager instance</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00008">GameEventsManager.cs:8</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
 <a id="af80523eb9a911e4222f023d5afa0813a" name="af80523eb9a911e4222f023d5afa0813a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af80523eb9a911e4222f023d5afa0813a">&#9670;&#160;</a></span>ControlPointCapture()</h2>
 
@@ -159,6 +208,22 @@ Events</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00031">31</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>    {</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_event" href="class_game_events_manager.html#acc5878bd9b8d2c6819a91e4c0787a993">OnControlPointCapture</a>?.Invoke(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="ttc" id="aclass_game_events_manager_html_acc5878bd9b8d2c6819a91e4c0787a993"><div class="ttname"><a href="class_game_events_manager.html#acc5878bd9b8d2c6819a91e4c0787a993">GameEventsManager.OnControlPointCapture</a></div><div class="ttdeci">Action&lt; int &gt; OnControlPointCapture</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00029">GameEventsManager.cs:29</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_events_manager_af80523eb9a911e4222f023d5afa0813a_icgraph.png" border="0" usemap="#aclass_game_events_manager_af80523eb9a911e4222f023d5afa0813a_icgraph" alt=""/></div>
+<map name="aclass_game_events_manager_af80523eb9a911e4222f023d5afa0813a_icgraph" id="aclass_game_events_manager_af80523eb9a911e4222f023d5afa0813a_icgraph">
+<area shape="rect" title=" " alt="" coords="492,5,683,45"/>
+<area shape="rect" href="class_control_point_controller.html#a5af986726a8b9cbf06defc475b7eb9d4" title=" " alt="" coords="247,13,444,38"/>
+<area shape="rect" href="class_control_point_controller.html#acfa3bd5eade314bc9e83f10bdb0411c3" title=" " alt="" coords="5,13,199,38"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -186,6 +251,22 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00038">38</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>    {</div>
+<div class="line"><span class="lineno">   40</span>        <a class="code hl_event" href="class_game_events_manager.html#a1761272121be1b41d7340c76ec4d9426">OnControlPointLoss</a>?.Invoke(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   41</span>    }</div>
+<div class="ttc" id="aclass_game_events_manager_html_a1761272121be1b41d7340c76ec4d9426"><div class="ttname"><a href="class_game_events_manager.html#a1761272121be1b41d7340c76ec4d9426">GameEventsManager.OnControlPointLoss</a></div><div class="ttdeci">Action&lt; int &gt; OnControlPointLoss</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00036">GameEventsManager.cs:36</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_events_manager_a8afa09993b2e227921b92f2eb6988c07_icgraph.png" border="0" usemap="#aclass_game_events_manager_a8afa09993b2e227921b92f2eb6988c07_icgraph" alt=""/></div>
+<map name="aclass_game_events_manager_a8afa09993b2e227921b92f2eb6988c07_icgraph" id="aclass_game_events_manager_a8afa09993b2e227921b92f2eb6988c07_icgraph">
+<area shape="rect" title=" " alt="" coords="500,5,691,45"/>
+<area shape="rect" href="class_control_point_controller.html#a8f0d654cdba56d6f88b19542d48890f9" title="Two types of reverting captures A: Enemy unit is taking the point and then leaves/dies before it&#39;s fu..." alt="" coords="247,13,452,38"/>
+<area shape="rect" href="class_control_point_controller.html#acfa3bd5eade314bc9e83f10bdb0411c3" title=" " alt="" coords="5,13,199,38"/>
+</map>
+</div>
+
 </div>
 </div>
 <a id="a855511803acce0d0b1506e95913c2249" name="a855511803acce0d0b1506e95913c2249"></a>
@@ -211,6 +292,22 @@ Events</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00017">17</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   18</span>    {</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_event" href="class_game_events_manager.html#a269165ca52b5767bcce21fc3028fedb5">OnControlPointTriggerEnter</a>?.Invoke(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+<div class="ttc" id="aclass_game_events_manager_html_a269165ca52b5767bcce21fc3028fedb5"><div class="ttname"><a href="class_game_events_manager.html#a269165ca52b5767bcce21fc3028fedb5">GameEventsManager.OnControlPointTriggerEnter</a></div><div class="ttdeci">Action&lt; int &gt; OnControlPointTriggerEnter</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00015">GameEventsManager.cs:15</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_game_events_manager_a855511803acce0d0b1506e95913c2249_icgraph.png" border="0" usemap="#aclass_game_events_manager_a855511803acce0d0b1506e95913c2249_icgraph" alt=""/></div>
+<map name="aclass_game_events_manager_a855511803acce0d0b1506e95913c2249_icgraph" id="aclass_game_events_manager_a855511803acce0d0b1506e95913c2249_icgraph">
+<area shape="rect" title=" " alt="" coords="245,37,436,77"/>
+<area shape="rect" href="class_control_point_trigger.html#a90583038af1479087ca8e8bc17c3e1a1" title=" " alt="" coords="5,5,197,45"/>
+<area shape="rect" href="class_control_point_trigger.html#ade8484b299a63fb386f9f5e1fec7f820" title=" " alt="" coords="5,69,197,109"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -238,6 +335,12 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00024">24</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <a class="code hl_event" href="class_game_events_manager.html#a24746a96a5d165eaa6456ac17ea01a26">OnControlPointTriggerExit</a>?.Invoke(<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   27</span>    }</div>
+<div class="ttc" id="aclass_game_events_manager_html_a24746a96a5d165eaa6456ac17ea01a26"><div class="ttname"><a href="class_game_events_manager.html#a24746a96a5d165eaa6456ac17ea01a26">GameEventsManager.OnControlPointTriggerExit</a></div><div class="ttdeci">Action&lt; int &gt; OnControlPointTriggerExit</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00022">GameEventsManager.cs:22</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -261,67 +364,77 @@ Events</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00008">8</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Event Documentation</h2>
-<a id="a7db25aef2c3964da791b1ebe71d9af11" name="a7db25aef2c3964da791b1ebe71d9af11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7db25aef2c3964da791b1ebe71d9af11">&#9670;&#160;</a></span>OnControlPointCapture</h2>
+<a id="acc5878bd9b8d2c6819a91e4c0787a993" name="acc5878bd9b8d2c6819a91e4c0787a993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc5878bd9b8d2c6819a91e4c0787a993">&#9670;&#160;</a></span>OnControlPointCapture</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;int&gt; GameEventsManager.OnControlPointCapture</td>
+          <td class="memname">Action&lt; int&gt; GameEventsManager.OnControlPointCapture</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00029">29</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+
 </div>
 </div>
-<a id="a9698d5ec2a252551b7041581cb463cf7" name="a9698d5ec2a252551b7041581cb463cf7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9698d5ec2a252551b7041581cb463cf7">&#9670;&#160;</a></span>OnControlPointLoss</h2>
+<a id="a1761272121be1b41d7340c76ec4d9426" name="a1761272121be1b41d7340c76ec4d9426"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1761272121be1b41d7340c76ec4d9426">&#9670;&#160;</a></span>OnControlPointLoss</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;int&gt; GameEventsManager.OnControlPointLoss</td>
+          <td class="memname">Action&lt; int&gt; GameEventsManager.OnControlPointLoss</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00036">36</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+
 </div>
 </div>
-<a id="a04a1448b88f47e24a63f891ae5341daa" name="a04a1448b88f47e24a63f891ae5341daa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04a1448b88f47e24a63f891ae5341daa">&#9670;&#160;</a></span>OnControlPointTriggerEnter</h2>
+<a id="a269165ca52b5767bcce21fc3028fedb5" name="a269165ca52b5767bcce21fc3028fedb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a269165ca52b5767bcce21fc3028fedb5">&#9670;&#160;</a></span>OnControlPointTriggerEnter</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;int&gt; GameEventsManager.OnControlPointTriggerEnter</td>
+          <td class="memname">Action&lt; int&gt; GameEventsManager.OnControlPointTriggerEnter</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00015">15</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
+
 </div>
 </div>
-<a id="a541960264cdeb24685ef6fddba7e0f21" name="a541960264cdeb24685ef6fddba7e0f21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a541960264cdeb24685ef6fddba7e0f21">&#9670;&#160;</a></span>OnControlPointTriggerExit</h2>
+<a id="a24746a96a5d165eaa6456ac17ea01a26" name="a24746a96a5d165eaa6456ac17ea01a26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24746a96a5d165eaa6456ac17ea01a26">&#9670;&#160;</a></span>OnControlPointTriggerExit</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">Action&lt;int&gt; GameEventsManager.OnControlPointTriggerExit</td>
+          <td class="memname">Action&lt; int&gt; GameEventsManager.OnControlPointTriggerExit</td>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_game_events_manager_8cs_source.html#l00022">22</a> of file <a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a>.</p>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Game Management/<a class="el" href="_game_events_manager_8cs.html">GameEventsManager.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Game Management/<a class="el" href="_game_events_manager_8cs_source.html">GameEventsManager.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

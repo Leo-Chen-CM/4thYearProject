@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Unit\+Shooting\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_unit_shooting__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Unit\+Shooting\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_unit_shooting__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -18,6 +30,33 @@ void \mbox{\hyperlink{class_unit_shooting_a5aefa0727af95304f04cbeec44fccfd6}{Sho
 \item 
 float \mbox{\hyperlink{class_unit_shooting_aea811188f95d9f921b16e3e56bf16924}{fire\+Rate}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_unit_shooting_a320da54d5fb54d7ddd7696bee260c5c8}{Start}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_unit_shooting_ac2ff23fb8277e772089aaa27e7bb039e}{Shoot\+Laser}} (Vector2 start\+Pos, Vector2 end\+Pos)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_unit_shooting_a17705542334d725a06bd66914d685998}{m\+\_\+firing\+Point}}
+\item 
+float \mbox{\hyperlink{class_unit_shooting_a382afe75fca69456ae1fdad6289deb06}{next\+Fire}} = 0f
+\item 
+Line\+Renderer \mbox{\hyperlink{class_unit_shooting_a3cb5a545bb83dc9c32ee7abaf5065639}{m\+\_\+line\+Renderer}}
+\item 
+float \mbox{\hyperlink{class_unit_shooting_ad26bc1b532912719f0d2000f6a2e3f21}{m\+\_\+offset}}
+\item 
+Layer\+Mask \mbox{\hyperlink{class_unit_shooting_afd39f081de613cf479eee786d12852c7}{m\+\_\+layer\+Mask}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -29,6 +68,114 @@ float \mbox{\hyperlink{class_unit_shooting_aea811188f95d9f921b16e3e56bf16924}{fi
 
 
 
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00037     \{}
+\DoxyCodeLine{00038         \textcolor{keywordflow}{if} (Time.time > \mbox{\hyperlink{class_unit_shooting_a382afe75fca69456ae1fdad6289deb06}{nextFire}})}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \mbox{\hyperlink{class_unit_shooting_a382afe75fca69456ae1fdad6289deb06}{nextFire}} = Time.time + \mbox{\hyperlink{class_unit_shooting_aea811188f95d9f921b16e3e56bf16924}{fireRate}};}
+\DoxyCodeLine{00041             \textcolor{keywordflow}{if} (Physics2D.Raycast(transform.position, transform.up))}
+\DoxyCodeLine{00042             \{}
+\DoxyCodeLine{00043                 Vector3 offset = \textcolor{keyword}{new} Vector3(Random.Range(-\/\mbox{\hyperlink{class_unit_shooting_ad26bc1b532912719f0d2000f6a2e3f21}{m\_offset}}, \mbox{\hyperlink{class_unit_shooting_ad26bc1b532912719f0d2000f6a2e3f21}{m\_offset}}), 0, 0);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045                 RaycastHit2D hit = Physics2D.Raycast(\mbox{\hyperlink{class_unit_shooting_a17705542334d725a06bd66914d685998}{m\_firingPoint}}.position, transform.up + offset, 200.0f, \mbox{\hyperlink{class_unit_shooting_afd39f081de613cf479eee786d12852c7}{m\_layerMask}});}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047 }
+\DoxyCodeLine{00048 }
+\DoxyCodeLine{00049                 \textcolor{keywordflow}{if} (hit.transform.gameObject.TryGetComponent(out \mbox{\hyperlink{class_base_unit}{BaseUnit}} unit))}
+\DoxyCodeLine{00050                 \{}
+\DoxyCodeLine{00051                     hit.transform.gameObject.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>().LoseHealth();}
+\DoxyCodeLine{00052                 \}}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (hit.transform.gameObject.name == \textcolor{stringliteral}{"{}Dummy"{}})}
+\DoxyCodeLine{00054                 \{}
+\DoxyCodeLine{00055                     Debug.Log(\textcolor{stringliteral}{"{}Dummy hit"{}});}
+\DoxyCodeLine{00056                 \}}
+\DoxyCodeLine{00057                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (hit == \textcolor{keyword}{false})}
+\DoxyCodeLine{00058                 \{}
+\DoxyCodeLine{00059                     Debug.Log(\textcolor{stringliteral}{"{}Laser shot"{}});}
+\DoxyCodeLine{00060                 \}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062                 StartCoroutine(\mbox{\hyperlink{class_unit_shooting_ac2ff23fb8277e772089aaa27e7bb039e}{ShootLaser}}(\mbox{\hyperlink{class_unit_shooting_a17705542334d725a06bd66914d685998}{m\_firingPoint}}.position, hit.point));}
+\DoxyCodeLine{00063             \}}
+\DoxyCodeLine{00064         \}}
+\DoxyCodeLine{00065     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=342pt]{class_unit_shooting_a5aefa0727af95304f04cbeec44fccfd6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_shooting_a5aefa0727af95304f04cbeec44fccfd6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_shooting_ac2ff23fb8277e772089aaa27e7bb039e}\label{class_unit_shooting_ac2ff23fb8277e772089aaa27e7bb039e}} 
+\index{UnitShooting@{UnitShooting}!ShootLaser@{ShootLaser}}
+\index{ShootLaser@{ShootLaser}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{ShootLaser()}{ShootLaser()}}
+{\footnotesize\ttfamily IEnumerator Unit\+Shooting.\+Shoot\+Laser (\begin{DoxyParamCaption}\item[{Vector2}]{start\+Pos,  }\item[{Vector2}]{end\+Pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         m\_lineRenderer.enabled = \textcolor{keyword}{true};}
+\DoxyCodeLine{00070         \mbox{\hyperlink{class_unit_shooting_a3cb5a545bb83dc9c32ee7abaf5065639}{m\_lineRenderer}}.SetPosition(0, startPos);}
+\DoxyCodeLine{00071         \mbox{\hyperlink{class_unit_shooting_a3cb5a545bb83dc9c32ee7abaf5065639}{m\_lineRenderer}}.SetPosition(1, endPos);}
+\DoxyCodeLine{00072         yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(0.1f);}
+\DoxyCodeLine{00073         m\_lineRenderer.enabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{00074     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_shooting_ac2ff23fb8277e772089aaa27e7bb039e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_shooting_a320da54d5fb54d7ddd7696bee260c5c8}\label{class_unit_shooting_a320da54d5fb54d7ddd7696bee260c5c8}} 
+\index{UnitShooting@{UnitShooting}!Start@{Start}}
+\index{Start@{Start}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Unit\+Shooting.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023     \{}
+\DoxyCodeLine{00024         \textcolor{keywordflow}{if} (gameObject.tag == \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             m\_lineRenderer.material.color = Color.red;}
+\DoxyCodeLine{00027         \}}
+\DoxyCodeLine{00028         }
+\DoxyCodeLine{00029         \textcolor{keywordflow}{if} (gameObject.tag == \textcolor{stringliteral}{"{}Team2"{}})}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             m\_lineRenderer.material.color = Color.blue;}
+\DoxyCodeLine{00032         \}}
+\DoxyCodeLine{00033         m\_lineRenderer.enabled = \textcolor{keyword}{false};}
+\DoxyCodeLine{00034     \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_unit_shooting_aea811188f95d9f921b16e3e56bf16924}\label{class_unit_shooting_aea811188f95d9f921b16e3e56bf16924}} 
 \index{UnitShooting@{UnitShooting}!fireRate@{fireRate}}
@@ -38,6 +185,60 @@ float \mbox{\hyperlink{class_unit_shooting_aea811188f95d9f921b16e3e56bf16924}{fi
 
 
 
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_shooting_a17705542334d725a06bd66914d685998}\label{class_unit_shooting_a17705542334d725a06bd66914d685998}} 
+\index{UnitShooting@{UnitShooting}!m\_firingPoint@{m\_firingPoint}}
+\index{m\_firingPoint@{m\_firingPoint}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{m\_firingPoint}{m\_firingPoint}}
+{\footnotesize\ttfamily Transform Unit\+Shooting.\+m\+\_\+firing\+Point\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_shooting_afd39f081de613cf479eee786d12852c7}\label{class_unit_shooting_afd39f081de613cf479eee786d12852c7}} 
+\index{UnitShooting@{UnitShooting}!m\_layerMask@{m\_layerMask}}
+\index{m\_layerMask@{m\_layerMask}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{m\_layerMask}{m\_layerMask}}
+{\footnotesize\ttfamily Layer\+Mask Unit\+Shooting.\+m\+\_\+layer\+Mask\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_shooting_a3cb5a545bb83dc9c32ee7abaf5065639}\label{class_unit_shooting_a3cb5a545bb83dc9c32ee7abaf5065639}} 
+\index{UnitShooting@{UnitShooting}!m\_lineRenderer@{m\_lineRenderer}}
+\index{m\_lineRenderer@{m\_lineRenderer}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{m\_lineRenderer}{m\_lineRenderer}}
+{\footnotesize\ttfamily Line\+Renderer Unit\+Shooting.\+m\+\_\+line\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_shooting_ad26bc1b532912719f0d2000f6a2e3f21}\label{class_unit_shooting_ad26bc1b532912719f0d2000f6a2e3f21}} 
+\index{UnitShooting@{UnitShooting}!m\_offset@{m\_offset}}
+\index{m\_offset@{m\_offset}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{m\_offset}{m\_offset}}
+{\footnotesize\ttfamily float Unit\+Shooting.\+m\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_shooting_a382afe75fca69456ae1fdad6289deb06}\label{class_unit_shooting_a382afe75fca69456ae1fdad6289deb06}} 
+\index{UnitShooting@{UnitShooting}!nextFire@{nextFire}}
+\index{nextFire@{nextFire}!UnitShooting@{UnitShooting}}
+\doxysubsubsection{\texorpdfstring{nextFire}{nextFire}}
+{\footnotesize\ttfamily float Unit\+Shooting.\+next\+Fire = 0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_shooting_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_unit_shooting_8cs_source}{Unit\+Shooting.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Unit Scripts/\mbox{\hyperlink{_unit_shooting_8cs}{Unit\+Shooting.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Unit Scripts/\mbox{\hyperlink{_unit_shooting_8cs}{Unit\+Shooting.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,100 @@
+\hypertarget{_node_8cs_source}{}\doxysection{Node.\+cs}
+\label{_node_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/Basics/Node.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/Basics/Node.cs}}
+\mbox{\hyperlink{_node_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00005}00005 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_behavior_tree}{BehaviorTree}}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00007}\mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{00007}}     \textcolor{keyword}{public} \textcolor{keyword}{enum} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00008}00008     \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00009}00009         RUNNING,}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00010}00010         SUCCESS,}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00011}00011         FAILURE}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00012}00012     \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00014}\mbox{\hyperlink{class_behavior_tree_1_1_node}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00016}\mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{00016}}         \textcolor{keyword}{protected} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00017}\mbox{\hyperlink{class_behavior_tree_1_1_node_a19576c1290165b1125bb5dba7f45b77f}{00017}}         \textcolor{keyword}{public} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}} \mbox{\hyperlink{class_behavior_tree_1_1_node_a19576c1290165b1125bb5dba7f45b77f}{State}} \{ \textcolor{keyword}{get} => \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}}; \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00018}00018 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00019}\mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{00019}}         \textcolor{keyword}{private} \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00020}\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{00020}}         \textcolor{keyword}{protected} List<Node> \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}} = \textcolor{keyword}{new} List<Node>();}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00021}\mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{00021}}         \textcolor{keyword}{private} Dictionary<string, object> \mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}} = \textcolor{keyword}{new} Dictionary<string, object>();}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00023}\mbox{\hyperlink{class_behavior_tree_1_1_node_ae767172c49022857cb397e68bc279ff1}{00023}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_behavior_tree_1_1_node_ae767172c49022857cb397e68bc279ff1}{Node}}() \{ \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}} = \textcolor{keyword}{null}; \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00024}\mbox{\hyperlink{class_behavior_tree_1_1_node_a01fd4fd0d40d21332ca036b17d4f5f30}{00024}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_behavior_tree_1_1_node_a01fd4fd0d40d21332ca036b17d4f5f30}{Node}}(List<Node> \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}) : this()}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00025}00025         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00026}00026             SetChildren(\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}});}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00027}00027         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00029}\mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{00029}}         \textcolor{keyword}{public} \textcolor{keyword}{virtual} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}} \mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{Evaluate}}() => \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00031}00031         \textcolor{keyword}{public} \textcolor{keywordtype}{void} SetChildren(List<Node> \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00032}00032         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00033}00033             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} c \textcolor{keywordflow}{in} \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00034}00034                 \mbox{\hyperlink{class_behavior_tree_1_1_node_a2ab6467379d0dc10386dea1aef3330f1}{Attach}}(c);}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00035}00035         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00037}\mbox{\hyperlink{class_behavior_tree_1_1_node_a2ab6467379d0dc10386dea1aef3330f1}{00037}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_behavior_tree_1_1_node_a2ab6467379d0dc10386dea1aef3330f1}{Attach}}(\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} child)}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00038}00038         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00039}00039             \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}.Add(child);}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00040}00040             child.\_parent = \textcolor{keyword}{this};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00041}00041         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00042}00042 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00043}\mbox{\hyperlink{class_behavior_tree_1_1_node_a2440c534290b86ad35b5efb7cb0b280c}{00043}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_behavior_tree_1_1_node_a2440c534290b86ad35b5efb7cb0b280c}{Detach}}(\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} child)}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00044}00044         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00045}00045             \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}.Remove(child);}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00046}00046             child.\_parent = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00047}00047         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00049}\mbox{\hyperlink{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655}{00049}}         \textcolor{keyword}{public} \textcolor{keywordtype}{object} \mbox{\hyperlink{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655}{GetData}}(\textcolor{keywordtype}{string} key)}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00050}00050         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00051}00051             \textcolor{keywordtype}{object} value = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00052}00052             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}.TryGetValue(key, out value))}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00053}00053                 \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00055}00055             \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} node = \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00056}00056             \textcolor{keywordflow}{while} (node != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00057}00057             \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00058}00058                 value = node.\mbox{\hyperlink{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655}{GetData}}(key);}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00059}00059                 \textcolor{keywordflow}{if} (value != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00060}00060                     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00061}00061                 node = node.\mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00062}00062             \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00063}00063             \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00064}00064         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00065}00065 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00066}\mbox{\hyperlink{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e}{00066}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e}{ClearData}}(\textcolor{keywordtype}{string} key)}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00067}00067         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00068}00068             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}.ContainsKey(key))}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00069}00069             \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00070}00070                 \mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}.Remove(key);}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00071}00071                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00072}00072             \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00074}00074             \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} node = \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00075}00075             \textcolor{keywordflow}{while} (node != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00076}00076             \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00077}00077                 \textcolor{keywordtype}{bool} cleared = node.\mbox{\hyperlink{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e}{ClearData}}(key);}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00078}00078                 \textcolor{keywordflow}{if} (cleared)}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00079}00079                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00080}00080                 node = node.\mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00081}00081             \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00082}00082             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00083}00083         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00085}\mbox{\hyperlink{class_behavior_tree_1_1_node_abae02a9b2ba98682d338b54f1dae8779}{00085}}         \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_behavior_tree_1_1_node_abae02a9b2ba98682d338b54f1dae8779}{SetData}}(\textcolor{keywordtype}{string} key, \textcolor{keywordtype}{object} value)}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00086}00086         \{}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00087}00087             \mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}[key] = value;}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00088}00088         \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00089}00089 }
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00090}\mbox{\hyperlink{class_behavior_tree_1_1_node_a7aba76d38d5b93381d49bfc79740d732}{00090}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} \mbox{\hyperlink{class_behavior_tree_1_1_node_a7aba76d38d5b93381d49bfc79740d732}{Parent}} \{ \textcolor{keyword}{get} => \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}}; \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00091}\mbox{\hyperlink{class_behavior_tree_1_1_node_a188e9b43896d7061e1275aa2652568ce}{00091}}         \textcolor{keyword}{public} List<Node> \mbox{\hyperlink{class_behavior_tree_1_1_node_a188e9b43896d7061e1275aa2652568ce}{Children}} \{ \textcolor{keyword}{get} => \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}; \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00092}\mbox{\hyperlink{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c3399404c9}{00092}}         \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c3399404c9}{HasChildren}} \{ \textcolor{keyword}{get} => children.Count > 0; \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00093}00093     \}}
+\DoxyCodeLine{\Hypertarget{_node_8cs_source_l00094}00094 \}}
+
+\end{DoxyCode}

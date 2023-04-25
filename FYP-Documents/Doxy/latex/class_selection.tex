@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Selection\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=218pt]{class_selection__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Selection\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -24,41 +36,389 @@ void \mbox{\hyperlink{class_selection_a1fd845df495405452cda91ff8cea543d}{Group\+
 \item 
 Vector3 \mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\+\_\+start\+Position}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_selection_a02fd2feccc176d75f1455e42c74c4f45}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_selection_a129eaf19e641d6a1bcf380fc873c183f}{Clear\+Selection}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_selection_a909f76da31e5eab07f29c232be40ca13}{m\+\_\+\+Group\+Leader\+Prefab}}
+\item 
+\mbox{\hyperlink{class_r_t_s_game_controller}{RTSGame\+Controller}} \mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\+\_\+controller}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_selection_a129eaf19e641d6a1bcf380fc873c183f}\label{class_selection_a129eaf19e641d6a1bcf380fc873c183f}} 
+\index{Selection@{Selection}!ClearSelection@{ClearSelection}}
+\index{ClearSelection@{ClearSelection}!Selection@{Selection}}
+\doxysubsubsection{\texorpdfstring{ClearSelection()}{ClearSelection()}}
+{\footnotesize\ttfamily void Selection.\+Clear\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00145}{145}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00146     \{}
+\DoxyCodeLine{00147         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Count == 0 \&\& \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count == 0)}
+\DoxyCodeLine{00148         \{}
+\DoxyCodeLine{00149             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00150         \}}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{00153         \{}
+\DoxyCodeLine{00154             unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00155         \}}
+\DoxyCodeLine{00156         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Clear();}
+\DoxyCodeLine{00157 }
+\DoxyCodeLine{00158         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_group_leader}{GroupLeader}} leader \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}})}
+\DoxyCodeLine{00159         \{}
+\DoxyCodeLine{00160             \textcolor{comment}{// Loop over all units in group}}
+\DoxyCodeLine{00161             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}})}
+\DoxyCodeLine{00162             \{}
+\DoxyCodeLine{00163                 unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{00164             \}}
+\DoxyCodeLine{00165         \}}
+\DoxyCodeLine{00166 }
+\DoxyCodeLine{00167         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Clear();}
+\DoxyCodeLine{00168     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_a129eaf19e641d6a1bcf380fc873c183f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_a129eaf19e641d6a1bcf380fc873c183f_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_selection_a1fd845df495405452cda91ff8cea543d}\label{class_selection_a1fd845df495405452cda91ff8cea543d}} 
 \index{Selection@{Selection}!GroupSelection@{GroupSelection}}
 \index{GroupSelection@{GroupSelection}!Selection@{Selection}}
 \doxysubsubsection{\texorpdfstring{GroupSelection()}{GroupSelection()}}
 {\footnotesize\ttfamily void Selection.\+Group\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00170}{170}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00171     \{}
+\DoxyCodeLine{00172         \textcolor{comment}{// Only execute when we have a selection}}
+\DoxyCodeLine{00173         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Count == 0 \&\& \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count == 0)}
+\DoxyCodeLine{00174             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00175 }
+\DoxyCodeLine{00176         \textcolor{keywordtype}{bool} newLeader = \textcolor{keyword}{false};}
+\DoxyCodeLine{00177         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count == 0 || \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count >= 2)}
+\DoxyCodeLine{00178             newLeader = \textcolor{keyword}{true};}
+\DoxyCodeLine{00179 }
+\DoxyCodeLine{00180         \textcolor{comment}{// Set invalid index}}
+\DoxyCodeLine{00181         \textcolor{keywordtype}{int} freeIndex = -\/1;}
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183 }
+\DoxyCodeLine{00184         \textcolor{keywordflow}{if} (newLeader)}
+\DoxyCodeLine{00185         \{}
+\DoxyCodeLine{00186             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} index = 0; index < \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}}.Length; index++)}
+\DoxyCodeLine{00187             \{}
+\DoxyCodeLine{00188                 \textcolor{comment}{// Get the first free index}}
+\DoxyCodeLine{00189                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}}[index] == \textcolor{keyword}{false})}
+\DoxyCodeLine{00190                 \{}
+\DoxyCodeLine{00191                     freeIndex = index;}
+\DoxyCodeLine{00192                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00193                 \}}
+\DoxyCodeLine{00194             \}}
+\DoxyCodeLine{00195         \}}
+\DoxyCodeLine{00196         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00197         \{}
+\DoxyCodeLine{00198             freeIndex = \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}[0].groupID;}
+\DoxyCodeLine{00199         \}}
+\DoxyCodeLine{00200         \textcolor{comment}{// Do not execute if we don't have a free index}}
+\DoxyCodeLine{00201         \textcolor{keywordflow}{if} (freeIndex == -\/1)}
+\DoxyCodeLine{00202         \{}
+\DoxyCodeLine{00203             Debug.LogError(\textcolor{stringliteral}{"{}Group limit reached."{}});}
+\DoxyCodeLine{00204             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00205         \}}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207         \textcolor{comment}{// Set minimum and maximum to opposite values}}
+\DoxyCodeLine{00208         Vector3 minimum = \textcolor{keyword}{new} Vector3(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity);}
+\DoxyCodeLine{00209         Vector3 maximum = \textcolor{keyword}{new} Vector3(-\/Mathf.Infinity, -\/Mathf.Infinity, -\/Mathf.Infinity);}
+\DoxyCodeLine{00210 }
+\DoxyCodeLine{00211         \textcolor{comment}{// Loop over all units}}
+\DoxyCodeLine{00212         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{00213         \{}
+\DoxyCodeLine{00214             Vector3 unitPosition = unit.transform.position;}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216             \textcolor{keywordflow}{if} (unitPosition.x < minimum.x)}
+\DoxyCodeLine{00217                 minimum.x = unitPosition.x;}
+\DoxyCodeLine{00218             \textcolor{keywordflow}{if} (unitPosition.x > maximum.x)}
+\DoxyCodeLine{00219                 maximum.x = unitPosition.x;}
+\DoxyCodeLine{00220 }
+\DoxyCodeLine{00221             \textcolor{keywordflow}{if} (unitPosition.y < minimum.y)}
+\DoxyCodeLine{00222                 minimum.y = unitPosition.y;}
+\DoxyCodeLine{00223             \textcolor{keywordflow}{if} (unitPosition.y > maximum.y)}
+\DoxyCodeLine{00224                 maximum.y = unitPosition.y;}
+\DoxyCodeLine{00225 }
+\DoxyCodeLine{00226             \textcolor{keywordflow}{if} (unitPosition.z < minimum.z)}
+\DoxyCodeLine{00227                 minimum.z = unitPosition.z;}
+\DoxyCodeLine{00228             \textcolor{keywordflow}{if} (unitPosition.z > maximum.z)}
+\DoxyCodeLine{00229                 maximum.z = unitPosition.z;}
+\DoxyCodeLine{00230         \}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232         Vector3 middle = (minimum + maximum) / 2f;}
+\DoxyCodeLine{00233 }
+\DoxyCodeLine{00234         \mbox{\hyperlink{class_group_leader}{GroupLeader}} leader;}
+\DoxyCodeLine{00235         \textcolor{keywordflow}{if} (newLeader)}
+\DoxyCodeLine{00236         \{}
+\DoxyCodeLine{00237             \textcolor{comment}{// Instantiate a leader in middle of furthest units}}
+\DoxyCodeLine{00238             GameObject go = Instantiate(\mbox{\hyperlink{class_selection_a909f76da31e5eab07f29c232be40ca13}{m\_GroupLeaderPrefab}}, middle, Quaternion.identity);}
+\DoxyCodeLine{00239             leader = go.GetComponent<\mbox{\hyperlink{class_group_leader}{GroupLeader}}>();}
+\DoxyCodeLine{00240 }
+\DoxyCodeLine{00241             \textcolor{comment}{// Assign group ID}}
+\DoxyCodeLine{00242             leader.groupID = freeIndex;}
+\DoxyCodeLine{00243             \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}}[freeIndex] = \textcolor{keyword}{true};}
+\DoxyCodeLine{00244         \}}
+\DoxyCodeLine{00245         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00246         \{}
+\DoxyCodeLine{00247             leader = \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}[0];}
+\DoxyCodeLine{00248             \textcolor{comment}{//leader.SetLocation(middle);}}
+\DoxyCodeLine{00249             \textcolor{comment}{//leader.units.Clear();}}
+\DoxyCodeLine{00250         \}}
+\DoxyCodeLine{00251 }
+\DoxyCodeLine{00252         \textcolor{comment}{// Loop over all units}}
+\DoxyCodeLine{00253         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{00254         \{}
+\DoxyCodeLine{00255             \textcolor{comment}{// Add to leader list of units, set unit leader and material to group color}}
+\DoxyCodeLine{00256             leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}}.Add(unit);}
+\DoxyCodeLine{00257             unit.\mbox{\hyperlink{class_base_unit_a00e0b72a818116d6ca14ffec46e8d69b}{AssignLeader}}(leader);}
+\DoxyCodeLine{00258         \}}
+\DoxyCodeLine{00259 }
+\DoxyCodeLine{00260 }
+\DoxyCodeLine{00261         leader.\mbox{\hyperlink{class_group_leader_ae39ef3c1f8e4b7a9676b72e491203354}{SetFormation}}(\mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}}.\mbox{\hyperlink{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46}{GetCurrentFormation}}());}
+\DoxyCodeLine{00262 }
+\DoxyCodeLine{00263         \textcolor{keywordflow}{if} (newLeader)}
+\DoxyCodeLine{00264         \{}
+\DoxyCodeLine{00265             \textcolor{comment}{// Add leader to selected leaders}}
+\DoxyCodeLine{00266             \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Add(leader);}
+\DoxyCodeLine{00267         \}}
+\DoxyCodeLine{00268 }
+\DoxyCodeLine{00269         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Clear();}
+\DoxyCodeLine{00270     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_a1fd845df495405452cda91ff8cea543d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_a1fd845df495405452cda91ff8cea543d_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_selection_ad1e91cc8fc1d6f1d658052162e474760}\label{class_selection_ad1e91cc8fc1d6f1d658052162e474760}} 
 \index{Selection@{Selection}!MoveSelection@{MoveSelection}}
 \index{MoveSelection@{MoveSelection}!Selection@{Selection}}
 \doxysubsubsection{\texorpdfstring{MoveSelection()}{MoveSelection()}}
 {\footnotesize\ttfamily void Selection.\+Move\+Selection (\begin{DoxyParamCaption}\item[{Vector3}]{target }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00129}{129}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130     \{}
+\DoxyCodeLine{00131         \textcolor{comment}{// Loop over all agents}}
+\DoxyCodeLine{00132         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{00133         \{}
+\DoxyCodeLine{00134             \textcolor{comment}{// Set a new target}}
+\DoxyCodeLine{00135             unit.\mbox{\hyperlink{class_base_unit_a5444c924c7be68b4d0ee5ba3396219f4}{SetTargetPosition}}(target);}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137 }
+\DoxyCodeLine{00138         \textcolor{comment}{// Loop over all leaders}}
+\DoxyCodeLine{00139         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_group_leader}{GroupLeader}} leader \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}})}
+\DoxyCodeLine{00140         \{}
+\DoxyCodeLine{00141             \textcolor{comment}{// Set a new target}}
+\DoxyCodeLine{00142             leader.\mbox{\hyperlink{class_group_leader_a54e85d2941924c0c4c77032829f8d7f3}{SetTarget}}(target);}
+\DoxyCodeLine{00143         \}}
+\DoxyCodeLine{00144     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_ad1e91cc8fc1d6f1d658052162e474760_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_ad1e91cc8fc1d6f1d658052162e474760_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_selection_a5d24db948b630a237b811f4734cbe868}\label{class_selection_a5d24db948b630a237b811f4734cbe868}} 
 \index{Selection@{Selection}!SelectUnits@{SelectUnits}}
 \index{SelectUnits@{SelectUnits}!Selection@{Selection}}
 \doxysubsubsection{\texorpdfstring{SelectUnits()}{SelectUnits()}}
 {\footnotesize\ttfamily void Selection.\+Select\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00075}{75}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00076     \{}
+\DoxyCodeLine{00077 }
+\DoxyCodeLine{00078         Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}}, \mbox{\hyperlink{class_utility}{Utility}}.\mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}{ReturnMousePosition2D}}());}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080         \textcolor{keywordflow}{if} (collider2DArray.Length > 0)}
+\DoxyCodeLine{00081         \{}
+\DoxyCodeLine{00082 }
+\DoxyCodeLine{00083             \textcolor{comment}{//foreach (BaseUnit unitRTS in m\_unitManager.m\_selectedUnits)}}
+\DoxyCodeLine{00084             \textcolor{comment}{//\{}}
+\DoxyCodeLine{00085             \textcolor{comment}{//    unitRTS.SetSelectedVisible(false);}}
+\DoxyCodeLine{00086             \textcolor{comment}{//\}}}
+\DoxyCodeLine{00087             \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} collider2DArray)}
+\DoxyCodeLine{00088             \{}
+\DoxyCodeLine{00089                 \mbox{\hyperlink{class_base_unit}{BaseUnit}} unitRTS = collider2D.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>();}
+\DoxyCodeLine{00090 }
+\DoxyCodeLine{00091                 \textcolor{keywordflow}{if} (unitRTS == \textcolor{keyword}{null} || unitRTS.gameObject.tag != \mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}}.\mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}}.ToString())}
+\DoxyCodeLine{00092                 \{}
+\DoxyCodeLine{00093                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00094                 \}}
+\DoxyCodeLine{00095 }
+\DoxyCodeLine{00096                 \mbox{\hyperlink{class_group_leader}{GroupLeader}} leader = unitRTS.\mbox{\hyperlink{class_base_unit_a9cd35c425549c36834a8606c86b15d49}{GetLeader}}();}
+\DoxyCodeLine{00097                 \textcolor{comment}{//Has no group then keep it loose}}
+\DoxyCodeLine{00098                 \textcolor{keywordflow}{if} (leader == \textcolor{keyword}{null})}
+\DoxyCodeLine{00099                 \{}
+\DoxyCodeLine{00100                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Contains(unitRTS))}
+\DoxyCodeLine{00101                     \{}
+\DoxyCodeLine{00102                         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Add(unitRTS);}
+\DoxyCodeLine{00103                         unitRTS.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00104                     \}}
+\DoxyCodeLine{00105                 \}}
+\DoxyCodeLine{00106                 \textcolor{comment}{//Has a group so get everyone from that group}}
+\DoxyCodeLine{00107                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00108                 \{}
+\DoxyCodeLine{00109                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Contains(leader))}
+\DoxyCodeLine{00110                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00111 }
+\DoxyCodeLine{00112                     \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}})}
+\DoxyCodeLine{00113                     \{}
+\DoxyCodeLine{00114                         unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00115                     \}}
+\DoxyCodeLine{00116                     \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Add(leader);}
+\DoxyCodeLine{00117                 \}}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119 }
+\DoxyCodeLine{00120         \}}
+\DoxyCodeLine{00121         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             \mbox{\hyperlink{class_selection_a129eaf19e641d6a1bcf380fc873c183f}{ClearSelection}}();}
+\DoxyCodeLine{00124         \}}
+\DoxyCodeLine{00125 }
+\DoxyCodeLine{00126     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_selection_a5d24db948b630a237b811f4734cbe868_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=345pt]{class_selection_a5d24db948b630a237b811f4734cbe868_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_selection_a02fd2feccc176d75f1455e42c74c4f45}\label{class_selection_a02fd2feccc176d75f1455e42c74c4f45}} 
+\index{Selection@{Selection}!Start@{Start}}
+\index{Start@{Start}!Selection@{Selection}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Selection.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00016     \{}
+\DoxyCodeLine{00017         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}} = GetComponent<UnitManager>();}
+\DoxyCodeLine{00018         \mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}} = GetComponent<RTSGameController>();}
+\DoxyCodeLine{00019     \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_selection_acf3163ca46d826b099a7584beb4cc243}\label{class_selection_acf3163ca46d826b099a7584beb4cc243}} 
+\index{Selection@{Selection}!m\_controller@{m\_controller}}
+\index{m\_controller@{m\_controller}!Selection@{Selection}}
+\doxysubsubsection{\texorpdfstring{m\_controller}{m\_controller}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_r_t_s_game_controller}{RTSGame\+Controller}} Selection.\+m\+\_\+controller\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+\mbox{\Hypertarget{class_selection_a909f76da31e5eab07f29c232be40ca13}\label{class_selection_a909f76da31e5eab07f29c232be40ca13}} 
+\index{Selection@{Selection}!m\_GroupLeaderPrefab@{m\_GroupLeaderPrefab}}
+\index{m\_GroupLeaderPrefab@{m\_GroupLeaderPrefab}!Selection@{Selection}}
+\doxysubsubsection{\texorpdfstring{m\_GroupLeaderPrefab}{m\_GroupLeaderPrefab}}
+{\footnotesize\ttfamily Game\+Object Selection.\+m\+\_\+\+Group\+Leader\+Prefab\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
 \mbox{\Hypertarget{class_selection_a86399849291d22e74b3e5c0dbcd687eb}\label{class_selection_a86399849291d22e74b3e5c0dbcd687eb}} 
 \index{Selection@{Selection}!m\_startPosition@{m\_startPosition}}
 \index{m\_startPosition@{m\_startPosition}!Selection@{Selection}}
 \doxysubsubsection{\texorpdfstring{m\_startPosition}{m\_startPosition}}
 {\footnotesize\ttfamily Vector3 Selection.\+m\+\_\+start\+Position\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
 
 \mbox{\Hypertarget{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}\label{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}} 
 \index{Selection@{Selection}!m\_unitManager@{m\_unitManager}}
@@ -68,6 +428,10 @@ Here is the call graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_selection_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_selection_8cs_source}{Selection.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Player\+NBase\+Scripts/\mbox{\hyperlink{_selection_8cs}{Selection.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Player\+NBase\+Scripts/\mbox{\hyperlink{_selection_8cs}{Selection.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,8 @@
+<map id="BaseUnit.SetSelectedVisible" name="BaseUnit.SetSelectedVisible">
+<area shape="rect" id="node1" title=" " alt="" coords="628,80,817,105"/>
+<area shape="rect" id="node2" href="$class_base_unit.html#a3d90e3d89c25654605ccd47971c310ff" title=" " alt="" coords="434,5,553,31"/>
+<area shape="rect" id="node3" href="$class_selection.html#a129eaf19e641d6a1bcf380fc873c183f" title=" " alt="" coords="411,55,575,80"/>
+<area shape="rect" id="node4" href="$class_selection.html#a5d24db948b630a237b811f4734cbe868" title=" " alt="" coords="212,80,359,105"/>
+<area shape="rect" id="node6" href="$class_n_n_commander_body.html#a2afec130389784c182207a570071c180" title=" " alt="" coords="407,156,580,181"/>
+<area shape="rect" id="node5" href="$class_player_selection.html#a97b2a113b76f6a2aad581f0261b64bcb" title=" " alt="" coords="5,80,164,105"/>
+</map>

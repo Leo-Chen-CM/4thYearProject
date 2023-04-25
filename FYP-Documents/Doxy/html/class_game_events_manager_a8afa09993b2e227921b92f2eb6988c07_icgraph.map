@@ -1,0 +1,5 @@
+<map id="GameEventsManager.ControlPointLoss" name="GameEventsManager.ControlPointLoss">
+<area shape="rect" id="node1" title=" " alt="" coords="500,5,691,45"/>
+<area shape="rect" id="node2" href="$class_control_point_controller.html#a8f0d654cdba56d6f88b19542d48890f9" title="Two types of reverting captures A: Enemy unit is taking the point and then leaves/dies before it&#39;s fu..." alt="" coords="247,13,452,38"/>
+<area shape="rect" id="node3" href="$class_control_point_controller.html#acfa3bd5eade314bc9e83f10bdb0411c3" title=" " alt="" coords="5,13,199,38"/>
+</map>

@@ -1,0 +1,27 @@
+\hypertarget{_unit_manager_8cs_source}{}\doxysection{Unit\+Manager.\+cs}
+\label{_unit_manager_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/UnitManager.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/UnitManager.cs}}
+\mbox{\hyperlink{_unit_manager_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00005}\mbox{\hyperlink{class_unit_manager}{00005}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_unit_manager}{UnitManager}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00007}\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{00007}}     \textcolor{keyword}{public} List<BaseUnit> \mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}} = \textcolor{keyword}{new} List<BaseUnit>();}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00008}\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{00008}}     \textcolor{keyword}{public} List<GroupLeader> \mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}} = \textcolor{keyword}{new} List<GroupLeader>();}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00009}00009 }
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00010}00010     \textcolor{comment}{// Groups}}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00011}\mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{00011}}     \textcolor{keyword}{const} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{maxGroups}} = 9;}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00012}\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{00012}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool}[] \mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}} = \textcolor{keyword}{new} \textcolor{keywordtype}{bool}[\mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{maxGroups}}];}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00013}00013     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00014}00014     \textcolor{comment}{// GETTERS \& SETTERS}}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00015}00015     \textcolor{comment}{// -\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/}}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00016}00016 }
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00017}\mbox{\hyperlink{class_unit_manager_ae75def4bf292d0162f6aea179875867d}{00017}}     \textcolor{keyword}{public} \textcolor{keywordtype}{int} \mbox{\hyperlink{class_unit_manager_ae75def4bf292d0162f6aea179875867d}{GetMaxGroupCount}}()}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00018}00018     \{}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00019}00019         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_unit_manager_a45f7502a1aeac66e5f9baaaf612dcbfc}{maxGroups}};}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00020}00020     \}}
+\DoxyCodeLine{\Hypertarget{_unit_manager_8cs_source_l00021}00021 \}}
+
+\end{DoxyCode}

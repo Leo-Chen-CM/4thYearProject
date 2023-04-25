@@ -1,14 +1,16 @@
 var searchData=
 [
-  ['unitfieldofview_0',['UnitFieldOfView',['../class_unit_field_of_view.html',1,'']]],
-  ['unitfieldofview_2ecs_1',['UnitFieldOfView.cs',['../_unit_field_of_view_8cs.html',1,'']]],
-  ['unitmanager_2',['UnitManager',['../class_unit_manager.html',1,'']]],
-  ['unitmanager_2ecs_3',['UnitManager.cs',['../_unit_manager_8cs.html',1,'']]],
-  ['unitmovement_4',['UnitMovement',['../class_unit_movement.html',1,'']]],
-  ['unitmovement_2ecs_5',['UnitMovement.cs',['../_unit_movement_8cs.html',1,'']]],
-  ['units_6',['units',['../class_group_leader.html#a9ed1939ca322e7b2c1038adaadfaca28',1,'GroupLeader']]],
-  ['unitshooting_7',['UnitShooting',['../class_unit_shooting.html',1,'']]],
-  ['unitshooting_2ecs_8',['UnitShooting.cs',['../_unit_shooting_8cs.html',1,'']]],
-  ['utility_9',['Utility',['../class_utility.html',1,'']]],
-  ['utility_2ecs_10',['Utility.cs',['../_utility_8cs.html',1,'']]]
+  ['tanh_0',['tanh',['../class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989',1,'NeuralNetwork']]],
+  ['tanhder_1',['tanhDer',['../class_neural_network.html#a325b03a712bb2f2d6ce845b9bbc06b06',1,'NeuralNetwork']]],
+  ['taskpatrol_2',['TaskPatrol',['../class_task_patrol.html',1,'TaskPatrol'],['../class_task_patrol.html#a92e49d97deb728258fa045874067acb2',1,'TaskPatrol.TaskPatrol()']]],
+  ['taskpatrol_2ecs_3',['TaskPatrol.cs',['../_task_patrol_8cs.html',1,'']]],
+  ['team1_4',['Team1',['../_r_t_s_game_controller_8cs.html#a00e464430dbea0d17f12c1b117eb4072ac8867457125653a9b4e61a12aa67df47',1,'RTSGameController.cs']]],
+  ['team2_5',['Team2',['../_r_t_s_game_controller_8cs.html#a00e464430dbea0d17f12c1b117eb4072a4dd507ad2b564b40b7a5c2ef8eb81a4e',1,'RTSGameController.cs']]],
+  ['teams_6',['Teams',['../_r_t_s_game_controller_8cs.html#a00e464430dbea0d17f12c1b117eb4072',1,'RTSGameController.cs']]],
+  ['teamselector_7',['TeamSelector',['../class_r_t_s_game_controller.html#a211db7636fbf9402da35ed6adae927b1',1,'RTSGameController']]],
+  ['togglegamepause_8',['ToggleGamePause',['../class_game_manager.html#a27c11cd9c091286098fd251a2423040a',1,'GameManager']]],
+  ['tree_9',['Tree',['../class_behavior_tree_1_1_tree.html',1,'BehaviorTree']]],
+  ['tree_2ecs_10',['Tree.cs',['../_tree_8cs.html',1,'']]],
+  ['trooper_11',['Trooper',['../class_trooper.html',1,'']]],
+  ['trooper_2ecs_12',['Trooper.cs',['../_trooper_8cs.html',1,'']]]
 ];

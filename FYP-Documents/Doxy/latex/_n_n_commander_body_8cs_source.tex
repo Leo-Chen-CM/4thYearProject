@@ -1,0 +1,119 @@
+\hypertarget{_n_n_commander_body_8cs_source}{}\doxysection{NNCommander\+Body.\+cs}
+\label{_n_n_commander_body_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/ML/NNCommanderBody.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/ML/NNCommanderBody.cs}}
+\mbox{\hyperlink{_n_n_commander_body_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00005}\mbox{\hyperlink{class_n_n_commander_body}{00005}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_n_n_commander_body}{NNCommanderBody}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00007}\mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{00007}}     \mbox{\hyperlink{class_unit_manager}{UnitManager}} \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00008}\mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{00008}}     \mbox{\hyperlink{class_a_i_unit_spawner}{AIUnitSpawner}} \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00009}00009     \textcolor{comment}{// Start is called before the first frame update}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00010}\mbox{\hyperlink{class_n_n_commander_body_a8f4807e20783621e11216d23ff0f06df}{00010}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_n_n_commander_body_a8f4807e20783621e11216d23ff0f06df}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00011}00011     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00012}00012         \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}} = GetComponent<AIUnitSpawner>();}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00013}00013         \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}} = GetComponent<UnitManager>();}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00014}00014     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00016}\mbox{\hyperlink{class_n_n_commander_body_a3f97d0759691e6ace10f2611f1f9d122}{00016}}     \textcolor{keyword}{public} \textcolor{keywordtype}{float}[] \mbox{\hyperlink{class_n_n_commander_body_a3f97d0759691e6ace10f2611f1f9d122}{GetInputs}}()}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00017}00017     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00018}00018         \textcolor{keywordtype}{float}[] floats = \{ \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Count, \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Count, \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}}, \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}}\};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00020}00020         \textcolor{keywordflow}{return} floats;}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00021}00021     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00022}00022 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00024}00024     }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00025}\mbox{\hyperlink{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80}{00025}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80}{DecideAction}}()}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00026}00026     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00027}00027         \textcolor{keywordtype}{float} best = \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[0];}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00028}00028         \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00029}00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}.Length; i++)}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00030}00030         \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00031}00031             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[i] > best)}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00032}00032             \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00033}00033                 best = \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[i];}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00034}00034                 index = i;}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00035}00035             \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00036}00036         \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00037}00037 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00038}00038         \textcolor{keywordflow}{switch} (index)}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00039}00039         \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00040}00040             \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00041}00041                 \textcolor{comment}{//Generate a group of units}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00042}00042                 Debug.Log(\textcolor{stringliteral}{"{}Make more units: "{}} + \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[0]);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00043}00043                 \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}{SpawnUnit}}();}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00044}00044 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00045}00045                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00046}00046             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00047}00047                 \textcolor{comment}{//Send units to cp}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00048}00048                 Debug.Log(\textcolor{stringliteral}{"{}Send units to CP: "{}} + \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[1]);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00050}00050                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00051}00051             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00052}00052                 \textcolor{comment}{//Send units to rp}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00053}00053                 Debug.Log(\textcolor{stringliteral}{"{}Send units to RP: "{}} + \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[2]);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00054}00054                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00055}00055 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00056}00056             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00057}00057                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00058}00058         \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00059}00059     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00060}00060 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00061}00061 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00062}\mbox{\hyperlink{class_n_n_commander_body_a63a4a2aa637db9c11f7ae648f0d764ee}{00062}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_n_n_commander_body_a63a4a2aa637db9c11f7ae648f0d764ee}{SendUnits}}()}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00063}00063     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00064}00064 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00065}00065     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00066}00066 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00067}\mbox{\hyperlink{class_n_n_commander_body_a2afec130389784c182207a570071c180}{00067}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_n_n_commander_body_a2afec130389784c182207a570071c180}{Rally}}()}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00068}00068     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00069}00069         \textcolor{keywordtype}{int} randomUnit = Random.Range(0, \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Count);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00070}00070 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00071}00071 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00072}00072         Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(\mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}[randomUnit].transform.position, 5);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00073}00073 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00074}00074         \textcolor{keywordflow}{if} (collider2DArray.Length > 5)}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00075}00075         \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00076}00076             \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} collider2DArray)}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00077}00077             \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00078}00078                 \mbox{\hyperlink{class_base_unit}{BaseUnit}} unitRTS = collider2D.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>();}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00080}00080                 \textcolor{keywordflow}{if} (unitRTS == \textcolor{keyword}{null} || unitRTS.gameObject.tag != gameObject.tag)}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00081}00081                 \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00082}00082                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00083}00083                 \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00084}00084 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00085}00085                 \mbox{\hyperlink{class_group_leader}{GroupLeader}} leader = unitRTS.\mbox{\hyperlink{class_base_unit_a9cd35c425549c36834a8606c86b15d49}{GetLeader}}();}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00086}00086                 \textcolor{comment}{//Has no group then keep it loose}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00087}00087                 \textcolor{keywordflow}{if} (leader == \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00088}00088                 \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00089}00089                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Contains(unitRTS))}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00090}00090                     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00091}00091                         \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Add(unitRTS);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00092}00092                         unitRTS.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00093}00093                     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00094}00094                 \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00095}00095                 \textcolor{comment}{//Has a group so get everyone from that group}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00096}00096                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00097}00097                 \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00098}00098                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Contains(leader))}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00099}00099                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00100}00100 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00101}00101                     \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}})}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00102}00102                     \{}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00103}00103                         unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00104}00104                     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00105}00105                     \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Add(leader);}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00106}00106                 \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00107}00107             \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00108}00108         \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00109}00109 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00110}00110 }
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00111}00111     \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00112}00112 \}}
+\DoxyCodeLine{\Hypertarget{_n_n_commander_body_8cs_source_l00113}00113 }
+
+\end{DoxyCode}

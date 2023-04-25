@@ -1,0 +1,5 @@
+<map id="UnitShooting.ShootLaser" name="UnitShooting.ShootLaser">
+<area shape="rect" id="node1" title=" " alt="" coords="420,5,587,31"/>
+<area shape="rect" id="node2" href="$class_unit_shooting.html#a5aefa0727af95304f04cbeec44fccfd6" title=" " alt="" coords="237,5,372,31"/>
+<area shape="rect" id="node3" href="$class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19" title=" " alt="" coords="5,5,189,31"/>
+</map>

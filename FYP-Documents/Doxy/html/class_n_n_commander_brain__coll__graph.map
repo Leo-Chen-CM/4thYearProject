@@ -1,0 +1,9 @@
+<map id="NNCommanderBrain" name="NNCommanderBrain">
+<area shape="rect" id="node1" title=" " alt="" coords="73,868,217,996"/>
+<area shape="rect" id="node2" title=" " alt="" coords="121,5,236,45"/>
+<area shape="rect" id="node3" href="$class_neural_network.html" title="Taken from kipgparker&#39;s github repo: https://github.com/kipgparker/BackPropNetwork" alt="" coords="31,305,161,668"/>
+<area shape="rect" id="node4" href="$class_n_n_commander_body.html" title=" " alt="" coords="229,692,373,805"/>
+<area shape="rect" id="node5" href="$class_unit_manager.html" title=" " alt="" coords="217,131,399,245"/>
+<area shape="rect" id="node6" href="$class_a_i_unit_spawner.html" title=" " alt="" coords="424,95,544,281"/>
+<area shape="rect" id="node7" title=" " alt="" coords="397,729,456,769"/>
+</map>

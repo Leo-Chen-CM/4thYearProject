@@ -8,11 +8,23 @@ Field of view of a single unit
 
 
 Inheritance diagram for Unit\+Field\+Of\+View\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_unit_field_of_view__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Unit\+Field\+Of\+View\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_unit_field_of_view__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
@@ -57,12 +69,44 @@ Transform \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990e
 \doxysubsection*{Properties}
 \begin{DoxyCompactItemize}
 \item 
-bool \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\+\_\+enemy\+Spotted}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+bool \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\+\_\+enemy\+Spotted}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, private set\mbox{]}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_unit_field_of_view_a72da8d225e419b6e764e00cb7719fcf4}{Start}} ()
+\item 
+bool \mbox{\hyperlink{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}{Find\+Visible\+Targets}} ()
+\item 
+void \mbox{\hyperlink{class_unit_field_of_view_a2653f6e4cda86e44e35143f00438cd5c}{On\+Draw\+Gizmos}} ()
+\begin{DoxyCompactList}\small\item\em Debug Field of view  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19}{Late\+Update}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1}{Find\+Targets\+With\+Delay}} (float delay)
+\item 
+void \mbox{\hyperlink{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}{Draw\+Field\+Of\+View}} ()
+\begin{DoxyCompactList}\small\item\em Actual field of view  \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{Edge\+Info}} \mbox{\hyperlink{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}{Find\+Edge}} (\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}} min\+View\+Cast, \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}} max\+View\+Cast)
+\item 
+\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}} \mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{View\+Cast}} (float global\+Angle)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Mesh \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{view\+Mesh}}
+\item 
+\mbox{\hyperlink{class_unit_shooting}{Unit\+Shooting}} \mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{m\+\_\+unit\+Shooting}}
+\item 
+List$<$ Collider2D $>$ \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\+\_\+targets\+In\+View}} = new List$<$Collider2D$>$()
 \end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
 Field of view of a single unit  
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
 
 \doxysubsection{Member Function Documentation}
 \mbox{\Hypertarget{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}\label{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}} 
@@ -73,6 +117,416 @@ Field of view of a single unit
 
 
 
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00286}{286}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00287     \{}
+\DoxyCodeLine{00288         \textcolor{keywordflow}{if} (!angleIsGlobal)}
+\DoxyCodeLine{00289         \{}
+\DoxyCodeLine{00290             angleInDegrees += transform.eulerAngles.z;}
+\DoxyCodeLine{00291         \}}
+\DoxyCodeLine{00292         \textcolor{keywordflow}{return} \textcolor{keyword}{new} Vector3(Mathf.Sin(-\/angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(-\/angleInDegrees * Mathf.Deg2Rad), 0);}
+\DoxyCodeLine{00293     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}\label{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!DrawFieldOfView@{DrawFieldOfView}}
+\index{DrawFieldOfView@{DrawFieldOfView}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{DrawFieldOfView()}{DrawFieldOfView()}}
+{\footnotesize\ttfamily void Unit\+Field\+Of\+View.\+Draw\+Field\+Of\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Actual field of view  
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00151}{151}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00152     \{}
+\DoxyCodeLine{00153         \textcolor{keywordtype}{int} stepCount = Mathf.RoundToInt(\mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} * \mbox{\hyperlink{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}{m\_meshResolution}});}
+\DoxyCodeLine{00154         \textcolor{keywordtype}{float} stepAngleSize = \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} / stepCount;}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= stepCount; i++)}
+\DoxyCodeLine{00157         \{}
+\DoxyCodeLine{00158             \textcolor{keywordtype}{float} angle = transform.eulerAngles.z -\/ \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} / 2 + stepAngleSize * i;}
+\DoxyCodeLine{00159             Debug.DrawLine(transform.position, transform.position + \mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{DirFromAngle}}(angle, \textcolor{keyword}{true}) * \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, Color.red);}
+\DoxyCodeLine{00160         \}}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162         List<Vector3> viewPoints = \textcolor{keyword}{new} List<Vector3>();}
+\DoxyCodeLine{00163         ViewCastInfo oldViewCast = \textcolor{keyword}{new} ViewCastInfo();}
+\DoxyCodeLine{00164         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i <= stepCount; i++)}
+\DoxyCodeLine{00165         \{}
+\DoxyCodeLine{00166             \textcolor{keywordtype}{float} angle = transform.eulerAngles.z -\/ \mbox{\hyperlink{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}{m\_angle}} / 2 + stepAngleSize * i;}
+\DoxyCodeLine{00167             ViewCastInfo newViewCast = \mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{ViewCast}}(angle);}
+\DoxyCodeLine{00168             viewPoints.Add(newViewCast.point);}
+\DoxyCodeLine{00169             \textcolor{keywordflow}{if} (i > 0)}
+\DoxyCodeLine{00170             \{}
+\DoxyCodeLine{00171                 \textcolor{keywordtype}{bool} edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst -\/ newViewCast.dst) > \mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{edgeDstThreshold}};}
+\DoxyCodeLine{00172                 \textcolor{keywordflow}{if} (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit \&\& newViewCast.hit \&\& edgeDstThresholdExceeded))}
+\DoxyCodeLine{00173                 \{}
+\DoxyCodeLine{00174                     EdgeInfo edge = \mbox{\hyperlink{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}{FindEdge}}(oldViewCast, newViewCast);}
+\DoxyCodeLine{00175                     \textcolor{keywordflow}{if} (edge.pointA != Vector3.zero)}
+\DoxyCodeLine{00176                     \{}
+\DoxyCodeLine{00177                         viewPoints.Add(edge.pointA);}
+\DoxyCodeLine{00178                     \}}
+\DoxyCodeLine{00179                     \textcolor{keywordflow}{if} (edge.pointB != Vector3.zero)}
+\DoxyCodeLine{00180                     \{}
+\DoxyCodeLine{00181                         viewPoints.Add(edge.pointB);}
+\DoxyCodeLine{00182                     \}}
+\DoxyCodeLine{00183                 \}}
+\DoxyCodeLine{00184             \}}
+\DoxyCodeLine{00185             oldViewCast = newViewCast;}
+\DoxyCodeLine{00186         \}}
+\DoxyCodeLine{00187 }
+\DoxyCodeLine{00188         \textcolor{keywordtype}{int} vertexCount = viewPoints.Count + 1;}
+\DoxyCodeLine{00189         Vector3[] vertices = \textcolor{keyword}{new} Vector3[vertexCount];}
+\DoxyCodeLine{00190         \textcolor{keywordtype}{int}[] triangles = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[(vertexCount -\/ 2) * 3];}
+\DoxyCodeLine{00191 }
+\DoxyCodeLine{00192         vertices[0] = Vector3.zero;}
+\DoxyCodeLine{00193         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < vertexCount -\/ 1; i++)}
+\DoxyCodeLine{00194         \{}
+\DoxyCodeLine{00195             vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);}
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197             \textcolor{keywordflow}{if} (i < vertexCount -\/ 2)}
+\DoxyCodeLine{00198             \{}
+\DoxyCodeLine{00199                 triangles[i * 3] = 0;}
+\DoxyCodeLine{00200                 triangles[i * 3 + 1] = i + 1;}
+\DoxyCodeLine{00201                 triangles[i * 3 + 2] = i + 2;}
+\DoxyCodeLine{00202             \}}
+\DoxyCodeLine{00203         \}}
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205         \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}}.Clear();}
+\DoxyCodeLine{00206 }
+\DoxyCodeLine{00207         viewMesh.vertices = vertices;}
+\DoxyCodeLine{00208         viewMesh.triangles = triangles;}
+\DoxyCodeLine{00209         \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}}.RecalculateNormals();}
+\DoxyCodeLine{00210     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}\label{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!FindEdge@{FindEdge}}
+\index{FindEdge@{FindEdge}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{FindEdge()}{FindEdge()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_unit_field_of_view_1_1_edge_info}{Edge\+Info}} Unit\+Field\+Of\+View.\+Find\+Edge (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}}}]{min\+View\+Cast,  }\item[{\mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}}}]{max\+View\+Cast }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00212}{212}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00213     \{}
+\DoxyCodeLine{00214         \textcolor{keywordtype}{float} minAngle = minViewCast.angle;}
+\DoxyCodeLine{00215         \textcolor{keywordtype}{float} maxAngle = maxViewCast.angle;}
+\DoxyCodeLine{00216         Vector3 minPoint = Vector3.zero;}
+\DoxyCodeLine{00217         Vector3 maxPoint = Vector3.zero;}
+\DoxyCodeLine{00218 }
+\DoxyCodeLine{00219         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}{edgeResolveIterations}}; i++)}
+\DoxyCodeLine{00220         \{}
+\DoxyCodeLine{00221             \textcolor{keywordtype}{float} angle = (minAngle + maxAngle) / 2;}
+\DoxyCodeLine{00222             ViewCastInfo newViewCast = \mbox{\hyperlink{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}{ViewCast}}(angle);}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224             \textcolor{keywordtype}{bool} edgeDstThresholdExceeded = Mathf.Abs(minViewCast.dst -\/ newViewCast.dst) > \mbox{\hyperlink{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}{edgeDstThreshold}};}
+\DoxyCodeLine{00225             \textcolor{keywordflow}{if} (newViewCast.hit == minViewCast.hit \&\& !edgeDstThresholdExceeded)}
+\DoxyCodeLine{00226             \{}
+\DoxyCodeLine{00227                 minAngle = angle;}
+\DoxyCodeLine{00228                 minPoint = newViewCast.point;}
+\DoxyCodeLine{00229             \}}
+\DoxyCodeLine{00230             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00231             \{}
+\DoxyCodeLine{00232                 maxAngle = angle;}
+\DoxyCodeLine{00233                 maxPoint = newViewCast.point;}
+\DoxyCodeLine{00234             \}}
+\DoxyCodeLine{00235         \}}
+\DoxyCodeLine{00236 }
+\DoxyCodeLine{00237         \textcolor{keywordflow}{return} \textcolor{keyword}{new} EdgeInfo(minPoint, maxPoint);}
+\DoxyCodeLine{00238     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1}\label{class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!FindTargetsWithDelay@{FindTargetsWithDelay}}
+\index{FindTargetsWithDelay@{FindTargetsWithDelay}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{FindTargetsWithDelay()}{FindTargetsWithDelay()}}
+{\footnotesize\ttfamily IEnumerator Unit\+Field\+Of\+View.\+Find\+Targets\+With\+Delay (\begin{DoxyParamCaption}\item[{float}]{delay }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00139}{139}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00140     \{}
+\DoxyCodeLine{00141         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{00142         \{}
+\DoxyCodeLine{00143             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(delay);}
+\DoxyCodeLine{00144             \mbox{\hyperlink{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}{FindVisibleTargets}}();}
+\DoxyCodeLine{00145         \}}
+\DoxyCodeLine{00146     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}\label{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!FindVisibleTargets@{FindVisibleTargets}}
+\index{FindVisibleTargets@{FindVisibleTargets}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{FindVisibleTargets()}{FindVisibleTargets()}}
+{\footnotesize\ttfamily bool Unit\+Field\+Of\+View.\+Find\+Visible\+Targets (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052     \{}
+\DoxyCodeLine{00053         Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(\textcolor{keyword}{new} Vector2(transform.position.x, transform.position.y), \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, \mbox{\hyperlink{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}{m\_targetLayer}});}
+\DoxyCodeLine{00054         \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Clear();}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056         \textcolor{comment}{//m\_targetsInView.AddRange(Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m\_radius, m\_targetLayer));}}
+\DoxyCodeLine{00057 }
+\DoxyCodeLine{00058         \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} targetsInViewRadius)}
+\DoxyCodeLine{00059         \{}
+\DoxyCodeLine{00060             \textcolor{keywordflow}{if} (collider2D.gameObject.tag != gameObject.tag)}
+\DoxyCodeLine{00061             \{}
+\DoxyCodeLine{00062                 \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Add(collider2D);}
+\DoxyCodeLine{00063             \}}
+\DoxyCodeLine{00064         \}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066 }
+\DoxyCodeLine{00067         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Count > 0)}
+\DoxyCodeLine{00068         \{}
+\DoxyCodeLine{00069             \textcolor{keywordtype}{int} length = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}.Count;}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < length; i++)}
+\DoxyCodeLine{00072             \{}
+\DoxyCodeLine{00073                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].gameObject != gameObject)}
+\DoxyCodeLine{00074                 \{}
+\DoxyCodeLine{00075                     Transform target = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].transform;}
+\DoxyCodeLine{00076                     Vector3 dirToTarget = (target.position -\/ transform.position).normalized;}
+\DoxyCodeLine{00077                     \textcolor{keywordtype}{float} dstToNewTarget = Vector3.Distance(transform.position, target.position);}
+\DoxyCodeLine{00078 }
+\DoxyCodeLine{00079                     \textcolor{keywordflow}{if} (Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, \mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{m\_obstructionLayer}}) \&\& dstToNewTarget < \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}})}
+\DoxyCodeLine{00080                     \{}
+\DoxyCodeLine{00081                         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{00082                         \{}
+\DoxyCodeLine{00083                             \textcolor{keywordtype}{float} currentDstToTarget = Vector3.Distance(transform.position, \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}}.position);}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085                             \textcolor{keywordflow}{if} (dstToNewTarget < currentDstToTarget)}
+\DoxyCodeLine{00086                             \{}
+\DoxyCodeLine{00087                                 \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].transform;}
+\DoxyCodeLine{00088                                 \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00089                             \}}
+\DoxyCodeLine{00090                         \}}
+\DoxyCodeLine{00091                         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00092                         \{}
+\DoxyCodeLine{00093                             \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \mbox{\hyperlink{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}{m\_targetsInView}}[i].transform;}
+\DoxyCodeLine{00094                             \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{true};  }
+\DoxyCodeLine{00095                         \}}
+\DoxyCodeLine{00096 }
+\DoxyCodeLine{00097                     \}}
+\DoxyCodeLine{00098                     \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00099                     \{}
+\DoxyCodeLine{00100                         \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00101                         \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{00102                     \}}
+\DoxyCodeLine{00103                 \}}
+\DoxyCodeLine{00104             \}}
+\DoxyCodeLine{00105         \}}
+\DoxyCodeLine{00106         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00107         \{}
+\DoxyCodeLine{00108             \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00109             \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{00110         \}}
+\DoxyCodeLine{00111         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}{m\_enemySpotted}};}
+\DoxyCodeLine{00112      }
+\DoxyCodeLine{00113     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19}\label{class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!LateUpdate@{LateUpdate}}
+\index{LateUpdate@{LateUpdate}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{LateUpdate()}{LateUpdate()}}
+{\footnotesize\ttfamily void Unit\+Field\+Of\+View.\+Late\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00129}{129}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00130     \{}
+\DoxyCodeLine{00131         \mbox{\hyperlink{class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3}{DrawFieldOfView}}();}
+\DoxyCodeLine{00132         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{00133         \{}
+\DoxyCodeLine{00134             transform.up = Vector3.Lerp(transform.up, (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}}.position -\/ transform.position), 1);}
+\DoxyCodeLine{00135             \mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{m\_unitShooting}}.\mbox{\hyperlink{class_unit_shooting_a5aefa0727af95304f04cbeec44fccfd6}{Shoot}}();}
+\DoxyCodeLine{00136         \}}
+\DoxyCodeLine{00137     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_unit_field_of_view_a2653f6e4cda86e44e35143f00438cd5c}\label{class_unit_field_of_view_a2653f6e4cda86e44e35143f00438cd5c}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!OnDrawGizmos@{OnDrawGizmos}}
+\index{OnDrawGizmos@{OnDrawGizmos}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{OnDrawGizmos()}{OnDrawGizmos()}}
+{\footnotesize\ttfamily void Unit\+Field\+Of\+View.\+On\+Draw\+Gizmos (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Debug Field of view  
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00119}{119}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00120     \{}
+\DoxyCodeLine{00121         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{00122         \{}
+\DoxyCodeLine{00123             Gizmos.color = Color.green;}
+\DoxyCodeLine{00124             Gizmos.DrawLine(transform.position, \mbox{\hyperlink{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}{m\_target}}.position);}
+\DoxyCodeLine{00125         \}}
+\DoxyCodeLine{00126 }
+\DoxyCodeLine{00127     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_unit_field_of_view_a72da8d225e419b6e764e00cb7719fcf4}\label{class_unit_field_of_view_a72da8d225e419b6e764e00cb7719fcf4}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!Start@{Start}}
+\index{Start@{Start}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Unit\+Field\+Of\+View.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042     \{}
+\DoxyCodeLine{00043         \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}} = \textcolor{keyword}{new} Mesh();}
+\DoxyCodeLine{00044         viewMesh.name = \textcolor{stringliteral}{"{}View Mesh"{}};}
+\DoxyCodeLine{00045         viewMeshFilter.mesh = \mbox{\hyperlink{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}{viewMesh}};}
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         \mbox{\hyperlink{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}{m\_unitShooting}} = GetComponent<UnitShooting>();}
+\DoxyCodeLine{00048         StartCoroutine(\textcolor{stringliteral}{"{}FindTargetsWithDelay"{}}, .1f);}
+\DoxyCodeLine{00049     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}\label{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!ViewCast@{ViewCast}}
+\index{ViewCast@{ViewCast}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{ViewCast()}{ViewCast()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_unit_field_of_view_1_1_view_cast_info}{View\+Cast\+Info}} Unit\+Field\+Of\+View.\+View\+Cast (\begin{DoxyParamCaption}\item[{float}]{global\+Angle }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00267}{267}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00268     \{}
+\DoxyCodeLine{00269         Vector3 dir = \mbox{\hyperlink{class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55}{DirFromAngle}}(globalAngle, \textcolor{keyword}{true});}
+\DoxyCodeLine{00270 }
+\DoxyCodeLine{00271         \textcolor{comment}{//int combinedMask = m\_targetLayer | m\_obstructionLayer;}}
+\DoxyCodeLine{00272 }
+\DoxyCodeLine{00273         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, \mbox{\hyperlink{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}{m\_obstructionLayer}});}
+\DoxyCodeLine{00274 }
+\DoxyCodeLine{00275         \textcolor{keywordflow}{if} (hit)}
+\DoxyCodeLine{00276         \{}
+\DoxyCodeLine{00277             \textcolor{keywordflow}{return} \textcolor{keyword}{new} ViewCastInfo(\textcolor{keyword}{true}, hit.point, hit.distance, globalAngle);}
+\DoxyCodeLine{00278         \}}
+\DoxyCodeLine{00279         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00280         \{}
+\DoxyCodeLine{00281             \textcolor{keywordflow}{return} \textcolor{keyword}{new} ViewCastInfo(\textcolor{keyword}{false}, transform.position + dir * \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, \mbox{\hyperlink{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}{m\_radius}}, globalAngle);}
+\DoxyCodeLine{00282         \}}
+\DoxyCodeLine{00283 }
+\DoxyCodeLine{00284     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_icgraph}
+\end{center}
+\end{figure}
+
+
 \doxysubsection{Member Data Documentation}
 \mbox{\Hypertarget{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}\label{class_unit_field_of_view_a62b23f33c2df6262804a1439fa85bd30}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!edgeDstThreshold@{edgeDstThreshold}}
@@ -80,11 +534,19 @@ Field of view of a single unit
 \doxysubsubsection{\texorpdfstring{edgeDstThreshold}{edgeDstThreshold}}
 {\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+edge\+Dst\+Threshold}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00026}{26}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
 \mbox{\Hypertarget{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}\label{class_unit_field_of_view_a1b6475a6d78679eb4b0f5b85fb1174b8}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!edgeResolveIterations@{edgeResolveIterations}}
 \index{edgeResolveIterations@{edgeResolveIterations}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{edgeResolveIterations}{edgeResolveIterations}}
 {\footnotesize\ttfamily int Unit\+Field\+Of\+View.\+edge\+Resolve\+Iterations}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}\label{class_unit_field_of_view_a2925dbd9040620300d8c3de7397fa93b}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_angle@{m\_angle}}
@@ -92,11 +554,19 @@ Field of view of a single unit
 \doxysubsubsection{\texorpdfstring{m\_angle}{m\_angle}}
 {\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+angle = 45f}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
 \mbox{\Hypertarget{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}\label{class_unit_field_of_view_aabbc24c745de1da35baf255c99eb6244}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_engagementRanged@{m\_engagementRanged}}
 \index{m\_engagementRanged@{m\_engagementRanged}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{m\_engagementRanged}{m\_engagementRanged}}
 {\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+engagement\+Ranged}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}\label{class_unit_field_of_view_a5620505a60be7a774656fde63eb72f1a}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_meshResolution@{m\_meshResolution}}
@@ -104,11 +574,19 @@ Field of view of a single unit
 \doxysubsubsection{\texorpdfstring{m\_meshResolution}{m\_meshResolution}}
 {\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+mesh\+Resolution}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
 \mbox{\Hypertarget{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}\label{class_unit_field_of_view_aab181968aebed6bddb788af42a3fda5a}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_obstructionLayer@{m\_obstructionLayer}}
 \index{m\_obstructionLayer@{m\_obstructionLayer}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{m\_obstructionLayer}{m\_obstructionLayer}}
 {\footnotesize\ttfamily Layer\+Mask Unit\+Field\+Of\+View.\+m\+\_\+obstruction\+Layer}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}\label{class_unit_field_of_view_ad1e49aa4f4b84cd36c8b723617adeb8a}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_obstructionOnlyLayer@{m\_obstructionOnlyLayer}}
@@ -116,11 +594,19 @@ Field of view of a single unit
 \doxysubsubsection{\texorpdfstring{m\_obstructionOnlyLayer}{m\_obstructionOnlyLayer}}
 {\footnotesize\ttfamily Layer\+Mask Unit\+Field\+Of\+View.\+m\+\_\+obstruction\+Only\+Layer}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
 \mbox{\Hypertarget{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}\label{class_unit_field_of_view_a62f7bbd26c411f4f9f574d94cdc03278}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_radius@{m\_radius}}
 \index{m\_radius@{m\_radius}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{m\_radius}{m\_radius}}
 {\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+m\+\_\+radius}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}\label{class_unit_field_of_view_a6a48d8c3fcfbf9e4140efcb990ea7983}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_target@{m\_target}}
@@ -128,11 +614,39 @@ Field of view of a single unit
 \doxysubsubsection{\texorpdfstring{m\_target}{m\_target}}
 {\footnotesize\ttfamily Transform Unit\+Field\+Of\+View.\+m\+\_\+target}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
 \mbox{\Hypertarget{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}\label{class_unit_field_of_view_a80d1e8b41273161c64d54c8fd82bcea4}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_targetLayer@{m\_targetLayer}}
 \index{m\_targetLayer@{m\_targetLayer}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{m\_targetLayer}{m\_targetLayer}}
 {\footnotesize\ttfamily Layer\+Mask Unit\+Field\+Of\+View.\+m\+\_\+target\+Layer}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}\label{class_unit_field_of_view_aebaa68287b0e40b9d53fdba1f2401bfb}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_targetsInView@{m\_targetsInView}}
+\index{m\_targetsInView@{m\_targetsInView}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_targetsInView}{m\_targetsInView}}
+{\footnotesize\ttfamily List$<$Collider2D$>$ Unit\+Field\+Of\+View.\+m\+\_\+targets\+In\+View = new List$<$Collider2D$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}\label{class_unit_field_of_view_aa9d29d7c65aaeb77349f40d15ae2287c}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!m\_unitShooting@{m\_unitShooting}}
+\index{m\_unitShooting@{m\_unitShooting}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{m\_unitShooting}{m\_unitShooting}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_shooting}{Unit\+Shooting}} Unit\+Field\+Of\+View.\+m\+\_\+unit\+Shooting\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}\label{class_unit_field_of_view_aa01e0d880d8845872b1ac7b876123cd7}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!maskCutawayDst@{maskCutawayDst}}
@@ -140,11 +654,29 @@ Field of view of a single unit
 \doxysubsubsection{\texorpdfstring{maskCutawayDst}{maskCutawayDst}}
 {\footnotesize\ttfamily float Unit\+Field\+Of\+View.\+mask\+Cutaway\+Dst = .\+1f}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+\mbox{\Hypertarget{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}\label{class_unit_field_of_view_ad3f547f03ce1baa60c88ec74a1d68f14}} 
+\index{UnitFieldOfView@{UnitFieldOfView}!viewMesh@{viewMesh}}
+\index{viewMesh@{viewMesh}!UnitFieldOfView@{UnitFieldOfView}}
+\doxysubsubsection{\texorpdfstring{viewMesh}{viewMesh}}
+{\footnotesize\ttfamily Mesh Unit\+Field\+Of\+View.\+view\+Mesh\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
 \mbox{\Hypertarget{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}\label{class_unit_field_of_view_ac36ca0bb521872eaff442fc7f77bb611}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!viewMeshFilter@{viewMeshFilter}}
 \index{viewMeshFilter@{viewMeshFilter}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{viewMeshFilter}{viewMeshFilter}}
 {\footnotesize\ttfamily Mesh\+Filter Unit\+Field\+Of\+View.\+view\+Mesh\+Filter}
+
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00030}{30}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
 
 \mbox{\Hypertarget{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}\label{class_unit_field_of_view_a0d48923c4436f1c923c53492987d4809}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!visibleTargets@{visibleTargets}}
@@ -154,15 +686,28 @@ Field of view of a single unit
 
 
 
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00022}{22}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+
 \doxysubsection{Property Documentation}
 \mbox{\Hypertarget{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}\label{class_unit_field_of_view_a8ca058efa6085d032e312058abe7bafd}} 
 \index{UnitFieldOfView@{UnitFieldOfView}!m\_enemySpotted@{m\_enemySpotted}}
 \index{m\_enemySpotted@{m\_enemySpotted}!UnitFieldOfView@{UnitFieldOfView}}
 \doxysubsubsection{\texorpdfstring{m\_enemySpotted}{m\_enemySpotted}}
-{\footnotesize\ttfamily bool Unit\+Field\+Of\+View.\+m\+\_\+enemy\+Spotted\hspace{0.3cm}{\ttfamily [get]}}
+{\footnotesize\ttfamily bool Unit\+Field\+Of\+View.\+m\+\_\+enemy\+Spotted\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [private set]}}
 
+
+
+Definition at line \mbox{\hyperlink{_unit_field_of_view_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_unit_field_of_view_8cs_source}{Unit\+Field\+Of\+View.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032 \{ \textcolor{keyword}{get}; \textcolor{keyword}{private} \textcolor{keyword}{set}; \}}
+
+\end{DoxyCode}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Unit Scripts/\mbox{\hyperlink{_unit_field_of_view_8cs}{Unit\+Field\+Of\+View.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Unit Scripts/\mbox{\hyperlink{_unit_field_of_view_8cs}{Unit\+Field\+Of\+View.\+cs}}\end{DoxyCompactItemize}

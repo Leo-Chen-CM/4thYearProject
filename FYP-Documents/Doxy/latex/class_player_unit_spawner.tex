@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Player\+Unit\+Spawner\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_player_unit_spawner__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Player\+Unit\+Spawner\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=200pt]{class_player_unit_spawner__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -33,15 +45,201 @@ List$<$ Game\+Object $>$ \mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a7
 \item 
 virtual void \mbox{\hyperlink{class_player_unit_spawner_aa067a7a8bad0bf505a098ec30317d720}{Start}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_player_unit_spawner_a887b8bce82ad368cb2e107a882281fb8}{Update}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_player_unit_spawner_a11e03f0f736e00227c421ab00b1cc346}{Creating\+Unit}} ()
+\item 
+void \mbox{\hyperlink{class_player_unit_spawner_aab7fbc97abfe24783f7c6fc9996c87f0}{Spawn\+UI}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}{m\+\_\+time}} = 3
+\item 
+Image \mbox{\hyperlink{class_player_unit_spawner_a15fcd851f136ceaabd025dd81c4c70c5}{m\+\_\+overlay}}
+\item 
+Image \mbox{\hyperlink{class_player_unit_spawner_a5e5e45a428c66741f4699601927fcc7a}{m\+\_\+prefab\+Image}}
+\item 
+Game\+Object \mbox{\hyperlink{class_player_unit_spawner_a00c33ee755f8e2e6d4fbddfa78f72685}{m\+\_\+unit\+Production\+UI}}
+\item 
+int \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\+\_\+units\+Queued}} = 0
+\item 
+Game\+Object \mbox{\hyperlink{class_player_unit_spawner_a25afac427941c98eb43767ef79aa1db7}{m\+\_\+units\+Being\+Built\+Text}}
+\item 
+bool \mbox{\hyperlink{class_player_unit_spawner_a7853048aa91ea5698efb6c1da95081b9}{m\+\_\+coroutine\+In\+Use}} = false
+\item 
+float \mbox{\hyperlink{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}{m\+\_\+next\+Spawn}}
+\item 
+Game\+Object \mbox{\hyperlink{class_player_unit_spawner_a76dce5f8636a84f04293005f1f14a9c8}{m\+\_\+opponent}}
+\item 
+Game\+Object \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\+\_\+spawn\+Area}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_player_unit_spawner_a11e03f0f736e00227c421ab00b1cc346}\label{class_player_unit_spawner_a11e03f0f736e00227c421ab00b1cc346}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!CreatingUnit@{CreatingUnit}}
+\index{CreatingUnit@{CreatingUnit}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{CreatingUnit()}{CreatingUnit()}}
+{\footnotesize\ttfamily IEnumerator Player\+Unit\+Spawner.\+Creating\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00148}{148}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00149     \{}
+\DoxyCodeLine{00150         m\_overlay.fillAmount = 1;}
+\DoxyCodeLine{00151 }
+\DoxyCodeLine{00152         Texture2D td = AssetPreview.GetAssetPreview(\mbox{\hyperlink{class_player_unit_spawner_ac01dc75b43bc3ae6261d3a4cda0a7cc9}{m\_unit}});}
+\DoxyCodeLine{00153 }
+\DoxyCodeLine{00154         Rect rect = \textcolor{keyword}{new} Rect(0, 0, td.width, td.height);}
+\DoxyCodeLine{00155 }
+\DoxyCodeLine{00156         m\_prefabImage.sprite = Sprite.Create(td, rect, \textcolor{keyword}{new} Vector2(0, 0));}
+\DoxyCodeLine{00157         \mbox{\hyperlink{class_player_unit_spawner_a7853048aa91ea5698efb6c1da95081b9}{m\_coroutineInUse}} = \textcolor{keyword}{true};}
+\DoxyCodeLine{00158 }
+\DoxyCodeLine{00159         \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}} > 0)}
+\DoxyCodeLine{00160         \{}
+\DoxyCodeLine{00161 }
+\DoxyCodeLine{00162             \textcolor{keywordflow}{while} (\mbox{\hyperlink{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}{m\_time}} > -\/0.1f)}
+\DoxyCodeLine{00163             \{}
+\DoxyCodeLine{00164                 m\_overlay.fillAmount = \mbox{\hyperlink{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}{m\_time}} / \mbox{\hyperlink{class_player_unit_spawner_a008570cdff7f76293c8bc3d2e95db289}{m\_spawnTime}};}
+\DoxyCodeLine{00165                 \mbox{\hyperlink{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}{m\_time}} -\/= Time.deltaTime;}
+\DoxyCodeLine{00166                 yield \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00167             \}}
+\DoxyCodeLine{00168 }
+\DoxyCodeLine{00169             \textcolor{comment}{//Creates a new unit}}
+\DoxyCodeLine{00170             \textcolor{comment}{//Vector3 spawn = new Vector3(m\_spawnPoint.position.x + Random.Range(-\/1, 1), m\_spawnPoint.position.y + Random.Range(-\/45,45), 0);}}
+\DoxyCodeLine{00171             Vector3 spawn = m\_spawnPoint.position + \textcolor{keyword}{new} Vector3(Random.Range(-\/\mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.x / 3, \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.x / 3), }
+\DoxyCodeLine{00172                                                                 Random.Range(-\/\mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.y / 3, \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.y / 3), 0);}
+\DoxyCodeLine{00173             Quaternion rotation = Quaternion.Euler(0, 0, \mbox{\hyperlink{class_player_unit_spawner_a2bef65b2f522a4e602ce298ed1e2882e}{m\_rotation}});}
+\DoxyCodeLine{00174             GameObject newUnit = Instantiate(\mbox{\hyperlink{class_player_unit_spawner_ac01dc75b43bc3ae6261d3a4cda0a7cc9}{m\_unit}}, spawn, rotation);}
+\DoxyCodeLine{00175             newUnit.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>().SetupTeam(tag);}
+\DoxyCodeLine{00176             \mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Add(newUnit);}
+\DoxyCodeLine{00177             \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}}-\/-\/;}
+\DoxyCodeLine{00178             \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}}-\/-\/;}
+\DoxyCodeLine{00179             \mbox{\hyperlink{class_player_unit_spawner_aab7fbc97abfe24783f7c6fc9996c87f0}{SpawnUI}}();}
+\DoxyCodeLine{00180             \mbox{\hyperlink{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}{m\_time}} = \mbox{\hyperlink{class_player_unit_spawner_a008570cdff7f76293c8bc3d2e95db289}{m\_spawnTime}};}
+\DoxyCodeLine{00181 }
+\DoxyCodeLine{00182 }
+\DoxyCodeLine{00183         \}}
+\DoxyCodeLine{00184         \mbox{\hyperlink{class_player_unit_spawner_a7853048aa91ea5698efb6c1da95081b9}{m\_coroutineInUse}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00185         \mbox{\hyperlink{class_player_unit_spawner_a00c33ee755f8e2e6d4fbddfa78f72685}{m\_unitProductionUI}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00186     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_unit_spawner_a11e03f0f736e00227c421ab00b1cc346_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_unit_spawner_a11e03f0f736e00227c421ab00b1cc346_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_player_unit_spawner_aab7fbc97abfe24783f7c6fc9996c87f0}\label{class_player_unit_spawner_aab7fbc97abfe24783f7c6fc9996c87f0}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!SpawnUI@{SpawnUI}}
+\index{SpawnUI@{SpawnUI}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{SpawnUI()}{SpawnUI()}}
+{\footnotesize\ttfamily void Player\+Unit\+Spawner.\+Spawn\+UI (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00188}{188}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00189     \{}
+\DoxyCodeLine{00190         \mbox{\hyperlink{class_player_unit_spawner_a25afac427941c98eb43767ef79aa1db7}{m\_unitsBeingBuiltText}}.GetComponent<TextMeshProUGUI>().text = \textcolor{stringliteral}{"{}x"{}} + \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}};}
+\DoxyCodeLine{00191     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_unit_spawner_aab7fbc97abfe24783f7c6fc9996c87f0_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_player_unit_spawner_a60032debd862fffd8f0bfef1b521cf64}\label{class_player_unit_spawner_a60032debd862fffd8f0bfef1b521cf64}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!SpawnUnit@{SpawnUnit}}
 \index{SpawnUnit@{SpawnUnit}!PlayerUnitSpawner@{PlayerUnitSpawner}}
 \doxysubsubsection{\texorpdfstring{SpawnUnit()}{SpawnUnit()}}
 {\footnotesize\ttfamily void Player\+Unit\+Spawner.\+Spawn\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00107}{107}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00108     \{}
+\DoxyCodeLine{00109         \textcolor{keywordflow}{if} (gameObject.tag == \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{00110         \{}
+\DoxyCodeLine{00111             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Count < \mbox{\hyperlink{class_player_unit_spawner_a2b113a5f79235cba342fa626d083bd9b}{m\_maxUnits}} \&\& \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} != 0)}
+\DoxyCodeLine{00112             \{}
+\DoxyCodeLine{00113                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}} < 9)}
+\DoxyCodeLine{00114                 \{}
+\DoxyCodeLine{00115                     \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}}++;}
+\DoxyCodeLine{00116                 \}}
+\DoxyCodeLine{00117 }
+\DoxyCodeLine{00118                 \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_player_unit_spawner_a7853048aa91ea5698efb6c1da95081b9}{m\_coroutineInUse}})}
+\DoxyCodeLine{00119                 \{}
+\DoxyCodeLine{00120                     \mbox{\hyperlink{class_player_unit_spawner_a00c33ee755f8e2e6d4fbddfa78f72685}{m\_unitProductionUI}}.SetActive(\textcolor{keyword}{true});}
+\DoxyCodeLine{00121                     StartCoroutine(\mbox{\hyperlink{class_player_unit_spawner_a11e03f0f736e00227c421ab00b1cc346}{CreatingUnit}}());}
+\DoxyCodeLine{00122                 \}}
+\DoxyCodeLine{00123 }
+\DoxyCodeLine{00124             \}}
+\DoxyCodeLine{00125         \}}
+\DoxyCodeLine{00126         \textcolor{comment}{//else if (gameObject.tag == "{}Team2"{})}}
+\DoxyCodeLine{00127         \textcolor{comment}{//\{}}
+\DoxyCodeLine{00128         \textcolor{comment}{//    if (m\_troopCount.Count < m\_maxUnits \&\& GameManager.instance.m\_team2Reserves != 0)}}
+\DoxyCodeLine{00129         \textcolor{comment}{//    \{}}
+\DoxyCodeLine{00130         \textcolor{comment}{//        if (m\_unitsQueued < 9)}}
+\DoxyCodeLine{00131         \textcolor{comment}{//        \{}}
+\DoxyCodeLine{00132         \textcolor{comment}{//            m\_unitsQueued++;}}
+\DoxyCodeLine{00133         \textcolor{comment}{//        \}}}
+\DoxyCodeLine{00134 }
+\DoxyCodeLine{00135         \textcolor{comment}{//        if (!m\_coroutineInUse)}}
+\DoxyCodeLine{00136         \textcolor{comment}{//        \{}}
+\DoxyCodeLine{00137         \textcolor{comment}{//            m\_unitProductionUI.SetActive(true);}}
+\DoxyCodeLine{00138         \textcolor{comment}{//            StartCoroutine(CreatingUnit());}}
+\DoxyCodeLine{00139         \textcolor{comment}{//        \}}}
+\DoxyCodeLine{00140 }
+\DoxyCodeLine{00141         \textcolor{comment}{//    \}}}
+\DoxyCodeLine{00142         \textcolor{comment}{//\}}}
+\DoxyCodeLine{00143 }
+\DoxyCodeLine{00144 }
+\DoxyCodeLine{00145     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_player_unit_spawner_a60032debd862fffd8f0bfef1b521cf64_cgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_player_unit_spawner_aa067a7a8bad0bf505a098ec30317d720}\label{class_player_unit_spawner_aa067a7a8bad0bf505a098ec30317d720}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!Start@{Start}}
 \index{Start@{Start}!PlayerUnitSpawner@{PlayerUnitSpawner}}
@@ -54,12 +252,148 @@ Reimplemented in \mbox{\hyperlink{class_ai_unit_spawner_a32ba907bcdb01d3ea78b509
 
 
 
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044     \{}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_player_unit_spawner_a76dce5f8636a84f04293005f1f14a9c8}{m\_opponent}}.GetComponent<\mbox{\hyperlink{class_r_t_s_game_controller}{RTSGameController}}>().\mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{m\_AI}})}
+\DoxyCodeLine{00047         \{}
+\DoxyCodeLine{00048             \mbox{\hyperlink{class_player_unit_spawner_a00c33ee755f8e2e6d4fbddfa78f72685}{m\_unitProductionUI}}.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00049         \}}
+\DoxyCodeLine{00050 }
+\DoxyCodeLine{00051     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_player_unit_spawner_a887b8bce82ad368cb2e107a882281fb8}\label{class_player_unit_spawner_a887b8bce82ad368cb2e107a882281fb8}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!Update@{Update}}
+\index{Update@{Update}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Player\+Unit\+Spawner.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00054     \{}
+\DoxyCodeLine{00055         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_a76dce5f8636a84f04293005f1f14a9c8}{m\_opponent}}.GetComponent<\mbox{\hyperlink{class_r_t_s_game_controller}{RTSGameController}}>().\mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{m\_AI}})}
+\DoxyCodeLine{00056         \{}
+\DoxyCodeLine{00057             \textcolor{keywordflow}{if} (gameObject.tag == \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{00058             \{}
+\DoxyCodeLine{00059                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Count < \mbox{\hyperlink{class_player_unit_spawner_a2b113a5f79235cba342fa626d083bd9b}{m\_maxUnits}} \&\& Time.time > \mbox{\hyperlink{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}{m\_nextSpawn}} \&\& \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} != 0)}
+\DoxyCodeLine{00060                 \{}
+\DoxyCodeLine{00061                     Vector3 spawn = m\_spawnPoint.position + \textcolor{keyword}{new} Vector3(Random.Range(-\/\mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.x / 3, \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.x / 3), Random.Range(-\/\mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.y / 3, \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.y / 3), 0);}
+\DoxyCodeLine{00062                     \mbox{\hyperlink{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}{m\_nextSpawn}} = Time.time + \mbox{\hyperlink{class_player_unit_spawner_a008570cdff7f76293c8bc3d2e95db289}{m\_spawnTime}};}
+\DoxyCodeLine{00063                     Quaternion rotation = Quaternion.Euler(0, 0, \mbox{\hyperlink{class_player_unit_spawner_a2bef65b2f522a4e602ce298ed1e2882e}{m\_rotation}});}
+\DoxyCodeLine{00064                     GameObject newUnit = Instantiate(\mbox{\hyperlink{class_player_unit_spawner_ac01dc75b43bc3ae6261d3a4cda0a7cc9}{m\_unit}}, spawn, rotation);}
+\DoxyCodeLine{00065                     newUnit.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>().SetupTeam(tag);}
+\DoxyCodeLine{00066                     \mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Add(newUnit);}
+\DoxyCodeLine{00067                     \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}}-\/-\/;}
+\DoxyCodeLine{00068                     \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}}-\/-\/;}
+\DoxyCodeLine{00069                 \}}
+\DoxyCodeLine{00070             \}}
+\DoxyCodeLine{00071             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (gameObject.tag == \textcolor{stringliteral}{"{}Team2"{}})}
+\DoxyCodeLine{00072             \{}
+\DoxyCodeLine{00073                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Count < \mbox{\hyperlink{class_player_unit_spawner_a2b113a5f79235cba342fa626d083bd9b}{m\_maxUnits}} \&\& Time.time > \mbox{\hyperlink{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}{m\_nextSpawn}} \&\& \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} != 0)}
+\DoxyCodeLine{00074                 \{}
+\DoxyCodeLine{00075                     Vector3 spawn = m\_spawnPoint.position + \textcolor{keyword}{new} Vector3(Random.Range(-\/\mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.x / 3, \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.x / 3), Random.Range(-\/\mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.y / 3, \mbox{\hyperlink{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}{m\_spawnArea}}.transform.localScale.y / 3), 0);}
+\DoxyCodeLine{00076                     \mbox{\hyperlink{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}{m\_nextSpawn}} = Time.time + \mbox{\hyperlink{class_player_unit_spawner_a008570cdff7f76293c8bc3d2e95db289}{m\_spawnTime}};}
+\DoxyCodeLine{00077                     Quaternion rotation = Quaternion.Euler(0, 0, \mbox{\hyperlink{class_player_unit_spawner_a2bef65b2f522a4e602ce298ed1e2882e}{m\_rotation}});}
+\DoxyCodeLine{00078                     GameObject newUnit = Instantiate(\mbox{\hyperlink{class_player_unit_spawner_ac01dc75b43bc3ae6261d3a4cda0a7cc9}{m\_unit}}, spawn, rotation);}
+\DoxyCodeLine{00079                     newUnit.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>().SetupTeam(tag);}
+\DoxyCodeLine{00080                     \mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Add(newUnit);}
+\DoxyCodeLine{00081                     \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}}-\/-\/;}
+\DoxyCodeLine{00082                     \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}}-\/-\/;}
+\DoxyCodeLine{00083                 \}}
+\DoxyCodeLine{00084             \}}
+\DoxyCodeLine{00085         \}}
+\DoxyCodeLine{00086         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00087         \{}
+\DoxyCodeLine{00088             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}} > 1)}
+\DoxyCodeLine{00089             \{}
+\DoxyCodeLine{00090                 \mbox{\hyperlink{class_player_unit_spawner_a25afac427941c98eb43767ef79aa1db7}{m\_unitsBeingBuiltText}}.GetComponent<TextMeshProUGUI>().text = \textcolor{stringliteral}{"{}x"{}} + \mbox{\hyperlink{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}{m\_unitsQueued}};}
+\DoxyCodeLine{00091             \}}
+\DoxyCodeLine{00092             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00093             \{}
+\DoxyCodeLine{00094                 \mbox{\hyperlink{class_player_unit_spawner_a25afac427941c98eb43767ef79aa1db7}{m\_unitsBeingBuiltText}}.GetComponent<TextMeshProUGUI>().text = \textcolor{stringliteral}{"{}"{}};}
+\DoxyCodeLine{00095             \}}
+\DoxyCodeLine{00096         \}}
+\DoxyCodeLine{00097 }
+\DoxyCodeLine{00098         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Count; i++)}
+\DoxyCodeLine{00099         \{}
+\DoxyCodeLine{00100             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}[i] == \textcolor{keyword}{null})}
+\DoxyCodeLine{00101             \{}
+\DoxyCodeLine{00102                 \mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}.Remove(\mbox{\hyperlink{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}{m\_troopCount}}[i]);}
+\DoxyCodeLine{00103             \}}
+\DoxyCodeLine{00104         \}}
+\DoxyCodeLine{00105     \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_player_unit_spawner_a7853048aa91ea5698efb6c1da95081b9}\label{class_player_unit_spawner_a7853048aa91ea5698efb6c1da95081b9}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_coroutineInUse@{m\_coroutineInUse}}
+\index{m\_coroutineInUse@{m\_coroutineInUse}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_coroutineInUse}{m\_coroutineInUse}}
+{\footnotesize\ttfamily bool Player\+Unit\+Spawner.\+m\+\_\+coroutine\+In\+Use = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00034}{34}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
 \mbox{\Hypertarget{class_player_unit_spawner_a2b113a5f79235cba342fa626d083bd9b}\label{class_player_unit_spawner_a2b113a5f79235cba342fa626d083bd9b}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_maxUnits@{m\_maxUnits}}
 \index{m\_maxUnits@{m\_maxUnits}!PlayerUnitSpawner@{PlayerUnitSpawner}}
 \doxysubsubsection{\texorpdfstring{m\_maxUnits}{m\_maxUnits}}
 {\footnotesize\ttfamily int Player\+Unit\+Spawner.\+m\+\_\+max\+Units}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}\label{class_player_unit_spawner_afbbe9ce08689bdd777312ec81380a828}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_nextSpawn@{m\_nextSpawn}}
+\index{m\_nextSpawn@{m\_nextSpawn}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_nextSpawn}{m\_nextSpawn}}
+{\footnotesize\ttfamily float Player\+Unit\+Spawner.\+m\+\_\+next\+Spawn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_a76dce5f8636a84f04293005f1f14a9c8}\label{class_player_unit_spawner_a76dce5f8636a84f04293005f1f14a9c8}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_opponent@{m\_opponent}}
+\index{m\_opponent@{m\_opponent}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_opponent}{m\_opponent}}
+{\footnotesize\ttfamily Game\+Object Player\+Unit\+Spawner.\+m\+\_\+opponent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_a15fcd851f136ceaabd025dd81c4c70c5}\label{class_player_unit_spawner_a15fcd851f136ceaabd025dd81c4c70c5}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_overlay@{m\_overlay}}
+\index{m\_overlay@{m\_overlay}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_overlay}{m\_overlay}}
+{\footnotesize\ttfamily Image Player\+Unit\+Spawner.\+m\+\_\+overlay\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_a5e5e45a428c66741f4699601927fcc7a}\label{class_player_unit_spawner_a5e5e45a428c66741f4699601927fcc7a}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_prefabImage@{m\_prefabImage}}
+\index{m\_prefabImage@{m\_prefabImage}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_prefabImage}{m\_prefabImage}}
+{\footnotesize\ttfamily Image Player\+Unit\+Spawner.\+m\+\_\+prefab\+Image\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
 
 \mbox{\Hypertarget{class_player_unit_spawner_a2bef65b2f522a4e602ce298ed1e2882e}\label{class_player_unit_spawner_a2bef65b2f522a4e602ce298ed1e2882e}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_rotation@{m\_rotation}}
@@ -67,11 +401,29 @@ Reimplemented in \mbox{\hyperlink{class_ai_unit_spawner_a32ba907bcdb01d3ea78b509
 \doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
 {\footnotesize\ttfamily int Player\+Unit\+Spawner.\+m\+\_\+rotation}
 
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}\label{class_player_unit_spawner_a7de7254d653ef58f41f1356818827ac1}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_spawnArea@{m\_spawnArea}}
+\index{m\_spawnArea@{m\_spawnArea}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_spawnArea}{m\_spawnArea}}
+{\footnotesize\ttfamily Game\+Object Player\+Unit\+Spawner.\+m\+\_\+spawn\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00042}{42}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
 \mbox{\Hypertarget{class_player_unit_spawner_a1a650c2c3956cfd71f43e18720ab75eb}\label{class_player_unit_spawner_a1a650c2c3956cfd71f43e18720ab75eb}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_spawnPoint@{m\_spawnPoint}}
 \index{m\_spawnPoint@{m\_spawnPoint}!PlayerUnitSpawner@{PlayerUnitSpawner}}
 \doxysubsubsection{\texorpdfstring{m\_spawnPoint}{m\_spawnPoint}}
 {\footnotesize\ttfamily Transform Player\+Unit\+Spawner.\+m\+\_\+spawn\+Point}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
 
 \mbox{\Hypertarget{class_player_unit_spawner_a008570cdff7f76293c8bc3d2e95db289}\label{class_player_unit_spawner_a008570cdff7f76293c8bc3d2e95db289}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_spawnTime@{m\_spawnTime}}
@@ -79,11 +431,29 @@ Reimplemented in \mbox{\hyperlink{class_ai_unit_spawner_a32ba907bcdb01d3ea78b509
 \doxysubsubsection{\texorpdfstring{m\_spawnTime}{m\_spawnTime}}
 {\footnotesize\ttfamily float Player\+Unit\+Spawner.\+m\+\_\+spawn\+Time = 3}
 
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}\label{class_player_unit_spawner_aa3e1e8c2df64118fece4517ff9afac14}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_time@{m\_time}}
+\index{m\_time@{m\_time}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_time}{m\_time}}
+{\footnotesize\ttfamily float Player\+Unit\+Spawner.\+m\+\_\+time = 3\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
 \mbox{\Hypertarget{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}\label{class_player_unit_spawner_ae6b057be9a72a396e2d4d7c63048f06e}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_troopCount@{m\_troopCount}}
 \index{m\_troopCount@{m\_troopCount}!PlayerUnitSpawner@{PlayerUnitSpawner}}
 \doxysubsubsection{\texorpdfstring{m\_troopCount}{m\_troopCount}}
 {\footnotesize\ttfamily List$<$Game\+Object$>$ Player\+Unit\+Spawner.\+m\+\_\+troop\+Count = new List$<$Game\+Object$>$()}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
 
 \mbox{\Hypertarget{class_player_unit_spawner_ac01dc75b43bc3ae6261d3a4cda0a7cc9}\label{class_player_unit_spawner_ac01dc75b43bc3ae6261d3a4cda0a7cc9}} 
 \index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_unit@{m\_unit}}
@@ -93,6 +463,40 @@ Reimplemented in \mbox{\hyperlink{class_ai_unit_spawner_a32ba907bcdb01d3ea78b509
 
 
 
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_a00c33ee755f8e2e6d4fbddfa78f72685}\label{class_player_unit_spawner_a00c33ee755f8e2e6d4fbddfa78f72685}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_unitProductionUI@{m\_unitProductionUI}}
+\index{m\_unitProductionUI@{m\_unitProductionUI}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_unitProductionUI}{m\_unitProductionUI}}
+{\footnotesize\ttfamily Game\+Object Player\+Unit\+Spawner.\+m\+\_\+unit\+Production\+UI\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_a25afac427941c98eb43767ef79aa1db7}\label{class_player_unit_spawner_a25afac427941c98eb43767ef79aa1db7}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_unitsBeingBuiltText@{m\_unitsBeingBuiltText}}
+\index{m\_unitsBeingBuiltText@{m\_unitsBeingBuiltText}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_unitsBeingBuiltText}{m\_unitsBeingBuiltText}}
+{\footnotesize\ttfamily Game\+Object Player\+Unit\+Spawner.\+m\+\_\+units\+Being\+Built\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}\label{class_player_unit_spawner_abb4f2e4ac0834bc72db2f157a2c120c5}} 
+\index{PlayerUnitSpawner@{PlayerUnitSpawner}!m\_unitsQueued@{m\_unitsQueued}}
+\index{m\_unitsQueued@{m\_unitsQueued}!PlayerUnitSpawner@{PlayerUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_unitsQueued}{m\_unitsQueued}}
+{\footnotesize\ttfamily int Player\+Unit\+Spawner.\+m\+\_\+units\+Queued = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_player_unit_spawner_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_player_unit_spawner_8cs_source}{Player\+Unit\+Spawner.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{_player_unit_spawner_8cs}{Player\+Unit\+Spawner.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\mbox{\hyperlink{_player_unit_spawner_8cs}{Player\+Unit\+Spawner.\+cs}}\end{DoxyCompactItemize}

@@ -1,10 +1,27 @@
 \hypertarget{class_utility}{}\doxysection{Utility Class Reference}
 \label{class_utility}\index{Utility@{Utility}}
+
+
+Collaboration diagram for Utility\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_utility__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static Vector3 \mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}{Return\+Mouse\+Position2D}} ()
 \end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_utility_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_utility_8cs_source}{Utility.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -14,10 +31,28 @@ static Vector3 \mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}
 \doxysubsubsection{\texorpdfstring{ReturnMousePosition2D()}{ReturnMousePosition2D()}}
 {\footnotesize\ttfamily static Vector3 Utility.\+Return\+Mouse\+Position2D (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+Definition at line \mbox{\hyperlink{_utility_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_utility_8cs_source}{Utility.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008     \{}
+\DoxyCodeLine{00009         Vector3 mousePosition2D = Camera.main.ScreenToWorldPoint(Input.mousePosition);}
+\DoxyCodeLine{00010         \textcolor{keywordflow}{return} \textcolor{keyword}{new} Vector3(mousePosition2D.x, mousePosition2D.y, 0);}
+\DoxyCodeLine{00011     \}}
+
+\end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_utility_ae371e10730332ffe8c695c8401effd37_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Unit Scripts/\mbox{\hyperlink{_utility_8cs}{Utility.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Unit Scripts/\mbox{\hyperlink{_utility_8cs}{Utility.\+cs}}\end{DoxyCompactItemize}

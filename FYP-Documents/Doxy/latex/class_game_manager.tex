@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Game\+Manager\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=236pt]{class_game_manager__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Game\+Manager\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=245pt]{class_game_manager__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -45,25 +57,415 @@ List$<$ \mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Control
 \item 
 static \mbox{\hyperlink{class_game_manager}{Game\+Manager}} \mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a44c79b205dec16bfe650e21259860c5b}{Update}} ()
+\item 
+void \mbox{\hyperlink{class_game_manager_a27c11cd9c091286098fd251a2423040a}{Toggle\+Game\+Pause}} ()
+\begin{DoxyCompactList}\small\item\em Pauses the game when called  \end{DoxyCompactList}\item 
+IEnumerator \mbox{\hyperlink{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}{Generate\+Score1}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_game_manager_a1fba451617ab45e6f68c974cf0972618}{Generate\+Score2}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}{Generate\+Funding1}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}{Generate\+Funding2}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\+\_\+game\+Paused}}
+\item 
+int \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\+\_\+max\+Resources}}
+\item 
+Game\+Object \mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{m\+\_\+pause\+Text\+Object}}
+\item 
+int \mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{m\+\_\+reserve\+Generation}} = 1
+\item 
+float \mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\+\_\+generation\+Timer}}
+\item 
+float \mbox{\hyperlink{class_game_manager_aac17958bb4e503d2dda20988909e4560}{m\+\_\+time\+Scale}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_game_manager_aade8c4f079ebc83ea8050f560d29cf71}{m\+\_\+team1\+Score\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_game_manager_a23787afc2d7f92525836eb3e7084809c}{m\+\_\+team1\+Resource\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_game_manager_a0ab54f7dd8b41e115b999015c19f5fd5}{m\+\_\+team2\+Score\+Text}}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_game_manager_a76c2bd4f76af5479947b019836901c58}{m\+\_\+team2\+Resource\+Text}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}\label{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}} 
+\index{GameManager@{GameManager}!GenerateFunding1@{GenerateFunding1}}
+\index{GenerateFunding1@{GenerateFunding1}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GenerateFunding1()}{GenerateFunding1()}}
+{\footnotesize\ttfamily IEnumerator Game\+Manager.\+Generate\+Funding1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00197}{197}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00198     \{}
+\DoxyCodeLine{00199         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) }
+\DoxyCodeLine{00200         \{}
+\DoxyCodeLine{00201             \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} += \mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{m\_reserveGeneration}} + \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Count;}
+\DoxyCodeLine{00202 }
+\DoxyCodeLine{00203             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} > \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}})}
+\DoxyCodeLine{00204             \{}
+\DoxyCodeLine{00205                 \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} = \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}};}
+\DoxyCodeLine{00206             \}}
+\DoxyCodeLine{00207 }
+\DoxyCodeLine{00208             m\_team1ResourceText.text = \textcolor{stringliteral}{"{}Team 1 Resources: "{}} + \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}};}
+\DoxyCodeLine{00209 }
+\DoxyCodeLine{00210             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{00211         \}}
+\DoxyCodeLine{00212 }
+\DoxyCodeLine{00213     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}\label{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}} 
+\index{GameManager@{GameManager}!GenerateFunding2@{GenerateFunding2}}
+\index{GenerateFunding2@{GenerateFunding2}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GenerateFunding2()}{GenerateFunding2()}}
+{\footnotesize\ttfamily IEnumerator Game\+Manager.\+Generate\+Funding2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00216}{216}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00217     \{}
+\DoxyCodeLine{00218         \textcolor{keywordflow}{while} (\textcolor{keyword}{true}) }
+\DoxyCodeLine{00219         \{}
+\DoxyCodeLine{00220             \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} += \mbox{\hyperlink{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}{m\_reserveGeneration}} + \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Count;}
+\DoxyCodeLine{00221 }
+\DoxyCodeLine{00222             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} > \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}})}
+\DoxyCodeLine{00223             \{}
+\DoxyCodeLine{00224                 \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} = \mbox{\hyperlink{class_game_manager_a49166324b32f0a45533725246cc244eb}{m\_maxResources}};}
+\DoxyCodeLine{00225             \}}
+\DoxyCodeLine{00226 }
+\DoxyCodeLine{00227             m\_team2ResourceText.text = \textcolor{stringliteral}{"{}Team 2 Resources: "{}} + \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}};}
+\DoxyCodeLine{00228 }
+\DoxyCodeLine{00229             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{00230         \}}
+\DoxyCodeLine{00231 }
+\DoxyCodeLine{00232     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}\label{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}} 
+\index{GameManager@{GameManager}!GenerateScore1@{GenerateScore1}}
+\index{GenerateScore1@{GenerateScore1}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GenerateScore1()}{GenerateScore1()}}
+{\footnotesize\ttfamily IEnumerator Game\+Manager.\+Generate\+Score1 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00176}{176}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00177     \{}
+\DoxyCodeLine{00178         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{00179         \{}
+\DoxyCodeLine{00180             \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}} += \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Count;}
+\DoxyCodeLine{00181             m\_team1ScoreText.text = \textcolor{stringliteral}{"{}Team 1 Score: "{}} + \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}};}
+\DoxyCodeLine{00182             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{00183         \}}
+\DoxyCodeLine{00184     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_manager_a1fba451617ab45e6f68c974cf0972618}\label{class_game_manager_a1fba451617ab45e6f68c974cf0972618}} 
+\index{GameManager@{GameManager}!GenerateScore2@{GenerateScore2}}
+\index{GenerateScore2@{GenerateScore2}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{GenerateScore2()}{GenerateScore2()}}
+{\footnotesize\ttfamily IEnumerator Game\+Manager.\+Generate\+Score2 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00186}{186}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00187     \{}
+\DoxyCodeLine{00188         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{00189         \{}
+\DoxyCodeLine{00190             \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}} += \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Count;}
+\DoxyCodeLine{00191             m\_team2ScoreText.text = \textcolor{stringliteral}{"{}Team 2 Score: "{}} + \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}};}
+\DoxyCodeLine{00192             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}{m\_generationTimer}});}
+\DoxyCodeLine{00193         \}}
+\DoxyCodeLine{00194     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a1fba451617ab45e6f68c974cf0972618_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_game_manager_a5964d11250b55f52fa6cf70e679d8803}\label{class_game_manager_a5964d11250b55f52fa6cf70e679d8803}} 
 \index{GameManager@{GameManager}!PointsCaptured@{PointsCaptured}}
 \index{PointsCaptured@{PointsCaptured}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{PointsCaptured()}{PointsCaptured()}}
 {\footnotesize\ttfamily void Game\+Manager.\+Points\+Captured (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00099}{99}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00100     \{}
+\DoxyCodeLine{00101         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} controlPointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_abc368543a1efb98498b81138b349a64b}{m\_controlPointControllers}})}
+\DoxyCodeLine{00102         \{}
+\DoxyCodeLine{00103             \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team1"{}} \&\& !\mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Contains(controlPointController))}
+\DoxyCodeLine{00104             \{}
+\DoxyCodeLine{00105                 \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Add(controlPointController);}
+\DoxyCodeLine{00106             \}}
+\DoxyCodeLine{00107             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team2"{}} \&\& !\mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Contains(controlPointController))}
+\DoxyCodeLine{00108             \{}
+\DoxyCodeLine{00109                 \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Add(controlPointController);}
+\DoxyCodeLine{00110             \}}
+\DoxyCodeLine{00111         \}}
+\DoxyCodeLine{00112 }
+\DoxyCodeLine{00113         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} resourcePointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_a9d14bb218cd302efecb6720a676710a5}{m\_resourcePointControllers}})}
+\DoxyCodeLine{00114         \{}
+\DoxyCodeLine{00115             \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team1"{}} \&\& !\mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Contains(resourcePointController))}
+\DoxyCodeLine{00116             \{}
+\DoxyCodeLine{00117                 \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Add(resourcePointController);}
+\DoxyCodeLine{00118             \}}
+\DoxyCodeLine{00119             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() == \textcolor{stringliteral}{"{}Team2"{}} \&\& !\mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Contains(resourcePointController))}
+\DoxyCodeLine{00120             \{}
+\DoxyCodeLine{00121                 \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Add(resourcePointController);}
+\DoxyCodeLine{00122             \}}
+\DoxyCodeLine{00123         \}}
+\DoxyCodeLine{00124     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a5964d11250b55f52fa6cf70e679d8803_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a5964d11250b55f52fa6cf70e679d8803_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_game_manager_abcc8946199734dd26f829e767d265ac1}\label{class_game_manager_abcc8946199734dd26f829e767d265ac1}} 
 \index{GameManager@{GameManager}!PointsLost@{PointsLost}}
 \index{PointsLost@{PointsLost}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{PointsLost()}{PointsLost()}}
 {\footnotesize\ttfamily void Game\+Manager.\+Points\+Lost (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00128}{128}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00129     \{}
+\DoxyCodeLine{00130         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} controlPointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_abc368543a1efb98498b81138b349a64b}{m\_controlPointControllers}})}
+\DoxyCodeLine{00131         \{}
+\DoxyCodeLine{00132             \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{00133             \{}
+\DoxyCodeLine{00134                 \mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Remove(controlPointController);}
+\DoxyCodeLine{00135             \}}
+\DoxyCodeLine{00136             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (controlPointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team2"{}})}
+\DoxyCodeLine{00137             \{}
+\DoxyCodeLine{00138                 \mbox{\hyperlink{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}{m\_team2ControlledPoints}}.Remove(controlPointController);}
+\DoxyCodeLine{00139             \}}
+\DoxyCodeLine{00140         \}}
+\DoxyCodeLine{00141 }
+\DoxyCodeLine{00142         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_control_point_controller}{ControlPointController}} resourcePointController \textcolor{keywordflow}{in} \mbox{\hyperlink{class_game_manager_a9d14bb218cd302efecb6720a676710a5}{m\_resourcePointControllers}})}
+\DoxyCodeLine{00143         \{}
+\DoxyCodeLine{00144             \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team1"{}})}
+\DoxyCodeLine{00145             \{}
+\DoxyCodeLine{00146                 \mbox{\hyperlink{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}{m\_team1ControlledResources}}.Remove(resourcePointController);}
+\DoxyCodeLine{00147             \}}
+\DoxyCodeLine{00148             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (resourcePointController.\mbox{\hyperlink{class_control_point_controller_ad282b2451f7a48af2b577329d976dfdf}{GetTeamAffiliation}}() != \textcolor{stringliteral}{"{}Team2"{}})}
+\DoxyCodeLine{00149             \{}
+\DoxyCodeLine{00150                 \mbox{\hyperlink{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}{m\_team2ControlledResources}}.Remove(resourcePointController);}
+\DoxyCodeLine{00151             \}}
+\DoxyCodeLine{00152         \}}
+\DoxyCodeLine{00153     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_abcc8946199734dd26f829e767d265ac1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_abcc8946199734dd26f829e767d265ac1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}\label{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98}} 
+\index{GameManager@{GameManager}!Start@{Start}}
+\index{Start@{Start}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065     \{}
+\DoxyCodeLine{00066         \mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}} = \textcolor{keyword}{this};}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068         \mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00069 }
+\DoxyCodeLine{00070         \mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}} = 0;}
+\DoxyCodeLine{00071         \mbox{\hyperlink{class_game_manager_a1693eb78921bba4c08d72181faabb40f}{m\_team2Score}} = 0;}
+\DoxyCodeLine{00072 }
+\DoxyCodeLine{00073         \mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} = 0;}
+\DoxyCodeLine{00074         \mbox{\hyperlink{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}{m\_team2Reserves}} = 0;}
+\DoxyCodeLine{00075 }
+\DoxyCodeLine{00076         StartCoroutine(\mbox{\hyperlink{class_game_manager_a19bd26cc4e0e878c193a42f3dbe19655}{GenerateFunding1}}());}
+\DoxyCodeLine{00077         StartCoroutine(\mbox{\hyperlink{class_game_manager_a3b41c5a58b2eb8a984e210ced57827f1}{GenerateFunding2}}());}
+\DoxyCodeLine{00078         StartCoroutine(\mbox{\hyperlink{class_game_manager_a9a6fcf8f109cf1cfd00a156024d01f31}{GenerateScore1}}());}
+\DoxyCodeLine{00079         StartCoroutine(\mbox{\hyperlink{class_game_manager_a1fba451617ab45e6f68c974cf0972618}{GenerateScore2}}());}
+\DoxyCodeLine{00080     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a5ccfacd027ad08eeb4ff1f25a7f59c98_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_manager_a27c11cd9c091286098fd251a2423040a}\label{class_game_manager_a27c11cd9c091286098fd251a2423040a}} 
+\index{GameManager@{GameManager}!ToggleGamePause@{ToggleGamePause}}
+\index{ToggleGamePause@{ToggleGamePause}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{ToggleGamePause()}{ToggleGamePause()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Toggle\+Game\+Pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Pauses the game when called  
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00159}{159}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00160     \{}
+\DoxyCodeLine{00161         \mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}} = !\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}};}
+\DoxyCodeLine{00162 }
+\DoxyCodeLine{00163         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}})}
+\DoxyCodeLine{00164         \{}
+\DoxyCodeLine{00165             Time.timeScale = 0;}
+\DoxyCodeLine{00166             \mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{m\_pauseTextObject}}.SetActive(\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}});}
+\DoxyCodeLine{00167         \}}
+\DoxyCodeLine{00168         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00169         \{}
+\DoxyCodeLine{00170             Time.timeScale = 1;}
+\DoxyCodeLine{00171             \mbox{\hyperlink{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}{m\_pauseTextObject}}.SetActive(\mbox{\hyperlink{class_game_manager_a64afd6016e1c53646412463340622db0}{m\_gamePaused}});}
+\DoxyCodeLine{00172         \}}
+\DoxyCodeLine{00173     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a27c11cd9c091286098fd251a2423040a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_manager_a44c79b205dec16bfe650e21259860c5b}\label{class_game_manager_a44c79b205dec16bfe650e21259860c5b}} 
+\index{GameManager@{GameManager}!Update@{Update}}
+\index{Update@{Update}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+Manager.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{if} (Input.GetKeyDown(KeyCode.P))}
+\DoxyCodeLine{00085         \{}
+\DoxyCodeLine{00086             \mbox{\hyperlink{class_game_manager_a27c11cd9c091286098fd251a2423040a}{ToggleGamePause}}();}
+\DoxyCodeLine{00087         \}}
+\DoxyCodeLine{00088 }
+\DoxyCodeLine{00089         \textcolor{keywordflow}{if} (Input.GetKeyDown(KeyCode.O))}
+\DoxyCodeLine{00090         \{}
+\DoxyCodeLine{00091             \mbox{\hyperlink{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}{m\_debugMode}} = !\mbox{\hyperlink{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}{m\_debugMode}};}
+\DoxyCodeLine{00092         \}}
+\DoxyCodeLine{00093 }
+\DoxyCodeLine{00094         Time.timeScale = \mbox{\hyperlink{class_game_manager_aac17958bb4e503d2dda20988909e4560}{m\_timeScale}};}
+\DoxyCodeLine{00095     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_manager_a44c79b205dec16bfe650e21259860c5b_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
@@ -73,11 +475,19 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{instance}{instance}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_game_manager}{Game\+Manager}} Game\+Manager.\+instance\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 \mbox{\Hypertarget{class_game_manager_abc368543a1efb98498b81138b349a64b}\label{class_game_manager_abc368543a1efb98498b81138b349a64b}} 
 \index{GameManager@{GameManager}!m\_controlPointControllers@{m\_controlPointControllers}}
 \index{m\_controlPointControllers@{m\_controlPointControllers}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{m\_controlPointControllers}{m\_controlPointControllers}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$ Game\+Manager.\+m\+\_\+control\+Point\+Controllers = new List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$()}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}\label{class_game_manager_a7aed1c66e288d6712e7b04c12bd0d5cc}} 
 \index{GameManager@{GameManager}!m\_debugMode@{m\_debugMode}}
@@ -85,11 +495,69 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{m\_debugMode}{m\_debugMode}}
 {\footnotesize\ttfamily bool Game\+Manager.\+m\+\_\+debug\+Mode}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a64afd6016e1c53646412463340622db0}\label{class_game_manager_a64afd6016e1c53646412463340622db0}} 
+\index{GameManager@{GameManager}!m\_gamePaused@{m\_gamePaused}}
+\index{m\_gamePaused@{m\_gamePaused}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_gamePaused}{m\_gamePaused}}
+{\footnotesize\ttfamily bool Game\+Manager.\+m\+\_\+game\+Paused\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}\label{class_game_manager_a5a67ca48f3027e1c46c25f6146edf43f}} 
+\index{GameManager@{GameManager}!m\_generationTimer@{m\_generationTimer}}
+\index{m\_generationTimer@{m\_generationTimer}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_generationTimer}{m\_generationTimer}}
+{\footnotesize\ttfamily float Game\+Manager.\+m\+\_\+generation\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00028}{28}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a49166324b32f0a45533725246cc244eb}\label{class_game_manager_a49166324b32f0a45533725246cc244eb}} 
+\index{GameManager@{GameManager}!m\_maxResources@{m\_maxResources}}
+\index{m\_maxResources@{m\_maxResources}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_maxResources}{m\_maxResources}}
+{\footnotesize\ttfamily int Game\+Manager.\+m\+\_\+max\+Resources\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}\label{class_game_manager_ac7743b4bdbc3fd83334658113c3c948e}} 
+\index{GameManager@{GameManager}!m\_pauseTextObject@{m\_pauseTextObject}}
+\index{m\_pauseTextObject@{m\_pauseTextObject}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_pauseTextObject}{m\_pauseTextObject}}
+{\footnotesize\ttfamily Game\+Object Game\+Manager.\+m\+\_\+pause\+Text\+Object\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}\label{class_game_manager_a9d2e150d5c143cc77dd719173ba721dd}} 
+\index{GameManager@{GameManager}!m\_reserveGeneration@{m\_reserveGeneration}}
+\index{m\_reserveGeneration@{m\_reserveGeneration}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_reserveGeneration}{m\_reserveGeneration}}
+{\footnotesize\ttfamily int Game\+Manager.\+m\+\_\+reserve\+Generation = 1\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 \mbox{\Hypertarget{class_game_manager_a9d14bb218cd302efecb6720a676710a5}\label{class_game_manager_a9d14bb218cd302efecb6720a676710a5}} 
 \index{GameManager@{GameManager}!m\_resourcePointControllers@{m\_resourcePointControllers}}
 \index{m\_resourcePointControllers@{m\_resourcePointControllers}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{m\_resourcePointControllers}{m\_resourcePointControllers}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$ Game\+Manager.\+m\+\_\+resource\+Point\+Controllers = new List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$()}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}\label{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}} 
 \index{GameManager@{GameManager}!m\_team1ControlledPoints@{m\_team1ControlledPoints}}
@@ -97,11 +565,19 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{m\_team1ControlledPoints}{m\_team1ControlledPoints}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$ Game\+Manager.\+m\+\_\+team1\+Controlled\+Points = new List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$()}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 \mbox{\Hypertarget{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}\label{class_game_manager_a53d3a7eda5a2663d3732e41d2a6eed51}} 
 \index{GameManager@{GameManager}!m\_team1ControlledResources@{m\_team1ControlledResources}}
 \index{m\_team1ControlledResources@{m\_team1ControlledResources}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{m\_team1ControlledResources}{m\_team1ControlledResources}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$ Game\+Manager.\+m\+\_\+team1\+Controlled\+Resources = new List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$()}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00040}{40}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_game_manager_acad047649b124177a598fddb478544cb}\label{class_game_manager_acad047649b124177a598fddb478544cb}} 
 \index{GameManager@{GameManager}!m\_team1Reserves@{m\_team1Reserves}}
@@ -109,11 +585,39 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{m\_team1Reserves}{m\_team1Reserves}}
 {\footnotesize\ttfamily int Game\+Manager.\+m\+\_\+team1\+Reserves}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a23787afc2d7f92525836eb3e7084809c}\label{class_game_manager_a23787afc2d7f92525836eb3e7084809c}} 
+\index{GameManager@{GameManager}!m\_team1ResourceText@{m\_team1ResourceText}}
+\index{m\_team1ResourceText@{m\_team1ResourceText}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_team1ResourceText}{m\_team1ResourceText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+UGUI Game\+Manager.\+m\+\_\+team1\+Resource\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00045}{45}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 \mbox{\Hypertarget{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}\label{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}} 
 \index{GameManager@{GameManager}!m\_team1Score@{m\_team1Score}}
 \index{m\_team1Score@{m\_team1Score}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{m\_team1Score}{m\_team1Score}}
 {\footnotesize\ttfamily int Game\+Manager.\+m\+\_\+team1\+Score}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00036}{36}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_aade8c4f079ebc83ea8050f560d29cf71}\label{class_game_manager_aade8c4f079ebc83ea8050f560d29cf71}} 
+\index{GameManager@{GameManager}!m\_team1ScoreText@{m\_team1ScoreText}}
+\index{m\_team1ScoreText@{m\_team1ScoreText}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_team1ScoreText}{m\_team1ScoreText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+UGUI Game\+Manager.\+m\+\_\+team1\+Score\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}\label{class_game_manager_af61e9447d9ee9d9e213edfa03b6009fd}} 
 \index{GameManager@{GameManager}!m\_team2ControlledPoints@{m\_team2ControlledPoints}}
@@ -121,17 +625,39 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{m\_team2ControlledPoints}{m\_team2ControlledPoints}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$ Game\+Manager.\+m\+\_\+team2\+Controlled\+Points = new List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$()}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00055}{55}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 \mbox{\Hypertarget{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}\label{class_game_manager_a4ba50418378e8a2651ce0173fc23d8f6}} 
 \index{GameManager@{GameManager}!m\_team2ControlledResources@{m\_team2ControlledResources}}
 \index{m\_team2ControlledResources@{m\_team2ControlledResources}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{m\_team2ControlledResources}{m\_team2ControlledResources}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$ Game\+Manager.\+m\+\_\+team2\+Controlled\+Resources = new List$<$\mbox{\hyperlink{class_control_point_controller}{Control\+Point\+Controller}}$>$()}
 
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00057}{57}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
 \mbox{\Hypertarget{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}\label{class_game_manager_ae9a0a0454093cede9b4e1bd58e0c6a90}} 
 \index{GameManager@{GameManager}!m\_team2Reserves@{m\_team2Reserves}}
 \index{m\_team2Reserves@{m\_team2Reserves}!GameManager@{GameManager}}
 \doxysubsubsection{\texorpdfstring{m\_team2Reserves}{m\_team2Reserves}}
 {\footnotesize\ttfamily int Game\+Manager.\+m\+\_\+team2\+Reserves}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a76c2bd4f76af5479947b019836901c58}\label{class_game_manager_a76c2bd4f76af5479947b019836901c58}} 
+\index{GameManager@{GameManager}!m\_team2ResourceText@{m\_team2ResourceText}}
+\index{m\_team2ResourceText@{m\_team2ResourceText}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_team2ResourceText}{m\_team2ResourceText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+UGUI Game\+Manager.\+m\+\_\+team2\+Resource\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
 
 \mbox{\Hypertarget{class_game_manager_a1693eb78921bba4c08d72181faabb40f}\label{class_game_manager_a1693eb78921bba4c08d72181faabb40f}} 
 \index{GameManager@{GameManager}!m\_team2Score@{m\_team2Score}}
@@ -141,6 +667,30 @@ Here is the call graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00053}{53}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_a0ab54f7dd8b41e115b999015c19f5fd5}\label{class_game_manager_a0ab54f7dd8b41e115b999015c19f5fd5}} 
+\index{GameManager@{GameManager}!m\_team2ScoreText@{m\_team2ScoreText}}
+\index{m\_team2ScoreText@{m\_team2ScoreText}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_team2ScoreText}{m\_team2ScoreText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+UGUI Game\+Manager.\+m\+\_\+team2\+Score\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00060}{60}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+\mbox{\Hypertarget{class_game_manager_aac17958bb4e503d2dda20988909e4560}\label{class_game_manager_aac17958bb4e503d2dda20988909e4560}} 
+\index{GameManager@{GameManager}!m\_timeScale@{m\_timeScale}}
+\index{m\_timeScale@{m\_timeScale}!GameManager@{GameManager}}
+\doxysubsubsection{\texorpdfstring{m\_timeScale}{m\_timeScale}}
+{\footnotesize\ttfamily float Game\+Manager.\+m\+\_\+time\+Scale\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_manager_8cs_source_l00031}{31}} of file \mbox{\hyperlink{_game_manager_8cs_source}{Game\+Manager.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Game Management/\mbox{\hyperlink{_game_manager_8cs}{Game\+Manager.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Game Management/\mbox{\hyperlink{_game_manager_8cs}{Game\+Manager.\+cs}}\end{DoxyCompactItemize}

@@ -92,6 +92,8 @@ $(document).ready(function(){initNavTree('class_a_i_unit_spawner.html',''); init
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_a_i_unit_spawner-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">AIUnitSpawner Class Reference</div></div>
 </div><!--header-->
@@ -100,12 +102,20 @@ $(document).ready(function(){initNavTree('class_a_i_unit_spawner.html',''); init
 Inheritance diagram for AIUnitSpawner:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_a_i_unit_spawner__inherit__graph.png" border="0" usemap="#a_a_i_unit_spawner_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_a_i_unit_spawner_inherit__map" id="a_a_i_unit_spawner_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,93,125,280"/>
+<area shape="rect" title=" " alt="" coords="8,5,123,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for AIUnitSpawner:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_a_i_unit_spawner__coll__graph.png" border="0" usemap="#a_a_i_unit_spawner_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_a_i_unit_spawner_coll__map" id="a_a_i_unit_spawner_coll__map">
+<area shape="rect" title=" " alt="" coords="5,93,125,280"/>
+<area shape="rect" title=" " alt="" coords="8,5,123,45"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -126,8 +136,23 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a987948201e0f40e6823bcc0343f94f9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aedbbf7d8e97d2ac39fa950c043229074"><td class="memItemLeft" align="right" valign="top">List&lt; GameObject &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a> = new List&lt;GameObject&gt;()</td></tr>
 <tr class="separator:aedbbf7d8e97d2ac39fa950c043229074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:aac8f2ddff6f2a7545d788ec1bb0705c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_i_unit_spawner.html#aac8f2ddff6f2a7545d788ec1bb0705c7">Update</a> ()</td></tr>
+<tr class="separator:aac8f2ddff6f2a7545d788ec1bb0705c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a31ce9c8bf096a126e809ec61c5e605b5"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_i_unit_spawner.html#a31ce9c8bf096a126e809ec61c5e605b5">m_spawnArea</a></td></tr>
+<tr class="separator:a31ce9c8bf096a126e809ec61c5e605b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac15914b769e741a9f87cca273a925ea4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_i_unit_spawner.html#ac15914b769e741a9f87cca273a925ea4">m_nextSpawn</a></td></tr>
+<tr class="separator:ac15914b769e741a9f87cca273a925ea4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00005">5</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeb42915d2439ce802205617796c096dd" name="aeb42915d2439ce802205617796c096dd"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeb42915d2439ce802205617796c096dd">&#9670;&#160;</a></span>SpawnUnit()</h2>
 
@@ -150,12 +175,79 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00032">32</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   33</span>    {</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a>.Count &lt; <a class="code hl_variable" href="class_a_i_unit_spawner.html#a434ef774d3547bd4317fc5c2e2487d74">m_maxUnits</a> &amp;&amp; Time.time &gt; <a class="code hl_variable" href="class_a_i_unit_spawner.html#ac15914b769e741a9f87cca273a925ea4">m_nextSpawn</a> &amp;&amp; <a class="code hl_class" href="class_game_manager.html">GameManager</a>.<a class="code hl_variable" href="class_game_manager.html#a7666e8468dac197b9eb32dd32128524f">instance</a>.<a class="code hl_variable" href="class_game_manager.html#acad047649b124177a598fddb478544cb">m_team1Reserves</a> != 0)</div>
+<div class="line"><span class="lineno">   35</span>        {</div>
+<div class="line"><span class="lineno">   36</span>            Vector3 spawn = m_spawnPoint.position + <span class="keyword">new</span> Vector3(Random.Range(-<a class="code hl_variable" href="class_a_i_unit_spawner.html#a31ce9c8bf096a126e809ec61c5e605b5">m_spawnArea</a>.transform.localScale.x / 3, <a class="code hl_variable" href="class_a_i_unit_spawner.html#a31ce9c8bf096a126e809ec61c5e605b5">m_spawnArea</a>.transform.localScale.x / 3), Random.Range(-<a class="code hl_variable" href="class_a_i_unit_spawner.html#a31ce9c8bf096a126e809ec61c5e605b5">m_spawnArea</a>.transform.localScale.y / 3, <a class="code hl_variable" href="class_a_i_unit_spawner.html#a31ce9c8bf096a126e809ec61c5e605b5">m_spawnArea</a>.transform.localScale.y / 3), 0);</div>
+<div class="line"><span class="lineno">   37</span>            <a class="code hl_variable" href="class_a_i_unit_spawner.html#ac15914b769e741a9f87cca273a925ea4">m_nextSpawn</a> = Time.time + <a class="code hl_variable" href="class_a_i_unit_spawner.html#ab28df4dc60db61ddde04f4008bbc197f">m_spawnTime</a>;</div>
+<div class="line"><span class="lineno">   38</span>            Quaternion rotation = Quaternion.Euler(0, 0, <a class="code hl_variable" href="class_a_i_unit_spawner.html#a987948201e0f40e6823bcc0343f94f9b">m_rotation</a>);</div>
+<div class="line"><span class="lineno">   39</span>            GameObject newUnit = Instantiate(<a class="code hl_variable" href="class_a_i_unit_spawner.html#a580bfe2fea90195ef699a0d33cbaa147">m_unit</a>, spawn, rotation);</div>
+<div class="line"><span class="lineno">   40</span>            newUnit.GetComponent&lt;<a class="code hl_class" href="class_base_unit.html">BaseUnit</a>&gt;().SetupTeam(tag);</div>
+<div class="line"><span class="lineno">   41</span>            <a class="code hl_variable" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a>.Add(newUnit);</div>
+<div class="line"><span class="lineno">   42</span>            <a class="code hl_class" href="class_game_manager.html">GameManager</a>.<a class="code hl_variable" href="class_game_manager.html#a7666e8468dac197b9eb32dd32128524f">instance</a>.<a class="code hl_variable" href="class_game_manager.html#acad047649b124177a598fddb478544cb">m_team1Reserves</a>--;</div>
+<div class="line"><span class="lineno">   43</span>        }</div>
+<div class="line"><span class="lineno">   44</span>    }</div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_a31ce9c8bf096a126e809ec61c5e605b5"><div class="ttname"><a href="class_a_i_unit_spawner.html#a31ce9c8bf096a126e809ec61c5e605b5">AIUnitSpawner.m_spawnArea</a></div><div class="ttdeci">GameObject m_spawnArea</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00016">AIUnitSpawner.cs:16</a></div></div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_a434ef774d3547bd4317fc5c2e2487d74"><div class="ttname"><a href="class_a_i_unit_spawner.html#a434ef774d3547bd4317fc5c2e2487d74">AIUnitSpawner.m_maxUnits</a></div><div class="ttdeci">int m_maxUnits</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00008">AIUnitSpawner.cs:8</a></div></div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_a580bfe2fea90195ef699a0d33cbaa147"><div class="ttname"><a href="class_a_i_unit_spawner.html#a580bfe2fea90195ef699a0d33cbaa147">AIUnitSpawner.m_unit</a></div><div class="ttdeci">GameObject m_unit</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00010">AIUnitSpawner.cs:10</a></div></div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_a987948201e0f40e6823bcc0343f94f9b"><div class="ttname"><a href="class_a_i_unit_spawner.html#a987948201e0f40e6823bcc0343f94f9b">AIUnitSpawner.m_rotation</a></div><div class="ttdeci">int m_rotation</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00012">AIUnitSpawner.cs:12</a></div></div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_ab28df4dc60db61ddde04f4008bbc197f"><div class="ttname"><a href="class_a_i_unit_spawner.html#ab28df4dc60db61ddde04f4008bbc197f">AIUnitSpawner.m_spawnTime</a></div><div class="ttdeci">float m_spawnTime</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00007">AIUnitSpawner.cs:7</a></div></div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_ac15914b769e741a9f87cca273a925ea4"><div class="ttname"><a href="class_a_i_unit_spawner.html#ac15914b769e741a9f87cca273a925ea4">AIUnitSpawner.m_nextSpawn</a></div><div class="ttdeci">float m_nextSpawn</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00018">AIUnitSpawner.cs:18</a></div></div>
+<div class="ttc" id="aclass_a_i_unit_spawner_html_aedbbf7d8e97d2ac39fa950c043229074"><div class="ttname"><a href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">AIUnitSpawner.m_troopCount</a></div><div class="ttdeci">List&lt; GameObject &gt; m_troopCount</div><div class="ttdef"><b>Definition:</b> <a href="_a_i_unit_spawner_8cs_source.html#l00013">AIUnitSpawner.cs:13</a></div></div>
+<div class="ttc" id="aclass_base_unit_html"><div class="ttname"><a href="class_base_unit.html">BaseUnit</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00006">BaseUnit.cs:7</a></div></div>
+<div class="ttc" id="aclass_game_manager_html"><div class="ttname"><a href="class_game_manager.html">GameManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00005">GameManager.cs:6</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_a7666e8468dac197b9eb32dd32128524f"><div class="ttname"><a href="class_game_manager.html#a7666e8468dac197b9eb32dd32128524f">GameManager.instance</a></div><div class="ttdeci">static GameManager instance</div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00008">GameManager.cs:8</a></div></div>
+<div class="ttc" id="aclass_game_manager_html_acad047649b124177a598fddb478544cb"><div class="ttname"><a href="class_game_manager.html#acad047649b124177a598fddb478544cb">GameManager.m_team1Reserves</a></div><div class="ttdeci">int m_team1Reserves</div><div class="ttdef"><b>Definition:</b> <a href="_game_manager_8cs_source.html#l00035">GameManager.cs:35</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd_icgraph.png" border="0" usemap="#aclass_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd_icgraph" alt=""/></div>
+<map name="aclass_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd_icgraph" id="aclass_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd_icgraph">
+<area shape="rect" title=" " alt="" coords="736,13,909,38"/>
+<area shape="rect" href="class_n_n_commander_body.html#a8c2bf4062941a443890ce18b17979d80" title=" " alt="" coords="467,13,688,38"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="225,5,419,45"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,13,177,38"/>
+</map>
 </div>
 
+</div>
+</div>
+<a id="aac8f2ddff6f2a7545d788ec1bb0705c7" name="aac8f2ddff6f2a7545d788ec1bb0705c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac8f2ddff6f2a7545d788ec1bb0705c7">&#9670;&#160;</a></span>Update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void AIUnitSpawner.Update </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00021">21</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>    {</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a>.Count; i++)</div>
+<div class="line"><span class="lineno">   24</span>        {</div>
+<div class="line"><span class="lineno">   25</span>            <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a>[i] == <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   26</span>            {</div>
+<div class="line"><span class="lineno">   27</span>                <a class="code hl_variable" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a>.Remove(<a class="code hl_variable" href="class_a_i_unit_spawner.html#aedbbf7d8e97d2ac39fa950c043229074">m_troopCount</a>[i]);</div>
+<div class="line"><span class="lineno">   28</span>            }</div>
+<div class="line"><span class="lineno">   29</span>        }</div>
+<div class="line"><span class="lineno">   30</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -171,6 +263,32 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00008">8</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+
+</div>
+</div>
+<a id="ac15914b769e741a9f87cca273a925ea4" name="ac15914b769e741a9f87cca273a925ea4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac15914b769e741a9f87cca273a925ea4">&#9670;&#160;</a></span>m_nextSpawn</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float AIUnitSpawner.m_nextSpawn</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00018">18</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+
 </div>
 </div>
 <a id="a987948201e0f40e6823bcc0343f94f9b" name="a987948201e0f40e6823bcc0343f94f9b"></a>
@@ -184,6 +302,32 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00012">12</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+
+</div>
+</div>
+<a id="a31ce9c8bf096a126e809ec61c5e605b5" name="a31ce9c8bf096a126e809ec61c5e605b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31ce9c8bf096a126e809ec61c5e605b5">&#9670;&#160;</a></span>m_spawnArea</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">GameObject AIUnitSpawner.m_spawnArea</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00016">16</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
 
 </div>
 </div>
@@ -199,6 +343,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00011">11</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+
 </div>
 </div>
 <a id="ab28df4dc60db61ddde04f4008bbc197f" name="ab28df4dc60db61ddde04f4008bbc197f"></a>
@@ -212,6 +358,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00007">7</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
 
 </div>
 </div>
@@ -227,6 +375,8 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00013">13</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+
 </div>
 </div>
 <a id="a580bfe2fea90195ef699a0d33cbaa147" name="a580bfe2fea90195ef699a0d33cbaa147"></a>
@@ -241,10 +391,12 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_a_i_unit_spawner_8cs_source.html#l00010">10</a> of file <a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li><a class="el" href="_a_i_unit_spawner_8cs.html">AIUnitSpawner.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/<a class="el" href="_a_i_unit_spawner_8cs_source.html">AIUnitSpawner.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

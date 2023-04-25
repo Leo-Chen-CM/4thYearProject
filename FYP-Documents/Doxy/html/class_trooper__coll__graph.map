@@ -1,0 +1,8 @@
+<map id="Trooper" name="Trooper">
+<area shape="rect" id="node1" title=" " alt="" coords="117,1529,186,1569"/>
+<area shape="rect" id="node2" href="$class_base_unit.html" title=" " alt="" coords="66,1088,237,1480"/>
+<area shape="rect" id="node3" title=" " alt="" coords="82,5,197,45"/>
+<area shape="rect" id="node4" href="$class_unit_field_of_view.html" title="Field of view of a single unit" alt="" coords="64,619,239,1025"/>
+<area shape="rect" id="node5" href="$class_unit_shooting.html" title=" " alt="" coords="129,95,249,267"/>
+<area shape="rect" id="node6" href="$class_group_leader.html" title="Adapted from EezehDev Coordinated Formations: https://github.com/EezehDev/AI&#45;Formations" alt="" coords="250,291,470,595"/>
+</map>

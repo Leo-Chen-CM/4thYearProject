@@ -1,0 +1,4 @@
+<map id="GameManager.ToggleGamePause" name="GameManager.ToggleGamePause">
+<area shape="rect" id="node1" title="Pauses the game when called" alt="" coords="205,5,427,31"/>
+<area shape="rect" id="node2" href="$class_game_manager.html#a44c79b205dec16bfe650e21259860c5b" title=" " alt="" coords="5,5,157,31"/>
+</map>

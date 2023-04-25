@@ -3,13 +3,168 @@
 
 
 Inheritance diagram for Game\+Timer\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_game_timer__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Game\+Timer\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=182pt]{class_game_timer__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}{m\+\_\+time\+Left}}
+\item 
+bool \mbox{\hyperlink{class_game_timer_a50ebd184ff2a7ea70d9229b3cd9a4a9a}{m\+\_\+timer\+On}} = true
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_game_timer_a45f8dd1d09d014de4c4b645777d13360}{Update}} ()
+\begin{DoxyCompactList}\small\item\em Updates the timer by subtracting the time left with Time.\+deltatime;  \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_game_timer_aaa0202bdfb6886a200c23b0fee65b337}{Update\+Timer\+Text}} (float t\+\_\+current\+Time)
+\begin{DoxyCompactList}\small\item\em Updates the text  \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Text\+Mesh\+Pro\+UGUI \mbox{\hyperlink{class_game_timer_a10922f9daef73d0dcbdfef82b5d8de5c}{m\+\_\+timer\+Text}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_game_timer_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_game_timer_8cs_source}{Game\+Timer.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_game_timer_a45f8dd1d09d014de4c4b645777d13360}\label{class_game_timer_a45f8dd1d09d014de4c4b645777d13360}} 
+\index{GameTimer@{GameTimer}!Update@{Update}}
+\index{Update@{Update}!GameTimer@{GameTimer}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void Game\+Timer.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates the timer by subtracting the time left with Time.\+deltatime;  
+
+
+
+Definition at line \mbox{\hyperlink{_game_timer_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_game_timer_8cs_source}{Game\+Timer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017     \{}
+\DoxyCodeLine{00018         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_timer_a50ebd184ff2a7ea70d9229b3cd9a4a9a}{m\_timerOn}})}
+\DoxyCodeLine{00019         \{}
+\DoxyCodeLine{00020             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}{m\_timeLeft}} > 0)}
+\DoxyCodeLine{00021             \{}
+\DoxyCodeLine{00022                 \mbox{\hyperlink{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}{m\_timeLeft}} -\/= Time.deltaTime;}
+\DoxyCodeLine{00023 }
+\DoxyCodeLine{00024             \}}
+\DoxyCodeLine{00025             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00026             \{}
+\DoxyCodeLine{00027                 \mbox{\hyperlink{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}{m\_timeLeft}} = 0;}
+\DoxyCodeLine{00028                 \mbox{\hyperlink{class_game_timer_a50ebd184ff2a7ea70d9229b3cd9a4a9a}{m\_timerOn}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{00029             \}}
+\DoxyCodeLine{00030             \mbox{\hyperlink{class_game_timer_aaa0202bdfb6886a200c23b0fee65b337}{UpdateTimerText}}(\mbox{\hyperlink{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}{m\_timeLeft}});}
+\DoxyCodeLine{00031         \}}
+\DoxyCodeLine{00032     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_timer_a45f8dd1d09d014de4c4b645777d13360_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_game_timer_aaa0202bdfb6886a200c23b0fee65b337}\label{class_game_timer_aaa0202bdfb6886a200c23b0fee65b337}} 
+\index{GameTimer@{GameTimer}!UpdateTimerText@{UpdateTimerText}}
+\index{UpdateTimerText@{UpdateTimerText}!GameTimer@{GameTimer}}
+\doxysubsubsection{\texorpdfstring{UpdateTimerText()}{UpdateTimerText()}}
+{\footnotesize\ttfamily void Game\+Timer.\+Update\+Timer\+Text (\begin{DoxyParamCaption}\item[{float}]{t\+\_\+current\+Time }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Updates the text  
+
+
+\begin{DoxyParams}{Parameters}
+{\em t\+\_\+current\+Time} & Gets the current time passed\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \mbox{\hyperlink{_game_timer_8cs_source_l00038}{38}} of file \mbox{\hyperlink{_game_timer_8cs_source}{Game\+Timer.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00039     \{}
+\DoxyCodeLine{00040         t\_currentTime += 1;}
+\DoxyCodeLine{00041 }
+\DoxyCodeLine{00042         \textcolor{keywordtype}{float} minutes = Mathf.FloorToInt(t\_currentTime / 60);}
+\DoxyCodeLine{00043         \textcolor{keywordtype}{float} seconds = Mathf.FloorToInt(t\_currentTime \% 60);}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045         m\_timerText.text = \textcolor{stringliteral}{"{}Time: "{}} + \textcolor{keywordtype}{string}.Format(\textcolor{stringliteral}{"{}\{0:00\}:\{1:00\}"{}}, minutes, seconds);}
+\DoxyCodeLine{00046     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_game_timer_aaa0202bdfb6886a200c23b0fee65b337_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}\label{class_game_timer_a6e5c60633f6aa2c31072a6956ee9560b}} 
+\index{GameTimer@{GameTimer}!m\_timeLeft@{m\_timeLeft}}
+\index{m\_timeLeft@{m\_timeLeft}!GameTimer@{GameTimer}}
+\doxysubsubsection{\texorpdfstring{m\_timeLeft}{m\_timeLeft}}
+{\footnotesize\ttfamily float Game\+Timer.\+m\+\_\+time\+Left}
+
+
+
+Definition at line \mbox{\hyperlink{_game_timer_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_game_timer_8cs_source}{Game\+Timer.\+cs}}.
+
+\mbox{\Hypertarget{class_game_timer_a50ebd184ff2a7ea70d9229b3cd9a4a9a}\label{class_game_timer_a50ebd184ff2a7ea70d9229b3cd9a4a9a}} 
+\index{GameTimer@{GameTimer}!m\_timerOn@{m\_timerOn}}
+\index{m\_timerOn@{m\_timerOn}!GameTimer@{GameTimer}}
+\doxysubsubsection{\texorpdfstring{m\_timerOn}{m\_timerOn}}
+{\footnotesize\ttfamily bool Game\+Timer.\+m\+\_\+timer\+On = true}
+
+
+
+Definition at line \mbox{\hyperlink{_game_timer_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_game_timer_8cs_source}{Game\+Timer.\+cs}}.
+
+\mbox{\Hypertarget{class_game_timer_a10922f9daef73d0dcbdfef82b5d8de5c}\label{class_game_timer_a10922f9daef73d0dcbdfef82b5d8de5c}} 
+\index{GameTimer@{GameTimer}!m\_timerText@{m\_timerText}}
+\index{m\_timerText@{m\_timerText}!GameTimer@{GameTimer}}
+\doxysubsubsection{\texorpdfstring{m\_timerText}{m\_timerText}}
+{\footnotesize\ttfamily Text\+Mesh\+Pro\+UGUI Game\+Timer.\+m\+\_\+timer\+Text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_game_timer_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_game_timer_8cs_source}{Game\+Timer.\+cs}}.
+
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Game Management/\mbox{\hyperlink{_game_timer_8cs}{Game\+Timer.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Game Management/\mbox{\hyperlink{_game_timer_8cs}{Game\+Timer.\+cs}}\end{DoxyCompactItemize}

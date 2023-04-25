@@ -1,0 +1,4 @@
+<map id="GameTimer.UpdateTimerText" name="GameTimer.UpdateTimerText">
+<area shape="rect" id="node1" title="Updates the text" alt="" coords="188,5,379,31"/>
+<area shape="rect" id="node2" href="$class_game_timer.html#a45f8dd1d09d014de4c4b645777d13360" title="Updates the timer by subtracting the time left with Time.deltatime;" alt="" coords="5,5,140,31"/>
+</map>

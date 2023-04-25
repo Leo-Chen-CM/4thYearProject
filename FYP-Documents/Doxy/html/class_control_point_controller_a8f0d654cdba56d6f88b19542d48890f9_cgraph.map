@@ -1,0 +1,5 @@
+<map id="ControlPointController.Reverting" name="ControlPointController.Reverting">
+<area shape="rect" id="node1" title="Two types of reverting captures A: Enemy unit is taking the point and then leaves/dies before it&#39;s fu..." alt="" coords="5,45,211,70"/>
+<area shape="rect" id="node2" href="$class_control_point_controller.html#aea2419d1590ba1bb6f09632edb4df14d" title=" " alt="" coords="259,5,449,45"/>
+<area shape="rect" id="node3" href="$class_game_events_manager.html#a8afa09993b2e227921b92f2eb6988c07" title=" " alt="" coords="259,69,449,109"/>
+</map>

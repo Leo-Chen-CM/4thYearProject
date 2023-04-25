@@ -1,0 +1,5 @@
+<map id="UnitFieldOfView" name="UnitFieldOfView">
+<area shape="rect" id="node1" title="Field of view of a single unit" alt="" coords="5,329,180,736"/>
+<area shape="rect" id="node2" title=" " alt="" coords="30,5,145,45"/>
+<area shape="rect" id="node3" href="$class_unit_shooting.html" title=" " alt="" coords="109,95,229,267"/>
+</map>

@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for Behavior\+Tree.\+Inverter\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=189pt]{class_behavior_tree_1_1_inverter__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Behavior\+Tree.\+Inverter\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_behavior_tree_1_1_inverter__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,6 +32,13 @@ override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6
 \doxysubsection*{Additional Inherited Members}
 
 
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_inverter_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_inverter_8cs_source}{Inverter.\+cs}}.
+
+
+
 \doxysubsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{class_behavior_tree_1_1_inverter_a2912d3e2f453182223a57674091500ae}\label{class_behavior_tree_1_1_inverter_a2912d3e2f453182223a57674091500ae}} 
 \index{BehaviorTree.Inverter@{BehaviorTree.Inverter}!Inverter@{Inverter}}
@@ -27,12 +46,30 @@ override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6
 \doxysubsubsection{\texorpdfstring{Inverter()}{Inverter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Behavior\+Tree.\+Inverter.\+Inverter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_inverter_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_inverter_8cs_source}{Inverter.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00007 : base() \{ \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_inverter_a7211d40bc36c3a6ff847ab73af60185b}\label{class_behavior_tree_1_1_inverter_a7211d40bc36c3a6ff847ab73af60185b}} 
 \index{BehaviorTree.Inverter@{BehaviorTree.Inverter}!Inverter@{Inverter}}
 \index{Inverter@{Inverter}!BehaviorTree.Inverter@{BehaviorTree.Inverter}}
 \doxysubsubsection{\texorpdfstring{Inverter()}{Inverter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Behavior\+Tree.\+Inverter.\+Inverter (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$}]{children }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_inverter_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_inverter_8cs_source}{Inverter.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00008 : base(\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}) \{ \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -46,12 +83,50 @@ override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6
 
 Reimplemented from \mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{Behavior\+Tree.\+Node}}.
 
+
+
+Definition at line \mbox{\hyperlink{_inverter_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_inverter_8cs_source}{Inverter.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011         \{}
+\DoxyCodeLine{00012             \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c3399404c9}{HasChildren}}) \textcolor{keywordflow}{return} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{00013             \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}[0].\mbox{\hyperlink{class_behavior_tree_1_1_inverter_a3f540aa4b129a60ac5db899aecd359c0}{Evaluate}}())}
+\DoxyCodeLine{00014             \{}
+\DoxyCodeLine{00015                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE:}
+\DoxyCodeLine{00016                     \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS;}
+\DoxyCodeLine{00017                     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00018                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS:}
+\DoxyCodeLine{00019                     \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{00020                     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00021                 \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.RUNNING:}
+\DoxyCodeLine{00022                     \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.RUNNING;}
+\DoxyCodeLine{00023                     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00024                 \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00025                     \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{00026                     \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00027             \}}
+\DoxyCodeLine{00028         \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_behavior_tree_1_1_inverter_a3f540aa4b129a60ac5db899aecd359c0_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_behavior_tree_1_1_inverter_a3f540aa4b129a60ac5db899aecd359c0_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Behaviour Tree/\+Basics/\mbox{\hyperlink{_inverter_8cs}{Inverter.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Behaviour Tree/\+Basics/\mbox{\hyperlink{_inverter_8cs}{Inverter.\+cs}}\end{DoxyCompactItemize}

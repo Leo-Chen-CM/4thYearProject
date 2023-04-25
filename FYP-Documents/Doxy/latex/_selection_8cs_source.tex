@@ -1,0 +1,276 @@
+\hypertarget{_selection_8cs_source}{}\doxysection{Selection.\+cs}
+\label{_selection_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/PlayerNBaseScripts/Selection.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/PlayerNBaseScripts/Selection.cs}}
+\mbox{\hyperlink{_selection_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00003}00003 \textcolor{keyword}{using }System.Xml.Linq;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00004}00004 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00006}\mbox{\hyperlink{class_selection}{00006}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_selection}{Selection}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00008}\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{00008}}     \textcolor{keyword}{protected} \mbox{\hyperlink{class_unit_manager}{UnitManager}} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00009}\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{00009}}     \textcolor{keyword}{protected} Vector3 \mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00010}00010     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00011}\mbox{\hyperlink{class_selection_a909f76da31e5eab07f29c232be40ca13}{00011}}     GameObject \mbox{\hyperlink{class_selection_a909f76da31e5eab07f29c232be40ca13}{m\_GroupLeaderPrefab}};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00013}\mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{00013}}     \mbox{\hyperlink{class_r_t_s_game_controller}{RTSGameController}} \mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00014}00014 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00015}\mbox{\hyperlink{class_selection_a02fd2feccc176d75f1455e42c74c4f45}{00015}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_selection_a02fd2feccc176d75f1455e42c74c4f45}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00016}00016     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00017}00017         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}} = GetComponent<UnitManager>();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00018}00018         \mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}} = GetComponent<RTSGameController>();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00019}00019     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00020}00020 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00022}00022     \textcolor{comment}{//void Update()}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00023}00023     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00024}00024     \textcolor{comment}{//    //Checks if any units selected has died and removes them from the list}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00025}00025     \textcolor{comment}{//    for (int i = 0; i < m\_unitManager.m\_selectedUnits.Count; i++)}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00026}00026     \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00027}00027     \textcolor{comment}{//        if (m\_unitManager.m\_selectedUnits[i] == null)}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00028}00028     \textcolor{comment}{//        \{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00029}00029     \textcolor{comment}{//            m\_unitManager.m\_selectedUnits.Remove(m\_unitManager.m\_selectedUnits[i]);}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00030}00030     \textcolor{comment}{//        \}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00031}00031     \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00032}00032 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00033}00033     \textcolor{comment}{//    if (Input.GetMouseButtonDown(0))}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00034}00034     \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00035}00035     \textcolor{comment}{//        m\_selectedAreaTransform.gameObject.SetActive(true);}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00036}00036     \textcolor{comment}{//        m\_startPosition = Utility.ReturnMousePosition2D();}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00037}00037     \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00039}00039     \textcolor{comment}{//    if (Input.GetMouseButton(0))}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00040}00040     \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00041}00041 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00042}00042     \textcolor{comment}{//        Vector3 currentMousePosition = Utility.ReturnMousePosition2D();}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00043}00043     \textcolor{comment}{//        Vector3 lowerLeft = new Vector3}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00044}00044     \textcolor{comment}{//            (}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00045}00045     \textcolor{comment}{//                Mathf.Min(m\_startPosition.x, currentMousePosition.x),}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00046}00046     \textcolor{comment}{//                Mathf.Min(m\_startPosition.y, currentMousePosition.y)}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00047}00047     \textcolor{comment}{//            );}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00048}00048 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00049}00049     \textcolor{comment}{//        Vector3 upperRight = new Vector3}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00050}00050     \textcolor{comment}{//            (}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00051}00051     \textcolor{comment}{//                Mathf.Max(m\_startPosition.x, currentMousePosition.x),}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00052}00052     \textcolor{comment}{//                Mathf.Max(m\_startPosition.y, currentMousePosition.y)}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00053}00053     \textcolor{comment}{//            );}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00054}00054 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00055}00055     \textcolor{comment}{//        m\_selectedAreaTransform.position = lowerLeft;}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00056}00056     \textcolor{comment}{//        m\_selectedAreaTransform.localScale = upperRight -\/ lowerLeft;}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00057}00057     \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00059}00059 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00060}00060     \textcolor{comment}{//    if (Input.GetMouseButtonUp(0))}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00061}00061     \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00062}00062     \textcolor{comment}{//        m\_selectedAreaTransform.gameObject.SetActive(false);}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00063}00063 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00064}00064     \textcolor{comment}{//        SelectUnits();}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00065}00065     \textcolor{comment}{//        GroupSelection();}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00066}00066     \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00067}00067 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00068}00068 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00069}00069     \textcolor{comment}{//    if (Input.GetMouseButtonDown(1))}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00070}00070     \textcolor{comment}{//    \{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00071}00071     \textcolor{comment}{//        MoveSelection(Utility.ReturnMousePosition2D());}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00072}00072     \textcolor{comment}{//    \}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00073}00073     \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00074}00074 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00075}\mbox{\hyperlink{class_selection_a5d24db948b630a237b811f4734cbe868}{00075}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_selection_a5d24db948b630a237b811f4734cbe868}{SelectUnits}}()}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00076}00076     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00077}00077 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00078}00078         Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(\mbox{\hyperlink{class_selection_a86399849291d22e74b3e5c0dbcd687eb}{m\_startPosition}}, \mbox{\hyperlink{class_utility}{Utility}}.\mbox{\hyperlink{class_utility_ae371e10730332ffe8c695c8401effd37}{ReturnMousePosition2D}}());}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00079}00079 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00080}00080         \textcolor{keywordflow}{if} (collider2DArray.Length > 0)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00081}00081         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00082}00082 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00083}00083             \textcolor{comment}{//foreach (BaseUnit unitRTS in m\_unitManager.m\_selectedUnits)}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00084}00084             \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00085}00085             \textcolor{comment}{//    unitRTS.SetSelectedVisible(false);}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00086}00086             \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00087}00087             \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} collider2DArray)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00088}00088             \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00089}00089                 \mbox{\hyperlink{class_base_unit}{BaseUnit}} unitRTS = collider2D.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00090}00090 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00091}00091                 \textcolor{keywordflow}{if} (unitRTS == \textcolor{keyword}{null} || unitRTS.gameObject.tag != \mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}}.\mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}}.ToString())}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00092}00092                 \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00093}00093                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00094}00094                 \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00095}00095 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00096}00096                 \mbox{\hyperlink{class_group_leader}{GroupLeader}} leader = unitRTS.\mbox{\hyperlink{class_base_unit_a9cd35c425549c36834a8606c86b15d49}{GetLeader}}();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00097}00097                 \textcolor{comment}{//Has no group then keep it loose}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00098}00098                 \textcolor{keywordflow}{if} (leader == \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00099}00099                 \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00100}00100                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Contains(unitRTS))}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00101}00101                     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00102}00102                         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Add(unitRTS);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00103}00103                         unitRTS.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00104}00104                     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00105}00105                 \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00106}00106                 \textcolor{comment}{//Has a group so get everyone from that group}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00107}00107                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00108}00108                 \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00109}00109                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Contains(leader))}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00110}00110                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00111}00111 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00112}00112                     \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00113}00113                     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00114}00114                         unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00115}00115                     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00116}00116                     \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Add(leader);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00117}00117                 \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00118}00118             \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00119}00119 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00120}00120         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00121}00121         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00122}00122         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00123}00123             \mbox{\hyperlink{class_selection_a129eaf19e641d6a1bcf380fc873c183f}{ClearSelection}}();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00124}00124         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00125}00125 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00126}00126     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00127}00127 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00128}00128     \textcolor{comment}{// Move all selected units to target}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00129}\mbox{\hyperlink{class_selection_ad1e91cc8fc1d6f1d658052162e474760}{00129}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_selection_ad1e91cc8fc1d6f1d658052162e474760}{MoveSelection}}(Vector3 target)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00130}00130     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00131}00131         \textcolor{comment}{// Loop over all agents}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00132}00132         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00133}00133         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00134}00134             \textcolor{comment}{// Set a new target}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00135}00135             unit.\mbox{\hyperlink{class_base_unit_a5444c924c7be68b4d0ee5ba3396219f4}{SetTargetPosition}}(target);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00136}00136         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00137}00137 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00138}00138         \textcolor{comment}{// Loop over all leaders}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00139}00139         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_group_leader}{GroupLeader}} leader \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00140}00140         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00141}00141             \textcolor{comment}{// Set a new target}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00142}00142             leader.\mbox{\hyperlink{class_group_leader_a54e85d2941924c0c4c77032829f8d7f3}{SetTarget}}(target);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00143}00143         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00144}00144     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00145}\mbox{\hyperlink{class_selection_a129eaf19e641d6a1bcf380fc873c183f}{00145}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_selection_a129eaf19e641d6a1bcf380fc873c183f}{ClearSelection}}()}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00146}00146     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00147}00147         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Count == 0 \&\& \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count == 0)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00148}00148         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00149}00149             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00150}00150         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00151}00151 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00152}00152         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00153}00153         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00154}00154             unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00155}00155         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00156}00156         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00157}00157 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00158}00158         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_group_leader}{GroupLeader}} leader \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00159}00159         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00160}00160             \textcolor{comment}{// Loop over all units in group}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00161}00161             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00162}00162             \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00163}00163                 unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00164}00164             \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00165}00165         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00166}00166 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00167}00167         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00168}00168     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00169}00169 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00170}\mbox{\hyperlink{class_selection_a1fd845df495405452cda91ff8cea543d}{00170}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_selection_a1fd845df495405452cda91ff8cea543d}{GroupSelection}}()}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00171}00171     \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00172}00172         \textcolor{comment}{// Only execute when we have a selection}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00173}00173         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Count == 0 \&\& \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count == 0)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00174}00174             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00175}00175 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00176}00176         \textcolor{keywordtype}{bool} newLeader = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00177}00177         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count == 0 || \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Count >= 2)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00178}00178             newLeader = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00179}00179 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00180}00180         \textcolor{comment}{// Set invalid index}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00181}00181         \textcolor{keywordtype}{int} freeIndex = -\/1;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00182}00182 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00183}00183 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00184}00184         \textcolor{keywordflow}{if} (newLeader)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00185}00185         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00186}00186             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} index = 0; index < \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}}.Length; index++)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00187}00187             \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00188}00188                 \textcolor{comment}{// Get the first free index}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00189}00189                 \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}}[index] == \textcolor{keyword}{false})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00190}00190                 \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00191}00191                     freeIndex = index;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00192}00192                     \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00193}00193                 \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00194}00194             \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00195}00195         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00196}00196         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00197}00197         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00198}00198             freeIndex = \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}[0].groupID;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00199}00199         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00200}00200         \textcolor{comment}{// Do not execute if we don't have a free index}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00201}00201         \textcolor{keywordflow}{if} (freeIndex == -\/1)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00202}00202         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00203}00203             Debug.LogError(\textcolor{stringliteral}{"{}Group limit reached."{}});}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00204}00204             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00205}00205         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00206}00206 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00207}00207         \textcolor{comment}{// Set minimum and maximum to opposite values}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00208}00208         Vector3 minimum = \textcolor{keyword}{new} Vector3(Mathf.Infinity, Mathf.Infinity, Mathf.Infinity);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00209}00209         Vector3 maximum = \textcolor{keyword}{new} Vector3(-\/Mathf.Infinity, -\/Mathf.Infinity, -\/Mathf.Infinity);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00211}00211         \textcolor{comment}{// Loop over all units}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00212}00212         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00213}00213         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00214}00214             Vector3 unitPosition = unit.transform.position;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00216}00216             \textcolor{keywordflow}{if} (unitPosition.x < minimum.x)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00217}00217                 minimum.x = unitPosition.x;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00218}00218             \textcolor{keywordflow}{if} (unitPosition.x > maximum.x)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00219}00219                 maximum.x = unitPosition.x;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00220}00220 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00221}00221             \textcolor{keywordflow}{if} (unitPosition.y < minimum.y)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00222}00222                 minimum.y = unitPosition.y;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00223}00223             \textcolor{keywordflow}{if} (unitPosition.y > maximum.y)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00224}00224                 maximum.y = unitPosition.y;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00225}00225 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00226}00226             \textcolor{keywordflow}{if} (unitPosition.z < minimum.z)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00227}00227                 minimum.z = unitPosition.z;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00228}00228             \textcolor{keywordflow}{if} (unitPosition.z > maximum.z)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00229}00229                 maximum.z = unitPosition.z;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00230}00230         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00231}00231 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00232}00232         Vector3 middle = (minimum + maximum) / 2f;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00233}00233 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00234}00234         \mbox{\hyperlink{class_group_leader}{GroupLeader}} leader;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00235}00235         \textcolor{keywordflow}{if} (newLeader)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00236}00236         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00237}00237             \textcolor{comment}{// Instantiate a leader in middle of furthest units}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00238}00238             GameObject go = Instantiate(\mbox{\hyperlink{class_selection_a909f76da31e5eab07f29c232be40ca13}{m\_GroupLeaderPrefab}}, middle, Quaternion.identity);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00239}00239             leader = go.GetComponent<\mbox{\hyperlink{class_group_leader}{GroupLeader}}>();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00241}00241             \textcolor{comment}{// Assign group ID}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00242}00242             leader.groupID = freeIndex;}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00243}00243             \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a1665d7c36c29ebabd3fd92de409e4f30}{groups}}[freeIndex] = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00244}00244         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00245}00245         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00246}00246         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00247}00247             leader = \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}[0];}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00248}00248             \textcolor{comment}{//leader.SetLocation(middle);}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00249}00249             \textcolor{comment}{//leader.units.Clear();}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00250}00250         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00251}00251 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00252}00252         \textcolor{comment}{// Loop over all units}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00253}00253         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}})}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00254}00254         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00255}00255             \textcolor{comment}{// Add to leader list of units, set unit leader and material to group color}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00256}00256             leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}}.Add(unit);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00257}00257             unit.\mbox{\hyperlink{class_base_unit_a00e0b72a818116d6ca14ffec46e8d69b}{AssignLeader}}(leader);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00258}00258         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00259}00259 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00260}00260 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00261}00261         leader.\mbox{\hyperlink{class_group_leader_ae39ef3c1f8e4b7a9676b72e491203354}{SetFormation}}(\mbox{\hyperlink{class_selection_acf3163ca46d826b099a7584beb4cc243}{m\_controller}}.\mbox{\hyperlink{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46}{GetCurrentFormation}}());}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00262}00262 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00263}00263         \textcolor{keywordflow}{if} (newLeader)}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00264}00264         \{}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00265}00265             \textcolor{comment}{// Add leader to selected leaders}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00266}00266             \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Add(leader);}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00267}00267         \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00268}00268 }
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00269}00269         \mbox{\hyperlink{class_selection_a0ef5aeac1d3a5d302e60d8891e32028b}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Clear();}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00270}00270     \}}
+\DoxyCodeLine{\Hypertarget{_selection_8cs_source_l00271}00271 \}}
+
+\end{DoxyCode}

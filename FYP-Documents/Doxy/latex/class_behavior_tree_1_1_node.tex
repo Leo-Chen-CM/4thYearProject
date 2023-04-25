@@ -3,7 +3,23 @@
 
 
 Inheritance diagram for Behavior\+Tree.\+Node\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_behavior_tree_1_1_node__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Behavior\+Tree.\+Node\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=238pt]{class_behavior_tree_1_1_node__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -12,8 +28,6 @@ Inheritance diagram for Behavior\+Tree.\+Node\+:
 \mbox{\hyperlink{class_behavior_tree_1_1_node_a01fd4fd0d40d21332ca036b17d4f5f30}{Node}} (List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})
 \item 
 virtual \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{Node\+State}} \mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{Evaluate}} ()
-\item 
-void \mbox{\hyperlink{class_behavior_tree_1_1_node_a808e3d6ed63f74e3f9d32d849b41f679}{Set\+Children}} (List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$ \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})
 \item 
 void \mbox{\hyperlink{class_behavior_tree_1_1_node_a2ab6467379d0dc10386dea1aef3330f1}{Attach}} (\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} child)
 \item 
@@ -43,6 +57,20 @@ List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$ \mbox{\hyperli
 \item 
 bool \mbox{\hyperlink{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c3399404c9}{Has\+Children}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\+\_\+parent}}
+\item 
+Dictionary$<$ string, object $>$ \mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\+\_\+data\+Context}} = new Dictionary$<$string, object$>$()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -52,14 +80,33 @@ bool \mbox{\hyperlink{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c33994
 \doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Behavior\+Tree.\+Node.\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00023 \{ \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}} = \textcolor{keyword}{null}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a01fd4fd0d40d21332ca036b17d4f5f30}\label{class_behavior_tree_1_1_node_a01fd4fd0d40d21332ca036b17d4f5f30}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!Node@{Node}}
 \index{Node@{Node}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Behavior\+Tree.\+Node.\+Node (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$}]{children }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 1
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00024                                          : \textcolor{keyword}{this}()}
+\DoxyCodeLine{00025         \{}
+\DoxyCodeLine{00026             SetChildren(\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}});}
+\DoxyCodeLine{00027         \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Function Documentation}
@@ -69,56 +116,174 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{Attach()}{Attach()}}
 {\footnotesize\ttfamily void Behavior\+Tree.\+Node.\+Attach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00038         \{}
+\DoxyCodeLine{00039             \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}.Add(child);}
+\DoxyCodeLine{00040             child.\_parent = \textcolor{keyword}{this};}
+\DoxyCodeLine{00041         \}}
+
+\end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_behavior_tree_1_1_node_a2ab6467379d0dc10386dea1aef3330f1_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e}\label{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!ClearData@{ClearData}}
 \index{ClearData@{ClearData}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{ClearData()}{ClearData()}}
 {\footnotesize\ttfamily bool Behavior\+Tree.\+Node.\+Clear\+Data (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00066}{66}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}.ContainsKey(key))}
+\DoxyCodeLine{00069             \{}
+\DoxyCodeLine{00070                 \mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}.Remove(key);}
+\DoxyCodeLine{00071                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00072             \}}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074             \mbox{\hyperlink{class_behavior_tree_1_1_node_ae767172c49022857cb397e68bc279ff1}{Node}} node = \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{00075             \textcolor{keywordflow}{while} (node != \textcolor{keyword}{null})}
+\DoxyCodeLine{00076             \{}
+\DoxyCodeLine{00077                 \textcolor{keywordtype}{bool} cleared = node.\mbox{\hyperlink{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e}{ClearData}}(key);}
+\DoxyCodeLine{00078                 \textcolor{keywordflow}{if} (cleared)}
+\DoxyCodeLine{00079                     \textcolor{keywordflow}{return} \textcolor{keyword}{true};}
+\DoxyCodeLine{00080                 node = node.\_parent;}
+\DoxyCodeLine{00081             \}}
+\DoxyCodeLine{00082             \textcolor{keywordflow}{return} \textcolor{keyword}{false};}
+\DoxyCodeLine{00083         \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_behavior_tree_1_1_node_a7225283110d2f00d69f2453b127edf6e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a2440c534290b86ad35b5efb7cb0b280c}\label{class_behavior_tree_1_1_node_a2440c534290b86ad35b5efb7cb0b280c}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!Detach@{Detach}}
 \index{Detach@{Detach}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{Detach()}{Detach()}}
 {\footnotesize\ttfamily void Behavior\+Tree.\+Node.\+Detach (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}}]{child }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00043}{43}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00044         \{}
+\DoxyCodeLine{00045             \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}.Remove(child);}
+\DoxyCodeLine{00046             child.\_parent = \textcolor{keyword}{null};}
+\DoxyCodeLine{00047         \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}\label{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!Evaluate@{Evaluate}}
 \index{Evaluate@{Evaluate}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{Evaluate()}{Evaluate()}}
-{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{Node\+State}} Behavior\+Tree.\+Node.\+Evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+{\footnotesize\ttfamily virtual \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{Node\+State}} Behavior\+Tree.\+Node.\+Evaluate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
 
 
 
 Reimplemented in \mbox{\hyperlink{class_behavior_tree_1_1_inverter_a3f540aa4b129a60ac5db899aecd359c0}{Behavior\+Tree.\+Inverter}}, \mbox{\hyperlink{class_behavior_tree_1_1_parallel_a1252f4fae398c06e72022b5dda75b7ff}{Behavior\+Tree.\+Parallel}}, \mbox{\hyperlink{class_behavior_tree_1_1_selector_a8881389df9bd60a334a01f889cca03b5}{Behavior\+Tree.\+Selector}}, \mbox{\hyperlink{class_behavior_tree_1_1_sequence_ae6a6e99bfdf6fd3052d4ef0974bd5840}{Behavior\+Tree.\+Sequence}}, \mbox{\hyperlink{class_check_unit_ownership_aabd1fc9460a827678e6952f360c520b2}{Check\+Unit\+Ownership}}, and \mbox{\hyperlink{class_task_patrol_aca3845938a2ee5cfcc351313078a7a0e}{Task\+Patrol}}.
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00032         \{}
+\DoxyCodeLine{00033             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_behavior_tree_1_1_node_ae767172c49022857cb397e68bc279ff1}{Node}} c \textcolor{keywordflow}{in} \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})}
+\DoxyCodeLine{00034                 \mbox{\hyperlink{class_behavior_tree_1_1_node_a2ab6467379d0dc10386dea1aef3330f1}{Attach}}(c);}
+\DoxyCodeLine{00035         \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 5
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655}\label{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!GetData@{GetData}}
 \index{GetData@{GetData}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{GetData()}{GetData()}}
 {\footnotesize\ttfamily object Behavior\+Tree.\+Node.\+Get\+Data (\begin{DoxyParamCaption}\item[{string}]{key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the call graph for this function\+:
-% FIG 6
-Here is the caller graph for this function\+:
-% FIG 7
-\mbox{\Hypertarget{class_behavior_tree_1_1_node_a808e3d6ed63f74e3f9d32d849b41f679}\label{class_behavior_tree_1_1_node_a808e3d6ed63f74e3f9d32d849b41f679}} 
-\index{BehaviorTree.Node@{BehaviorTree.Node}!SetChildren@{SetChildren}}
-\index{SetChildren@{SetChildren}!BehaviorTree.Node@{BehaviorTree.Node}}
-\doxysubsubsection{\texorpdfstring{SetChildren()}{SetChildren()}}
-{\footnotesize\ttfamily void Behavior\+Tree.\+Node.\+Set\+Children (\begin{DoxyParamCaption}\item[{List$<$ \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} $>$}]{children }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00049}{49}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00050         \{}
+\DoxyCodeLine{00051             \textcolor{keywordtype}{object} value = \textcolor{keyword}{null};}
+\DoxyCodeLine{00052             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}.TryGetValue(key, out value))}
+\DoxyCodeLine{00053                 \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{00054 }
+\DoxyCodeLine{00055             \mbox{\hyperlink{class_behavior_tree_1_1_node_ae767172c49022857cb397e68bc279ff1}{Node}} node = \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}};}
+\DoxyCodeLine{00056             \textcolor{keywordflow}{while} (node != \textcolor{keyword}{null})}
+\DoxyCodeLine{00057             \{}
+\DoxyCodeLine{00058                 value = node.\mbox{\hyperlink{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655}{GetData}}(key);}
+\DoxyCodeLine{00059                 \textcolor{keywordflow}{if} (value != \textcolor{keyword}{null})}
+\DoxyCodeLine{00060                     \textcolor{keywordflow}{return} value;}
+\DoxyCodeLine{00061                 node = node.\_parent;}
+\DoxyCodeLine{00062             \}}
+\DoxyCodeLine{00063             \textcolor{keywordflow}{return} \textcolor{keyword}{null};}
+\DoxyCodeLine{00064         \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 8
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655_cgraph}
+\end{center}
+\end{figure}
 Here is the caller graph for this function\+:
-% FIG 9
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=217pt]{class_behavior_tree_1_1_node_a4173116aa4eda60bf82e562ef2f77655_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_abae02a9b2ba98682d338b54f1dae8779}\label{class_behavior_tree_1_1_node_abae02a9b2ba98682d338b54f1dae8779}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!SetData@{SetData}}
 \index{SetData@{SetData}!BehaviorTree.Node@{BehaviorTree.Node}}
@@ -127,18 +292,57 @@ Here is the caller graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00085}{85}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00086         \{}
+\DoxyCodeLine{00087             \mbox{\hyperlink{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}{\_dataContext}}[key] = value;}
+\DoxyCodeLine{00088         \}}
+
+\end{DoxyCode}
+
+
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}\label{class_behavior_tree_1_1_node_aa266d4f071bed346557b82ed34fb078b}} 
+\index{BehaviorTree.Node@{BehaviorTree.Node}!\_dataContext@{\_dataContext}}
+\index{\_dataContext@{\_dataContext}!BehaviorTree.Node@{BehaviorTree.Node}}
+\doxysubsubsection{\texorpdfstring{\_dataContext}{\_dataContext}}
+{\footnotesize\ttfamily Dictionary$<$string, object$>$ Behavior\+Tree.\+Node.\+\_\+data\+Context = new Dictionary$<$string, object$>$()\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+\mbox{\Hypertarget{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}\label{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}} 
+\index{BehaviorTree.Node@{BehaviorTree.Node}!\_parent@{\_parent}}
+\index{\_parent@{\_parent}!BehaviorTree.Node@{BehaviorTree.Node}}
+\doxysubsubsection{\texorpdfstring{\_parent}{\_parent}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} Behavior\+Tree.\+Node.\+\_\+parent\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}\label{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!children@{children}}
 \index{children@{children}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{children}{children}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}$>$ Behavior\+Tree.\+Node.\+children = new List$<$\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}$>$()\hspace{0.3cm}{\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}\label{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!state@{state}}
 \index{state@{state}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{state}{state}}
 {\footnotesize\ttfamily \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{Node\+State}} Behavior\+Tree.\+Node.\+state\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
 
 
 
@@ -149,18 +353,45 @@ Here is the caller graph for this function\+:
 \doxysubsubsection{\texorpdfstring{Children}{Children}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}$>$ Behavior\+Tree.\+Node.\+Children\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00091}{91}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00091 \{ \textcolor{keyword}{get} => \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c3399404c9}\label{class_behavior_tree_1_1_node_a6771e30ded331ce054f2e6c3399404c9}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!HasChildren@{HasChildren}}
 \index{HasChildren@{HasChildren}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{HasChildren}{HasChildren}}
 {\footnotesize\ttfamily bool Behavior\+Tree.\+Node.\+Has\+Children\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00092}{92}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00092 \{ \textcolor{keyword}{get} => children.Count > 0; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a7aba76d38d5b93381d49bfc79740d732}\label{class_behavior_tree_1_1_node_a7aba76d38d5b93381d49bfc79740d732}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!Parent@{Parent}}
 \index{Parent@{Parent}!BehaviorTree.Node@{BehaviorTree.Node}}
 \doxysubsubsection{\texorpdfstring{Parent}{Parent}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} Behavior\+Tree.\+Node.\+Parent\hspace{0.3cm}{\ttfamily [get]}}
 
+
+
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00090}{90}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00090 \{ \textcolor{keyword}{get} => \mbox{\hyperlink{class_behavior_tree_1_1_node_ac4790d3269ce6eca6b3a5d9e32ba7428}{\_parent}}; \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_behavior_tree_1_1_node_a19576c1290165b1125bb5dba7f45b77f}\label{class_behavior_tree_1_1_node_a19576c1290165b1125bb5dba7f45b77f}} 
 \index{BehaviorTree.Node@{BehaviorTree.Node}!State@{State}}
 \index{State@{State}!BehaviorTree.Node@{BehaviorTree.Node}}
@@ -169,6 +400,15 @@ Here is the caller graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_node_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_node_8cs_source}{Node.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017 \{ \textcolor{keyword}{get} => \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}}; \}}
+
+\end{DoxyCode}
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Behaviour Tree/\+Basics/\mbox{\hyperlink{_node_8cs}{Node.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Behaviour Tree/\+Basics/\mbox{\hyperlink{_node_8cs}{Node.\+cs}}\end{DoxyCompactItemize}

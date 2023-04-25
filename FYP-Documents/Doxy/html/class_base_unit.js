@@ -1,10 +1,29 @@
 var class_base_unit =
 [
     [ "AssignLeader", "class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b", null ],
+    [ "Awake", "class_base_unit.html#a3d90e3d89c25654605ccd47971c310ff", null ],
+    [ "CheckPosition", "class_base_unit.html#a58d3649de15a15429d6a647b90e7520c", null ],
+    [ "FixedUpdate", "class_base_unit.html#a3110d1f7c27f1e30ee4191fdbf7c544a", null ],
     [ "GetLeader", "class_base_unit.html#a9cd35c425549c36834a8606c86b15d49", null ],
+    [ "Idle", "class_base_unit.html#a3b46613eca4eeeba5c84edecd59a5354", null ],
     [ "LoseHealth", "class_base_unit.html#a1ac58b3df1765aa8a5603d4c6b4284e8", null ],
+    [ "RotateTowards", "class_base_unit.html#acaa91d22d1d43f62c2ab650a8f0a8aaf", null ],
+    [ "SetAgentPosition", "class_base_unit.html#a830123965148423ef24de24bec716137", null ],
     [ "SetSelectedVisible", "class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69", null ],
     [ "SetTargetPosition", "class_base_unit.html#a5444c924c7be68b4d0ee5ba3396219f4", null ],
     [ "SetupTeam", "class_base_unit.html#a2c5a9cd00f2925d9ea91605b3f35808c", null ],
-    [ "m_goal", "class_base_unit.html#ab71d71d1141142378cdf35a667db6b0f", null ]
+    [ "Start", "class_base_unit.html#acfef3cbd9ee3b292d076bf14e11625fa", null ],
+    [ "m_agent", "class_base_unit.html#afbc13cfc6f892576cec3a70d1f3e9e2e", null ],
+    [ "m_destinationReached", "class_base_unit.html#a30b1d7e205e638b5de389e76111c6f89", null ],
+    [ "m_goal", "class_base_unit.html#ab71d71d1141142378cdf35a667db6b0f", null ],
+    [ "m_groupLeader", "class_base_unit.html#a211a96e6eb122b60f49a076cba457bc7", null ],
+    [ "m_health", "class_base_unit.html#aad2210f5881919f56babbbe3a52ed3d3", null ],
+    [ "m_rigidbody2D", "class_base_unit.html#ac54b32abf175ef91bd719c11e3405af1", null ],
+    [ "m_rotationModifier", "class_base_unit.html#af1da17e9b823972377ea7821b99afb63", null ],
+    [ "m_rotationSpeed", "class_base_unit.html#a025172d1e43edef3626d559fc9a1b6ed", null ],
+    [ "m_selectedGameObject", "class_base_unit.html#a756a5c738f4d3406df327f2fafb42f8f", null ],
+    [ "m_targetDestination", "class_base_unit.html#a1f31a2abff0082edff2fa3b66d02f736", null ],
+    [ "m_toggleGoal", "class_base_unit.html#abfc898e850e5c1828dd7cf96771734dd", null ],
+    [ "m_unitFieldOfView", "class_base_unit.html#a660d4514f3b6666d31d89a482593c6e9", null ],
+    [ "m_viewVisualisation", "class_base_unit.html#a77689bac519d54f5f34e22367b246d62", null ]
 ];

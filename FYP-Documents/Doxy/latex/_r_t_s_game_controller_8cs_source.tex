@@ -1,0 +1,265 @@
+\hypertarget{_r_t_s_game_controller_8cs_source}{}\doxysection{RTSGame\+Controller.\+cs}
+\label{_r_t_s_game_controller_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/RTSGameController.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/RTSGameController.cs}}
+\mbox{\hyperlink{_r_t_s_game_controller_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00003}00003 \textcolor{keyword}{using }TMPro;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00004}00004 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00005}00005 \textcolor{keyword}{using }UnityEngine.UIElements;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00006}00006 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00007}\mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{00007}} \textcolor{keyword}{public} \textcolor{keyword}{enum} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00008}00008 \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00009}00009     \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072ac8867457125653a9b4e61a12aa67df47}{Team1}},}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00010}00010     \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072a4dd507ad2b564b40b7a5c2ef8eb81a4e}{Team2}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00011}00011 \};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00012}00012 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00013}\mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{00013}} \textcolor{keyword}{public} \textcolor{keyword}{enum} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00014}00014 \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00015}00015     \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72a4803e6b9e63dabf04de980788d6a13c4}{Line}},}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00016}00016     \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72a3cfce651e667ab85486dd42a8185f98a}{Box}},}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00017}00017     \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72a3c74c5856cf9da6599118c9cc45c95d1}{Cheveron}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00018}00018 \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00019}00019 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00020}\mbox{\hyperlink{class_r_t_s_game_controller}{00020}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_r_t_s_game_controller}{RTSGameController}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00021}00021 \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00022}00022     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00023}\mbox{\hyperlink{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}{00023}}     \textcolor{keyword}{private} Transform \mbox{\hyperlink{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}{m\_selectedAreaTransform}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00024}\mbox{\hyperlink{class_r_t_s_game_controller_a49a49f9d13e350006abfa2253cbae715}{00024}}     \textcolor{keyword}{private} Vector3 \mbox{\hyperlink{class_r_t_s_game_controller_a49a49f9d13e350006abfa2253cbae715}{m\_startPosition}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00025}\mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{00025}}     \textcolor{keyword}{public} List<BaseUnit> \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00026}00026     \textcolor{comment}{// Update is called once per frame}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00027}00027 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00028}00028 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00029}\mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{00029}}     \textcolor{keyword}{public} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}} \mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}}.Team1;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00030}00030 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00031}00031     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00032}\mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{00032}}     \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Line;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00033}00033 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00034}00034     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00035}\mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{00035}}     \textcolor{keyword}{private} \textcolor{keywordtype}{float} \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00036}00036 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00037}\mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{00037}}     \textcolor{keyword}{public} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{m\_AI}} = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00038}00038 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00039}\mbox{\hyperlink{class_r_t_s_game_controller_a7eee09fc9af2749a91668df58822d595}{00039}}     \textcolor{keyword}{public} TMP\_Dropdown[] \mbox{\hyperlink{class_r_t_s_game_controller_a7eee09fc9af2749a91668df58822d595}{dropdowns}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00040}00040 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00041}\mbox{\hyperlink{class_r_t_s_game_controller_a55e948584be4c54b51c18ca71be03097}{00041}}     \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_s_game_controller_a55e948584be4c54b51c18ca71be03097}{Awake}}()}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00042}00042     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00043}00043         \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}} = \textcolor{keyword}{new} List<BaseUnit>();}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00044}00044         \mbox{\hyperlink{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}{m\_selectedAreaTransform}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00045}00045     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00046}00046 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00047}00047     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00048}\mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{00048}}     TMP\_Dropdown \mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{TeamSelector}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00049}00049 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00050}00050     [SerializeField]}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00051}\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{00051}}     TMP\_Dropdown \mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00052}\mbox{\hyperlink{class_r_t_s_game_controller_a0fb38c5f67a5a49026c1c3c6ed8f1e35}{00052}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_s_game_controller_a0fb38c5f67a5a49026c1c3c6ed8f1e35}{SetTeam}}()}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00053}00053     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00054}00054         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{TeamSelector}}.value == 0)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00055}00055         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00056}00056             \mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}}.Team1;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00057}00057         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00058}00058 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00059}00059         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{TeamSelector}}.value == 1)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00060}00060         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00061}00061             \mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}}.Team2;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00062}00062         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00063}00063     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00064}\mbox{\hyperlink{class_r_t_s_game_controller_a95a6f8a347c8c1754c54fe6e80ba2653}{00064}}     \textcolor{keyword}{public} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_s_game_controller_a95a6f8a347c8c1754c54fe6e80ba2653}{SetFormation}}()}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00065}00065     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00066}00066         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}}.value == 0)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00067}00067         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00068}00068             \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Line;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00069}00069         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00070}00070         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00071}00071         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}}.value == 1)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00072}00072         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00073}00073             \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Box;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00074}00074         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00075}00075         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00076}00076         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}}.value == 2)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00077}00077         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00078}00078             \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Cheveron;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00079}00079         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00080}00080     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00081}00081 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00082}\mbox{\hyperlink{class_r_t_s_game_controller_a86e28e474ce3acecba619aa171bef0dd}{00082}}     \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_s_game_controller_a86e28e474ce3acecba619aa171bef0dd}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00083}00083     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00084}00084         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{m\_AI}})}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00085}00085         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00086}00086             \textcolor{comment}{/*}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00087}00087 \textcolor{comment}{            //Checks if any units selected has died and removes them from the list}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00088}00088 \textcolor{comment}{            for (int i = 0; i < m\_selectedUnits.Count; i++)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00089}00089 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00090}00090 \textcolor{comment}{                if (m\_selectedUnits[i] == null)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00091}00091 \textcolor{comment}{                \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00092}00092 \textcolor{comment}{                    m\_selectedUnits.Remove(m\_selectedUnits[i]);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00093}00093 \textcolor{comment}{                \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00094}00094 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00095}00095 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00096}00096 \textcolor{comment}{            if (Input.GetMouseButtonDown(0))}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00097}00097 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00098}00098 \textcolor{comment}{                m\_selectedAreaTransform.gameObject.SetActive(true);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00099}00099 \textcolor{comment}{                m\_startPosition = Utility.ReturnMousePosition2D();}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00100}00100 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00101}00101 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00102}00102 \textcolor{comment}{            if (Input.GetMouseButton(0))}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00103}00103 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00104}00104 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00105}00105 \textcolor{comment}{                Vector3 currentMousePosition = Utility.ReturnMousePosition2D();}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00106}00106 \textcolor{comment}{                Vector3 lowerLeft = new Vector3}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00107}00107 \textcolor{comment}{                    (}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00108}00108 \textcolor{comment}{                        Mathf.Min(m\_startPosition.x, currentMousePosition.x),}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00109}00109 \textcolor{comment}{                        Mathf.Min(m\_startPosition.y, currentMousePosition.y)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00110}00110 \textcolor{comment}{                    );}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00111}00111 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00112}00112 \textcolor{comment}{                Vector3 upperRight = new Vector3}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00113}00113 \textcolor{comment}{                    (}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00114}00114 \textcolor{comment}{                        Mathf.Max(m\_startPosition.x, currentMousePosition.x),}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00115}00115 \textcolor{comment}{                        Mathf.Max(m\_startPosition.y, currentMousePosition.y)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00116}00116 \textcolor{comment}{                    );}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00117}00117 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00118}00118 \textcolor{comment}{                m\_selectedAreaTransform.position = lowerLeft;}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00119}00119 \textcolor{comment}{                m\_selectedAreaTransform.localScale = upperRight -\/ lowerLeft;}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00120}00120 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00121}00121 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00122}00122 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00123}00123 \textcolor{comment}{            if (Input.GetMouseButtonUp(0))}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00124}00124 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00125}00125 \textcolor{comment}{                m\_selectedAreaTransform.gameObject.SetActive(false);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00126}00126 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00127}00127 \textcolor{comment}{                Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(m\_startPosition, Utility.ReturnMousePosition2D());}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00128}00128 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00129}00129 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00130}00130 \textcolor{comment}{                foreach (BaseUnit unitRTS in m\_selectedUnits)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00131}00131 \textcolor{comment}{                \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00132}00132 \textcolor{comment}{                    unitRTS.SetSelectedVisible(false);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00133}00133 \textcolor{comment}{                    //unitRTS.ToggleLeader(false);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00134}00134 \textcolor{comment}{                \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00135}00135 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00136}00136 \textcolor{comment}{                m\_selectedUnits.Clear();}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00137}00137 \textcolor{comment}{                foreach (Collider2D collider2D in collider2DArray)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00138}00138 \textcolor{comment}{                \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00139}00139 \textcolor{comment}{                    BaseUnit unitRTS = collider2D.GetComponent<BaseUnit>();}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00140}00140 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00141}00141 \textcolor{comment}{                    //if (collider2D == collider2DArray[0])}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00142}00142 \textcolor{comment}{                    //\{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00143}00143 \textcolor{comment}{                    //    unitRTS.m\_agent.ToggleLeader(true);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00144}00144 \textcolor{comment}{                    //\}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00145}00145 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00146}00146 \textcolor{comment}{                    if (unitRTS != null \&\& unitRTS.gameObject.tag == m\_team.ToString())}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00147}00147 \textcolor{comment}{                    \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00148}00148 \textcolor{comment}{                        unitRTS.SetSelectedVisible(true);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00149}00149 \textcolor{comment}{                        m\_selectedUnits.Add(unitRTS);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00150}00150 \textcolor{comment}{                    \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00151}00151 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00152}00152 \textcolor{comment}{                \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00153}00153 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00154}00154 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00155}00155 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00156}00156 \textcolor{comment}{            if (Input.GetMouseButtonDown(1))}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00157}00157 \textcolor{comment}{            \{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00158}00158 \textcolor{comment}{                SetFormationPosition(Utility.ReturnMousePosition2D());}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00159}00159 \textcolor{comment}{            \}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00160}00160 \textcolor{comment}{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00161}00161 \textcolor{comment}{            */}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00162}00162         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00163}00163 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00164}00164 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00165}00165 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00166}00166     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00167}00167 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00168}\mbox{\hyperlink{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46}{00168}}     \textcolor{keyword}{public} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} \mbox{\hyperlink{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46}{GetCurrentFormation}}()}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00169}00169     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00170}00170         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00171}00171     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00172}00172 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00173}\mbox{\hyperlink{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52}{00173}}     \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52}{SetFormationPosition}}(Vector3 t\_destination)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00174}00174     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00175}00175         Vector3 moveToPosition = t\_destination;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00176}00176 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00177}00177         List<Vector3> targetPositionList = \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(moveToPosition);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00178}00178 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00179}00179         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}})}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00180}00180         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00181}00181             \textcolor{keywordflow}{case} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Line:}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00182}00182                 targetPositionList = \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(moveToPosition);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00183}00183                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00184}00184             \textcolor{keywordflow}{case} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Box:}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00185}00185 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00186}00186                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00187}00187             \textcolor{keywordflow}{case} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Cheveron:}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00188}00188 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00189}00189                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00190}00190             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00191}00191                 targetPositionList = \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(moveToPosition);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00192}00192                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00193}00193         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00194}00194 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00195}00195        }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00196}00196 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00197}00197         \textcolor{keywordtype}{int} targetPositionListIndex = 0;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00198}00198 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00199}00199         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}})}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00200}00200         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00201}00201             unit.\mbox{\hyperlink{class_base_unit_a5444c924c7be68b4d0ee5ba3396219f4}{SetTargetPosition}}(targetPositionList[targetPositionListIndex]);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00202}00202             targetPositionListIndex = (targetPositionListIndex + 1) \% targetPositionList.Count;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00203}00203         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00204}00204 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00205}00205         \textcolor{comment}{//if (unit.m\_agent.m\_leader)}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00206}00206         \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00207}00207         \textcolor{comment}{//    unit.m\_agent.SetTargetPosition();}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00208}00208         \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00209}00209     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00210}00210 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00211}\mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{00211}}     \textcolor{keyword}{protected} List<Vector3> \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(Vector3 t\_startPosition)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00212}00212     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00213}00213         List<Vector3> positionList = \textcolor{keyword}{new} List<Vector3>();}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00214}00214         \textcolor{comment}{//positionList.Add(t\_startPosition);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00215}00215 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00216}00216         \textcolor{keywordtype}{float} rowMax = Mathf.Ceil(\mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}}.Count / 9f);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00217}00217 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00218}00218         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rowMax; i++)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00219}00219         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00220}00220             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 9; j++)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00221}00221             \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00222}00222                 \textcolor{comment}{//positionList.AddRange(GetLinePositionList(t\_startPosition, new float[] \{9\}));}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00223}00223 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00224}00224                 \textcolor{keywordflow}{if} (i \% 2 != 0)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00225}00225                 \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00226}00226                     Vector3 offset = \textcolor{keyword}{new} Vector3(t\_startPosition.x + \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * i, t\_startPosition.y -\/ \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * j, 0);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00227}00227                     positionList.Add(offset);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00228}00228                 \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00229}00229                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00230}00230                 \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00231}00231                     Vector3 offset = \textcolor{keyword}{new} Vector3(t\_startPosition.x -\/ \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * i, t\_startPosition.y -\/ \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * j, 0);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00232}00232                     positionList.Add(offset);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00233}00233                 \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00234}00234 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00235}00235             \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00236}00236         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00237}00237 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00238}00238         \textcolor{keywordflow}{return} positionList;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00239}00239     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00240}00240 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00241}\mbox{\hyperlink{class_r_t_s_game_controller_a8e16a67c14cd86f9bbb6aff2172cdf3d}{00241}}     \textcolor{keyword}{private} List<Vector3> \mbox{\hyperlink{class_r_t_s_game_controller_a8e16a67c14cd86f9bbb6aff2172cdf3d}{GetBoxFormation}}(Vector3 t\_startPosition)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00242}00242     \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00243}00243         List<Vector3> positionList = \textcolor{keyword}{new} List<Vector3>();}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00244}00244         \textcolor{comment}{//positionList.Add(t\_startPosition);}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00245}00245         \textcolor{keywordtype}{float} perLine = m\_selectedUnits.Count / 4;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00246}00246         perLine = Mathf.Ceil(perLine);}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00247}00247         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 4; j++)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00248}00248         \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00249}00249             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < perLine; i++)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00250}00250             \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00251}00251                 \textcolor{keywordflow}{if} (perLine \% 2 == 0)}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00252}00252                 \{}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00253}00253 }
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00254}00254                 \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00255}00255             \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00256}00256         \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00257}00257         \textcolor{keywordflow}{return} positionList;}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00258}00258     \}}
+\DoxyCodeLine{\Hypertarget{_r_t_s_game_controller_8cs_source_l00259}00259 \}}
+
+\end{DoxyCode}

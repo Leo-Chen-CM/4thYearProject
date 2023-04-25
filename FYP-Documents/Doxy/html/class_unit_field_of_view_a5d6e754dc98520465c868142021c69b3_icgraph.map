@@ -1,0 +1,4 @@
+<map id="UnitFieldOfView.DrawFieldOfView" name="UnitFieldOfView.DrawFieldOfView">
+<area shape="rect" id="node1" title="Actual field of view" alt="" coords="237,5,412,45"/>
+<area shape="rect" id="node2" href="$class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19" title=" " alt="" coords="5,13,189,38"/>
+</map>

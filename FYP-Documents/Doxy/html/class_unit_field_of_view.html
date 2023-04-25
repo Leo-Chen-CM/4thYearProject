@@ -94,6 +94,8 @@ $(document).ready(function(){initNavTree('class_unit_field_of_view.html',''); in
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="#properties">Properties</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_unit_field_of_view-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">UnitFieldOfView Class Reference</div></div>
 </div><!--header-->
@@ -105,12 +107,21 @@ $(document).ready(function(){initNavTree('class_unit_field_of_view.html',''); in
 Inheritance diagram for UnitFieldOfView:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_field_of_view__inherit__graph.png" border="0" usemap="#a_unit_field_of_view_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_unit_field_of_view_inherit__map" id="a_unit_field_of_view_inherit__map">
+<area shape="rect" title="Field of view of a single unit" alt="" coords="5,93,180,515"/>
+<area shape="rect" title=" " alt="" coords="35,5,150,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for UnitFieldOfView:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_unit_field_of_view__coll__graph.png" border="0" usemap="#a_unit_field_of_view_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_unit_field_of_view_coll__map" id="a_unit_field_of_view_coll__map">
+<area shape="rect" title="Field of view of a single unit" alt="" coords="5,329,180,736"/>
+<area shape="rect" title=" " alt="" coords="30,5,145,45"/>
+<area shape="rect" href="class_unit_shooting.html" title=" " alt="" coords="109,95,229,267"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
@@ -155,11 +166,43 @@ Public Attributes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="properties" name="properties"></a>
 Properties</h2></td></tr>
-<tr class="memitem:a8ca058efa6085d032e312058abe7bafd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a><code> [get]</code></td></tr>
+<tr class="memitem:a8ca058efa6085d032e312058abe7bafd"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a><code> [get, private set]</code></td></tr>
 <tr class="separator:a8ca058efa6085d032e312058abe7bafd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a72da8d225e419b6e764e00cb7719fcf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a72da8d225e419b6e764e00cb7719fcf4">Start</a> ()</td></tr>
+<tr class="separator:a72da8d225e419b6e764e00cb7719fcf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade15ae2c0d88822a3711b2804709b334"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#ade15ae2c0d88822a3711b2804709b334">FindVisibleTargets</a> ()</td></tr>
+<tr class="separator:ade15ae2c0d88822a3711b2804709b334"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2653f6e4cda86e44e35143f00438cd5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a2653f6e4cda86e44e35143f00438cd5c">OnDrawGizmos</a> ()</td></tr>
+<tr class="memdesc:a2653f6e4cda86e44e35143f00438cd5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debug Field of view   <a href="class_unit_field_of_view.html#a2653f6e4cda86e44e35143f00438cd5c">More...</a><br /></td></tr>
+<tr class="separator:a2653f6e4cda86e44e35143f00438cd5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefb3e9e114ff986b89bc8fa154c66e19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19">LateUpdate</a> ()</td></tr>
+<tr class="separator:aefb3e9e114ff986b89bc8fa154c66e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60848ff4b0dd5c7070c36d17f5adc4c1"><td class="memItemLeft" align="right" valign="top">IEnumerator&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a60848ff4b0dd5c7070c36d17f5adc4c1">FindTargetsWithDelay</a> (float delay)</td></tr>
+<tr class="separator:a60848ff4b0dd5c7070c36d17f5adc4c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d6e754dc98520465c868142021c69b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3">DrawFieldOfView</a> ()</td></tr>
+<tr class="memdesc:a5d6e754dc98520465c868142021c69b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Actual field of view   <a href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3">More...</a><br /></td></tr>
+<tr class="separator:a5d6e754dc98520465c868142021c69b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0c2991fcfd038f2c70e8cc7f04867947"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_unit_field_of_view_1_1_edge_info.html">EdgeInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947">FindEdge</a> (<a class="el" href="struct_unit_field_of_view_1_1_view_cast_info.html">ViewCastInfo</a> minViewCast, <a class="el" href="struct_unit_field_of_view_1_1_view_cast_info.html">ViewCastInfo</a> maxViewCast)</td></tr>
+<tr class="separator:a0c2991fcfd038f2c70e8cc7f04867947"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3ac48e199ec18ac1a3c365b508da3e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_unit_field_of_view_1_1_view_cast_info.html">ViewCastInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9">ViewCast</a> (float globalAngle)</td></tr>
+<tr class="separator:ad3ac48e199ec18ac1a3c365b508da3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:ad3f547f03ce1baa60c88ec74a1d68f14"><td class="memItemLeft" align="right" valign="top">Mesh&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#ad3f547f03ce1baa60c88ec74a1d68f14">viewMesh</a></td></tr>
+<tr class="separator:ad3f547f03ce1baa60c88ec74a1d68f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d29d7c65aaeb77349f40d15ae2287c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_unit_shooting.html">UnitShooting</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#aa9d29d7c65aaeb77349f40d15ae2287c">m_unitShooting</a></td></tr>
+<tr class="separator:aa9d29d7c65aaeb77349f40d15ae2287c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebaa68287b0e40b9d53fdba1f2401bfb"><td class="memItemLeft" align="right" valign="top">List&lt; Collider2D &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a> = new List&lt;Collider2D&gt;()</td></tr>
+<tr class="separator:aebaa68287b0e40b9d53fdba1f2401bfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Field of view of a single unit  </p>
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00010">10</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a74ef3c62b951565e73e33b991e76fc55" name="a74ef3c62b951565e73e33b991e76fc55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a74ef3c62b951565e73e33b991e76fc55">&#9670;&#160;</a></span>DirFromAngle()</h2>
@@ -195,6 +238,565 @@ Properties</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00286">286</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>    {</div>
+<div class="line"><span class="lineno">  288</span>        <span class="keywordflow">if</span> (!angleIsGlobal)</div>
+<div class="line"><span class="lineno">  289</span>        {</div>
+<div class="line"><span class="lineno">  290</span>            angleInDegrees += transform.eulerAngles.z;</div>
+<div class="line"><span class="lineno">  291</span>        }</div>
+<div class="line"><span class="lineno">  292</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> Vector3(Mathf.Sin(-angleInDegrees * Mathf.Deg2Rad), Mathf.Cos(-angleInDegrees * Mathf.Deg2Rad), 0);</div>
+<div class="line"><span class="lineno">  293</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55_icgraph.png" border="0" usemap="#aclass_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55_icgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55_icgraph" id="aclass_unit_field_of_view_a74ef3c62b951565e73e33b991e76fc55_icgraph">
+<area shape="rect" title=" " alt="" coords="903,5,1100,31"/>
+<area shape="rect" href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3" title="Actual field of view" alt="" coords="237,23,412,63"/>
+<area shape="rect" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9" title=" " alt="" coords="681,31,855,56"/>
+<area shape="rect" href="class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19" title=" " alt="" coords="5,31,189,56"/>
+<area shape="rect" href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947" title=" " alt="" coords="460,81,633,107"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a5d6e754dc98520465c868142021c69b3" name="a5d6e754dc98520465c868142021c69b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d6e754dc98520465c868142021c69b3">&#9670;&#160;</a></span>DrawFieldOfView()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitFieldOfView.DrawFieldOfView </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Actual field of view  </p>
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00151">151</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>    {</div>
+<div class="line"><span class="lineno">  153</span>        <span class="keywordtype">int</span> stepCount = Mathf.RoundToInt(<a class="code hl_variable" href="class_unit_field_of_view.html#a2925dbd9040620300d8c3de7397fa93b">m_angle</a> * <a class="code hl_variable" href="class_unit_field_of_view.html#a5620505a60be7a774656fde63eb72f1a">m_meshResolution</a>);</div>
+<div class="line"><span class="lineno">  154</span>        <span class="keywordtype">float</span> stepAngleSize = <a class="code hl_variable" href="class_unit_field_of_view.html#a2925dbd9040620300d8c3de7397fa93b">m_angle</a> / stepCount;</div>
+<div class="line"><span class="lineno">  155</span> </div>
+<div class="line"><span class="lineno">  156</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= stepCount; i++)</div>
+<div class="line"><span class="lineno">  157</span>        {</div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordtype">float</span> angle = transform.eulerAngles.z - <a class="code hl_variable" href="class_unit_field_of_view.html#a2925dbd9040620300d8c3de7397fa93b">m_angle</a> / 2 + stepAngleSize * i;</div>
+<div class="line"><span class="lineno">  159</span>            Debug.DrawLine(transform.position, transform.position + <a class="code hl_function" href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55">DirFromAngle</a>(angle, <span class="keyword">true</span>) * <a class="code hl_variable" href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">m_radius</a>, Color.red);</div>
+<div class="line"><span class="lineno">  160</span>        }</div>
+<div class="line"><span class="lineno">  161</span> </div>
+<div class="line"><span class="lineno">  162</span>        List&lt;Vector3&gt; viewPoints = <span class="keyword">new</span> List&lt;Vector3&gt;();</div>
+<div class="line"><span class="lineno">  163</span>        ViewCastInfo oldViewCast = <span class="keyword">new</span> ViewCastInfo();</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt;= stepCount; i++)</div>
+<div class="line"><span class="lineno">  165</span>        {</div>
+<div class="line"><span class="lineno">  166</span>            <span class="keywordtype">float</span> angle = transform.eulerAngles.z - <a class="code hl_variable" href="class_unit_field_of_view.html#a2925dbd9040620300d8c3de7397fa93b">m_angle</a> / 2 + stepAngleSize * i;</div>
+<div class="line"><span class="lineno">  167</span>            ViewCastInfo newViewCast = <a class="code hl_function" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9">ViewCast</a>(angle);</div>
+<div class="line"><span class="lineno">  168</span>            viewPoints.Add(newViewCast.point);</div>
+<div class="line"><span class="lineno">  169</span>            <span class="keywordflow">if</span> (i &gt; 0)</div>
+<div class="line"><span class="lineno">  170</span>            {</div>
+<div class="line"><span class="lineno">  171</span>                <span class="keywordtype">bool</span> edgeDstThresholdExceeded = Mathf.Abs(oldViewCast.dst - newViewCast.dst) &gt; <a class="code hl_variable" href="class_unit_field_of_view.html#a62b23f33c2df6262804a1439fa85bd30">edgeDstThreshold</a>;</div>
+<div class="line"><span class="lineno">  172</span>                <span class="keywordflow">if</span> (oldViewCast.hit != newViewCast.hit || (oldViewCast.hit &amp;&amp; newViewCast.hit &amp;&amp; edgeDstThresholdExceeded))</div>
+<div class="line"><span class="lineno">  173</span>                {</div>
+<div class="line"><span class="lineno">  174</span>                    EdgeInfo edge = <a class="code hl_function" href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947">FindEdge</a>(oldViewCast, newViewCast);</div>
+<div class="line"><span class="lineno">  175</span>                    <span class="keywordflow">if</span> (edge.pointA != Vector3.zero)</div>
+<div class="line"><span class="lineno">  176</span>                    {</div>
+<div class="line"><span class="lineno">  177</span>                        viewPoints.Add(edge.pointA);</div>
+<div class="line"><span class="lineno">  178</span>                    }</div>
+<div class="line"><span class="lineno">  179</span>                    <span class="keywordflow">if</span> (edge.pointB != Vector3.zero)</div>
+<div class="line"><span class="lineno">  180</span>                    {</div>
+<div class="line"><span class="lineno">  181</span>                        viewPoints.Add(edge.pointB);</div>
+<div class="line"><span class="lineno">  182</span>                    }</div>
+<div class="line"><span class="lineno">  183</span>                }</div>
+<div class="line"><span class="lineno">  184</span>            }</div>
+<div class="line"><span class="lineno">  185</span>            oldViewCast = newViewCast;</div>
+<div class="line"><span class="lineno">  186</span>        }</div>
+<div class="line"><span class="lineno">  187</span> </div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordtype">int</span> vertexCount = viewPoints.Count + 1;</div>
+<div class="line"><span class="lineno">  189</span>        Vector3[] vertices = <span class="keyword">new</span> Vector3[vertexCount];</div>
+<div class="line"><span class="lineno">  190</span>        <span class="keywordtype">int</span>[] triangles = <span class="keyword">new</span> <span class="keywordtype">int</span>[(vertexCount - 2) * 3];</div>
+<div class="line"><span class="lineno">  191</span> </div>
+<div class="line"><span class="lineno">  192</span>        vertices[0] = Vector3.zero;</div>
+<div class="line"><span class="lineno">  193</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; vertexCount - 1; i++)</div>
+<div class="line"><span class="lineno">  194</span>        {</div>
+<div class="line"><span class="lineno">  195</span>            vertices[i + 1] = transform.InverseTransformPoint(viewPoints[i]);</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>            <span class="keywordflow">if</span> (i &lt; vertexCount - 2)</div>
+<div class="line"><span class="lineno">  198</span>            {</div>
+<div class="line"><span class="lineno">  199</span>                triangles[i * 3] = 0;</div>
+<div class="line"><span class="lineno">  200</span>                triangles[i * 3 + 1] = i + 1;</div>
+<div class="line"><span class="lineno">  201</span>                triangles[i * 3 + 2] = i + 2;</div>
+<div class="line"><span class="lineno">  202</span>            }</div>
+<div class="line"><span class="lineno">  203</span>        }</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>        <a class="code hl_variable" href="class_unit_field_of_view.html#ad3f547f03ce1baa60c88ec74a1d68f14">viewMesh</a>.Clear();</div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>        viewMesh.vertices = vertices;</div>
+<div class="line"><span class="lineno">  208</span>        viewMesh.triangles = triangles;</div>
+<div class="line"><span class="lineno">  209</span>        <a class="code hl_variable" href="class_unit_field_of_view.html#ad3f547f03ce1baa60c88ec74a1d68f14">viewMesh</a>.RecalculateNormals();</div>
+<div class="line"><span class="lineno">  210</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a0c2991fcfd038f2c70e8cc7f04867947"><div class="ttname"><a href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947">UnitFieldOfView.FindEdge</a></div><div class="ttdeci">EdgeInfo FindEdge(ViewCastInfo minViewCast, ViewCastInfo maxViewCast)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00212">UnitFieldOfView.cs:212</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a2925dbd9040620300d8c3de7397fa93b"><div class="ttname"><a href="class_unit_field_of_view.html#a2925dbd9040620300d8c3de7397fa93b">UnitFieldOfView.m_angle</a></div><div class="ttdeci">float m_angle</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00015">UnitFieldOfView.cs:15</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a5620505a60be7a774656fde63eb72f1a"><div class="ttname"><a href="class_unit_field_of_view.html#a5620505a60be7a774656fde63eb72f1a">UnitFieldOfView.m_meshResolution</a></div><div class="ttdeci">float m_meshResolution</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00024">UnitFieldOfView.cs:24</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a62b23f33c2df6262804a1439fa85bd30"><div class="ttname"><a href="class_unit_field_of_view.html#a62b23f33c2df6262804a1439fa85bd30">UnitFieldOfView.edgeDstThreshold</a></div><div class="ttdeci">float edgeDstThreshold</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00026">UnitFieldOfView.cs:26</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a62f7bbd26c411f4f9f574d94cdc03278"><div class="ttname"><a href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">UnitFieldOfView.m_radius</a></div><div class="ttdeci">float m_radius</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00012">UnitFieldOfView.cs:12</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a74ef3c62b951565e73e33b991e76fc55"><div class="ttname"><a href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55">UnitFieldOfView.DirFromAngle</a></div><div class="ttdeci">Vector3 DirFromAngle(float angleInDegrees, bool angleIsGlobal)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00286">UnitFieldOfView.cs:286</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_ad3ac48e199ec18ac1a3c365b508da3e9"><div class="ttname"><a href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9">UnitFieldOfView.ViewCast</a></div><div class="ttdeci">ViewCastInfo ViewCast(float globalAngle)</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00267">UnitFieldOfView.cs:267</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_ad3f547f03ce1baa60c88ec74a1d68f14"><div class="ttname"><a href="class_unit_field_of_view.html#ad3f547f03ce1baa60c88ec74a1d68f14">UnitFieldOfView.viewMesh</a></div><div class="ttdeci">Mesh viewMesh</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00031">UnitFieldOfView.cs:31</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_cgraph.png" border="0" usemap="#aclass_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_cgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_cgraph" id="aclass_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_cgraph">
+<area shape="rect" title="Actual field of view" alt="" coords="5,23,180,63"/>
+<area shape="rect" href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55" title=" " alt="" coords="671,5,868,31"/>
+<area shape="rect" href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947" title=" " alt="" coords="228,31,401,56"/>
+<area shape="rect" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9" title=" " alt="" coords="449,31,623,56"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_icgraph.png" border="0" usemap="#aclass_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_icgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_icgraph" id="aclass_unit_field_of_view_a5d6e754dc98520465c868142021c69b3_icgraph">
+<area shape="rect" title="Actual field of view" alt="" coords="237,5,412,45"/>
+<area shape="rect" href="class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19" title=" " alt="" coords="5,13,189,38"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0c2991fcfd038f2c70e8cc7f04867947" name="a0c2991fcfd038f2c70e8cc7f04867947"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0c2991fcfd038f2c70e8cc7f04867947">&#9670;&#160;</a></span>FindEdge()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_unit_field_of_view_1_1_edge_info.html">EdgeInfo</a> UnitFieldOfView.FindEdge </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_unit_field_of_view_1_1_view_cast_info.html">ViewCastInfo</a>&#160;</td>
+          <td class="paramname"><em>minViewCast</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_unit_field_of_view_1_1_view_cast_info.html">ViewCastInfo</a>&#160;</td>
+          <td class="paramname"><em>maxViewCast</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00212">212</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>    {</div>
+<div class="line"><span class="lineno">  214</span>        <span class="keywordtype">float</span> minAngle = minViewCast.angle;</div>
+<div class="line"><span class="lineno">  215</span>        <span class="keywordtype">float</span> maxAngle = maxViewCast.angle;</div>
+<div class="line"><span class="lineno">  216</span>        Vector3 minPoint = Vector3.zero;</div>
+<div class="line"><span class="lineno">  217</span>        Vector3 maxPoint = Vector3.zero;</div>
+<div class="line"><span class="lineno">  218</span> </div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_unit_field_of_view.html#a1b6475a6d78679eb4b0f5b85fb1174b8">edgeResolveIterations</a>; i++)</div>
+<div class="line"><span class="lineno">  220</span>        {</div>
+<div class="line"><span class="lineno">  221</span>            <span class="keywordtype">float</span> angle = (minAngle + maxAngle) / 2;</div>
+<div class="line"><span class="lineno">  222</span>            ViewCastInfo newViewCast = <a class="code hl_function" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9">ViewCast</a>(angle);</div>
+<div class="line"><span class="lineno">  223</span> </div>
+<div class="line"><span class="lineno">  224</span>            <span class="keywordtype">bool</span> edgeDstThresholdExceeded = Mathf.Abs(minViewCast.dst - newViewCast.dst) &gt; <a class="code hl_variable" href="class_unit_field_of_view.html#a62b23f33c2df6262804a1439fa85bd30">edgeDstThreshold</a>;</div>
+<div class="line"><span class="lineno">  225</span>            <span class="keywordflow">if</span> (newViewCast.hit == minViewCast.hit &amp;&amp; !edgeDstThresholdExceeded)</div>
+<div class="line"><span class="lineno">  226</span>            {</div>
+<div class="line"><span class="lineno">  227</span>                minAngle = angle;</div>
+<div class="line"><span class="lineno">  228</span>                minPoint = newViewCast.point;</div>
+<div class="line"><span class="lineno">  229</span>            }</div>
+<div class="line"><span class="lineno">  230</span>            <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  231</span>            {</div>
+<div class="line"><span class="lineno">  232</span>                maxAngle = angle;</div>
+<div class="line"><span class="lineno">  233</span>                maxPoint = newViewCast.point;</div>
+<div class="line"><span class="lineno">  234</span>            }</div>
+<div class="line"><span class="lineno">  235</span>        }</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>        <span class="keywordflow">return</span> <span class="keyword">new</span> EdgeInfo(minPoint, maxPoint);</div>
+<div class="line"><span class="lineno">  238</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a1b6475a6d78679eb4b0f5b85fb1174b8"><div class="ttname"><a href="class_unit_field_of_view.html#a1b6475a6d78679eb4b0f5b85fb1174b8">UnitFieldOfView.edgeResolveIterations</a></div><div class="ttdeci">int edgeResolveIterations</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00025">UnitFieldOfView.cs:25</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_cgraph.png" border="0" usemap="#aclass_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_cgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_cgraph" id="aclass_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,179,31"/>
+<area shape="rect" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9" title=" " alt="" coords="227,5,400,31"/>
+<area shape="rect" href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55" title=" " alt="" coords="448,5,645,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_icgraph.png" border="0" usemap="#aclass_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_icgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_icgraph" id="aclass_unit_field_of_view_a0c2991fcfd038f2c70e8cc7f04867947_icgraph">
+<area shape="rect" title=" " alt="" coords="460,13,633,38"/>
+<area shape="rect" href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3" title="Actual field of view" alt="" coords="237,5,412,45"/>
+<area shape="rect" href="class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19" title=" " alt="" coords="5,13,189,38"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a60848ff4b0dd5c7070c36d17f5adc4c1" name="a60848ff4b0dd5c7070c36d17f5adc4c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60848ff4b0dd5c7070c36d17f5adc4c1">&#9670;&#160;</a></span>FindTargetsWithDelay()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">IEnumerator UnitFieldOfView.FindTargetsWithDelay </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>delay</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00139">139</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">  142</span>        {</div>
+<div class="line"><span class="lineno">  143</span>            yield <span class="keywordflow">return</span> <span class="keyword">new</span> WaitForSeconds(delay);</div>
+<div class="line"><span class="lineno">  144</span>            <a class="code hl_function" href="class_unit_field_of_view.html#ade15ae2c0d88822a3711b2804709b334">FindVisibleTargets</a>();</div>
+<div class="line"><span class="lineno">  145</span>        }</div>
+<div class="line"><span class="lineno">  146</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html_ade15ae2c0d88822a3711b2804709b334"><div class="ttname"><a href="class_unit_field_of_view.html#ade15ae2c0d88822a3711b2804709b334">UnitFieldOfView.FindVisibleTargets</a></div><div class="ttdeci">bool FindVisibleTargets()</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00051">UnitFieldOfView.cs:51</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1_cgraph.png" border="0" usemap="#aclass_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1_cgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1_cgraph" id="aclass_unit_field_of_view_a60848ff4b0dd5c7070c36d17f5adc4c1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,192,45"/>
+<area shape="rect" href="class_unit_field_of_view.html#ade15ae2c0d88822a3711b2804709b334" title=" " alt="" coords="240,5,423,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ade15ae2c0d88822a3711b2804709b334" name="ade15ae2c0d88822a3711b2804709b334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade15ae2c0d88822a3711b2804709b334">&#9670;&#160;</a></span>FindVisibleTargets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool UnitFieldOfView.FindVisibleTargets </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00051">51</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>    {</div>
+<div class="line"><span class="lineno">   53</span>        Collider2D[] targetsInViewRadius = Physics2D.OverlapCircleAll(<span class="keyword">new</span> Vector2(transform.position.x, transform.position.y), <a class="code hl_variable" href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">m_radius</a>, <a class="code hl_variable" href="class_unit_field_of_view.html#a80d1e8b41273161c64d54c8fd82bcea4">m_targetLayer</a>);</div>
+<div class="line"><span class="lineno">   54</span>        <a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>.Clear();</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span>        <span class="comment">//m_targetsInView.AddRange(Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), m_radius, m_targetLayer));</span></div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">foreach</span> (Collider2D collider2D <span class="keywordflow">in</span> targetsInViewRadius)</div>
+<div class="line"><span class="lineno">   59</span>        {</div>
+<div class="line"><span class="lineno">   60</span>            <span class="keywordflow">if</span> (collider2D.gameObject.tag != gameObject.tag)</div>
+<div class="line"><span class="lineno">   61</span>            {</div>
+<div class="line"><span class="lineno">   62</span>                <a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>.Add(collider2D);</div>
+<div class="line"><span class="lineno">   63</span>            }</div>
+<div class="line"><span class="lineno">   64</span>        }</div>
+<div class="line"><span class="lineno">   65</span> </div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>.Count &gt; 0)</div>
+<div class="line"><span class="lineno">   68</span>        {</div>
+<div class="line"><span class="lineno">   69</span>            <span class="keywordtype">int</span> length = <a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>.Count;</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; length; i++)</div>
+<div class="line"><span class="lineno">   72</span>            {</div>
+<div class="line"><span class="lineno">   73</span>                <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>[i].gameObject != gameObject)</div>
+<div class="line"><span class="lineno">   74</span>                {</div>
+<div class="line"><span class="lineno">   75</span>                    Transform target = <a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>[i].transform;</div>
+<div class="line"><span class="lineno">   76</span>                    Vector3 dirToTarget = (target.position - transform.position).normalized;</div>
+<div class="line"><span class="lineno">   77</span>                    <span class="keywordtype">float</span> dstToNewTarget = Vector3.Distance(transform.position, target.position);</div>
+<div class="line"><span class="lineno">   78</span> </div>
+<div class="line"><span class="lineno">   79</span>                    <span class="keywordflow">if</span> (Physics2D.Raycast(transform.position, dirToTarget, dstToNewTarget, <a class="code hl_variable" href="class_unit_field_of_view.html#aab181968aebed6bddb788af42a3fda5a">m_obstructionLayer</a>) &amp;&amp; dstToNewTarget &lt; <a class="code hl_variable" href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">m_radius</a>)</div>
+<div class="line"><span class="lineno">   80</span>                    {</div>
+<div class="line"><span class="lineno">   81</span>                        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">   82</span>                        {</div>
+<div class="line"><span class="lineno">   83</span>                            <span class="keywordtype">float</span> currentDstToTarget = Vector3.Distance(transform.position, <a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a>.position);</div>
+<div class="line"><span class="lineno">   84</span> </div>
+<div class="line"><span class="lineno">   85</span>                            <span class="keywordflow">if</span> (dstToNewTarget &lt; currentDstToTarget)</div>
+<div class="line"><span class="lineno">   86</span>                            {</div>
+<div class="line"><span class="lineno">   87</span>                                <a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> = <a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>[i].transform;</div>
+<div class="line"><span class="lineno">   88</span>                                <a class="code hl_property" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a> = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   89</span>                            }</div>
+<div class="line"><span class="lineno">   90</span>                        }</div>
+<div class="line"><span class="lineno">   91</span>                        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   92</span>                        {</div>
+<div class="line"><span class="lineno">   93</span>                            <a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> = <a class="code hl_variable" href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">m_targetsInView</a>[i].transform;</div>
+<div class="line"><span class="lineno">   94</span>                            <a class="code hl_property" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a> = <span class="keyword">true</span>;  </div>
+<div class="line"><span class="lineno">   95</span>                        }</div>
+<div class="line"><span class="lineno">   96</span> </div>
+<div class="line"><span class="lineno">   97</span>                    }</div>
+<div class="line"><span class="lineno">   98</span>                    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   99</span>                    {</div>
+<div class="line"><span class="lineno">  100</span>                        <a class="code hl_property" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  101</span>                        <a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  102</span>                    }</div>
+<div class="line"><span class="lineno">  103</span>                }</div>
+<div class="line"><span class="lineno">  104</span>            }</div>
+<div class="line"><span class="lineno">  105</span>        }</div>
+<div class="line"><span class="lineno">  106</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  107</span>        {</div>
+<div class="line"><span class="lineno">  108</span>            <a class="code hl_property" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a> = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  109</span>            <a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> = <span class="keyword">null</span>;</div>
+<div class="line"><span class="lineno">  110</span>        }</div>
+<div class="line"><span class="lineno">  111</span>        <span class="keywordflow">return</span> <a class="code hl_property" href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">m_enemySpotted</a>;</div>
+<div class="line"><span class="lineno">  112</span>     </div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a6a48d8c3fcfbf9e4140efcb990ea7983"><div class="ttname"><a href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">UnitFieldOfView.m_target</a></div><div class="ttdeci">Transform m_target</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00034">UnitFieldOfView.cs:34</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a80d1e8b41273161c64d54c8fd82bcea4"><div class="ttname"><a href="class_unit_field_of_view.html#a80d1e8b41273161c64d54c8fd82bcea4">UnitFieldOfView.m_targetLayer</a></div><div class="ttdeci">LayerMask m_targetLayer</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00017">UnitFieldOfView.cs:17</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a8ca058efa6085d032e312058abe7bafd"><div class="ttname"><a href="class_unit_field_of_view.html#a8ca058efa6085d032e312058abe7bafd">UnitFieldOfView.m_enemySpotted</a></div><div class="ttdeci">bool m_enemySpotted</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00032">UnitFieldOfView.cs:32</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_aab181968aebed6bddb788af42a3fda5a"><div class="ttname"><a href="class_unit_field_of_view.html#aab181968aebed6bddb788af42a3fda5a">UnitFieldOfView.m_obstructionLayer</a></div><div class="ttdeci">LayerMask m_obstructionLayer</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00018">UnitFieldOfView.cs:18</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_aebaa68287b0e40b9d53fdba1f2401bfb"><div class="ttname"><a href="class_unit_field_of_view.html#aebaa68287b0e40b9d53fdba1f2401bfb">UnitFieldOfView.m_targetsInView</a></div><div class="ttdeci">List&lt; Collider2D &gt; m_targetsInView</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00038">UnitFieldOfView.cs:38</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334_icgraph.png" border="0" usemap="#aclass_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334_icgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334_icgraph" id="aclass_unit_field_of_view_ade15ae2c0d88822a3711b2804709b334_icgraph">
+<area shape="rect" title=" " alt="" coords="240,5,423,45"/>
+<area shape="rect" href="class_unit_field_of_view.html#a60848ff4b0dd5c7070c36d17f5adc4c1" title=" " alt="" coords="5,5,192,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aefb3e9e114ff986b89bc8fa154c66e19" name="aefb3e9e114ff986b89bc8fa154c66e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefb3e9e114ff986b89bc8fa154c66e19">&#9670;&#160;</a></span>LateUpdate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitFieldOfView.LateUpdate </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00129">129</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  130</span>    {</div>
+<div class="line"><span class="lineno">  131</span>        <a class="code hl_function" href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3">DrawFieldOfView</a>();</div>
+<div class="line"><span class="lineno">  132</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  133</span>        {</div>
+<div class="line"><span class="lineno">  134</span>            transform.up = Vector3.Lerp(transform.up, (<a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a>.position - transform.position), 1);</div>
+<div class="line"><span class="lineno">  135</span>            <a class="code hl_variable" href="class_unit_field_of_view.html#aa9d29d7c65aaeb77349f40d15ae2287c">m_unitShooting</a>.<a class="code hl_function" href="class_unit_shooting.html#a5aefa0727af95304f04cbeec44fccfd6">Shoot</a>();</div>
+<div class="line"><span class="lineno">  136</span>        }</div>
+<div class="line"><span class="lineno">  137</span>    }</div>
+<div class="ttc" id="aclass_unit_field_of_view_html_a5d6e754dc98520465c868142021c69b3"><div class="ttname"><a href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3">UnitFieldOfView.DrawFieldOfView</a></div><div class="ttdeci">void DrawFieldOfView()</div><div class="ttdoc">Actual field of view</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00151">UnitFieldOfView.cs:151</a></div></div>
+<div class="ttc" id="aclass_unit_field_of_view_html_aa9d29d7c65aaeb77349f40d15ae2287c"><div class="ttname"><a href="class_unit_field_of_view.html#aa9d29d7c65aaeb77349f40d15ae2287c">UnitFieldOfView.m_unitShooting</a></div><div class="ttdeci">UnitShooting m_unitShooting</div><div class="ttdef"><b>Definition:</b> <a href="_unit_field_of_view_8cs_source.html#l00036">UnitFieldOfView.cs:36</a></div></div>
+<div class="ttc" id="aclass_unit_shooting_html_a5aefa0727af95304f04cbeec44fccfd6"><div class="ttname"><a href="class_unit_shooting.html#a5aefa0727af95304f04cbeec44fccfd6">UnitShooting.Shoot</a></div><div class="ttdeci">void Shoot()</div><div class="ttdef"><b>Definition:</b> <a href="_unit_shooting_8cs_source.html#l00036">UnitShooting.cs:36</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19_cgraph.png" border="0" usemap="#aclass_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19_cgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19_cgraph" id="aclass_unit_field_of_view_aefb3e9e114ff986b89bc8fa154c66e19_cgraph">
+<area shape="rect" title=" " alt="" coords="5,85,189,110"/>
+<area shape="rect" href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3" title="Actual field of view" alt="" coords="237,38,412,78"/>
+<area shape="rect" href="class_unit_shooting.html#a5aefa0727af95304f04cbeec44fccfd6" title=" " alt="" coords="257,113,392,138"/>
+<area shape="rect" href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55" title=" " alt="" coords="903,8,1100,33"/>
+<area shape="rect" href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947" title=" " alt="" coords="460,33,633,58"/>
+<area shape="rect" href="class_unit_field_of_view.html#ad3ac48e199ec18ac1a3c365b508da3e9" title=" " alt="" coords="681,33,855,58"/>
+<area shape="rect" href="class_unit_shooting.html#ac2ff23fb8277e772089aaa27e7bb039e" title=" " alt="" coords="463,134,630,160"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a2653f6e4cda86e44e35143f00438cd5c" name="a2653f6e4cda86e44e35143f00438cd5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2653f6e4cda86e44e35143f00438cd5c">&#9670;&#160;</a></span>OnDrawGizmos()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitFieldOfView.OnDrawGizmos </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Debug Field of view  </p>
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00119">119</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  120</span>    {</div>
+<div class="line"><span class="lineno">  121</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a> != <span class="keyword">null</span>)</div>
+<div class="line"><span class="lineno">  122</span>        {</div>
+<div class="line"><span class="lineno">  123</span>            Gizmos.color = Color.green;</div>
+<div class="line"><span class="lineno">  124</span>            Gizmos.DrawLine(transform.position, <a class="code hl_variable" href="class_unit_field_of_view.html#a6a48d8c3fcfbf9e4140efcb990ea7983">m_target</a>.position);</div>
+<div class="line"><span class="lineno">  125</span>        }</div>
+<div class="line"><span class="lineno">  126</span> </div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a72da8d225e419b6e764e00cb7719fcf4" name="a72da8d225e419b6e764e00cb7719fcf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72da8d225e419b6e764e00cb7719fcf4">&#9670;&#160;</a></span>Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void UnitFieldOfView.Start </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00041">41</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>    {</div>
+<div class="line"><span class="lineno">   43</span>        <a class="code hl_variable" href="class_unit_field_of_view.html#ad3f547f03ce1baa60c88ec74a1d68f14">viewMesh</a> = <span class="keyword">new</span> Mesh();</div>
+<div class="line"><span class="lineno">   44</span>        viewMesh.name = <span class="stringliteral">&quot;View Mesh&quot;</span>;</div>
+<div class="line"><span class="lineno">   45</span>        viewMeshFilter.mesh = <a class="code hl_variable" href="class_unit_field_of_view.html#ad3f547f03ce1baa60c88ec74a1d68f14">viewMesh</a>;</div>
+<div class="line"><span class="lineno">   46</span> </div>
+<div class="line"><span class="lineno">   47</span>        <a class="code hl_variable" href="class_unit_field_of_view.html#aa9d29d7c65aaeb77349f40d15ae2287c">m_unitShooting</a> = GetComponent&lt;UnitShooting&gt;();</div>
+<div class="line"><span class="lineno">   48</span>        StartCoroutine(<span class="stringliteral">&quot;FindTargetsWithDelay&quot;</span>, .1f);</div>
+<div class="line"><span class="lineno">   49</span>    }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad3ac48e199ec18ac1a3c365b508da3e9" name="ad3ac48e199ec18ac1a3c365b508da3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3ac48e199ec18ac1a3c365b508da3e9">&#9670;&#160;</a></span>ViewCast()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_unit_field_of_view_1_1_view_cast_info.html">ViewCastInfo</a> UnitFieldOfView.ViewCast </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>globalAngle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00267">267</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  268</span>    {</div>
+<div class="line"><span class="lineno">  269</span>        Vector3 dir = <a class="code hl_function" href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55">DirFromAngle</a>(globalAngle, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  270</span> </div>
+<div class="line"><span class="lineno">  271</span>        <span class="comment">//int combinedMask = m_targetLayer | m_obstructionLayer;</span></div>
+<div class="line"><span class="lineno">  272</span> </div>
+<div class="line"><span class="lineno">  273</span>        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, <a class="code hl_variable" href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">m_radius</a>, <a class="code hl_variable" href="class_unit_field_of_view.html#aab181968aebed6bddb788af42a3fda5a">m_obstructionLayer</a>);</div>
+<div class="line"><span class="lineno">  274</span> </div>
+<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">if</span> (hit)</div>
+<div class="line"><span class="lineno">  276</span>        {</div>
+<div class="line"><span class="lineno">  277</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ViewCastInfo(<span class="keyword">true</span>, hit.point, hit.distance, globalAngle);</div>
+<div class="line"><span class="lineno">  278</span>        }</div>
+<div class="line"><span class="lineno">  279</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  280</span>        {</div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">return</span> <span class="keyword">new</span> ViewCastInfo(<span class="keyword">false</span>, transform.position + dir * <a class="code hl_variable" href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">m_radius</a>, <a class="code hl_variable" href="class_unit_field_of_view.html#a62f7bbd26c411f4f9f574d94cdc03278">m_radius</a>, globalAngle);</div>
+<div class="line"><span class="lineno">  282</span>        }</div>
+<div class="line"><span class="lineno">  283</span> </div>
+<div class="line"><span class="lineno">  284</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_cgraph.png" border="0" usemap="#aclass_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_cgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_cgraph" id="aclass_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,179,31"/>
+<area shape="rect" href="class_unit_field_of_view.html#a74ef3c62b951565e73e33b991e76fc55" title=" " alt="" coords="227,5,424,31"/>
+</map>
+</div>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_icgraph.png" border="0" usemap="#aclass_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_icgraph" alt=""/></div>
+<map name="aclass_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_icgraph" id="aclass_unit_field_of_view_ad3ac48e199ec18ac1a3c365b508da3e9_icgraph">
+<area shape="rect" title=" " alt="" coords="681,13,855,38"/>
+<area shape="rect" href="class_unit_field_of_view.html#a5d6e754dc98520465c868142021c69b3" title="Actual field of view" alt="" coords="237,5,412,45"/>
+<area shape="rect" href="class_unit_field_of_view.html#a0c2991fcfd038f2c70e8cc7f04867947" title=" " alt="" coords="460,38,633,63"/>
+<area shape="rect" href="class_unit_field_of_view.html#aefb3e9e114ff986b89bc8fa154c66e19" title=" " alt="" coords="5,13,189,38"/>
+</map>
+</div>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -210,6 +812,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00026">26</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="a1b6475a6d78679eb4b0f5b85fb1174b8" name="a1b6475a6d78679eb4b0f5b85fb1174b8"></a>
@@ -223,6 +827,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00025">25</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 
 </div>
 </div>
@@ -238,6 +844,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00015">15</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="aabbc24c745de1da35baf255c99eb6244" name="aabbc24c745de1da35baf255c99eb6244"></a>
@@ -251,6 +859,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00013">13</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 
 </div>
 </div>
@@ -266,6 +876,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00024">24</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="aab181968aebed6bddb788af42a3fda5a" name="aab181968aebed6bddb788af42a3fda5a"></a>
@@ -279,6 +891,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00018">18</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 
 </div>
 </div>
@@ -294,6 +908,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00019">19</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="a62f7bbd26c411f4f9f574d94cdc03278" name="a62f7bbd26c411f4f9f574d94cdc03278"></a>
@@ -307,6 +923,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00012">12</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 
 </div>
 </div>
@@ -322,6 +940,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00034">34</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="a80d1e8b41273161c64d54c8fd82bcea4" name="a80d1e8b41273161c64d54c8fd82bcea4"></a>
@@ -335,6 +955,56 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00017">17</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
+</div>
+</div>
+<a id="aebaa68287b0e40b9d53fdba1f2401bfb" name="aebaa68287b0e40b9d53fdba1f2401bfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebaa68287b0e40b9d53fdba1f2401bfb">&#9670;&#160;</a></span>m_targetsInView</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;Collider2D&gt; UnitFieldOfView.m_targetsInView = new List&lt;Collider2D&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00038">38</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
+</div>
+</div>
+<a id="aa9d29d7c65aaeb77349f40d15ae2287c" name="aa9d29d7c65aaeb77349f40d15ae2287c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9d29d7c65aaeb77349f40d15ae2287c">&#9670;&#160;</a></span>m_unitShooting</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_unit_shooting.html">UnitShooting</a> UnitFieldOfView.m_unitShooting</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00036">36</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 
 </div>
 </div>
@@ -350,6 +1020,32 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00028">28</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
+</div>
+</div>
+<a id="ad3f547f03ce1baa60c88ec74a1d68f14" name="ad3f547f03ce1baa60c88ec74a1d68f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3f547f03ce1baa60c88ec74a1d68f14">&#9670;&#160;</a></span>viewMesh</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Mesh UnitFieldOfView.viewMesh</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00031">31</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="ac36ca0bb521872eaff442fc7f77bb611" name="ac36ca0bb521872eaff442fc7f77bb611"></a>
@@ -364,6 +1060,8 @@ Properties</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00030">30</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+
 </div>
 </div>
 <a id="a0d48923c4436f1c923c53492987d4809" name="a0d48923c4436f1c923c53492987d4809"></a>
@@ -377,6 +1075,8 @@ Properties</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00022">22</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
 
 </div>
 </div>
@@ -396,15 +1096,18 @@ Properties</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">get</span></span>  </td>
+<span class="mlabels"><span class="mlabel">get</span><span class="mlabel">private set</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_unit_field_of_view_8cs_source.html#l00032">32</a> of file <a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   32</span>{ <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Unit Scripts/<a class="el" href="_unit_field_of_view_8cs.html">UnitFieldOfView.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Unit Scripts/<a class="el" href="_unit_field_of_view_8cs_source.html">UnitFieldOfView.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

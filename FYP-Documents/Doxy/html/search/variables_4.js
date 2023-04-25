@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['firerate_0',['fireRate',['../class_unit_shooting.html#aea811188f95d9f921b16e3e56bf16924',1,'UnitShooting']]],
-  ['fitness_1',['fitness',['../class_neural_network.html#acade3068094daeb0d2f6e0a63a1428cd',1,'NeuralNetwork']]]
+  ['dropdowns_0',['dropdowns',['../class_r_t_s_game_controller.html#a7eee09fc9af2749a91668df58822d595',1,'RTSGameController']]],
+  ['dst_1',['dst',['../struct_unit_field_of_view_1_1_view_cast_info.html#afa2b40e2fa3f0d40cf1a8fa89f23d86e',1,'UnitFieldOfView::ViewCastInfo']]]
 ];

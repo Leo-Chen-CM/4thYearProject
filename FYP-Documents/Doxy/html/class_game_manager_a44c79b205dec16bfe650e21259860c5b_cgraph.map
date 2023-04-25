@@ -1,0 +1,4 @@
+<map id="GameManager.Update" name="GameManager.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,5,157,31"/>
+<area shape="rect" id="node2" href="$class_game_manager.html#a27c11cd9c091286098fd251a2423040a" title="Pauses the game when called" alt="" coords="205,5,427,31"/>
+</map>

@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for RTSGame\+Controller\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_r_t_s_game_controller__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for RTSGame\+Controller\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{class_r_t_s_game_controller__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -35,45 +47,383 @@ void \mbox{\hyperlink{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97
 \item 
 List$<$ Vector3 $>$ \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{Get\+Line\+Position\+List}} (Vector3 t\+\_\+start\+Position)
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_r_t_s_game_controller_a55e948584be4c54b51c18ca71be03097}{Awake}} ()
+\item 
+void \mbox{\hyperlink{class_r_t_s_game_controller_a86e28e474ce3acecba619aa171bef0dd}{Update}} ()
+\item 
+List$<$ Vector3 $>$ \mbox{\hyperlink{class_r_t_s_game_controller_a8e16a67c14cd86f9bbb6aff2172cdf3d}{Get\+Box\+Formation}} (Vector3 t\+\_\+start\+Position)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Transform \mbox{\hyperlink{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}{m\+\_\+selected\+Area\+Transform}}
+\item 
+Vector3 \mbox{\hyperlink{class_r_t_s_game_controller_a49a49f9d13e350006abfa2253cbae715}{m\+\_\+start\+Position}}
+\item 
+\mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\+\_\+formation}} = Formations.\+Line
+\item 
+float \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\+\_\+offset}}
+\item 
+TMP\+\_\+\+Dropdown \mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{Team\+Selector}}
+\item 
+TMP\+\_\+\+Dropdown \mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{Formation\+Selector}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00020}{20}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_r_t_s_game_controller_a55e948584be4c54b51c18ca71be03097}\label{class_r_t_s_game_controller_a55e948584be4c54b51c18ca71be03097}} 
+\index{RTSGameController@{RTSGameController}!Awake@{Awake}}
+\index{Awake@{Awake}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{Awake()}{Awake()}}
+{\footnotesize\ttfamily void RTSGame\+Controller.\+Awake (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00041}{41}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00042     \{}
+\DoxyCodeLine{00043         \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}} = \textcolor{keyword}{new} List<BaseUnit>();}
+\DoxyCodeLine{00044         \mbox{\hyperlink{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}{m\_selectedAreaTransform}}.gameObject.SetActive(\textcolor{keyword}{false});}
+\DoxyCodeLine{00045     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_r_t_s_game_controller_a8e16a67c14cd86f9bbb6aff2172cdf3d}\label{class_r_t_s_game_controller_a8e16a67c14cd86f9bbb6aff2172cdf3d}} 
+\index{RTSGameController@{RTSGameController}!GetBoxFormation@{GetBoxFormation}}
+\index{GetBoxFormation@{GetBoxFormation}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{GetBoxFormation()}{GetBoxFormation()}}
+{\footnotesize\ttfamily List$<$ Vector3 $>$ RTSGame\+Controller.\+Get\+Box\+Formation (\begin{DoxyParamCaption}\item[{Vector3}]{t\+\_\+start\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00241}{241}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00242     \{}
+\DoxyCodeLine{00243         List<Vector3> positionList = \textcolor{keyword}{new} List<Vector3>();}
+\DoxyCodeLine{00244         \textcolor{comment}{//positionList.Add(t\_startPosition);}}
+\DoxyCodeLine{00245         \textcolor{keywordtype}{float} perLine = m\_selectedUnits.Count / 4;}
+\DoxyCodeLine{00246         perLine = Mathf.Ceil(perLine);}
+\DoxyCodeLine{00247         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 4; j++)}
+\DoxyCodeLine{00248         \{}
+\DoxyCodeLine{00249             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < perLine; i++)}
+\DoxyCodeLine{00250             \{}
+\DoxyCodeLine{00251                 \textcolor{keywordflow}{if} (perLine \% 2 == 0)}
+\DoxyCodeLine{00252                 \{}
+\DoxyCodeLine{00253 }
+\DoxyCodeLine{00254                 \}}
+\DoxyCodeLine{00255             \}}
+\DoxyCodeLine{00256         \}}
+\DoxyCodeLine{00257         \textcolor{keywordflow}{return} positionList;}
+\DoxyCodeLine{00258     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46}\label{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46}} 
 \index{RTSGameController@{RTSGameController}!GetCurrentFormation@{GetCurrentFormation}}
 \index{GetCurrentFormation@{GetCurrentFormation}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{GetCurrentFormation()}{GetCurrentFormation()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} RTSGame\+Controller.\+Get\+Current\+Formation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00168}{168}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00169     \{}
+\DoxyCodeLine{00170         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}};}
+\DoxyCodeLine{00171     \}}
+
+\end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_r_t_s_game_controller_a21338ade1d9507648d239ba534541a46_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}\label{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}} 
 \index{RTSGameController@{RTSGameController}!GetLinePositionList@{GetLinePositionList}}
 \index{GetLinePositionList@{GetLinePositionList}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{GetLinePositionList()}{GetLinePositionList()}}
 {\footnotesize\ttfamily List$<$ Vector3 $>$ RTSGame\+Controller.\+Get\+Line\+Position\+List (\begin{DoxyParamCaption}\item[{Vector3}]{t\+\_\+start\+Position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00211}{211}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00212     \{}
+\DoxyCodeLine{00213         List<Vector3> positionList = \textcolor{keyword}{new} List<Vector3>();}
+\DoxyCodeLine{00214         \textcolor{comment}{//positionList.Add(t\_startPosition);}}
+\DoxyCodeLine{00215 }
+\DoxyCodeLine{00216         \textcolor{keywordtype}{float} rowMax = Mathf.Ceil(\mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}}.Count / 9f);}
+\DoxyCodeLine{00217 }
+\DoxyCodeLine{00218         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < rowMax; i++)}
+\DoxyCodeLine{00219         \{}
+\DoxyCodeLine{00220             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} j = 0; j < 9; j++)}
+\DoxyCodeLine{00221             \{}
+\DoxyCodeLine{00222                 \textcolor{comment}{//positionList.AddRange(GetLinePositionList(t\_startPosition, new float[] \{9\}));}}
+\DoxyCodeLine{00223 }
+\DoxyCodeLine{00224                 \textcolor{keywordflow}{if} (i \% 2 != 0)}
+\DoxyCodeLine{00225                 \{}
+\DoxyCodeLine{00226                     Vector3 offset = \textcolor{keyword}{new} Vector3(t\_startPosition.x + \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * i, t\_startPosition.y -\/ \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * j, 0);}
+\DoxyCodeLine{00227                     positionList.Add(offset);}
+\DoxyCodeLine{00228                 \}}
+\DoxyCodeLine{00229                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00230                 \{}
+\DoxyCodeLine{00231                     Vector3 offset = \textcolor{keyword}{new} Vector3(t\_startPosition.x -\/ \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * i, t\_startPosition.y -\/ \mbox{\hyperlink{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}{m\_offset}} * j, 0);}
+\DoxyCodeLine{00232                     positionList.Add(offset);}
+\DoxyCodeLine{00233                 \}}
+\DoxyCodeLine{00234 }
+\DoxyCodeLine{00235             \}}
+\DoxyCodeLine{00236         \}}
+\DoxyCodeLine{00237 }
+\DoxyCodeLine{00238         \textcolor{keywordflow}{return} positionList;}
+\DoxyCodeLine{00239     \}}
+
+\end{DoxyCode}
 Here is the caller graph for this function\+:
-% FIG 3
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_r_t_s_game_controller_a95a6f8a347c8c1754c54fe6e80ba2653}\label{class_r_t_s_game_controller_a95a6f8a347c8c1754c54fe6e80ba2653}} 
 \index{RTSGameController@{RTSGameController}!SetFormation@{SetFormation}}
 \index{SetFormation@{SetFormation}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{SetFormation()}{SetFormation()}}
 {\footnotesize\ttfamily void RTSGame\+Controller.\+Set\+Formation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00064}{64}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00065     \{}
+\DoxyCodeLine{00066         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}}.value == 0)}
+\DoxyCodeLine{00067         \{}
+\DoxyCodeLine{00068             \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Line;}
+\DoxyCodeLine{00069         \}}
+\DoxyCodeLine{00070         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00071         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}}.value == 1)}
+\DoxyCodeLine{00072         \{}
+\DoxyCodeLine{00073             \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Box;}
+\DoxyCodeLine{00074         \}}
+\DoxyCodeLine{00075         \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00076         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}{FormationSelector}}.value == 2)}
+\DoxyCodeLine{00077         \{}
+\DoxyCodeLine{00078             \mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Cheveron;}
+\DoxyCodeLine{00079         \}}
+\DoxyCodeLine{00080     \}}
+
+\end{DoxyCode}
 \mbox{\Hypertarget{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52}\label{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52}} 
 \index{RTSGameController@{RTSGameController}!SetFormationPosition@{SetFormationPosition}}
 \index{SetFormationPosition@{SetFormationPosition}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{SetFormationPosition()}{SetFormationPosition()}}
 {\footnotesize\ttfamily void RTSGame\+Controller.\+Set\+Formation\+Position (\begin{DoxyParamCaption}\item[{Vector3}]{t\+\_\+destination }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00173}{173}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00174     \{}
+\DoxyCodeLine{00175         Vector3 moveToPosition = t\_destination;}
+\DoxyCodeLine{00176 }
+\DoxyCodeLine{00177         List<Vector3> targetPositionList = \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(moveToPosition);}
+\DoxyCodeLine{00178 }
+\DoxyCodeLine{00179         \textcolor{keywordflow}{switch} (\mbox{\hyperlink{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}{m\_formation}})}
+\DoxyCodeLine{00180         \{}
+\DoxyCodeLine{00181             \textcolor{keywordflow}{case} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Line:}
+\DoxyCodeLine{00182                 targetPositionList = \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(moveToPosition);}
+\DoxyCodeLine{00183                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00184             \textcolor{keywordflow}{case} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Box:}
+\DoxyCodeLine{00185 }
+\DoxyCodeLine{00186                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00187             \textcolor{keywordflow}{case} \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}}.Cheveron:}
+\DoxyCodeLine{00188 }
+\DoxyCodeLine{00189                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00190             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00191                 targetPositionList = \mbox{\hyperlink{class_r_t_s_game_controller_adad534c012cc53d327b9b4a46e94cc75}{GetLinePositionList}}(moveToPosition);}
+\DoxyCodeLine{00192                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00193         \}}
+\DoxyCodeLine{00194 }
+\DoxyCodeLine{00195        }
+\DoxyCodeLine{00196 }
+\DoxyCodeLine{00197         \textcolor{keywordtype}{int} targetPositionListIndex = 0;}
+\DoxyCodeLine{00198 }
+\DoxyCodeLine{00199         \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} \mbox{\hyperlink{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}{m\_selectedUnits}})}
+\DoxyCodeLine{00200         \{}
+\DoxyCodeLine{00201             unit.\mbox{\hyperlink{class_base_unit_a5444c924c7be68b4d0ee5ba3396219f4}{SetTargetPosition}}(targetPositionList[targetPositionListIndex]);}
+\DoxyCodeLine{00202             targetPositionListIndex = (targetPositionListIndex + 1) \% targetPositionList.Count;}
+\DoxyCodeLine{00203         \}}
+\DoxyCodeLine{00204 }
+\DoxyCodeLine{00205         \textcolor{comment}{//if (unit.m\_agent.m\_leader)}}
+\DoxyCodeLine{00206         \textcolor{comment}{//\{}}
+\DoxyCodeLine{00207         \textcolor{comment}{//    unit.m\_agent.SetTargetPosition();}}
+\DoxyCodeLine{00208         \textcolor{comment}{//\}}}
+\DoxyCodeLine{00209     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 4
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_r_t_s_game_controller_af5d49ffb278cabd2bd1c7bd8bda97f52_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_r_t_s_game_controller_a0fb38c5f67a5a49026c1c3c6ed8f1e35}\label{class_r_t_s_game_controller_a0fb38c5f67a5a49026c1c3c6ed8f1e35}} 
 \index{RTSGameController@{RTSGameController}!SetTeam@{SetTeam}}
 \index{SetTeam@{SetTeam}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{SetTeam()}{SetTeam()}}
 {\footnotesize\ttfamily void RTSGame\+Controller.\+Set\+Team (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00052}{52}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00053     \{}
+\DoxyCodeLine{00054         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{TeamSelector}}.value == 0)}
+\DoxyCodeLine{00055         \{}
+\DoxyCodeLine{00056             \mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}}.Team1;}
+\DoxyCodeLine{00057         \}}
+\DoxyCodeLine{00058 }
+\DoxyCodeLine{00059         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}{TeamSelector}}.value == 1)}
+\DoxyCodeLine{00060         \{}
+\DoxyCodeLine{00061             \mbox{\hyperlink{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}{m\_team}} = \mbox{\hyperlink{_r_t_s_game_controller_8cs_a00e464430dbea0d17f12c1b117eb4072}{Teams}}.Team2;}
+\DoxyCodeLine{00062         \}}
+\DoxyCodeLine{00063     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_r_t_s_game_controller_a86e28e474ce3acecba619aa171bef0dd}\label{class_r_t_s_game_controller_a86e28e474ce3acecba619aa171bef0dd}} 
+\index{RTSGameController@{RTSGameController}!Update@{Update}}
+\index{Update@{Update}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void RTSGame\+Controller.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00082}{82}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00083     \{}
+\DoxyCodeLine{00084         \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}{m\_AI}})}
+\DoxyCodeLine{00085         \{}
+\DoxyCodeLine{00086             \textcolor{comment}{/*}}
+\DoxyCodeLine{00087 \textcolor{comment}{            //Checks if any units selected has died and removes them from the list}}
+\DoxyCodeLine{00088 \textcolor{comment}{            for (int i = 0; i < m\_selectedUnits.Count; i++)}}
+\DoxyCodeLine{00089 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00090 \textcolor{comment}{                if (m\_selectedUnits[i] == null)}}
+\DoxyCodeLine{00091 \textcolor{comment}{                \{}}
+\DoxyCodeLine{00092 \textcolor{comment}{                    m\_selectedUnits.Remove(m\_selectedUnits[i]);}}
+\DoxyCodeLine{00093 \textcolor{comment}{                \}}}
+\DoxyCodeLine{00094 \textcolor{comment}{            \}}}
+\DoxyCodeLine{00095 \textcolor{comment}{}}
+\DoxyCodeLine{00096 \textcolor{comment}{            if (Input.GetMouseButtonDown(0))}}
+\DoxyCodeLine{00097 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00098 \textcolor{comment}{                m\_selectedAreaTransform.gameObject.SetActive(true);}}
+\DoxyCodeLine{00099 \textcolor{comment}{                m\_startPosition = Utility.ReturnMousePosition2D();}}
+\DoxyCodeLine{00100 \textcolor{comment}{            \}}}
+\DoxyCodeLine{00101 \textcolor{comment}{}}
+\DoxyCodeLine{00102 \textcolor{comment}{            if (Input.GetMouseButton(0))}}
+\DoxyCodeLine{00103 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00104 \textcolor{comment}{}}
+\DoxyCodeLine{00105 \textcolor{comment}{                Vector3 currentMousePosition = Utility.ReturnMousePosition2D();}}
+\DoxyCodeLine{00106 \textcolor{comment}{                Vector3 lowerLeft = new Vector3}}
+\DoxyCodeLine{00107 \textcolor{comment}{                    (}}
+\DoxyCodeLine{00108 \textcolor{comment}{                        Mathf.Min(m\_startPosition.x, currentMousePosition.x),}}
+\DoxyCodeLine{00109 \textcolor{comment}{                        Mathf.Min(m\_startPosition.y, currentMousePosition.y)}}
+\DoxyCodeLine{00110 \textcolor{comment}{                    );}}
+\DoxyCodeLine{00111 \textcolor{comment}{}}
+\DoxyCodeLine{00112 \textcolor{comment}{                Vector3 upperRight = new Vector3}}
+\DoxyCodeLine{00113 \textcolor{comment}{                    (}}
+\DoxyCodeLine{00114 \textcolor{comment}{                        Mathf.Max(m\_startPosition.x, currentMousePosition.x),}}
+\DoxyCodeLine{00115 \textcolor{comment}{                        Mathf.Max(m\_startPosition.y, currentMousePosition.y)}}
+\DoxyCodeLine{00116 \textcolor{comment}{                    );}}
+\DoxyCodeLine{00117 \textcolor{comment}{}}
+\DoxyCodeLine{00118 \textcolor{comment}{                m\_selectedAreaTransform.position = lowerLeft;}}
+\DoxyCodeLine{00119 \textcolor{comment}{                m\_selectedAreaTransform.localScale = upperRight -\/ lowerLeft;}}
+\DoxyCodeLine{00120 \textcolor{comment}{            \}}}
+\DoxyCodeLine{00121 \textcolor{comment}{}}
+\DoxyCodeLine{00122 \textcolor{comment}{}}
+\DoxyCodeLine{00123 \textcolor{comment}{            if (Input.GetMouseButtonUp(0))}}
+\DoxyCodeLine{00124 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00125 \textcolor{comment}{                m\_selectedAreaTransform.gameObject.SetActive(false);}}
+\DoxyCodeLine{00126 \textcolor{comment}{}}
+\DoxyCodeLine{00127 \textcolor{comment}{                Collider2D[] collider2DArray = Physics2D.OverlapAreaAll(m\_startPosition, Utility.ReturnMousePosition2D());}}
+\DoxyCodeLine{00128 \textcolor{comment}{}}
+\DoxyCodeLine{00129 \textcolor{comment}{}}
+\DoxyCodeLine{00130 \textcolor{comment}{                foreach (BaseUnit unitRTS in m\_selectedUnits)}}
+\DoxyCodeLine{00131 \textcolor{comment}{                \{}}
+\DoxyCodeLine{00132 \textcolor{comment}{                    unitRTS.SetSelectedVisible(false);}}
+\DoxyCodeLine{00133 \textcolor{comment}{                    //unitRTS.ToggleLeader(false);}}
+\DoxyCodeLine{00134 \textcolor{comment}{                \}}}
+\DoxyCodeLine{00135 \textcolor{comment}{}}
+\DoxyCodeLine{00136 \textcolor{comment}{                m\_selectedUnits.Clear();}}
+\DoxyCodeLine{00137 \textcolor{comment}{                foreach (Collider2D collider2D in collider2DArray)}}
+\DoxyCodeLine{00138 \textcolor{comment}{                \{}}
+\DoxyCodeLine{00139 \textcolor{comment}{                    BaseUnit unitRTS = collider2D.GetComponent<BaseUnit>();}}
+\DoxyCodeLine{00140 \textcolor{comment}{}}
+\DoxyCodeLine{00141 \textcolor{comment}{                    //if (collider2D == collider2DArray[0])}}
+\DoxyCodeLine{00142 \textcolor{comment}{                    //\{}}
+\DoxyCodeLine{00143 \textcolor{comment}{                    //    unitRTS.m\_agent.ToggleLeader(true);}}
+\DoxyCodeLine{00144 \textcolor{comment}{                    //\}}}
+\DoxyCodeLine{00145 \textcolor{comment}{}}
+\DoxyCodeLine{00146 \textcolor{comment}{                    if (unitRTS != null \&\& unitRTS.gameObject.tag == m\_team.ToString())}}
+\DoxyCodeLine{00147 \textcolor{comment}{                    \{}}
+\DoxyCodeLine{00148 \textcolor{comment}{                        unitRTS.SetSelectedVisible(true);}}
+\DoxyCodeLine{00149 \textcolor{comment}{                        m\_selectedUnits.Add(unitRTS);}}
+\DoxyCodeLine{00150 \textcolor{comment}{                    \}}}
+\DoxyCodeLine{00151 \textcolor{comment}{}}
+\DoxyCodeLine{00152 \textcolor{comment}{                \}}}
+\DoxyCodeLine{00153 \textcolor{comment}{            \}}}
+\DoxyCodeLine{00154 \textcolor{comment}{}}
+\DoxyCodeLine{00155 \textcolor{comment}{}}
+\DoxyCodeLine{00156 \textcolor{comment}{            if (Input.GetMouseButtonDown(1))}}
+\DoxyCodeLine{00157 \textcolor{comment}{            \{}}
+\DoxyCodeLine{00158 \textcolor{comment}{                SetFormationPosition(Utility.ReturnMousePosition2D());}}
+\DoxyCodeLine{00159 \textcolor{comment}{            \}}}
+\DoxyCodeLine{00160 \textcolor{comment}{}}
+\DoxyCodeLine{00161 \textcolor{comment}{            */}}
+\DoxyCodeLine{00162         \}}
+\DoxyCodeLine{00163 }
+\DoxyCodeLine{00164 }
+\DoxyCodeLine{00165 }
+\DoxyCodeLine{00166     \}}
+
+\end{DoxyCode}
 
 
 \doxysubsection{Member Data Documentation}
@@ -83,17 +433,79 @@ Here is the call graph for this function\+:
 \doxysubsubsection{\texorpdfstring{dropdowns}{dropdowns}}
 {\footnotesize\ttfamily TMP\+\_\+\+Dropdown \mbox{[}$\,$\mbox{]} RTSGame\+Controller.\+dropdowns}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00039}{39}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}\label{class_r_t_s_game_controller_afa544b534c5901e38d42ce8baa106b82}} 
+\index{RTSGameController@{RTSGameController}!FormationSelector@{FormationSelector}}
+\index{FormationSelector@{FormationSelector}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{FormationSelector}{FormationSelector}}
+{\footnotesize\ttfamily TMP\+\_\+\+Dropdown RTSGame\+Controller.\+Formation\+Selector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
 \mbox{\Hypertarget{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}\label{class_r_t_s_game_controller_a2464e87860059643c30a1843f5833f2f}} 
 \index{RTSGameController@{RTSGameController}!m\_AI@{m\_AI}}
 \index{m\_AI@{m\_AI}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{m\_AI}{m\_AI}}
 {\footnotesize\ttfamily bool RTSGame\+Controller.\+m\+\_\+\+AI = false}
 
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00037}{37}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}\label{class_r_t_s_game_controller_a6fa8512b7a693cb24a8e1804d4f4d070}} 
+\index{RTSGameController@{RTSGameController}!m\_formation@{m\_formation}}
+\index{m\_formation@{m\_formation}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{m\_formation}{m\_formation}}
+{\footnotesize\ttfamily \mbox{\hyperlink{_r_t_s_game_controller_8cs_a038e169d4381c2a9b5d36e179ecc9c72}{Formations}} RTSGame\+Controller.\+m\+\_\+formation = Formations.\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}\label{class_r_t_s_game_controller_a9fa5383576b2d94be23e2e4f0868585a}} 
+\index{RTSGameController@{RTSGameController}!m\_offset@{m\_offset}}
+\index{m\_offset@{m\_offset}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{m\_offset}{m\_offset}}
+{\footnotesize\ttfamily float RTSGame\+Controller.\+m\+\_\+offset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00035}{35}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}\label{class_r_t_s_game_controller_a2c8ce6711e514f43185edeec99bbf106}} 
+\index{RTSGameController@{RTSGameController}!m\_selectedAreaTransform@{m\_selectedAreaTransform}}
+\index{m\_selectedAreaTransform@{m\_selectedAreaTransform}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{m\_selectedAreaTransform}{m\_selectedAreaTransform}}
+{\footnotesize\ttfamily Transform RTSGame\+Controller.\+m\+\_\+selected\+Area\+Transform\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00023}{23}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
 \mbox{\Hypertarget{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}\label{class_r_t_s_game_controller_a01aa61493d158fbeca3e265b5c05685e}} 
 \index{RTSGameController@{RTSGameController}!m\_selectedUnits@{m\_selectedUnits}}
 \index{m\_selectedUnits@{m\_selectedUnits}!RTSGameController@{RTSGameController}}
 \doxysubsubsection{\texorpdfstring{m\_selectedUnits}{m\_selectedUnits}}
 {\footnotesize\ttfamily List$<$\mbox{\hyperlink{class_base_unit}{Base\+Unit}}$>$ RTSGame\+Controller.\+m\+\_\+selected\+Units}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_r_t_s_game_controller_a49a49f9d13e350006abfa2253cbae715}\label{class_r_t_s_game_controller_a49a49f9d13e350006abfa2253cbae715}} 
+\index{RTSGameController@{RTSGameController}!m\_startPosition@{m\_startPosition}}
+\index{m\_startPosition@{m\_startPosition}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{m\_startPosition}{m\_startPosition}}
+{\footnotesize\ttfamily Vector3 RTSGame\+Controller.\+m\+\_\+start\+Position\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00024}{24}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
 
 \mbox{\Hypertarget{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}\label{class_r_t_s_game_controller_a8e00b8e77adbe804cebaed4dab418836}} 
 \index{RTSGameController@{RTSGameController}!m\_team@{m\_team}}
@@ -103,6 +515,20 @@ Here is the call graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00029}{29}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+\mbox{\Hypertarget{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}\label{class_r_t_s_game_controller_a211db7636fbf9402da35ed6adae927b1}} 
+\index{RTSGameController@{RTSGameController}!TeamSelector@{TeamSelector}}
+\index{TeamSelector@{TeamSelector}!RTSGameController@{RTSGameController}}
+\doxysubsubsection{\texorpdfstring{TeamSelector}{TeamSelector}}
+{\footnotesize\ttfamily TMP\+\_\+\+Dropdown RTSGame\+Controller.\+Team\+Selector\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_r_t_s_game_controller_8cs_source_l00048}{48}} of file \mbox{\hyperlink{_r_t_s_game_controller_8cs_source}{RTSGame\+Controller.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{_r_t_s_game_controller_8cs}{RTSGame\+Controller.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\mbox{\hyperlink{_r_t_s_game_controller_8cs}{RTSGame\+Controller.\+cs}}\end{DoxyCompactItemize}

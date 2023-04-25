@@ -1,0 +1,12 @@
+<map id="ControlPointController.Update" name="ControlPointController.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,171,199,197"/>
+<area shape="rect" id="node2" href="$class_control_point_controller.html#a5af986726a8b9cbf06defc475b7eb9d4" title=" " alt="" coords="253,13,451,38"/>
+<area shape="rect" id="node3" href="$class_control_point_controller.html#aea2419d1590ba1bb6f09632edb4df14d" title=" " alt="" coords="506,145,695,185"/>
+<area shape="rect" id="node5" href="$class_control_point_controller.html#aeb42846316735068ef9819eda8ce3ec4" title=" " alt="" coords="247,114,457,139"/>
+<area shape="rect" id="node6" href="$class_control_point_trigger.html#a41f331530d6531c280fc3101e90fb391" title=" " alt="" coords="262,164,442,204"/>
+<area shape="rect" id="node7" href="$class_control_point_controller.html#a7ec711e0769f85aa65b3986bf6dd3b2e" title=" " alt="" coords="258,228,446,268"/>
+<area shape="rect" id="node8" href="$class_control_point_controller.html#a8f0d654cdba56d6f88b19542d48890f9" title="Two types of reverting captures A: Enemy unit is taking the point and then leaves/dies before it&#39;s fu..." alt="" coords="249,293,455,318"/>
+<area shape="rect" id="node10" href="$class_control_point_controller.html#a4e0e2f0c0904d1dbe4132fd85cb69c61" title=" " alt="" coords="267,343,437,383"/>
+<area shape="rect" id="node4" href="$class_game_events_manager.html#af80523eb9a911e4222f023d5afa0813a" title=" " alt="" coords="505,5,696,45"/>
+<area shape="rect" id="node9" href="$class_game_events_manager.html#a8afa09993b2e227921b92f2eb6988c07" title=" " alt="" coords="505,285,696,325"/>
+</map>

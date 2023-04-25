@@ -92,24 +92,37 @@ $(document).ready(function(){initNavTree('class_neural_network.html',''); initRe
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_neural_network-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">NeuralNetwork Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Taken from kipgparker's github repo: <a href="https://github.com/kipgparker/BackPropNetwork">https://github.com/kipgparker/BackPropNetwork</a>   
+ <a href="class_neural_network.html#details">More...</a></p>
 <div class="dynheader">
 Inheritance diagram for NeuralNetwork:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network__inherit__graph.png" border="0" usemap="#a_neural_network_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_neural_network_inherit__map" id="a_neural_network_inherit__map">
+<area shape="rect" title="Taken from kipgparker&#39;s github repo: https://github.com/kipgparker/BackPropNetwork" alt="" coords="5,93,135,456"/>
+<area shape="rect" title=" " alt="" coords="13,5,127,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for NeuralNetwork:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network__coll__graph.png" border="0" usemap="#a_neural_network_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_neural_network_coll__map" id="a_neural_network_coll__map">
+<area shape="rect" title="Taken from kipgparker&#39;s github repo: https://github.com/kipgparker/BackPropNetwork" alt="" coords="5,93,135,456"/>
+<area shape="rect" title=" " alt="" coords="13,5,127,45"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad19d71c4e2abbab47d7c5e6ba48009ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ad19d71c4e2abbab47d7c5e6ba48009ec">NeuralNetwork</a> (int[] layers, string[] layerActivations)</td></tr>
+<tr class="memitem:ad19d71c4e2abbab47d7c5e6ba48009ec"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ad19d71c4e2abbab47d7c5e6ba48009ec">NeuralNetwork</a> (int[] <a class="el" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>, string[] layerActivations)</td></tr>
 <tr class="separator:ad19d71c4e2abbab47d7c5e6ba48009ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6af00bb964b378d647ade509c0d09fc4"><td class="memItemLeft" align="right" valign="top">float[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4">FeedForward</a> (float[] inputs)</td></tr>
 <tr class="separator:a6af00bb964b378d647ade509c0d09fc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -154,8 +167,34 @@ Public Attributes</h2></td></tr>
 <tr class="separator:aed5371f4eca4f4fd5b38d69e33d29bcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad540552e0c6605dcdb5b1f3b38580aa1"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#ad540552e0c6605dcdb5b1f3b38580aa1">cost</a> = 0</td></tr>
 <tr class="separator:ad540552e0c6605dcdb5b1f3b38580aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a69ec02e17369b50881e720b900f7d68d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a69ec02e17369b50881e720b900f7d68d">InitNeurons</a> ()</td></tr>
+<tr class="separator:a69ec02e17369b50881e720b900f7d68d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af180eacfb0f911b1e6b091f7e5744690"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#af180eacfb0f911b1e6b091f7e5744690">InitBiases</a> ()</td></tr>
+<tr class="separator:af180eacfb0f911b1e6b091f7e5744690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9c3989a617754ce777e4440a42ba1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a7a9c3989a617754ce777e4440a42ba1d">InitWeights</a> ()</td></tr>
+<tr class="separator:a7a9c3989a617754ce777e4440a42ba1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a5675ef00bb514a731ddad698c342cdaa"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a></td></tr>
+<tr class="separator:a5675ef00bb514a731ddad698c342cdaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13905970284bb4d0c6623cf477c12da9"><td class="memItemLeft" align="right" valign="top">float[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a></td></tr>
+<tr class="separator:a13905970284bb4d0c6623cf477c12da9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a774edc22743a6d8718671cdee9f7ddfb"><td class="memItemLeft" align="right" valign="top">float[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a></td></tr>
+<tr class="separator:a774edc22743a6d8718671cdee9f7ddfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae75802f501ae2682cfd5ff7ca127c27"><td class="memItemLeft" align="right" valign="top">float[][][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a></td></tr>
+<tr class="separator:aae75802f501ae2682cfd5ff7ca127c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee737b111f3364ed41efd1383a28d2a8"><td class="memItemLeft" align="right" valign="top">int[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a></td></tr>
+<tr class="separator:aee737b111f3364ed41efd1383a28d2a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p >Taken from kipgparker's github repo: <a href="https://github.com/kipgparker/BackPropNetwork">https://github.com/kipgparker/BackPropNetwork</a>  </p>
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00010">10</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="ad19d71c4e2abbab47d7c5e6ba48009ec" name="ad19d71c4e2abbab47d7c5e6ba48009ec"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad19d71c4e2abbab47d7c5e6ba48009ec">&#9670;&#160;</a></span>NeuralNetwork()</h2>
 
@@ -189,6 +228,57 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00026">26</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   27</span>    {</div>
+<div class="line"><span class="lineno">   28</span>        this.layers = <span class="keyword">new</span> <span class="keywordtype">int</span>[<a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length];</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length; i++)</div>
+<div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>            this.<a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i] = <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i];</div>
+<div class="line"><span class="lineno">   32</span>        }</div>
+<div class="line"><span class="lineno">   33</span>        <a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a> = <span class="keyword">new</span> <span class="keywordtype">int</span>[layers.Length - 1];</div>
+<div class="line"><span class="lineno">   34</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; layers.Length - 1; i++)</div>
+<div class="line"><span class="lineno">   35</span>        {</div>
+<div class="line"><span class="lineno">   36</span>            <span class="keywordtype">string</span> action = layerActivations[i];</div>
+<div class="line"><span class="lineno">   37</span>            <span class="keywordflow">switch</span> (action)</div>
+<div class="line"><span class="lineno">   38</span>            {</div>
+<div class="line"><span class="lineno">   39</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;sigmoid&quot;</span>:</div>
+<div class="line"><span class="lineno">   40</span>                    <a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[i] = 0;</div>
+<div class="line"><span class="lineno">   41</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   42</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;tanh&quot;</span>:</div>
+<div class="line"><span class="lineno">   43</span>                    <a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[i] = 1;</div>
+<div class="line"><span class="lineno">   44</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   45</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;relu&quot;</span>:</div>
+<div class="line"><span class="lineno">   46</span>                    <a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[i] = 2;</div>
+<div class="line"><span class="lineno">   47</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   48</span>                <span class="keywordflow">case</span> <span class="stringliteral">&quot;leakyrelu&quot;</span>:</div>
+<div class="line"><span class="lineno">   49</span>                    <a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[i] = 3;</div>
+<div class="line"><span class="lineno">   50</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   51</span>                <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">   52</span>                    <a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[i] = 2;</div>
+<div class="line"><span class="lineno">   53</span>                    <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">   54</span>            }</div>
+<div class="line"><span class="lineno">   55</span>        }</div>
+<div class="line"><span class="lineno">   56</span>        <a class="code hl_function" href="class_neural_network.html#a69ec02e17369b50881e720b900f7d68d">InitNeurons</a>();</div>
+<div class="line"><span class="lineno">   57</span>        <a class="code hl_function" href="class_neural_network.html#af180eacfb0f911b1e6b091f7e5744690">InitBiases</a>();</div>
+<div class="line"><span class="lineno">   58</span>        <a class="code hl_function" href="class_neural_network.html#a7a9c3989a617754ce777e4440a42ba1d">InitWeights</a>();</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="ttc" id="aclass_neural_network_html_a5675ef00bb514a731ddad698c342cdaa"><div class="ttname"><a href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">NeuralNetwork.layers</a></div><div class="ttdeci">int[] layers</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00013">NeuralNetwork.cs:13</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_a69ec02e17369b50881e720b900f7d68d"><div class="ttname"><a href="class_neural_network.html#a69ec02e17369b50881e720b900f7d68d">NeuralNetwork.InitNeurons</a></div><div class="ttdeci">void InitNeurons()</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00062">NeuralNetwork.cs:62</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_a7a9c3989a617754ce777e4440a42ba1d"><div class="ttname"><a href="class_neural_network.html#a7a9c3989a617754ce777e4440a42ba1d">NeuralNetwork.InitWeights</a></div><div class="ttdeci">void InitWeights()</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00089">NeuralNetwork.cs:89</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_aee737b111f3364ed41efd1383a28d2a8"><div class="ttname"><a href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">NeuralNetwork.activations</a></div><div class="ttdeci">int[] activations</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00017">NeuralNetwork.cs:17</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_af180eacfb0f911b1e6b091f7e5744690"><div class="ttname"><a href="class_neural_network.html#af180eacfb0f911b1e6b091f7e5744690">NeuralNetwork.InitBiases</a></div><div class="ttdeci">void InitBiases()</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00072">NeuralNetwork.cs:72</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec_cgraph.png" border="0" usemap="#aclass_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec_cgraph" alt=""/></div>
+<map name="aclass_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec_cgraph" id="aclass_neural_network_ad19d71c4e2abbab47d7c5e6ba48009ec_cgraph">
+<area shape="rect" title=" " alt="" coords="5,55,200,80"/>
+<area shape="rect" href="class_neural_network.html#af180eacfb0f911b1e6b091f7e5744690" title=" " alt="" coords="252,5,419,31"/>
+<area shape="rect" href="class_neural_network.html#a69ec02e17369b50881e720b900f7d68d" title=" " alt="" coords="248,55,423,80"/>
+<area shape="rect" href="class_neural_network.html#a7a9c3989a617754ce777e4440a42ba1d" title=" " alt="" coords="248,104,423,129"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -226,15 +316,50 @@ Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00132">132</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>    {</div>
+<div class="line"><span class="lineno">  134</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[layer])</div>
+<div class="line"><span class="lineno">  135</span>        {</div>
+<div class="line"><span class="lineno">  136</span>            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  137</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#aed31a3307f2f89363ded205f77c60225">sigmoid</a>(value);</div>
+<div class="line"><span class="lineno">  138</span>            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  139</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989">tanh</a>(value);</div>
+<div class="line"><span class="lineno">  140</span>            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  141</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4">relu</a>(value);</div>
+<div class="line"><span class="lineno">  142</span>            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  143</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#abe984c4f9cfa5139ffb941ab2b9bfa1d">leakyrelu</a>(value);</div>
+<div class="line"><span class="lineno">  144</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  145</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4">relu</a>(value);</div>
+<div class="line"><span class="lineno">  146</span>        }</div>
+<div class="line"><span class="lineno">  147</span>    }</div>
+<div class="ttc" id="aclass_neural_network_html_a9516c0b3aedb1322e7a09b3786e21989"><div class="ttname"><a href="class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989">NeuralNetwork.tanh</a></div><div class="ttdeci">float tanh(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00170">NeuralNetwork.cs:170</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_abe984c4f9cfa5139ffb941ab2b9bfa1d"><div class="ttname"><a href="class_neural_network.html#abe984c4f9cfa5139ffb941ab2b9bfa1d">NeuralNetwork.leakyrelu</a></div><div class="ttdeci">float leakyrelu(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00178">NeuralNetwork.cs:178</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_ace4f18b78ec173d01ce5ee69b53f39d4"><div class="ttname"><a href="class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4">NeuralNetwork.relu</a></div><div class="ttdeci">float relu(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00174">NeuralNetwork.cs:174</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_aed31a3307f2f89363ded205f77c60225"><div class="ttname"><a href="class_neural_network.html#aed31a3307f2f89363ded205f77c60225">NeuralNetwork.sigmoid</a></div><div class="ttdeci">float sigmoid(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00165">NeuralNetwork.cs:165</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_ab75f7019c882965d1a3361a10936a039_cgraph.png" border="0" usemap="#aclass_neural_network_ab75f7019c882965d1a3361a10936a039_cgraph" alt=""/></div>
+<map name="aclass_neural_network_ab75f7019c882965d1a3361a10936a039_cgraph" id="aclass_neural_network_ab75f7019c882965d1a3361a10936a039_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,160,105"/>
+<area shape="rect" href="class_neural_network.html#abe984c4f9cfa5139ffb941ab2b9bfa1d" title=" " alt="" coords="208,5,371,31"/>
+<area shape="rect" href="class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4" title=" " alt="" coords="224,55,355,80"/>
+<area shape="rect" href="class_neural_network.html#aed31a3307f2f89363ded205f77c60225" title=" " alt="" coords="212,104,367,129"/>
+<area shape="rect" href="class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989" title=" " alt="" coords="222,153,357,179"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_ab75f7019c882965d1a3361a10936a039_icgraph.png" border="0" usemap="#aclass_neural_network_ab75f7019c882965d1a3361a10936a039_icgraph" alt=""/></div>
+<map name="aclass_neural_network_ab75f7019c882965d1a3361a10936a039_icgraph" id="aclass_neural_network_ab75f7019c882965d1a3361a10936a039_icgraph">
+<area shape="rect" title=" " alt="" coords="705,35,860,60"/>
+<area shape="rect" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="472,35,657,60"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="225,5,424,31"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="228,55,421,95"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,63,177,88"/>
+</map>
 </div>
 
 </div>
@@ -272,15 +397,47 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00148">148</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>    {</div>
+<div class="line"><span class="lineno">  150</span>        <span class="keywordflow">switch</span> (<a class="code hl_variable" href="class_neural_network.html#aee737b111f3364ed41efd1383a28d2a8">activations</a>[layer])</div>
+<div class="line"><span class="lineno">  151</span>        {</div>
+<div class="line"><span class="lineno">  152</span>            <span class="keywordflow">case</span> 0:</div>
+<div class="line"><span class="lineno">  153</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#ab53de5941d235bca92ef79b5063290db">sigmoidDer</a>(value);</div>
+<div class="line"><span class="lineno">  154</span>            <span class="keywordflow">case</span> 1:</div>
+<div class="line"><span class="lineno">  155</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#a325b03a712bb2f2d6ce845b9bbc06b06">tanhDer</a>(value);</div>
+<div class="line"><span class="lineno">  156</span>            <span class="keywordflow">case</span> 2:</div>
+<div class="line"><span class="lineno">  157</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#aaae5996212041a89a97bbeed3732398a">reluDer</a>(value);</div>
+<div class="line"><span class="lineno">  158</span>            <span class="keywordflow">case</span> 3:</div>
+<div class="line"><span class="lineno">  159</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#a16703e78a01afa1ffaa78848e134899f">leakyreluDer</a>(value);</div>
+<div class="line"><span class="lineno">  160</span>            <span class="keywordflow">default</span>:</div>
+<div class="line"><span class="lineno">  161</span>                <span class="keywordflow">return</span> <a class="code hl_function" href="class_neural_network.html#aaae5996212041a89a97bbeed3732398a">reluDer</a>(value);</div>
+<div class="line"><span class="lineno">  162</span>        }</div>
+<div class="line"><span class="lineno">  163</span>    }</div>
+<div class="ttc" id="aclass_neural_network_html_a16703e78a01afa1ffaa78848e134899f"><div class="ttname"><a href="class_neural_network.html#a16703e78a01afa1ffaa78848e134899f">NeuralNetwork.leakyreluDer</a></div><div class="ttdeci">float leakyreluDer(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00194">NeuralNetwork.cs:194</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_a325b03a712bb2f2d6ce845b9bbc06b06"><div class="ttname"><a href="class_neural_network.html#a325b03a712bb2f2d6ce845b9bbc06b06">NeuralNetwork.tanhDer</a></div><div class="ttdeci">float tanhDer(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00186">NeuralNetwork.cs:186</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_aaae5996212041a89a97bbeed3732398a"><div class="ttname"><a href="class_neural_network.html#aaae5996212041a89a97bbeed3732398a">NeuralNetwork.reluDer</a></div><div class="ttdeci">float reluDer(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00190">NeuralNetwork.cs:190</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_ab53de5941d235bca92ef79b5063290db"><div class="ttname"><a href="class_neural_network.html#ab53de5941d235bca92ef79b5063290db">NeuralNetwork.sigmoidDer</a></div><div class="ttdeci">float sigmoidDer(float x)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00182">NeuralNetwork.cs:182</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_aaad3fd52ff6697bc570352b116192c61_cgraph.png" border="0" usemap="#aclass_neural_network_aaad3fd52ff6697bc570352b116192c61_cgraph" alt=""/></div>
+<map name="aclass_neural_network_aaad3fd52ff6697bc570352b116192c61_cgraph" id="aclass_neural_network_aaad3fd52ff6697bc570352b116192c61_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,180,105"/>
+<area shape="rect" href="class_neural_network.html#a16703e78a01afa1ffaa78848e134899f" title=" " alt="" coords="228,5,411,31"/>
+<area shape="rect" href="class_neural_network.html#aaae5996212041a89a97bbeed3732398a" title=" " alt="" coords="244,55,395,80"/>
+<area shape="rect" href="class_neural_network.html#ab53de5941d235bca92ef79b5063290db" title=" " alt="" coords="232,104,407,129"/>
+<area shape="rect" href="class_neural_network.html#a325b03a712bb2f2d6ce845b9bbc06b06" title=" " alt="" coords="242,153,397,179"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_aaad3fd52ff6697bc570352b116192c61_icgraph.png" border="0" usemap="#aclass_neural_network_aaad3fd52ff6697bc570352b116192c61_icgraph" alt=""/></div>
+<map name="aclass_neural_network_aaad3fd52ff6697bc570352b116192c61_icgraph" id="aclass_neural_network_aaad3fd52ff6697bc570352b116192c61_icgraph">
+<area shape="rect" title=" " alt="" coords="252,5,427,31"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="5,5,204,31"/>
+</map>
 </div>
 
 </div>
@@ -318,10 +475,84 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00199">199</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>    {</div>
+<div class="line"><span class="lineno">  201</span>        <span class="keywordtype">float</span>[] output = <a class="code hl_function" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4">FeedForward</a>(inputs);<span class="comment">//runs feed forward to ensure neurons are populated correctly</span></div>
+<div class="line"><span class="lineno">  202</span> </div>
+<div class="line"><span class="lineno">  203</span>        <a class="code hl_variable" href="class_neural_network.html#ad540552e0c6605dcdb5b1f3b38580aa1">cost</a> = 0;</div>
+<div class="line"><span class="lineno">  204</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; output.Length; i++) <a class="code hl_variable" href="class_neural_network.html#ad540552e0c6605dcdb5b1f3b38580aa1">cost</a> += (<span class="keywordtype">float</span>)Math.Pow(output[i] - expected[i], 2);<span class="comment">//calculated cost of network</span></div>
+<div class="line"><span class="lineno">  205</span>        <a class="code hl_variable" href="class_neural_network.html#ad540552e0c6605dcdb5b1f3b38580aa1">cost</a> = <a class="code hl_variable" href="class_neural_network.html#ad540552e0c6605dcdb5b1f3b38580aa1">cost</a> / 2;<span class="comment">//this value is not used in calculions, rather used to identify the performance of the network</span></div>
+<div class="line"><span class="lineno">  206</span> </div>
+<div class="line"><span class="lineno">  207</span>        <span class="keywordtype">float</span>[][] gamma;</div>
+<div class="line"><span class="lineno">  208</span> </div>
+<div class="line"><span class="lineno">  209</span> </div>
+<div class="line"><span class="lineno">  210</span>        List&lt;float[]&gt; gammaList = <span class="keyword">new</span> List&lt;float[]&gt;();</div>
+<div class="line"><span class="lineno">  211</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  212</span>        {</div>
+<div class="line"><span class="lineno">  213</span>            gammaList.Add(<span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]]);</div>
+<div class="line"><span class="lineno">  214</span>        }</div>
+<div class="line"><span class="lineno">  215</span>        gamma = gammaList.ToArray();<span class="comment">//gamma initialization</span></div>
+<div class="line"><span class="lineno">  216</span> </div>
+<div class="line"><span class="lineno">  217</span>        <span class="keywordtype">int</span> layer = layers.Length - 2;</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; output.Length; i++) gamma[<a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length - 1][i] = (output[i] - expected[i]) * <a class="code hl_function" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61">activateDer</a>(output[i], layer);<span class="comment">//Gamma calculation</span></div>
+<div class="line"><span class="lineno">  219</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[layers.Length - 1]; i++)<span class="comment">//calculates the w&#39; and b&#39; for the last layer in the network</span></div>
+<div class="line"><span class="lineno">  220</span>        {</div>
+<div class="line"><span class="lineno">  221</span>            <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[layers.Length - 2][i] -= gamma[layers.Length - 1][i] * <a class="code hl_variable" href="class_neural_network.html#aed5371f4eca4f4fd5b38d69e33d29bcf">learningRate</a>;</div>
+<div class="line"><span class="lineno">  222</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[layers.Length - 2]; j++)</div>
+<div class="line"><span class="lineno">  223</span>            {</div>
+<div class="line"><span class="lineno">  224</span> </div>
+<div class="line"><span class="lineno">  225</span>                <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[layers.Length - 2][i][j] -= gamma[layers.Length - 1][i] * <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[layers.Length - 2][j] * <a class="code hl_variable" href="class_neural_network.html#aed5371f4eca4f4fd5b38d69e33d29bcf">learningRate</a>;<span class="comment">//*learning </span></div>
+<div class="line"><span class="lineno">  226</span>            }</div>
+<div class="line"><span class="lineno">  227</span>        }</div>
+<div class="line"><span class="lineno">  228</span> </div>
+<div class="line"><span class="lineno">  229</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length - 2; i &gt; 0; i--)<span class="comment">//runs on all hidden layers</span></div>
+<div class="line"><span class="lineno">  230</span>        {</div>
+<div class="line"><span class="lineno">  231</span>            layer = i - 1;</div>
+<div class="line"><span class="lineno">  232</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]; j++)<span class="comment">//outputs</span></div>
+<div class="line"><span class="lineno">  233</span>            {</div>
+<div class="line"><span class="lineno">  234</span>                gamma[i][j] = 0;</div>
+<div class="line"><span class="lineno">  235</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; gamma[i + 1].Length; k++)</div>
+<div class="line"><span class="lineno">  236</span>                {</div>
+<div class="line"><span class="lineno">  237</span>                    gamma[i][j] += gamma[i + 1][k] * <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][k][j];</div>
+<div class="line"><span class="lineno">  238</span>                }</div>
+<div class="line"><span class="lineno">  239</span>                gamma[i][j] *= <a class="code hl_function" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61">activateDer</a>(<a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[i][j], layer);<span class="comment">//calculate gamma</span></div>
+<div class="line"><span class="lineno">  240</span>            }</div>
+<div class="line"><span class="lineno">  241</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]; j++)<span class="comment">//itterate over outputs of layer</span></div>
+<div class="line"><span class="lineno">  242</span>            {</div>
+<div class="line"><span class="lineno">  243</span>                <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i - 1][j] -= gamma[i][j] * <a class="code hl_variable" href="class_neural_network.html#aed5371f4eca4f4fd5b38d69e33d29bcf">learningRate</a>;<span class="comment">//modify biases of network</span></div>
+<div class="line"><span class="lineno">  244</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i - 1]; k++)<span class="comment">//itterate over inputs to layer</span></div>
+<div class="line"><span class="lineno">  245</span>                {</div>
+<div class="line"><span class="lineno">  246</span>                    <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i - 1][j][k] -= gamma[i][j] * <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[i - 1][k] * <a class="code hl_variable" href="class_neural_network.html#aed5371f4eca4f4fd5b38d69e33d29bcf">learningRate</a>;<span class="comment">//modify weights of network</span></div>
+<div class="line"><span class="lineno">  247</span>                }</div>
+<div class="line"><span class="lineno">  248</span>            }</div>
+<div class="line"><span class="lineno">  249</span>        }</div>
+<div class="line"><span class="lineno">  250</span>    }</div>
+<div class="ttc" id="aclass_neural_network_html_a13905970284bb4d0c6623cf477c12da9"><div class="ttname"><a href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">NeuralNetwork.neurons</a></div><div class="ttdeci">float[][] neurons</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00014">NeuralNetwork.cs:14</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_a6af00bb964b378d647ade509c0d09fc4"><div class="ttname"><a href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4">NeuralNetwork.FeedForward</a></div><div class="ttdeci">float[] FeedForward(float[] inputs)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00110">NeuralNetwork.cs:110</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_a774edc22743a6d8718671cdee9f7ddfb"><div class="ttname"><a href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">NeuralNetwork.biases</a></div><div class="ttdeci">float[][] biases</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00015">NeuralNetwork.cs:15</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_aaad3fd52ff6697bc570352b116192c61"><div class="ttname"><a href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61">NeuralNetwork.activateDer</a></div><div class="ttdeci">float activateDer(float value, int layer)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00148">NeuralNetwork.cs:148</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_aae75802f501ae2682cfd5ff7ca127c27"><div class="ttname"><a href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">NeuralNetwork.weights</a></div><div class="ttdeci">float[][][] weights</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00016">NeuralNetwork.cs:16</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_ad540552e0c6605dcdb5b1f3b38580aa1"><div class="ttname"><a href="class_neural_network.html#ad540552e0c6605dcdb5b1f3b38580aa1">NeuralNetwork.cost</a></div><div class="ttdeci">float cost</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00024">NeuralNetwork.cs:24</a></div></div>
+<div class="ttc" id="aclass_neural_network_html_aed5371f4eca4f4fd5b38d69e33d29bcf"><div class="ttname"><a href="class_neural_network.html#aed5371f4eca4f4fd5b38d69e33d29bcf">NeuralNetwork.learningRate</a></div><div class="ttdeci">float learningRate</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00023">NeuralNetwork.cs:23</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_a0848cf60f63eb03cff313c6b48edbeae_cgraph.png" border="0" usemap="#aclass_neural_network_a0848cf60f63eb03cff313c6b48edbeae_cgraph" alt=""/></div>
+<map name="aclass_neural_network_a0848cf60f63eb03cff313c6b48edbeae_cgraph" id="aclass_neural_network_a0848cf60f63eb03cff313c6b48edbeae_cgraph">
+<area shape="rect" title=" " alt="" coords="5,153,204,179"/>
+<area shape="rect" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61" title=" " alt="" coords="257,104,432,129"/>
+<area shape="rect" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="252,177,437,203"/>
+<area shape="rect" href="class_neural_network.html#a16703e78a01afa1ffaa78848e134899f" title=" " alt="" coords="485,5,668,31"/>
+<area shape="rect" href="class_neural_network.html#aaae5996212041a89a97bbeed3732398a" title=" " alt="" coords="501,55,652,80"/>
+<area shape="rect" href="class_neural_network.html#ab53de5941d235bca92ef79b5063290db" title=" " alt="" coords="489,104,664,129"/>
+<area shape="rect" href="class_neural_network.html#a325b03a712bb2f2d6ce845b9bbc06b06" title=" " alt="" coords="499,153,654,179"/>
+<area shape="rect" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="499,203,654,228"/>
+<area shape="rect" href="class_neural_network.html#abe984c4f9cfa5139ffb941ab2b9bfa1d" title=" " alt="" coords="716,128,879,153"/>
+<area shape="rect" href="class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4" title=" " alt="" coords="732,177,863,203"/>
+<area shape="rect" href="class_neural_network.html#aed31a3307f2f89363ded205f77c60225" title=" " alt="" coords="720,227,875,252"/>
+<area shape="rect" href="class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989" title=" " alt="" coords="730,276,865,301"/>
+</map>
 </div>
 
 </div>
@@ -350,6 +581,19 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00276">276</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  277</span>    {</div>
+<div class="line"><span class="lineno">  278</span>        <span class="keywordflow">if</span> (other == <span class="keyword">null</span>) <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  279</span> </div>
+<div class="line"><span class="lineno">  280</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_neural_network.html#acade3068094daeb0d2f6e0a63a1428cd">fitness</a> &gt; other.<a class="code hl_variable" href="class_neural_network.html#acade3068094daeb0d2f6e0a63a1428cd">fitness</a>)</div>
+<div class="line"><span class="lineno">  281</span>            <span class="keywordflow">return</span> 1;</div>
+<div class="line"><span class="lineno">  282</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="class_neural_network.html#acade3068094daeb0d2f6e0a63a1428cd">fitness</a> &lt; other.<a class="code hl_variable" href="class_neural_network.html#acade3068094daeb0d2f6e0a63a1428cd">fitness</a>)</div>
+<div class="line"><span class="lineno">  283</span>            <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  284</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  285</span>            <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  286</span>    }</div>
+<div class="ttc" id="aclass_neural_network_html_acade3068094daeb0d2f6e0a63a1428cd"><div class="ttname"><a href="class_neural_network.html#acade3068094daeb0d2f6e0a63a1428cd">NeuralNetwork.fitness</a></div><div class="ttdeci">float fitness</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00020">NeuralNetwork.cs:20</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="acc343fa84553ce4a90a4be4d60358eef" name="acc343fa84553ce4a90a4be4d60358eef"></a>
@@ -376,6 +620,28 @@ Here is the call graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00288">288</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  289</span>    {</div>
+<div class="line"><span class="lineno">  290</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  291</span>        {</div>
+<div class="line"><span class="lineno">  292</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  293</span>            {</div>
+<div class="line"><span class="lineno">  294</span>                nn.<a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j] = <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j];</div>
+<div class="line"><span class="lineno">  295</span>            }</div>
+<div class="line"><span class="lineno">  296</span>        }</div>
+<div class="line"><span class="lineno">  297</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  298</span>        {</div>
+<div class="line"><span class="lineno">  299</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  300</span>            {</div>
+<div class="line"><span class="lineno">  301</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j].Length; k++)</div>
+<div class="line"><span class="lineno">  302</span>                {</div>
+<div class="line"><span class="lineno">  303</span>                    nn.<a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k] = <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k];</div>
+<div class="line"><span class="lineno">  304</span>                }</div>
+<div class="line"><span class="lineno">  305</span>            }</div>
+<div class="line"><span class="lineno">  306</span>        }</div>
+<div class="line"><span class="lineno">  307</span>        <span class="keywordflow">return</span> nn;</div>
+<div class="line"><span class="lineno">  308</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a6af00bb964b378d647ade509c0d09fc4" name="a6af00bb964b378d647ade509c0d09fc4"></a>
@@ -401,15 +667,202 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00110">110</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  111</span>    {</div>
+<div class="line"><span class="lineno">  112</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; inputs.Length; i++)</div>
+<div class="line"><span class="lineno">  113</span>        {</div>
+<div class="line"><span class="lineno">  114</span>            <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[0][i] = inputs[i];</div>
+<div class="line"><span class="lineno">  115</span>        }</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  117</span>        {</div>
+<div class="line"><span class="lineno">  118</span>            <span class="keywordtype">int</span> layer = i - 1;</div>
+<div class="line"><span class="lineno">  119</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]; j++)</div>
+<div class="line"><span class="lineno">  120</span>            {</div>
+<div class="line"><span class="lineno">  121</span>                <span class="keywordtype">float</span> value = 0f;</div>
+<div class="line"><span class="lineno">  122</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i - 1]; k++)</div>
+<div class="line"><span class="lineno">  123</span>                {</div>
+<div class="line"><span class="lineno">  124</span>                    value += <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i - 1][j][k] * <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[i - 1][k];</div>
+<div class="line"><span class="lineno">  125</span>                }</div>
+<div class="line"><span class="lineno">  126</span>                <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[i][j] = <a class="code hl_function" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039">activate</a>(value + <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i - 1][j], layer);</div>
+<div class="line"><span class="lineno">  127</span>            }</div>
+<div class="line"><span class="lineno">  128</span>        }</div>
+<div class="line"><span class="lineno">  129</span>        <span class="keywordflow">return</span> <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a>[layers.Length - 1];</div>
+<div class="line"><span class="lineno">  130</span>    }</div>
+<div class="ttc" id="aclass_neural_network_html_ab75f7019c882965d1a3361a10936a039"><div class="ttname"><a href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039">NeuralNetwork.activate</a></div><div class="ttdeci">float activate(float value, int layer)</div><div class="ttdef"><b>Definition:</b> <a href="_neural_network_8cs_source.html#l00132">NeuralNetwork.cs:132</a></div></div>
+</div><!-- fragment --><div class="dynheader">
 Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_a6af00bb964b378d647ade509c0d09fc4_cgraph.png" border="0" usemap="#aclass_neural_network_a6af00bb964b378d647ade509c0d09fc4_cgraph" alt=""/></div>
+<map name="aclass_neural_network_a6af00bb964b378d647ade509c0d09fc4_cgraph" id="aclass_neural_network_a6af00bb964b378d647ade509c0d09fc4_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,191,105"/>
+<area shape="rect" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="239,80,393,105"/>
+<area shape="rect" href="class_neural_network.html#abe984c4f9cfa5139ffb941ab2b9bfa1d" title=" " alt="" coords="441,5,604,31"/>
+<area shape="rect" href="class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4" title=" " alt="" coords="457,55,588,80"/>
+<area shape="rect" href="class_neural_network.html#aed31a3307f2f89363ded205f77c60225" title=" " alt="" coords="445,104,600,129"/>
+<area shape="rect" href="class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989" title=" " alt="" coords="455,153,590,179"/>
+</map>
 </div>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_a6af00bb964b378d647ade509c0d09fc4_icgraph.png" border="0" usemap="#aclass_neural_network_a6af00bb964b378d647ade509c0d09fc4_icgraph" alt=""/></div>
+<map name="aclass_neural_network_a6af00bb964b378d647ade509c0d09fc4_icgraph" id="aclass_neural_network_a6af00bb964b378d647ade509c0d09fc4_icgraph">
+<area shape="rect" title=" " alt="" coords="472,35,657,60"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="225,5,424,31"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="228,55,421,95"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,63,177,88"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af180eacfb0f911b1e6b091f7e5744690" name="af180eacfb0f911b1e6b091f7e5744690"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af180eacfb0f911b1e6b091f7e5744690">&#9670;&#160;</a></span>InitBiases()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuralNetwork.InitBiases </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00072">72</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span> </div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>        List&lt;float[]&gt; biasList = <span class="keyword">new</span> List&lt;float[]&gt;();</div>
+<div class="line"><span class="lineno">   77</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length; i++)</div>
+<div class="line"><span class="lineno">   78</span>        {</div>
+<div class="line"><span class="lineno">   79</span>            <span class="keywordtype">float</span>[] bias = <span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]];</div>
+<div class="line"><span class="lineno">   80</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]; j++)</div>
+<div class="line"><span class="lineno">   81</span>            {</div>
+<div class="line"><span class="lineno">   82</span>                bias[j] = UnityEngine.Random.Range(-0.5f, 0.5f);</div>
+<div class="line"><span class="lineno">   83</span>            }</div>
+<div class="line"><span class="lineno">   84</span>            biasList.Add(bias);</div>
+<div class="line"><span class="lineno">   85</span>        }</div>
+<div class="line"><span class="lineno">   86</span>        <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a> = biasList.ToArray();</div>
+<div class="line"><span class="lineno">   87</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_network_af180eacfb0f911b1e6b091f7e5744690_icgraph.png" border="0" usemap="#aclass_neural_network_af180eacfb0f911b1e6b091f7e5744690_icgraph" alt=""/></div>
+<map name="aclass_neural_network_af180eacfb0f911b1e6b091f7e5744690_icgraph" id="aclass_neural_network_af180eacfb0f911b1e6b091f7e5744690_icgraph">
+<area shape="rect" title=" " alt="" coords="248,5,415,31"/>
+<area shape="rect" href="class_neural_network.html#ad19d71c4e2abbab47d7c5e6ba48009ec" title=" " alt="" coords="5,5,200,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a69ec02e17369b50881e720b900f7d68d" name="a69ec02e17369b50881e720b900f7d68d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69ec02e17369b50881e720b900f7d68d">&#9670;&#160;</a></span>InitNeurons()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuralNetwork.InitNeurons </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00062">62</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>    {</div>
+<div class="line"><span class="lineno">   64</span>        List&lt;float[]&gt; neuronsList = <span class="keyword">new</span> List&lt;float[]&gt;();</div>
+<div class="line"><span class="lineno">   65</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length; i++)</div>
+<div class="line"><span class="lineno">   66</span>        {</div>
+<div class="line"><span class="lineno">   67</span>            neuronsList.Add(<span class="keyword">new</span> <span class="keywordtype">float</span>[<a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]]);</div>
+<div class="line"><span class="lineno">   68</span>        }</div>
+<div class="line"><span class="lineno">   69</span>        <a class="code hl_variable" href="class_neural_network.html#a13905970284bb4d0c6623cf477c12da9">neurons</a> = neuronsList.ToArray();</div>
+<div class="line"><span class="lineno">   70</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_network_a69ec02e17369b50881e720b900f7d68d_icgraph.png" border="0" usemap="#aclass_neural_network_a69ec02e17369b50881e720b900f7d68d_icgraph" alt=""/></div>
+<map name="aclass_neural_network_a69ec02e17369b50881e720b900f7d68d_icgraph" id="aclass_neural_network_a69ec02e17369b50881e720b900f7d68d_icgraph">
+<area shape="rect" title=" " alt="" coords="248,5,423,31"/>
+<area shape="rect" href="class_neural_network.html#ad19d71c4e2abbab47d7c5e6ba48009ec" title=" " alt="" coords="5,5,200,31"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7a9c3989a617754ce777e4440a42ba1d" name="a7a9c3989a617754ce777e4440a42ba1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9c3989a617754ce777e4440a42ba1d">&#9670;&#160;</a></span>InitWeights()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void NeuralNetwork.InitWeights </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00089">89</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   90</span>    {</div>
+<div class="line"><span class="lineno">   91</span>        List&lt;float[][]&gt; weightsList = <span class="keyword">new</span> List&lt;float[][]&gt;();</div>
+<div class="line"><span class="lineno">   92</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>.Length; i++)</div>
+<div class="line"><span class="lineno">   93</span>        {</div>
+<div class="line"><span class="lineno">   94</span>            List&lt;float[]&gt; layerWeightsList = <span class="keyword">new</span> List&lt;float[]&gt;();</div>
+<div class="line"><span class="lineno">   95</span>            <span class="keywordtype">int</span> neuronsInPreviousLayer = <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i - 1];</div>
+<div class="line"><span class="lineno">   96</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a5675ef00bb514a731ddad698c342cdaa">layers</a>[i]; j++)</div>
+<div class="line"><span class="lineno">   97</span>            {</div>
+<div class="line"><span class="lineno">   98</span>                <span class="keywordtype">float</span>[] neuronWeights = <span class="keyword">new</span> <span class="keywordtype">float</span>[neuronsInPreviousLayer];</div>
+<div class="line"><span class="lineno">   99</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; neuronsInPreviousLayer; k++)</div>
+<div class="line"><span class="lineno">  100</span>                {</div>
+<div class="line"><span class="lineno">  101</span>                    neuronWeights[k] = UnityEngine.Random.Range(-0.5f, 0.5f);</div>
+<div class="line"><span class="lineno">  102</span>                }</div>
+<div class="line"><span class="lineno">  103</span>                layerWeightsList.Add(neuronWeights);</div>
+<div class="line"><span class="lineno">  104</span>            }</div>
+<div class="line"><span class="lineno">  105</span>            weightsList.Add(layerWeightsList.ToArray());</div>
+<div class="line"><span class="lineno">  106</span>        }</div>
+<div class="line"><span class="lineno">  107</span>        <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a> = weightsList.ToArray();</div>
+<div class="line"><span class="lineno">  108</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_neural_network_a7a9c3989a617754ce777e4440a42ba1d_icgraph.png" border="0" usemap="#aclass_neural_network_a7a9c3989a617754ce777e4440a42ba1d_icgraph" alt=""/></div>
+<map name="aclass_neural_network_a7a9c3989a617754ce777e4440a42ba1d_icgraph" id="aclass_neural_network_a7a9c3989a617754ce777e4440a42ba1d_icgraph">
+<area shape="rect" title=" " alt="" coords="248,5,423,31"/>
+<area shape="rect" href="class_neural_network.html#ad19d71c4e2abbab47d7c5e6ba48009ec" title=" " alt="" coords="5,5,200,31"/>
+</map>
 </div>
 
 </div>
@@ -437,10 +890,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00178">178</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  179</span>    {</div>
+<div class="line"><span class="lineno">  180</span>        <span class="keywordflow">return</span> (0 &gt;= x) ? 0.01f * x : x;</div>
+<div class="line"><span class="lineno">  181</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d_icgraph.png" border="0" usemap="#aclass_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d_icgraph" alt=""/></div>
+<map name="aclass_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d_icgraph" id="aclass_neural_network_abe984c4f9cfa5139ffb941ab2b9bfa1d_icgraph">
+<area shape="rect" title=" " alt="" coords="908,35,1071,60"/>
+<area shape="rect" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="705,35,860,60"/>
+<area shape="rect" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="472,35,657,60"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="225,5,424,31"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="228,55,421,95"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,63,177,88"/>
+</map>
 </div>
 
 </div>
@@ -468,10 +934,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00194">194</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  195</span>    {</div>
+<div class="line"><span class="lineno">  196</span>        <span class="keywordflow">return</span> (0 &gt;= x) ? 0.01f : 1;</div>
+<div class="line"><span class="lineno">  197</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_a16703e78a01afa1ffaa78848e134899f_icgraph.png" border="0" usemap="#aclass_neural_network_a16703e78a01afa1ffaa78848e134899f_icgraph" alt=""/></div>
+<map name="aclass_neural_network_a16703e78a01afa1ffaa78848e134899f_icgraph" id="aclass_neural_network_a16703e78a01afa1ffaa78848e134899f_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,657,31"/>
+<area shape="rect" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61" title=" " alt="" coords="252,5,427,31"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="5,5,204,31"/>
+</map>
 </div>
 
 </div>
@@ -500,6 +976,42 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00311">311</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  312</span>    {</div>
+<div class="line"><span class="lineno">  313</span>        TextReader tr = <span class="keyword">new</span> StreamReader(path);</div>
+<div class="line"><span class="lineno">  314</span>        <span class="keywordtype">int</span> NumberOfLines = (int)<span class="keyword">new</span> FileInfo(path).Length;</div>
+<div class="line"><span class="lineno">  315</span>        <span class="keywordtype">string</span>[] ListLines = <span class="keyword">new</span> <span class="keywordtype">string</span>[NumberOfLines];</div>
+<div class="line"><span class="lineno">  316</span>        <span class="keywordtype">int</span> index = 1;</div>
+<div class="line"><span class="lineno">  317</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 1; i &lt; NumberOfLines; i++)</div>
+<div class="line"><span class="lineno">  318</span>        {</div>
+<div class="line"><span class="lineno">  319</span>            ListLines[i] = tr.ReadLine();</div>
+<div class="line"><span class="lineno">  320</span>        }</div>
+<div class="line"><span class="lineno">  321</span>        tr.Close();</div>
+<div class="line"><span class="lineno">  322</span>        <span class="keywordflow">if</span> (<span class="keyword">new</span> FileInfo(path).Length &gt; 0)</div>
+<div class="line"><span class="lineno">  323</span>        {</div>
+<div class="line"><span class="lineno">  324</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  325</span>            {</div>
+<div class="line"><span class="lineno">  326</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  327</span>                {</div>
+<div class="line"><span class="lineno">  328</span>                    <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j] = <span class="keywordtype">float</span>.Parse(ListLines[index]);</div>
+<div class="line"><span class="lineno">  329</span>                    index++;</div>
+<div class="line"><span class="lineno">  330</span>                }</div>
+<div class="line"><span class="lineno">  331</span>            }</div>
+<div class="line"><span class="lineno">  332</span> </div>
+<div class="line"><span class="lineno">  333</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  334</span>            {</div>
+<div class="line"><span class="lineno">  335</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  336</span>                {</div>
+<div class="line"><span class="lineno">  337</span>                    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j].Length; k++)</div>
+<div class="line"><span class="lineno">  338</span>                    {</div>
+<div class="line"><span class="lineno">  339</span>                        <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k] = <span class="keywordtype">float</span>.Parse(ListLines[index]); ;</div>
+<div class="line"><span class="lineno">  340</span>                        index++;</div>
+<div class="line"><span class="lineno">  341</span>                    }</div>
+<div class="line"><span class="lineno">  342</span>                }</div>
+<div class="line"><span class="lineno">  343</span>            }</div>
+<div class="line"><span class="lineno">  344</span>        }</div>
+<div class="line"><span class="lineno">  345</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a3b8b31c453188bfbfa70de7fc006c10a" name="a3b8b31c453188bfbfa70de7fc006c10a"></a>
@@ -536,6 +1048,28 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00254">254</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  255</span>    {</div>
+<div class="line"><span class="lineno">  256</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  257</span>        {</div>
+<div class="line"><span class="lineno">  258</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  259</span>            {</div>
+<div class="line"><span class="lineno">  260</span>                <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j] = (UnityEngine.Random.Range(0f, high) &lt;= 2) ? <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j] += UnityEngine.Random.Range(-val, val) : <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j];</div>
+<div class="line"><span class="lineno">  261</span>            }</div>
+<div class="line"><span class="lineno">  262</span>        }</div>
+<div class="line"><span class="lineno">  263</span> </div>
+<div class="line"><span class="lineno">  264</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  265</span>        {</div>
+<div class="line"><span class="lineno">  266</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  267</span>            {</div>
+<div class="line"><span class="lineno">  268</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j].Length; k++)</div>
+<div class="line"><span class="lineno">  269</span>                {</div>
+<div class="line"><span class="lineno">  270</span>                    <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k] = (UnityEngine.Random.Range(0f, high) &lt;= 2) ? <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k] += UnityEngine.Random.Range(-val, val) : <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k];</div>
+<div class="line"><span class="lineno">  271</span>                }</div>
+<div class="line"><span class="lineno">  272</span>            }</div>
+<div class="line"><span class="lineno">  273</span>        }</div>
+<div class="line"><span class="lineno">  274</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ace4f18b78ec173d01ce5ee69b53f39d4" name="ace4f18b78ec173d01ce5ee69b53f39d4"></a>
@@ -561,10 +1095,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00174">174</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  175</span>    {</div>
+<div class="line"><span class="lineno">  176</span>        <span class="keywordflow">return</span> (0 &gt;= x) ? 0 : x;</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4_icgraph.png" border="0" usemap="#aclass_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4_icgraph" alt=""/></div>
+<map name="aclass_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4_icgraph" id="aclass_neural_network_ace4f18b78ec173d01ce5ee69b53f39d4_icgraph">
+<area shape="rect" title=" " alt="" coords="908,35,1039,60"/>
+<area shape="rect" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="705,35,860,60"/>
+<area shape="rect" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="472,35,657,60"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="225,5,424,31"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="228,55,421,95"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,63,177,88"/>
+</map>
 </div>
 
 </div>
@@ -592,10 +1139,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00190">190</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  191</span>    {</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">return</span> (0 &gt;= x) ? 0 : 1;</div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_aaae5996212041a89a97bbeed3732398a_icgraph.png" border="0" usemap="#aclass_neural_network_aaae5996212041a89a97bbeed3732398a_icgraph" alt=""/></div>
+<map name="aclass_neural_network_aaae5996212041a89a97bbeed3732398a_icgraph" id="aclass_neural_network_aaae5996212041a89a97bbeed3732398a_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,625,31"/>
+<area shape="rect" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61" title=" " alt="" coords="252,5,427,31"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="5,5,204,31"/>
+</map>
 </div>
 
 </div>
@@ -624,6 +1181,32 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00346">346</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  347</span>    {</div>
+<div class="line"><span class="lineno">  348</span>        File.Create(path).Close();</div>
+<div class="line"><span class="lineno">  349</span>        StreamWriter writer = <span class="keyword">new</span> StreamWriter(path, <span class="keyword">true</span>);</div>
+<div class="line"><span class="lineno">  350</span> </div>
+<div class="line"><span class="lineno">  351</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  352</span>        {</div>
+<div class="line"><span class="lineno">  353</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  354</span>            {</div>
+<div class="line"><span class="lineno">  355</span>                writer.WriteLine(<a class="code hl_variable" href="class_neural_network.html#a774edc22743a6d8718671cdee9f7ddfb">biases</a>[i][j]);</div>
+<div class="line"><span class="lineno">  356</span>            }</div>
+<div class="line"><span class="lineno">  357</span>        }</div>
+<div class="line"><span class="lineno">  358</span> </div>
+<div class="line"><span class="lineno">  359</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>.Length; i++)</div>
+<div class="line"><span class="lineno">  360</span>        {</div>
+<div class="line"><span class="lineno">  361</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i].Length; j++)</div>
+<div class="line"><span class="lineno">  362</span>            {</div>
+<div class="line"><span class="lineno">  363</span>                <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = 0; k &lt; <a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j].Length; k++)</div>
+<div class="line"><span class="lineno">  364</span>                {</div>
+<div class="line"><span class="lineno">  365</span>                    writer.WriteLine(<a class="code hl_variable" href="class_neural_network.html#aae75802f501ae2682cfd5ff7ca127c27">weights</a>[i][j][k]);</div>
+<div class="line"><span class="lineno">  366</span>                }</div>
+<div class="line"><span class="lineno">  367</span>            }</div>
+<div class="line"><span class="lineno">  368</span>        }</div>
+<div class="line"><span class="lineno">  369</span>        writer.Close();</div>
+<div class="line"><span class="lineno">  370</span>    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="aed31a3307f2f89363ded205f77c60225" name="aed31a3307f2f89363ded205f77c60225"></a>
@@ -649,10 +1232,24 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00165">165</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  166</span>    {</div>
+<div class="line"><span class="lineno">  167</span>        <span class="keywordtype">float</span> k = Mathf.Exp(-x);</div>
+<div class="line"><span class="lineno">  168</span>        <span class="keywordflow">return</span> k / (1.0f + k);</div>
+<div class="line"><span class="lineno">  169</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_aed31a3307f2f89363ded205f77c60225_icgraph.png" border="0" usemap="#aclass_neural_network_aed31a3307f2f89363ded205f77c60225_icgraph" alt=""/></div>
+<map name="aclass_neural_network_aed31a3307f2f89363ded205f77c60225_icgraph" id="aclass_neural_network_aed31a3307f2f89363ded205f77c60225_icgraph">
+<area shape="rect" title=" " alt="" coords="908,35,1063,60"/>
+<area shape="rect" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="705,35,860,60"/>
+<area shape="rect" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="472,35,657,60"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="225,5,424,31"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="228,55,421,95"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,63,177,88"/>
+</map>
 </div>
 
 </div>
@@ -680,10 +1277,20 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00182">182</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>    {</div>
+<div class="line"><span class="lineno">  184</span>        <span class="keywordflow">return</span> x * (1 - x);</div>
+<div class="line"><span class="lineno">  185</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_ab53de5941d235bca92ef79b5063290db_icgraph.png" border="0" usemap="#aclass_neural_network_ab53de5941d235bca92ef79b5063290db_icgraph" alt=""/></div>
+<map name="aclass_neural_network_ab53de5941d235bca92ef79b5063290db_icgraph" id="aclass_neural_network_ab53de5941d235bca92ef79b5063290db_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,649,31"/>
+<area shape="rect" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61" title=" " alt="" coords="252,5,427,31"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="5,5,204,31"/>
+</map>
 </div>
 
 </div>
@@ -711,10 +1318,23 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00170">170</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  171</span>    {</div>
+<div class="line"><span class="lineno">  172</span>        <span class="keywordflow">return</span> (<span class="keywordtype">float</span>)Math.Tanh(x);</div>
+<div class="line"><span class="lineno">  173</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_a9516c0b3aedb1322e7a09b3786e21989_icgraph.png" border="0" usemap="#aclass_neural_network_a9516c0b3aedb1322e7a09b3786e21989_icgraph" alt=""/></div>
+<map name="aclass_neural_network_a9516c0b3aedb1322e7a09b3786e21989_icgraph" id="aclass_neural_network_a9516c0b3aedb1322e7a09b3786e21989_icgraph">
+<area shape="rect" title=" " alt="" coords="908,35,1043,60"/>
+<area shape="rect" href="class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="705,35,860,60"/>
+<area shape="rect" href="class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="472,35,657,60"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="225,5,424,31"/>
+<area shape="rect" href="class_n_n_commander_brain.html#ab8e964285eb3f96f521b7e6c4e9776f7" title=" " alt="" coords="228,55,421,95"/>
+<area shape="rect" href="class_n_n_commander_brain.html#a34ad49870988f3ea27c4af376c0ddad3" title=" " alt="" coords="5,63,177,88"/>
+</map>
 </div>
 
 </div>
@@ -742,15 +1362,73 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00186">186</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>    {</div>
+<div class="line"><span class="lineno">  188</span>        <span class="keywordflow">return</span> 1 - (x * x);</div>
+<div class="line"><span class="lineno">  189</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06_icgraph.png" border="0" usemap="#aclass_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06_icgraph" alt=""/></div>
+<map name="aclass_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06_icgraph" id="aclass_neural_network_a325b03a712bb2f2d6ce845b9bbc06b06_icgraph">
+<area shape="rect" title=" " alt="" coords="475,5,629,31"/>
+<area shape="rect" href="class_neural_network.html#aaad3fd52ff6697bc570352b116192c61" title=" " alt="" coords="252,5,427,31"/>
+<area shape="rect" href="class_neural_network.html#a0848cf60f63eb03cff313c6b48edbeae" title=" " alt="" coords="5,5,204,31"/>
+</map>
 </div>
 
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="aee737b111f3364ed41efd1383a28d2a8" name="aee737b111f3364ed41efd1383a28d2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee737b111f3364ed41efd1383a28d2a8">&#9670;&#160;</a></span>activations</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] NeuralNetwork.activations</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00017">17</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
+</div>
+</div>
+<a id="a774edc22743a6d8718671cdee9f7ddfb" name="a774edc22743a6d8718671cdee9f7ddfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a774edc22743a6d8718671cdee9f7ddfb">&#9670;&#160;</a></span>biases</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [][] NeuralNetwork.biases</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00015">15</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
+</div>
+</div>
 <a id="ad540552e0c6605dcdb5b1f3b38580aa1" name="ad540552e0c6605dcdb5b1f3b38580aa1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad540552e0c6605dcdb5b1f3b38580aa1">&#9670;&#160;</a></span>cost</h2>
 
@@ -762,6 +1440,8 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00024">24</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
 
 </div>
 </div>
@@ -777,6 +1457,32 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00020">20</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
+</div>
+</div>
+<a id="a5675ef00bb514a731ddad698c342cdaa" name="a5675ef00bb514a731ddad698c342cdaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5675ef00bb514a731ddad698c342cdaa">&#9670;&#160;</a></span>layers</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int [] NeuralNetwork.layers</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00013">13</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
 </div>
 </div>
 <a id="aed5371f4eca4f4fd5b38d69e33d29bcf" name="aed5371f4eca4f4fd5b38d69e33d29bcf"></a>
@@ -791,10 +1497,60 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00023">23</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
+</div>
+</div>
+<a id="a13905970284bb4d0c6623cf477c12da9" name="a13905970284bb4d0c6623cf477c12da9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13905970284bb4d0c6623cf477c12da9">&#9670;&#160;</a></span>neurons</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [][] NeuralNetwork.neurons</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00014">14</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
+</div>
+</div>
+<a id="aae75802f501ae2682cfd5ff7ca127c27" name="aae75802f501ae2682cfd5ff7ca127c27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae75802f501ae2682cfd5ff7ca127c27">&#9670;&#160;</a></span>weights</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float [][][] NeuralNetwork.weights</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_neural_network_8cs_source.html#l00016">16</a> of file <a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>ML/<a class="el" href="_neural_network_8cs.html">NeuralNetwork.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/ML/<a class="el" href="_neural_network_8cs_source.html">NeuralNetwork.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for NNCommander\+Brain\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=205pt]{class_n_n_commander_brain__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for NNCommander\+Brain\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_n_n_commander_brain__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,20 +32,196 @@ float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed
 \item 
 static \mbox{\hyperlink{class_n_n_commander_brain}{NNCommander\+Brain}} \mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_n_n_commander_brain_a34ad49870988f3ea27c4af376c0ddad3}{Start}} ()
+\item 
+IEnumerator \mbox{\hyperlink{class_n_n_commander_brain_ab8e964285eb3f96f521b7e6c4e9776f7}{Evaluate\+Inputs}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_neural_network}{Neural\+Network}} \mbox{\hyperlink{class_n_n_commander_brain_a90c44ca951481feabdd61f23ed2972f0}{m\+\_\+neural\+Network}}
+\item 
+int\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_n_n_commander_brain_aabf0194d9e4cec75a2a936381235fc15}{layers}} = new int\mbox{[}3\mbox{]} \{ 4, 5, 3 \}
+\item 
+string\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_n_n_commander_brain_ae61f91d73aa79a26470e006452e9810a}{activation}} = new string\mbox{[}2\mbox{]} \{ \char`\"{}relu\char`\"{}, \char`\"{}sigmoid\char`\"{} \}
+\item 
+\mbox{\hyperlink{class_n_n_commander_body}{NNCommander\+Body}} \mbox{\hyperlink{class_n_n_commander_brain_a6b0aa94507c0b2ded2465bd5300391dd}{m\+\_\+\+NNCommander\+Body}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00006}{6}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_n_commander_brain_ab8e964285eb3f96f521b7e6c4e9776f7}\label{class_n_n_commander_brain_ab8e964285eb3f96f521b7e6c4e9776f7}} 
+\index{NNCommanderBrain@{NNCommanderBrain}!EvaluateInputs@{EvaluateInputs}}
+\index{EvaluateInputs@{EvaluateInputs}!NNCommanderBrain@{NNCommanderBrain}}
+\doxysubsubsection{\texorpdfstring{EvaluateInputs()}{EvaluateInputs()}}
+{\footnotesize\ttfamily IEnumerator NNCommander\+Brain.\+Evaluate\+Inputs (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00051}{51}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00052     \{}
+\DoxyCodeLine{00053         \textcolor{keywordflow}{while} (\textcolor{keyword}{true})}
+\DoxyCodeLine{00054         \{}
+\DoxyCodeLine{00055             \mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}} = \mbox{\hyperlink{class_n_n_commander_brain_a90c44ca951481feabdd61f23ed2972f0}{m\_neuralNetwork}}.\mbox{\hyperlink{class_neural_network_a6af00bb964b378d647ade509c0d09fc4}{FeedForward}}(\mbox{\hyperlink{class_n_n_commander_brain_a6b0aa94507c0b2ded2465bd5300391dd}{m\_NNCommanderBody}}.\mbox{\hyperlink{class_n_n_commander_body_a3f97d0759691e6ace10f2611f1f9d122}{GetInputs}}());}
+\DoxyCodeLine{00056 }
+\DoxyCodeLine{00057             \textcolor{comment}{//for (int i = 0; i < m\_outputs.Length; i++)}}
+\DoxyCodeLine{00058             \textcolor{comment}{//\{}}
+\DoxyCodeLine{00059             \textcolor{comment}{//    Debug.Log(m\_outputs[i]);}}
+\DoxyCodeLine{00060             \textcolor{comment}{//\}}}
+\DoxyCodeLine{00061 }
+\DoxyCodeLine{00062             \textcolor{comment}{//Debug.Log("{}Spawn a unit: "{} + m\_outputs[0]);}}
+\DoxyCodeLine{00063             \textcolor{comment}{//Debug.Log("{}Send units to CP: "{} + m\_outputs[1]);}}
+\DoxyCodeLine{00064             \textcolor{comment}{//Debug.Log("{}Send units to RP: "{} + m\_outputs[2]);}}
+\DoxyCodeLine{00065 }
+\DoxyCodeLine{00066             yield \textcolor{keywordflow}{return} \textcolor{keyword}{new} WaitForSeconds(\mbox{\hyperlink{class_n_n_commander_brain_a57e426479e8bb64960cd80facda2dbbc}{m\_evaluationTime}});}
+\DoxyCodeLine{00067 }
+\DoxyCodeLine{00068             \mbox{\hyperlink{class_n_n_commander_brain_a6b0aa94507c0b2ded2465bd5300391dd}{m\_NNCommanderBody}}.\mbox{\hyperlink{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80}{DecideAction}}();}
+\DoxyCodeLine{00069         \}}
+\DoxyCodeLine{00070     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_brain_ab8e964285eb3f96f521b7e6c4e9776f7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_brain_ab8e964285eb3f96f521b7e6c4e9776f7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_n_commander_brain_a34ad49870988f3ea27c4af376c0ddad3}\label{class_n_n_commander_brain_a34ad49870988f3ea27c4af376c0ddad3}} 
+\index{NNCommanderBrain@{NNCommanderBrain}!Start@{Start}}
+\index{Start@{Start}!NNCommanderBrain@{NNCommanderBrain}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void NNCommander\+Brain.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00019}{19}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00020     \{}
+\DoxyCodeLine{00021         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}} == \textcolor{keyword}{null})}
+\DoxyCodeLine{00022         \{}
+\DoxyCodeLine{00023             \mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}} = \textcolor{keyword}{this};}
+\DoxyCodeLine{00024         \}}
+\DoxyCodeLine{00025 }
+\DoxyCodeLine{00026         \mbox{\hyperlink{class_n_n_commander_brain_a90c44ca951481feabdd61f23ed2972f0}{m\_neuralNetwork}} = \textcolor{keyword}{new} \mbox{\hyperlink{class_neural_network}{NeuralNetwork}}(\mbox{\hyperlink{class_n_n_commander_brain_aabf0194d9e4cec75a2a936381235fc15}{layers}}, \mbox{\hyperlink{class_n_n_commander_brain_ae61f91d73aa79a26470e006452e9810a}{activation}});}
+\DoxyCodeLine{00027         \mbox{\hyperlink{class_n_n_commander_brain_a6b0aa94507c0b2ded2465bd5300391dd}{m\_NNCommanderBody}} = GetComponent<NNCommanderBody>();}
+\DoxyCodeLine{00028         \textcolor{comment}{/*}}
+\DoxyCodeLine{00029 \textcolor{comment}{        4 basic inputs for feed forward:}}
+\DoxyCodeLine{00030 \textcolor{comment}{}}
+\DoxyCodeLine{00031 \textcolor{comment}{        Total friendly units in the field}}
+\DoxyCodeLine{00032 \textcolor{comment}{        Control points owned by NN Commander}}
+\DoxyCodeLine{00033 \textcolor{comment}{        Current score count compared to enemy score}}
+\DoxyCodeLine{00034 \textcolor{comment}{        Current resource count}}
+\DoxyCodeLine{00035 \textcolor{comment}{        */}}
+\DoxyCodeLine{00036 }
+\DoxyCodeLine{00037         \textcolor{comment}{/*}}
+\DoxyCodeLine{00038 \textcolor{comment}{         }}
+\DoxyCodeLine{00039 \textcolor{comment}{        3 basic outputs once all inputs are accounted for}}
+\DoxyCodeLine{00040 \textcolor{comment}{        Make more units and then group them up }}
+\DoxyCodeLine{00041 \textcolor{comment}{        Send units to control point}}
+\DoxyCodeLine{00042 \textcolor{comment}{        Send units to resource point}}
+\DoxyCodeLine{00043 \textcolor{comment}{         }}
+\DoxyCodeLine{00044 \textcolor{comment}{        */}}
+\DoxyCodeLine{00045 }
+\DoxyCodeLine{00046 }
+\DoxyCodeLine{00047         StartCoroutine(\mbox{\hyperlink{class_n_n_commander_brain_ab8e964285eb3f96f521b7e6c4e9776f7}{EvaluateInputs}}());}
+\DoxyCodeLine{00048     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_brain_a34ad49870988f3ea27c4af376c0ddad3_cgraph}
+\end{center}
+\end{figure}
 
 
 \doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_n_commander_brain_ae61f91d73aa79a26470e006452e9810a}\label{class_n_n_commander_brain_ae61f91d73aa79a26470e006452e9810a}} 
+\index{NNCommanderBrain@{NNCommanderBrain}!activation@{activation}}
+\index{activation@{activation}!NNCommanderBrain@{NNCommanderBrain}}
+\doxysubsubsection{\texorpdfstring{activation}{activation}}
+{\footnotesize\ttfamily string \mbox{[}$\,$\mbox{]} NNCommander\+Brain.\+activation = new string\mbox{[}2\mbox{]} \{ \char`\"{}relu\char`\"{}, \char`\"{}sigmoid\char`\"{} \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
 \mbox{\Hypertarget{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}\label{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}} 
 \index{NNCommanderBrain@{NNCommanderBrain}!instance@{instance}}
 \index{instance@{instance}!NNCommanderBrain@{NNCommanderBrain}}
 \doxysubsubsection{\texorpdfstring{instance}{instance}}
 {\footnotesize\ttfamily \mbox{\hyperlink{class_n_n_commander_brain}{NNCommander\+Brain}} NNCommander\+Brain.\+instance\hspace{0.3cm}{\ttfamily [static]}}
 
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00015}{15}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+\mbox{\Hypertarget{class_n_n_commander_brain_aabf0194d9e4cec75a2a936381235fc15}\label{class_n_n_commander_brain_aabf0194d9e4cec75a2a936381235fc15}} 
+\index{NNCommanderBrain@{NNCommanderBrain}!layers@{layers}}
+\index{layers@{layers}!NNCommanderBrain@{NNCommanderBrain}}
+\doxysubsubsection{\texorpdfstring{layers}{layers}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} NNCommander\+Brain.\+layers = new int\mbox{[}3\mbox{]} \{ 4, 5, 3 \}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00009}{9}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
 \mbox{\Hypertarget{class_n_n_commander_brain_a57e426479e8bb64960cd80facda2dbbc}\label{class_n_n_commander_brain_a57e426479e8bb64960cd80facda2dbbc}} 
 \index{NNCommanderBrain@{NNCommanderBrain}!m\_evaluationTime@{m\_evaluationTime}}
 \index{m\_evaluationTime@{m\_evaluationTime}!NNCommanderBrain@{NNCommanderBrain}}
 \doxysubsubsection{\texorpdfstring{m\_evaluationTime}{m\_evaluationTime}}
 {\footnotesize\ttfamily float NNCommander\+Brain.\+m\+\_\+evaluation\+Time = 3}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00017}{17}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+\mbox{\Hypertarget{class_n_n_commander_brain_a90c44ca951481feabdd61f23ed2972f0}\label{class_n_n_commander_brain_a90c44ca951481feabdd61f23ed2972f0}} 
+\index{NNCommanderBrain@{NNCommanderBrain}!m\_neuralNetwork@{m\_neuralNetwork}}
+\index{m\_neuralNetwork@{m\_neuralNetwork}!NNCommanderBrain@{NNCommanderBrain}}
+\doxysubsubsection{\texorpdfstring{m\_neuralNetwork}{m\_neuralNetwork}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_neural_network}{Neural\+Network}} NNCommander\+Brain.\+m\+\_\+neural\+Network\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+\mbox{\Hypertarget{class_n_n_commander_brain_a6b0aa94507c0b2ded2465bd5300391dd}\label{class_n_n_commander_brain_a6b0aa94507c0b2ded2465bd5300391dd}} 
+\index{NNCommanderBrain@{NNCommanderBrain}!m\_NNCommanderBody@{m\_NNCommanderBody}}
+\index{m\_NNCommanderBody@{m\_NNCommanderBody}!NNCommanderBrain@{NNCommanderBrain}}
+\doxysubsubsection{\texorpdfstring{m\_NNCommanderBody}{m\_NNCommanderBody}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_n_n_commander_body}{NNCommander\+Body}} NNCommander\+Brain.\+m\+\_\+\+NNCommander\+Body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
 
 \mbox{\Hypertarget{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}\label{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}} 
 \index{NNCommanderBrain@{NNCommanderBrain}!m\_outputs@{m\_outputs}}
@@ -43,6 +231,10 @@ static \mbox{\hyperlink{class_n_n_commander_brain}{NNCommander\+Brain}} \mbox{\h
 
 
 
+Definition at line \mbox{\hyperlink{_n_n_commander_brain_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_n_n_commander_brain_8cs_source}{NNCommander\+Brain.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-ML/\mbox{\hyperlink{_n_n_commander_brain_8cs}{NNCommander\+Brain.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+ML/\mbox{\hyperlink{_n_n_commander_brain_8cs}{NNCommander\+Brain.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,12 @@
+<map id="NNCommanderBrain.EvaluateInputs" name="NNCommanderBrain.EvaluateInputs">
+<area shape="rect" id="node1" title=" " alt="" coords="5,73,199,113"/>
+<area shape="rect" id="node2" href="$class_n_n_commander_body.html#a8c2bf4062941a443890ce18b17979d80" title=" " alt="" coords="247,31,468,56"/>
+<area shape="rect" id="node4" href="$class_neural_network.html#a6af00bb964b378d647ade509c0d09fc4" title=" " alt="" coords="265,80,450,105"/>
+<area shape="rect" id="node10" href="$class_n_n_commander_body.html#a3f97d0759691e6ace10f2611f1f9d122" title=" " alt="" coords="257,129,457,155"/>
+<area shape="rect" id="node3" href="$class_a_i_unit_spawner.html#aeb42915d2439ce802205617796c096dd" title=" " alt="" coords="516,31,689,56"/>
+<area shape="rect" id="node5" href="$class_neural_network.html#ab75f7019c882965d1a3361a10936a039" title=" " alt="" coords="525,80,680,105"/>
+<area shape="rect" id="node6" href="$class_neural_network.html#abe984c4f9cfa5139ffb941ab2b9bfa1d" title=" " alt="" coords="737,5,900,31"/>
+<area shape="rect" id="node7" href="$class_neural_network.html#ace4f18b78ec173d01ce5ee69b53f39d4" title=" " alt="" coords="753,55,884,80"/>
+<area shape="rect" id="node8" href="$class_neural_network.html#aed31a3307f2f89363ded205f77c60225" title=" " alt="" coords="741,104,896,129"/>
+<area shape="rect" id="node9" href="$class_neural_network.html#a9516c0b3aedb1322e7a09b3786e21989" title=" " alt="" coords="751,153,886,179"/>
+</map>

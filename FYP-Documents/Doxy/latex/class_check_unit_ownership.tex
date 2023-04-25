@@ -3,17 +3,41 @@
 
 
 Inheritance diagram for Check\+Unit\+Ownership\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{class_check_unit_ownership__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for Check\+Unit\+Ownership\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_check_unit_ownership__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 override \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{Node\+State}} \mbox{\hyperlink{class_check_unit_ownership_aabd1fc9460a827678e6952f360c520b2}{Evaluate}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}{\+\_\+unit\+Is\+Mine}}
+\end{DoxyCompactItemize}
 \doxysubsection*{Additional Inherited Members}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_check_unit_ownership_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_check_unit_ownership_8cs_source}{Check\+Unit\+Ownership.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -29,6 +53,31 @@ Reimplemented from \mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c
 
 
 
+Definition at line \mbox{\hyperlink{_check_unit_ownership_8cs_source_l00014}{14}} of file \mbox{\hyperlink{_check_unit_ownership_8cs_source}{Check\+Unit\+Ownership.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00015     \{}
+\DoxyCodeLine{00016         \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}{\_unitIsMine}} ? NodeState.SUCCESS : \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{00017         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{00018     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}\label{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}} 
+\index{CheckUnitOwnership@{CheckUnitOwnership}!\_unitIsMine@{\_unitIsMine}}
+\index{\_unitIsMine@{\_unitIsMine}!CheckUnitOwnership@{CheckUnitOwnership}}
+\doxysubsubsection{\texorpdfstring{\_unitIsMine}{\_unitIsMine}}
+{\footnotesize\ttfamily bool Check\+Unit\+Ownership.\+\_\+unit\+Is\+Mine\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_check_unit_ownership_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_check_unit_ownership_8cs_source}{Check\+Unit\+Ownership.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Behaviour Tree/\mbox{\hyperlink{_check_unit_ownership_8cs}{Check\+Unit\+Ownership.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+Behaviour Tree/\mbox{\hyperlink{_check_unit_ownership_8cs}{Check\+Unit\+Ownership.\+cs}}\end{DoxyCompactItemize}

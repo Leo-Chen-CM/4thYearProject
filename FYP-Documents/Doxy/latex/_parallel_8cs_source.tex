@@ -1,0 +1,45 @@
+\hypertarget{_parallel_8cs_source}{}\doxysection{Parallel.\+cs}
+\label{_parallel_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/Basics/Parallel.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/Basics/Parallel.cs}}
+\mbox{\hyperlink{_parallel_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00001}00001 }
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00003}00003 }
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00004}00004 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_behavior_tree}{BehaviorTree}}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00005}00005 \{}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00006}\mbox{\hyperlink{class_behavior_tree_1_1_parallel}{00006}}     \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_behavior_tree_1_1_parallel}{Parallel}} : \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00007}00007     \{}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00008}\mbox{\hyperlink{class_behavior_tree_1_1_parallel_ac03e9034cf3c37496a6cd01694905cc5}{00008}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_behavior_tree_1_1_parallel_ac03e9034cf3c37496a6cd01694905cc5}{Parallel}}() : base() \{ \}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00009}\mbox{\hyperlink{class_behavior_tree_1_1_parallel_a673ab14600439bc44f43ec7f2698bbd8}{00009}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_behavior_tree_1_1_parallel_a673ab14600439bc44f43ec7f2698bbd8}{Parallel}}(List<Node> \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}) : base(\mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}) \{ \}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00010}00010 }
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00011}\mbox{\hyperlink{class_behavior_tree_1_1_parallel_a1252f4fae398c06e72022b5dda75b7ff}{00011}}         \textcolor{keyword}{public} \textcolor{keyword}{override} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}} \mbox{\hyperlink{class_behavior_tree_1_1_parallel_a1252f4fae398c06e72022b5dda75b7ff}{Evaluate}}()}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00012}00012         \{}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00013}00013             \textcolor{keywordtype}{bool} anyChildIsRunning = \textcolor{keyword}{false};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00014}00014             \textcolor{keywordtype}{int} nFailedChildren = 0;}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00015}00015             \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} node \textcolor{keywordflow}{in} \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}})}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00016}00016             \{}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00017}00017                 \textcolor{keywordflow}{switch} (node.\mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{Evaluate}}())}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00018}00018                 \{}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00019}00019                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE:}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00020}00020                         nFailedChildren++;}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00021}00021                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00022}00022                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS:}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00023}00023                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00024}00024                     \textcolor{keywordflow}{case} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.RUNNING:}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00025}00025                         anyChildIsRunning = \textcolor{keyword}{true};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00026}00026                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00027}00027                     \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00028}00028                         \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00029}00029                         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00030}00030                 \}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00031}00031             \}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00032}00032             \textcolor{keywordflow}{if} (nFailedChildren == \mbox{\hyperlink{class_behavior_tree_1_1_node_a017963d4aefae7cc56ba10323f877c87}{children}}.Count)}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00033}00033                 \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00034}00034             \textcolor{keywordflow}{else}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00035}00035                 \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = anyChildIsRunning ? NodeState.RUNNING : \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.SUCCESS;}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00036}00036             \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00037}00037         \}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00038}00038     \}}
+\DoxyCodeLine{\Hypertarget{_parallel_8cs_source_l00039}00039 \}}
+
+\end{DoxyCode}

@@ -3,3 +3,207 @@
 
 
 Inheritance diagram for AIUnit\+Spawner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_a_i_unit_spawner__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for AIUnit\+Spawner\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_a_i_unit_spawner__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}{Spawn\+Unit}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float \mbox{\hyperlink{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}{m\+\_\+spawn\+Time}} = 3
+\item 
+int \mbox{\hyperlink{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}{m\+\_\+max\+Units}}
+\item 
+Game\+Object \mbox{\hyperlink{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}{m\+\_\+unit}}
+\item 
+Transform \mbox{\hyperlink{class_a_i_unit_spawner_ac0fa5a92ca485787cd899c089edd2318}{m\+\_\+spawn\+Point}}
+\item 
+int \mbox{\hyperlink{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}{m\+\_\+rotation}}
+\item 
+List$<$ Game\+Object $>$ \mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\+\_\+troop\+Count}} = new List$<$Game\+Object$>$()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_a_i_unit_spawner_aac8f2ddff6f2a7545d788ec1bb0705c7}{Update}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Game\+Object \mbox{\hyperlink{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}{m\+\_\+spawn\+Area}}
+\item 
+float \mbox{\hyperlink{class_a_i_unit_spawner_ac15914b769e741a9f87cca273a925ea4}{m\+\_\+next\+Spawn}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}\label{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!SpawnUnit@{SpawnUnit}}
+\index{SpawnUnit@{SpawnUnit}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{SpawnUnit()}{SpawnUnit()}}
+{\footnotesize\ttfamily void AIUnit\+Spawner.\+Spawn\+Unit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00032}{32}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00033     \{}
+\DoxyCodeLine{00034         \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Count < \mbox{\hyperlink{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}{m\_maxUnits}} \&\& Time.time > \mbox{\hyperlink{class_a_i_unit_spawner_ac15914b769e741a9f87cca273a925ea4}{m\_nextSpawn}} \&\& \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}} != 0)}
+\DoxyCodeLine{00035         \{}
+\DoxyCodeLine{00036             Vector3 spawn = m\_spawnPoint.position + \textcolor{keyword}{new} Vector3(Random.Range(-\/\mbox{\hyperlink{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}{m\_spawnArea}}.transform.localScale.x / 3, \mbox{\hyperlink{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}{m\_spawnArea}}.transform.localScale.x / 3), Random.Range(-\/\mbox{\hyperlink{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}{m\_spawnArea}}.transform.localScale.y / 3, \mbox{\hyperlink{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}{m\_spawnArea}}.transform.localScale.y / 3), 0);}
+\DoxyCodeLine{00037             \mbox{\hyperlink{class_a_i_unit_spawner_ac15914b769e741a9f87cca273a925ea4}{m\_nextSpawn}} = Time.time + \mbox{\hyperlink{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}{m\_spawnTime}};}
+\DoxyCodeLine{00038             Quaternion rotation = Quaternion.Euler(0, 0, \mbox{\hyperlink{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}{m\_rotation}});}
+\DoxyCodeLine{00039             GameObject newUnit = Instantiate(\mbox{\hyperlink{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}{m\_unit}}, spawn, rotation);}
+\DoxyCodeLine{00040             newUnit.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>().SetupTeam(tag);}
+\DoxyCodeLine{00041             \mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Add(newUnit);}
+\DoxyCodeLine{00042             \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}}-\/-\/;}
+\DoxyCodeLine{00043         \}}
+\DoxyCodeLine{00044     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_a_i_unit_spawner_aac8f2ddff6f2a7545d788ec1bb0705c7}\label{class_a_i_unit_spawner_aac8f2ddff6f2a7545d788ec1bb0705c7}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!Update@{Update}}
+\index{Update@{Update}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{Update()}{Update()}}
+{\footnotesize\ttfamily void AIUnit\+Spawner.\+Update (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00021}{21}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00022     \{}
+\DoxyCodeLine{00023         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Count; i++)}
+\DoxyCodeLine{00024         \{}
+\DoxyCodeLine{00025             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}[i] == \textcolor{keyword}{null})}
+\DoxyCodeLine{00026             \{}
+\DoxyCodeLine{00027                 \mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Remove(\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}[i]);}
+\DoxyCodeLine{00028             \}}
+\DoxyCodeLine{00029         \}}
+\DoxyCodeLine{00030     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}\label{class_a_i_unit_spawner_a434ef774d3547bd4317fc5c2e2487d74}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_maxUnits@{m\_maxUnits}}
+\index{m\_maxUnits@{m\_maxUnits}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_maxUnits}{m\_maxUnits}}
+{\footnotesize\ttfamily int AIUnit\+Spawner.\+m\+\_\+max\+Units}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_ac15914b769e741a9f87cca273a925ea4}\label{class_a_i_unit_spawner_ac15914b769e741a9f87cca273a925ea4}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_nextSpawn@{m\_nextSpawn}}
+\index{m\_nextSpawn@{m\_nextSpawn}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_nextSpawn}{m\_nextSpawn}}
+{\footnotesize\ttfamily float AIUnit\+Spawner.\+m\+\_\+next\+Spawn\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00018}{18}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}\label{class_a_i_unit_spawner_a987948201e0f40e6823bcc0343f94f9b}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_rotation@{m\_rotation}}
+\index{m\_rotation@{m\_rotation}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_rotation}{m\_rotation}}
+{\footnotesize\ttfamily int AIUnit\+Spawner.\+m\+\_\+rotation}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00012}{12}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}\label{class_a_i_unit_spawner_a31ce9c8bf096a126e809ec61c5e605b5}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_spawnArea@{m\_spawnArea}}
+\index{m\_spawnArea@{m\_spawnArea}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_spawnArea}{m\_spawnArea}}
+{\footnotesize\ttfamily Game\+Object AIUnit\+Spawner.\+m\+\_\+spawn\+Area\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_ac0fa5a92ca485787cd899c089edd2318}\label{class_a_i_unit_spawner_ac0fa5a92ca485787cd899c089edd2318}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_spawnPoint@{m\_spawnPoint}}
+\index{m\_spawnPoint@{m\_spawnPoint}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_spawnPoint}{m\_spawnPoint}}
+{\footnotesize\ttfamily Transform AIUnit\+Spawner.\+m\+\_\+spawn\+Point}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00011}{11}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}\label{class_a_i_unit_spawner_ab28df4dc60db61ddde04f4008bbc197f}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_spawnTime@{m\_spawnTime}}
+\index{m\_spawnTime@{m\_spawnTime}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_spawnTime}{m\_spawnTime}}
+{\footnotesize\ttfamily float AIUnit\+Spawner.\+m\+\_\+spawn\+Time = 3}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}\label{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_troopCount@{m\_troopCount}}
+\index{m\_troopCount@{m\_troopCount}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_troopCount}{m\_troopCount}}
+{\footnotesize\ttfamily List$<$Game\+Object$>$ AIUnit\+Spawner.\+m\+\_\+troop\+Count = new List$<$Game\+Object$>$()}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00013}{13}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+\mbox{\Hypertarget{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}\label{class_a_i_unit_spawner_a580bfe2fea90195ef699a0d33cbaa147}} 
+\index{AIUnitSpawner@{AIUnitSpawner}!m\_unit@{m\_unit}}
+\index{m\_unit@{m\_unit}!AIUnitSpawner@{AIUnitSpawner}}
+\doxysubsubsection{\texorpdfstring{m\_unit}{m\_unit}}
+{\footnotesize\ttfamily Game\+Object AIUnit\+Spawner.\+m\+\_\+unit}
+
+
+
+Definition at line \mbox{\hyperlink{_a_i_unit_spawner_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_a_i_unit_spawner_8cs_source}{AIUnit\+Spawner.\+cs}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\mbox{\hyperlink{_a_i_unit_spawner_8cs}{AIUnit\+Spawner.\+cs}}\end{DoxyCompactItemize}

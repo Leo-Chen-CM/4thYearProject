@@ -59,3 +59,28 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+*~
+.*sw?
+\#*
+.DS_Store
+
+*.rej
+*.orig
+
+*.pro
+/packages/rpm/doxygen.spec
+*.idb
+*.pdb
+
+/doxygen_docs
+/doxygen.tag
+/build*
+/qtools_docs
+/warnings.log
+
+tags
+
+.idea
+
+/examples/html/*
+/examples/latex/*

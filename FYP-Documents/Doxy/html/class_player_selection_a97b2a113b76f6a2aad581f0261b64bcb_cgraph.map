@@ -1,0 +1,17 @@
+<map id="PlayerSelection.Update" name="PlayerSelection.Update">
+<area shape="rect" id="node1" title=" " alt="" coords="5,243,164,268"/>
+<area shape="rect" id="node2" href="$class_selection.html#a1fd845df495405452cda91ff8cea543d" title=" " alt="" coords="212,92,381,117"/>
+<area shape="rect" id="node7" href="$class_selection.html#ad1e91cc8fc1d6f1d658052162e474760" title=" " alt="" coords="215,217,379,243"/>
+<area shape="rect" id="node11" href="$class_utility.html#ae371e10730332ffe8c695c8401effd37" title=" " alt="" coords="432,268,631,293"/>
+<area shape="rect" id="node12" href="$class_selection.html#a5d24db948b630a237b811f4734cbe868" title=" " alt="" coords="223,319,370,344"/>
+<area shape="rect" id="node3" href="$class_base_unit.html#a00e0b72a818116d6ca14ffec46e8d69b" title=" " alt="" coords="452,5,611,31"/>
+<area shape="rect" id="node4" href="$class_r_t_s_game_controller.html#a21338ade1d9507648d239ba534541a46" title=" " alt="" coords="429,55,633,95"/>
+<area shape="rect" id="node5" href="$class_group_leader.html#ae39ef3c1f8e4b7a9676b72e491203354" title=" " alt="" coords="442,120,621,145"/>
+<area shape="rect" id="node6" href="$class_group_leader.html#a0b68f07858de9d6574628c0a6674ed38" title=" " alt="" coords="681,120,872,145"/>
+<area shape="rect" id="node8" href="$class_group_leader.html#a54e85d2941924c0c4c77032829f8d7f3" title=" " alt="" coords="453,169,609,195"/>
+<area shape="rect" id="node9" href="$class_base_unit.html#a5444c924c7be68b4d0ee5ba3396219f4" title=" " alt="" coords="440,219,623,244"/>
+<area shape="rect" id="node10" href="$class_base_unit.html#a830123965148423ef24de24bec716137" title=" " alt="" coords="687,219,867,244"/>
+<area shape="rect" id="node13" href="$class_selection.html#a129eaf19e641d6a1bcf380fc873c183f" title=" " alt="" coords="449,317,613,343"/>
+<area shape="rect" id="node14" href="$class_base_unit.html#a01b7cb41c2be087426e622fa4e57fc69" title=" " alt="" coords="682,343,871,368"/>
+<area shape="rect" id="node15" href="$class_base_unit.html#a9cd35c425549c36834a8606c86b15d49" title=" " alt="" coords="462,419,601,444"/>
+</map>

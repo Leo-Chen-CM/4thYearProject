@@ -91,6 +91,8 @@ $(document).ready(function(){initNavTree('class_control_point_trigger.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_control_point_trigger-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ControlPointTrigger Class Reference</div></div>
 </div><!--header-->
@@ -99,19 +101,42 @@ $(document).ready(function(){initNavTree('class_control_point_trigger.html','');
 Inheritance diagram for ControlPointTrigger:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_control_point_trigger__inherit__graph.png" border="0" usemap="#a_control_point_trigger_inherit__map" alt="Inheritance graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_control_point_trigger_inherit__map" id="a_control_point_trigger_inherit__map">
+<area shape="rect" title=" " alt="" coords="5,93,176,192"/>
+<area shape="rect" title=" " alt="" coords="33,5,148,45"/>
+</map>
+</div>
 <div class="dynheader">
 Collaboration diagram for ControlPointTrigger:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_control_point_trigger__coll__graph.png" border="0" usemap="#a_control_point_trigger_coll__map" alt="Collaboration graph"/></div>
-<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
+<map name="a_control_point_trigger_coll__map" id="a_control_point_trigger_coll__map">
+<area shape="rect" title=" " alt="" coords="5,93,176,192"/>
+<area shape="rect" title=" " alt="" coords="33,5,148,45"/>
+</map>
+</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a41f331530d6531c280fc3101e90fb391"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_base_unit.html">BaseUnit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_point_trigger.html#a41f331530d6531c280fc3101e90fb391">GetUnitInControlPoint</a> ()</td></tr>
 <tr class="separator:a41f331530d6531c280fc3101e90fb391"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a90583038af1479087ca8e8bc17c3e1a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_point_trigger.html#a90583038af1479087ca8e8bc17c3e1a1">OnTriggerEnter2D</a> (Collider2D collision)</td></tr>
+<tr class="separator:a90583038af1479087ca8e8bc17c3e1a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade8484b299a63fb386f9f5e1fec7f820"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_point_trigger.html#ade8484b299a63fb386f9f5e1fec7f820">OnTriggerExit2D</a> (Collider2D collision)</td></tr>
+<tr class="separator:ade8484b299a63fb386f9f5e1fec7f820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a21579172936610b2e4693d1688ab15b1"><td class="memItemLeft" align="right" valign="top">List&lt; <a class="el" href="class_base_unit.html">BaseUnit</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_control_point_trigger.html#a21579172936610b2e4693d1688ab15b1">m_unitsInControlPoint</a> = new List&lt;<a class="el" href="class_base_unit.html">BaseUnit</a>&gt;()</td></tr>
+<tr class="separator:a21579172936610b2e4693d1688ab15b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="_control_point_trigger_8cs_source.html#l00006">6</a> of file <a class="el" href="_control_point_trigger_8cs_source.html">ControlPointTrigger.cs</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a41f331530d6531c280fc3101e90fb391" name="a41f331530d6531c280fc3101e90fb391"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41f331530d6531c280fc3101e90fb391">&#9670;&#160;</a></span>GetUnitInControlPoint()</h2>
 
@@ -135,10 +160,134 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="_control_point_trigger_8cs_source.html#l00022">22</a> of file <a class="el" href="_control_point_trigger_8cs_source.html">ControlPointTrigger.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   22</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="class_control_point_trigger.html#a21579172936610b2e4693d1688ab15b1">m_unitsInControlPoint</a>; }</div>
+<div class="ttc" id="aclass_control_point_trigger_html_a21579172936610b2e4693d1688ab15b1"><div class="ttname"><a href="class_control_point_trigger.html#a21579172936610b2e4693d1688ab15b1">ControlPointTrigger.m_unitsInControlPoint</a></div><div class="ttdeci">List&lt; BaseUnit &gt; m_unitsInControlPoint</div><div class="ttdef"><b>Definition:</b> <a href="_control_point_trigger_8cs_source.html#l00008">ControlPointTrigger.cs:8</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_control_point_trigger_a41f331530d6531c280fc3101e90fb391_icgraph.png" border="0" usemap="#aclass_control_point_trigger_a41f331530d6531c280fc3101e90fb391_icgraph" alt=""/></div>
+<map name="aclass_control_point_trigger_a41f331530d6531c280fc3101e90fb391_icgraph" id="aclass_control_point_trigger_a41f331530d6531c280fc3101e90fb391_icgraph">
+<area shape="rect" title=" " alt="" coords="247,5,427,45"/>
+<area shape="rect" href="class_control_point_controller.html#acfa3bd5eade314bc9e83f10bdb0411c3" title=" " alt="" coords="5,13,199,38"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a90583038af1479087ca8e8bc17c3e1a1" name="a90583038af1479087ca8e8bc17c3e1a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90583038af1479087ca8e8bc17c3e1a1">&#9670;&#160;</a></span>OnTriggerEnter2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlPointTrigger.OnTriggerEnter2D </td>
+          <td>(</td>
+          <td class="paramtype">Collider2D&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_control_point_trigger_8cs_source.html#l00010">10</a> of file <a class="el" href="_control_point_trigger_8cs_source.html">ControlPointTrigger.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>    {</div>
+<div class="line"><span class="lineno">   12</span>        <a class="code hl_variable" href="class_control_point_trigger.html#a21579172936610b2e4693d1688ab15b1">m_unitsInControlPoint</a>.Add(collision.gameObject.GetComponent&lt;<a class="code hl_class" href="class_base_unit.html">BaseUnit</a>&gt;());</div>
+<div class="line"><span class="lineno">   13</span>        <a class="code hl_class" href="class_game_events_manager.html">GameEventsManager</a>.<a class="code hl_variable" href="class_game_events_manager.html#a1064a13fbcad613c37dd46cd94f38bfd">instance</a>.<a class="code hl_function" href="class_game_events_manager.html#a855511803acce0d0b1506e95913c2249">ControlPointTriggerEnter</a>(GetComponentInParent&lt;ControlPointController&gt;().<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   14</span>    }</div>
+<div class="ttc" id="aclass_base_unit_html"><div class="ttname"><a href="class_base_unit.html">BaseUnit</a></div><div class="ttdef"><b>Definition:</b> <a href="_base_unit_8cs_source.html#l00006">BaseUnit.cs:7</a></div></div>
+<div class="ttc" id="aclass_game_events_manager_html"><div class="ttname"><a href="class_game_events_manager.html">GameEventsManager</a></div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00006">GameEventsManager.cs:7</a></div></div>
+<div class="ttc" id="aclass_game_events_manager_html_a1064a13fbcad613c37dd46cd94f38bfd"><div class="ttname"><a href="class_game_events_manager.html#a1064a13fbcad613c37dd46cd94f38bfd">GameEventsManager.instance</a></div><div class="ttdeci">static GameEventsManager instance</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00008">GameEventsManager.cs:8</a></div></div>
+<div class="ttc" id="aclass_game_events_manager_html_a855511803acce0d0b1506e95913c2249"><div class="ttname"><a href="class_game_events_manager.html#a855511803acce0d0b1506e95913c2249">GameEventsManager.ControlPointTriggerEnter</a></div><div class="ttdeci">void ControlPointTriggerEnter(int id)</div><div class="ttdef"><b>Definition:</b> <a href="_game_events_manager_8cs_source.html#l00017">GameEventsManager.cs:17</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_control_point_trigger_a90583038af1479087ca8e8bc17c3e1a1_cgraph.png" border="0" usemap="#aclass_control_point_trigger_a90583038af1479087ca8e8bc17c3e1a1_cgraph" alt=""/></div>
+<map name="aclass_control_point_trigger_a90583038af1479087ca8e8bc17c3e1a1_cgraph" id="aclass_control_point_trigger_a90583038af1479087ca8e8bc17c3e1a1_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,197,45"/>
+<area shape="rect" href="class_game_events_manager.html#a855511803acce0d0b1506e95913c2249" title=" " alt="" coords="245,5,436,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ade8484b299a63fb386f9f5e1fec7f820" name="ade8484b299a63fb386f9f5e1fec7f820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade8484b299a63fb386f9f5e1fec7f820">&#9670;&#160;</a></span>OnTriggerExit2D()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlPointTrigger.OnTriggerExit2D </td>
+          <td>(</td>
+          <td class="paramtype">Collider2D&#160;</td>
+          <td class="paramname"><em>collision</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_control_point_trigger_8cs_source.html#l00016">16</a> of file <a class="el" href="_control_point_trigger_8cs_source.html">ControlPointTrigger.cs</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   17</span>    {</div>
+<div class="line"><span class="lineno">   18</span>        <a class="code hl_variable" href="class_control_point_trigger.html#a21579172936610b2e4693d1688ab15b1">m_unitsInControlPoint</a>.Remove(collision.gameObject.GetComponent&lt;<a class="code hl_class" href="class_base_unit.html">BaseUnit</a>&gt;());</div>
+<div class="line"><span class="lineno">   19</span>        <a class="code hl_class" href="class_game_events_manager.html">GameEventsManager</a>.<a class="code hl_variable" href="class_game_events_manager.html#a1064a13fbcad613c37dd46cd94f38bfd">instance</a>.<a class="code hl_function" href="class_game_events_manager.html#a855511803acce0d0b1506e95913c2249">ControlPointTriggerEnter</a>(GetComponentInParent&lt;ControlPointController&gt;().<span class="keywordtype">id</span>);</div>
+<div class="line"><span class="lineno">   20</span>    }</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_control_point_trigger_ade8484b299a63fb386f9f5e1fec7f820_cgraph.png" border="0" usemap="#aclass_control_point_trigger_ade8484b299a63fb386f9f5e1fec7f820_cgraph" alt=""/></div>
+<map name="aclass_control_point_trigger_ade8484b299a63fb386f9f5e1fec7f820_cgraph" id="aclass_control_point_trigger_ade8484b299a63fb386f9f5e1fec7f820_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,197,45"/>
+<area shape="rect" href="class_game_events_manager.html#a855511803acce0d0b1506e95913c2249" title=" " alt="" coords="245,5,436,45"/>
+</map>
+</div>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a21579172936610b2e4693d1688ab15b1" name="a21579172936610b2e4693d1688ab15b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21579172936610b2e4693d1688ab15b1">&#9670;&#160;</a></span>m_unitsInControlPoint</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">List&lt;<a class="el" href="class_base_unit.html">BaseUnit</a>&gt; ControlPointTrigger.m_unitsInControlPoint = new List&lt;<a class="el" href="class_base_unit.html">BaseUnit</a>&gt;()</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_control_point_trigger_8cs_source.html#l00008">8</a> of file <a class="el" href="_control_point_trigger_8cs_source.html">ControlPointTrigger.cs</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>Map Scripts/<a class="el" href="_control_point_trigger_8cs.html">ControlPointTrigger.cs</a></li>
+<li>C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Map Scripts/<a class="el" href="_control_point_trigger_8cs_source.html">ControlPointTrigger.cs</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

@@ -3,11 +3,23 @@
 
 
 Inheritance diagram for NNCommander\+Body\+:
-% FIG 0
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=188pt]{class_n_n_commander_body__inherit__graph}
+\end{center}
+\end{figure}
 
 
 Collaboration diagram for NNCommander\+Body\+:
-% FIG 1
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_body__coll__graph}
+\end{center}
+\end{figure}
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -15,6 +27,29 @@ float\mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_n_n_commander_body_a3f97d075969
 \item 
 void \mbox{\hyperlink{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80}{Decide\+Action}} ()
 \end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_n_n_commander_body_a8f4807e20783621e11216d23ff0f06df}{Start}} ()
+\item 
+void \mbox{\hyperlink{class_n_n_commander_body_a63a4a2aa637db9c11f7ae648f0d764ee}{Send\+Units}} ()
+\item 
+void \mbox{\hyperlink{class_n_n_commander_body_a2afec130389784c182207a570071c180}{Rally}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_unit_manager}{Unit\+Manager}} \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\+\_\+unit\+Manager}}
+\item 
+\mbox{\hyperlink{class_a_i_unit_spawner}{AIUnit\+Spawner}} \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\+\_\+unit\+Spawner}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00005}{5}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
 
 
 \doxysubsection{Member Function Documentation}
@@ -24,8 +59,64 @@ void \mbox{\hyperlink{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80
 \doxysubsubsection{\texorpdfstring{DecideAction()}{DecideAction()}}
 {\footnotesize\ttfamily void NNCommander\+Body.\+Decide\+Action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00025}{25}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00026     \{}
+\DoxyCodeLine{00027         \textcolor{keywordtype}{float} best = \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[0];}
+\DoxyCodeLine{00028         \textcolor{keywordtype}{int} index = 0;}
+\DoxyCodeLine{00029         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 1; i < \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}.Length; i++)}
+\DoxyCodeLine{00030         \{}
+\DoxyCodeLine{00031             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[i] > best)}
+\DoxyCodeLine{00032             \{}
+\DoxyCodeLine{00033                 best = \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[i];}
+\DoxyCodeLine{00034                 index = i;}
+\DoxyCodeLine{00035             \}}
+\DoxyCodeLine{00036         \}}
+\DoxyCodeLine{00037 }
+\DoxyCodeLine{00038         \textcolor{keywordflow}{switch} (index)}
+\DoxyCodeLine{00039         \{}
+\DoxyCodeLine{00040             \textcolor{keywordflow}{case} 0:}
+\DoxyCodeLine{00041                 \textcolor{comment}{//Generate a group of units}}
+\DoxyCodeLine{00042                 Debug.Log(\textcolor{stringliteral}{"{}Make more units: "{}} + \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[0]);}
+\DoxyCodeLine{00043                 \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aeb42915d2439ce802205617796c096dd}{SpawnUnit}}();}
+\DoxyCodeLine{00044 }
+\DoxyCodeLine{00045                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00046             \textcolor{keywordflow}{case} 1:}
+\DoxyCodeLine{00047                 \textcolor{comment}{//Send units to cp}}
+\DoxyCodeLine{00048                 Debug.Log(\textcolor{stringliteral}{"{}Send units to CP: "{}} + \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[1]);}
+\DoxyCodeLine{00049 }
+\DoxyCodeLine{00050                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00051             \textcolor{keywordflow}{case} 2:}
+\DoxyCodeLine{00052                 \textcolor{comment}{//Send units to rp}}
+\DoxyCodeLine{00053                 Debug.Log(\textcolor{stringliteral}{"{}Send units to RP: "{}} + \mbox{\hyperlink{class_n_n_commander_brain}{NNCommanderBrain}}.\mbox{\hyperlink{class_n_n_commander_brain_a93d0606a6dd6fe2ffe94fad4362d53d3}{instance}}.\mbox{\hyperlink{class_n_n_commander_brain_a81da0ff5ed4ceed86f5c2d4415830b90}{m\_outputs}}[2]);}
+\DoxyCodeLine{00054                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00055 }
+\DoxyCodeLine{00056             \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00057                 \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00058         \}}
+\DoxyCodeLine{00059     \}}
+
+\end{DoxyCode}
 Here is the call graph for this function\+:
-% FIG 2
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_body_a8c2bf4062941a443890ce18b17979d80_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{class_n_n_commander_body_a3f97d0759691e6ace10f2611f1f9d122}\label{class_n_n_commander_body_a3f97d0759691e6ace10f2611f1f9d122}} 
 \index{NNCommanderBody@{NNCommanderBody}!GetInputs@{GetInputs}}
 \index{GetInputs@{GetInputs}!NNCommanderBody@{NNCommanderBody}}
@@ -34,6 +125,151 @@ Here is the call graph for this function\+:
 
 
 
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00016}{16}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00017     \{}
+\DoxyCodeLine{00018         \textcolor{keywordtype}{float}[] floats = \{ \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Count, \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_aea142f6ef0e38bf108e620b5b0983e3d}{m\_team1ControlledPoints}}.Count, \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_ada8721fa8d9d3a5002a982b28ee9f897}{m\_team1Score}}, \mbox{\hyperlink{class_game_manager}{GameManager}}.\mbox{\hyperlink{class_game_manager_a7666e8468dac197b9eb32dd32128524f}{instance}}.\mbox{\hyperlink{class_game_manager_acad047649b124177a598fddb478544cb}{m\_team1Reserves}}\};}
+\DoxyCodeLine{00019 }
+\DoxyCodeLine{00020         \textcolor{keywordflow}{return} floats;}
+\DoxyCodeLine{00021     \}}
+
+\end{DoxyCode}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_body_a3f97d0759691e6ace10f2611f1f9d122_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_n_commander_body_a2afec130389784c182207a570071c180}\label{class_n_n_commander_body_a2afec130389784c182207a570071c180}} 
+\index{NNCommanderBody@{NNCommanderBody}!Rally@{Rally}}
+\index{Rally@{Rally}!NNCommanderBody@{NNCommanderBody}}
+\doxysubsubsection{\texorpdfstring{Rally()}{Rally()}}
+{\footnotesize\ttfamily void NNCommander\+Body.\+Rally (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00067}{67}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00068     \{}
+\DoxyCodeLine{00069         \textcolor{keywordtype}{int} randomUnit = Random.Range(0, \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}.Count);}
+\DoxyCodeLine{00070 }
+\DoxyCodeLine{00071 }
+\DoxyCodeLine{00072         Collider2D[] collider2DArray = Physics2D.OverlapCircleAll(\mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}}.\mbox{\hyperlink{class_a_i_unit_spawner_aedbbf7d8e97d2ac39fa950c043229074}{m\_troopCount}}[randomUnit].transform.position, 5);}
+\DoxyCodeLine{00073 }
+\DoxyCodeLine{00074         \textcolor{keywordflow}{if} (collider2DArray.Length > 5)}
+\DoxyCodeLine{00075         \{}
+\DoxyCodeLine{00076             \textcolor{keywordflow}{foreach} (Collider2D collider2D \textcolor{keywordflow}{in} collider2DArray)}
+\DoxyCodeLine{00077             \{}
+\DoxyCodeLine{00078                 \mbox{\hyperlink{class_base_unit}{BaseUnit}} unitRTS = collider2D.GetComponent<\mbox{\hyperlink{class_base_unit}{BaseUnit}}>();}
+\DoxyCodeLine{00079 }
+\DoxyCodeLine{00080                 \textcolor{keywordflow}{if} (unitRTS == \textcolor{keyword}{null} || unitRTS.gameObject.tag != gameObject.tag)}
+\DoxyCodeLine{00081                 \{}
+\DoxyCodeLine{00082                     \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00083                 \}}
+\DoxyCodeLine{00084 }
+\DoxyCodeLine{00085                 \mbox{\hyperlink{class_group_leader}{GroupLeader}} leader = unitRTS.\mbox{\hyperlink{class_base_unit_a9cd35c425549c36834a8606c86b15d49}{GetLeader}}();}
+\DoxyCodeLine{00086                 \textcolor{comment}{//Has no group then keep it loose}}
+\DoxyCodeLine{00087                 \textcolor{keywordflow}{if} (leader == \textcolor{keyword}{null})}
+\DoxyCodeLine{00088                 \{}
+\DoxyCodeLine{00089                     \textcolor{keywordflow}{if} (!\mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Contains(unitRTS))}
+\DoxyCodeLine{00090                     \{}
+\DoxyCodeLine{00091                         \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_a41ed6c79982363c306738d9fcaf26c14}{m\_selectedUnits}}.Add(unitRTS);}
+\DoxyCodeLine{00092                         unitRTS.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00093                     \}}
+\DoxyCodeLine{00094                 \}}
+\DoxyCodeLine{00095                 \textcolor{comment}{//Has a group so get everyone from that group}}
+\DoxyCodeLine{00096                 \textcolor{keywordflow}{else}}
+\DoxyCodeLine{00097                 \{}
+\DoxyCodeLine{00098                     \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Contains(leader))}
+\DoxyCodeLine{00099                         \textcolor{keywordflow}{continue};}
+\DoxyCodeLine{00100 }
+\DoxyCodeLine{00101                     \textcolor{keywordflow}{foreach} (\mbox{\hyperlink{class_base_unit}{BaseUnit}} unit \textcolor{keywordflow}{in} leader.\mbox{\hyperlink{class_group_leader_a9ed1939ca322e7b2c1038adaadfaca28}{units}})}
+\DoxyCodeLine{00102                     \{}
+\DoxyCodeLine{00103                         unit.\mbox{\hyperlink{class_base_unit_a01b7cb41c2be087426e622fa4e57fc69}{SetSelectedVisible}}(\textcolor{keyword}{true});}
+\DoxyCodeLine{00104                     \}}
+\DoxyCodeLine{00105                     \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}}.\mbox{\hyperlink{class_unit_manager_aaea901c23ae0ae6a8903c36f3eb6fb0b}{m\_selectedGroupLeaders}}.Add(leader);}
+\DoxyCodeLine{00106                 \}}
+\DoxyCodeLine{00107             \}}
+\DoxyCodeLine{00108         \}}
+\DoxyCodeLine{00109 }
+\DoxyCodeLine{00110 }
+\DoxyCodeLine{00111     \}}
+
+\end{DoxyCode}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_n_commander_body_a2afec130389784c182207a570071c180_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_n_n_commander_body_a63a4a2aa637db9c11f7ae648f0d764ee}\label{class_n_n_commander_body_a63a4a2aa637db9c11f7ae648f0d764ee}} 
+\index{NNCommanderBody@{NNCommanderBody}!SendUnits@{SendUnits}}
+\index{SendUnits@{SendUnits}!NNCommanderBody@{NNCommanderBody}}
+\doxysubsubsection{\texorpdfstring{SendUnits()}{SendUnits()}}
+{\footnotesize\ttfamily void NNCommander\+Body.\+Send\+Units (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00062}{62}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00063     \{}
+\DoxyCodeLine{00064 }
+\DoxyCodeLine{00065     \}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_n_commander_body_a8f4807e20783621e11216d23ff0f06df}\label{class_n_n_commander_body_a8f4807e20783621e11216d23ff0f06df}} 
+\index{NNCommanderBody@{NNCommanderBody}!Start@{Start}}
+\index{Start@{Start}!NNCommanderBody@{NNCommanderBody}}
+\doxysubsubsection{\texorpdfstring{Start()}{Start()}}
+{\footnotesize\ttfamily void NNCommander\+Body.\+Start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00010}{10}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00011     \{}
+\DoxyCodeLine{00012         \mbox{\hyperlink{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}{m\_unitSpawner}} = GetComponent<AIUnitSpawner>();}
+\DoxyCodeLine{00013         \mbox{\hyperlink{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}{m\_unitManager}} = GetComponent<UnitManager>();}
+\DoxyCodeLine{00014     \}}
+
+\end{DoxyCode}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}\label{class_n_n_commander_body_a79d5e325109ae81db458b85faea101eb}} 
+\index{NNCommanderBody@{NNCommanderBody}!m\_unitManager@{m\_unitManager}}
+\index{m\_unitManager@{m\_unitManager}!NNCommanderBody@{NNCommanderBody}}
+\doxysubsubsection{\texorpdfstring{m\_unitManager}{m\_unitManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_unit_manager}{Unit\+Manager}} NNCommander\+Body.\+m\+\_\+unit\+Manager\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00007}{7}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+\mbox{\Hypertarget{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}\label{class_n_n_commander_body_abeafbc21c210d1a6490d4178ecba9435}} 
+\index{NNCommanderBody@{NNCommanderBody}!m\_unitSpawner@{m\_unitSpawner}}
+\index{m\_unitSpawner@{m\_unitSpawner}!NNCommanderBody@{NNCommanderBody}}
+\doxysubsubsection{\texorpdfstring{m\_unitSpawner}{m\_unitSpawner}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_a_i_unit_spawner}{AIUnit\+Spawner}} NNCommander\+Body.\+m\+\_\+unit\+Spawner\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line \mbox{\hyperlink{_n_n_commander_body_8cs_source_l00008}{8}} of file \mbox{\hyperlink{_n_n_commander_body_8cs_source}{NNCommander\+Body.\+cs}}.
+
+
+
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-ML/\mbox{\hyperlink{_n_n_commander_body_8cs}{NNCommander\+Body.\+cs}}\end{DoxyCompactItemize}
+C\+:/\+Users/gameuser/\+Desktop/4th Year Work/\+Project/4th\+Year\+Project/\+RTS/\+Assets/\+Resources/\+Scripts/\+ML/\mbox{\hyperlink{_n_n_commander_body_8cs}{NNCommander\+Body.\+cs}}\end{DoxyCompactItemize}

@@ -1,0 +1,5 @@
+<map id="PlayerUnitSpawner.SpawnUI" name="PlayerUnitSpawner.SpawnUI">
+<area shape="rect" id="node1" title=" " alt="" coords="507,5,693,31"/>
+<area shape="rect" id="node2" href="$class_player_unit_spawner.html#a11e03f0f736e00227c421ab00b1cc346" title=" " alt="" coords="252,5,459,31"/>
+<area shape="rect" id="node3" href="$class_player_unit_spawner.html#a60032debd862fffd8f0bfef1b521cf64" title=" " alt="" coords="5,5,204,31"/>
+</map>

@@ -1,0 +1,33 @@
+\hypertarget{_tree_8cs_source}{}\doxysection{Tree.\+cs}
+\label{_tree_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/Basics/Tree.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/Basics/Tree.cs}}
+\mbox{\hyperlink{_tree_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00004}00004 }
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00005}00005 }
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00006}00006 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespace_behavior_tree}{BehaviorTree}}}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00007}00007 \{}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00008}\mbox{\hyperlink{class_behavior_tree_1_1_tree}{00008}}     \textcolor{keyword}{public} \textcolor{keyword}{abstract} \textcolor{keyword}{class }\mbox{\hyperlink{class_behavior_tree_1_1_tree}{Tree}} : MonoBehaviour}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00009}00009     \{}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00010}\mbox{\hyperlink{class_behavior_tree_1_1_tree_aae02c40f4364244e31229ad4129bc249}{00010}}         \textcolor{keyword}{private} \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} \mbox{\hyperlink{class_behavior_tree_1_1_tree_aae02c40f4364244e31229ad4129bc249}{\_root}} = \textcolor{keyword}{null};}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00011}\mbox{\hyperlink{class_behavior_tree_1_1_tree_a89169f6cb1c3e4b44aea9ce8f083ae55}{00011}}         \textcolor{keyword}{protected} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_behavior_tree_1_1_tree_a89169f6cb1c3e4b44aea9ce8f083ae55}{Start}}()}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00012}00012         \{}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00013}00013             \mbox{\hyperlink{class_behavior_tree_1_1_tree_aae02c40f4364244e31229ad4129bc249}{\_root}} = \mbox{\hyperlink{class_behavior_tree_1_1_tree_a53186d3f87ef3ec6f6c3146c85de9322}{SetupTree}}();}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00014}00014         \}}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00015}00015 }
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00016}\mbox{\hyperlink{class_behavior_tree_1_1_tree_aa5ef775fc9991ace7c9edc6a555cca67}{00016}}         \textcolor{keyword}{private} \textcolor{keywordtype}{void} \mbox{\hyperlink{class_behavior_tree_1_1_tree_aa5ef775fc9991ace7c9edc6a555cca67}{Update}}()}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00017}00017         \{}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00018}00018             \textcolor{keywordflow}{if} (\mbox{\hyperlink{class_behavior_tree_1_1_tree_aae02c40f4364244e31229ad4129bc249}{\_root}} != \textcolor{keyword}{null})}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00019}00019             \{}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00020}00020                 \mbox{\hyperlink{class_behavior_tree_1_1_tree_aae02c40f4364244e31229ad4129bc249}{\_root}}.\mbox{\hyperlink{class_behavior_tree_1_1_node_a5c7ed46c54539c4498c911b77c6bc164}{Evaluate}}();}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00021}00021             \}}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00022}00022         \}}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00023}00023 }
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00024}\mbox{\hyperlink{class_behavior_tree_1_1_tree_a0ca4067db987d81bf118c6e99fcff09a}{00024}}         \textcolor{keyword}{public} \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} \mbox{\hyperlink{class_behavior_tree_1_1_tree_a0ca4067db987d81bf118c6e99fcff09a}{Root}} => \mbox{\hyperlink{class_behavior_tree_1_1_tree_aae02c40f4364244e31229ad4129bc249}{\_root}};}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00025}\mbox{\hyperlink{class_behavior_tree_1_1_tree_a53186d3f87ef3ec6f6c3146c85de9322}{00025}}         \textcolor{keyword}{protected} \textcolor{keyword}{abstract} \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}} \mbox{\hyperlink{class_behavior_tree_1_1_tree_a53186d3f87ef3ec6f6c3146c85de9322}{SetupTree}}();}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00026}00026     \}}
+\DoxyCodeLine{\Hypertarget{_tree_8cs_source_l00027}00027 \}}
+
+\end{DoxyCode}

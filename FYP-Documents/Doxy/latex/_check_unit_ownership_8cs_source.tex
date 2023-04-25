@@ -1,0 +1,25 @@
+\hypertarget{_check_unit_ownership_8cs_source}{}\doxysection{Check\+Unit\+Ownership.\+cs}
+\label{_check_unit_ownership_8cs_source}\index{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/CheckUnitOwnership.cs@{C:/Users/gameuser/Desktop/4th Year Work/Project/4thYearProject/RTS/Assets/Resources/Scripts/Behaviour Tree/CheckUnitOwnership.cs}}
+\mbox{\hyperlink{_check_unit_ownership_8cs}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00001}00001 \textcolor{keyword}{using }System.Collections;}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00002}00002 \textcolor{keyword}{using }System.Collections.Generic;}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00003}00003 \textcolor{keyword}{using }UnityEngine;}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00004}00004 \textcolor{keyword}{using }\mbox{\hyperlink{namespace_behavior_tree}{BehaviorTree}};}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00005}\mbox{\hyperlink{class_check_unit_ownership}{00005}} \textcolor{keyword}{public} \textcolor{keyword}{class }\mbox{\hyperlink{class_check_unit_ownership}{CheckUnitOwnership}} : \mbox{\hyperlink{class_behavior_tree_1_1_node}{Node}}}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00006}00006 \{}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00007}\mbox{\hyperlink{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}{00007}}     \textcolor{keyword}{private} \textcolor{keywordtype}{bool} \mbox{\hyperlink{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}{\_unitIsMine}};}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00008}00008 }
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00009}00009     \textcolor{comment}{//public CheckUnitOwnership(RTSGameController manager) : base()}}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00010}00010     \textcolor{comment}{//\{}}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00011}00011     \textcolor{comment}{//    \_unitIsMine = manager.m\_selectedUnits.== GameManager.instance.gamePlayersParameters.myPlayerId;}}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00012}00012     \textcolor{comment}{//\}}}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00013}00013 }
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00014}\mbox{\hyperlink{class_check_unit_ownership_aabd1fc9460a827678e6952f360c520b2}{00014}}     \textcolor{keyword}{public} \textcolor{keyword}{override} \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}} \mbox{\hyperlink{class_check_unit_ownership_aabd1fc9460a827678e6952f360c520b2}{Evaluate}}()}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00015}00015     \{}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00016}00016         \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}} = \mbox{\hyperlink{class_check_unit_ownership_a423c3e73d45f752f3f687499b5974a1f}{\_unitIsMine}} ? NodeState.SUCCESS : \mbox{\hyperlink{namespace_behavior_tree_ad28716fafe44c95a42ab6428ac2f6b50}{NodeState}}.FAILURE;}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00017}00017         \textcolor{keywordflow}{return} \mbox{\hyperlink{class_behavior_tree_1_1_node_a706ef80276709ae3552393ce56311fbd}{state}};}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00018}00018     \}}
+\DoxyCodeLine{\Hypertarget{_check_unit_ownership_8cs_source_l00019}00019 \}}
+
+\end{DoxyCode}

@@ -61,12 +61,12 @@ public class GroupLeader : MonoBehaviour
         }
 
         RemoveExcessTransformations();
-        MoveUnits();
-
         if (units.Count == 0)
         {
             Destroy(gameObject);
         }
+        MoveUnits();
+
 
 
         gameObject.GetComponent<SpriteRenderer>().enabled = GameManager.instance.m_debugMode;
@@ -106,7 +106,6 @@ public class GroupLeader : MonoBehaviour
     }
     private void MoveUnits()
     {
-        Debug.Log("Unit count :" + units.Count);
         for (int index = 0; index < units.Count; index++)
         {
             units[index].SetTargetPosition(m_positions[index].position);

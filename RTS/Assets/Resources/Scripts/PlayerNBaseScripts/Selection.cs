@@ -17,61 +17,9 @@ public class Selection : MonoBehaviour
         m_unitManager = GetComponent<UnitManager>();
         m_controller = GetComponent<RTSGameController>();
     }
-
-    //// Update is called once per frame
-    //void Update()
-    //{
-    //    //Checks if any units selected has died and removes them from the list
-    //    for (int i = 0; i < m_unitManager.m_selectedUnits.Count; i++)
-    //    {
-    //        if (m_unitManager.m_selectedUnits[i] == null)
-    //        {
-    //            m_unitManager.m_selectedUnits.Remove(m_unitManager.m_selectedUnits[i]);
-    //        }
-    //    }
-
-    //    if (Input.GetMouseButtonDown(0))
-    //    {
-    //        m_selectedAreaTransform.gameObject.SetActive(true);
-    //        m_startPosition = Utility.ReturnMousePosition2D();
-    //    }
-
-    //    if (Input.GetMouseButton(0))
-    //    {
-
-    //        Vector3 currentMousePosition = Utility.ReturnMousePosition2D();
-    //        Vector3 lowerLeft = new Vector3
-    //            (
-    //                Mathf.Min(m_startPosition.x, currentMousePosition.x),
-    //                Mathf.Min(m_startPosition.y, currentMousePosition.y)
-    //            );
-
-    //        Vector3 upperRight = new Vector3
-    //            (
-    //                Mathf.Max(m_startPosition.x, currentMousePosition.x),
-    //                Mathf.Max(m_startPosition.y, currentMousePosition.y)
-    //            );
-
-    //        m_selectedAreaTransform.position = lowerLeft;
-    //        m_selectedAreaTransform.localScale = upperRight - lowerLeft;
-    //    }
-
-
-    //    if (Input.GetMouseButtonUp(0))
-    //    {
-    //        m_selectedAreaTransform.gameObject.SetActive(false);
-
-    //        SelectUnits();
-    //        GroupSelection();
-    //    }
-
-
-    //    if (Input.GetMouseButtonDown(1))
-    //    {
-    //        MoveSelection(Utility.ReturnMousePosition2D());
-    //    }
-    //}
-
+    /// <summary>
+    /// Selects all units in the overlap area
+    /// </summary>
     protected void SelectUnits()
     {
 
@@ -80,10 +28,6 @@ public class Selection : MonoBehaviour
         if (collider2DArray.Length > 0)
         {
 
-            //foreach (BaseUnit unitRTS in m_unitManager.m_selectedUnits)
-            //{
-            //    unitRTS.SetSelectedVisible(false);
-            //}
             foreach (Collider2D collider2D in collider2DArray)
             {
                 BaseUnit unitRTS = collider2D.GetComponent<BaseUnit>();

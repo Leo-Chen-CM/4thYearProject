@@ -21,12 +21,14 @@ public class PlayerSelection : Selection
             }
         }
 
+        //Enables the selection area gameobject and assigns the starting position of the transform to the first instance of where the mouse was.
         if (Input.GetMouseButtonDown(0))
         {
             m_selectedAreaTransform.gameObject.SetActive(true);
             m_startPosition = Utility.ReturnMousePosition2D();
         }
 
+        //When dragging the mouse around, the transform scales based on the distance from the starting position to where the mouse is.
         if (Input.GetMouseButton(0))
         {
 
@@ -48,6 +50,7 @@ public class PlayerSelection : Selection
         }
 
 
+        
         if (Input.GetMouseButtonUp(0))
         {
             m_selectedAreaTransform.gameObject.SetActive(false);

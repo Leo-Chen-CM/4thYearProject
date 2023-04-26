@@ -23,12 +23,12 @@ public class UnitShooting : MonoBehaviour
     {
         if (gameObject.tag == "Team1")
         {
-            m_lineRenderer.material.color = Color.red;
+            m_lineRenderer.material.color = Color.blue;
         }
         
         if (gameObject.tag == "Team2")
         {
-            m_lineRenderer.material.color = Color.blue;
+            m_lineRenderer.material.color = Color.red;
         }
         m_lineRenderer.enabled = false;
     }

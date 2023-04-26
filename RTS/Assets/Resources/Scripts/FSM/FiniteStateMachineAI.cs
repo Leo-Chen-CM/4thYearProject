@@ -59,16 +59,17 @@ public class FiniteStateMachineAI : RTSGameController
         m_AI = true;
         StartCoroutine(Orders());
     }
+
+    /// <summary>
+    /// A very simple loop.
+    /// </summary>
+    /// <returns></returns>
     IEnumerator Orders()
     {
         while (true)
         {
             switch (m_states)
             {
-                //case States.Idle:
-                //    //AwaitingOrders();
-                //    break;
-
                 case States.GatherForces:
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     GatherForces();
@@ -76,19 +77,14 @@ public class FiniteStateMachineAI : RTSGameController
                     break;
 
                 case States.RallyPoint:
-                    //m_states = States.Idle;
-                    //StartCoroutine(MoveToRallyPoint());
-                    //MoveToPoint(m_wayPoints[0].position);
                     SetFormationPosition(m_rallyPoints[Random.Range(0,m_rallyPoints.Count)].position);
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.MoveOut;
                     break;
 
                 case States.MoveOut:
-                    //m_states = States.Idle;
-                    //StartCoroutine(MoveOut());
-                    SetFormationPosition(m_wayPoints[Random.Range(0, m_wayPoints.Count)].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
-                    //MoveToPoint(m_wayPoints[1].position + new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
+                    SetFormationPosition(m_wayPoints[Random.Range(0, m_wayPoints.Count)].position + 
+                                         new Vector3(Random.Range(-5, 5), Random.Range(-5, 5), 0));
                     yield return new WaitForSeconds(m_ordersTimeDelay);
                     m_states = States.GatherForces;
                     break;
@@ -96,23 +92,14 @@ public class FiniteStateMachineAI : RTSGameController
         }
     }
 
-
+    /// <summary>
+    /// Gets all units in the collider array annd puts them into the selection
+    /// </summary>
     void GatherForces()
     {
         Collider2D[] collider2DArray;
 
         collider2DArray = Physics2D.OverlapAreaAll(m_selectionArea[0].position, m_selectionArea[1].position, m_entityLayer);
-
-        //if (gameObject.tag == "Team1")
-        //{
-
-
-        //    collider2DArray = Physics2D.OverlapAreaAll(new Vector3(-250, 75, 0), new Vector3(-175, -75, 0), m_entityLayer);
-        //}
-        //else
-        //{
-        //    collider2DArray = Physics2D.OverlapAreaAll(new Vector3(175, 75, 0), new Vector3(250, -75, 0), m_entityLayer);
-        //}
 
         m_selectedUnits.Clear();
 
@@ -132,19 +119,4 @@ public class FiniteStateMachineAI : RTSGameController
 
         m_states = States.RallyPoint;
     }
-
-    //void MoveToPoint(Vector3 t_destination)
-    //{
-    //    List<Vector3> targetPositionList = GetLinePositionList(t_destination);
-
-    //    int targetPositionListIndex = 0;
-
-    //    foreach (UnitRTS unit in m_selectedUnits)
-    //    {
-    //        unit.m_agent.SetTargetPosition(targetPositionList[targetPositionListIndex]);
-    //        targetPositionListIndex = (targetPositionListIndex + 1) % targetPositionList.Count;
-    //    }
-    //}
-
-
 }

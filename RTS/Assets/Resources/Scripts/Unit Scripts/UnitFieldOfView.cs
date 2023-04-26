@@ -6,6 +6,8 @@ using static UnityEngine.GraphicsBuffer;
 
 /// <summary>
 /// Field of view of a single unit
+/// Based on Sebastian Lague's tutorial:
+/// https://www.youtube.com/watch?v=rQG9aUWarwE
 /// </summary>
 public class UnitFieldOfView : MonoBehaviour
 {
@@ -18,7 +20,7 @@ public class UnitFieldOfView : MonoBehaviour
     public LayerMask m_obstructionLayer;
     public LayerMask m_obstructionOnlyLayer;
 
-    [HideInInspector]
+    
     public List<Transform> visibleTargets = new List<Transform>();
 
     public float m_meshResolution;
@@ -33,6 +35,7 @@ public class UnitFieldOfView : MonoBehaviour
 
     public Transform m_target;
 
+    [SerializeField]
     private UnitShooting m_unitShooting;
 
     List<Collider2D> m_targetsInView = new List<Collider2D>();
@@ -45,7 +48,7 @@ public class UnitFieldOfView : MonoBehaviour
         viewMeshFilter.mesh = viewMesh;
 
         m_unitShooting = GetComponent<UnitShooting>();
-        StartCoroutine("FindTargetsWithDelay", .1f);
+        StartCoroutine("FindTargetsWithDelay", .2f);
     }
 
     bool FindVisibleTargets()

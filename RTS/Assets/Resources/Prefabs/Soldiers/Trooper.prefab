@@ -126,11 +126,11 @@ GameObject:
   - component: {fileID: 4623158510368895287}
   - component: {fileID: 4623158510368895280}
   - component: {fileID: 6128588384141374375}
+  - component: {fileID: 1816387446}
+  - component: {fileID: 1816387444}
   - component: {fileID: 4623158510368895285}
   - component: {fileID: 4623158510368895284}
   - component: {fileID: 4623158510368895307}
-  - component: {fileID: 1816387446}
-  - component: {fileID: 1816387444}
   - component: {fileID: 8303284807999659937}
   m_Layer: 6
   m_Name: Trooper
@@ -226,9 +226,59 @@ MonoBehaviour:
   m_rotationModifier: 90
   m_unitFieldOfView: {fileID: 0}
   m_destinationReached: 0
-  m_leader: 0
   m_toggleGoal: 0
   m_health: 3
+--- !u!114 &1816387446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623158510368895281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46cc306b35f9e8c45af87a8768a79fd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_radius: 15
+  m_engagementRanged: 0
+  m_angle: 360
+  m_targetLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  m_obstructionLayer:
+    serializedVersion: 2
+    m_Bits: 192
+  m_obstructionOnlyLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  visibleTargets: []
+  m_meshResolution: 0.2
+  edgeResolveIterations: 0
+  edgeDstThreshold: 0.5
+  maskCutawayDst: 0.1
+  viewMeshFilter: {fileID: 841360589166007095}
+  m_target: {fileID: 0}
+  m_unitShooting: {fileID: 1816387444}
+--- !u!114 &1816387444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4623158510368895281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29b140ed9a0173948b26dac7d94b78f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_firingPoint: {fileID: 4389229701348755439}
+  m_lineRenderer: {fileID: 8303284807999659937}
+  fireRate: 1
+  m_offset: 0.15
+  m_layerMask:
+    serializedVersion: 2
+    m_Bits: 192
 --- !u!195 &4623158510368895285
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -288,56 +338,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1816387446
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4623158510368895281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 46cc306b35f9e8c45af87a8768a79fd8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_radius: 15
-  m_engagementRanged: 0
-  m_angle: 360
-  m_targetLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  m_obstructionLayer:
-    serializedVersion: 2
-    m_Bits: 192
-  m_obstructionOnlyLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  visibleTargets: []
-  m_meshResolution: 1
-  edgeResolveIterations: 0
-  edgeDstThreshold: 0.5
-  maskCutawayDst: 0.1
-  viewMeshFilter: {fileID: 841360589166007095}
-  m_target: {fileID: 0}
---- !u!114 &1816387444
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4623158510368895281}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29b140ed9a0173948b26dac7d94b78f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_firingPoint: {fileID: 4389229701348755439}
-  m_lineRenderer: {fileID: 8303284807999659937}
-  fireRate: 1
-  m_offset: 0.15
-  m_layerMask:
-    serializedVersion: 2
-    m_Bits: 192
 --- !u!120 &8303284807999659937
 LineRenderer:
   m_ObjectHideFlags: 0

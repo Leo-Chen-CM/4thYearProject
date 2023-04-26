@@ -76,11 +76,17 @@ public class BaseUnit : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Stops the agent from moving
+    /// </summary>
     void Idle()
     {
         m_agent.SetDestination(new Vector3(transform.position.x, transform.position.y, 0));
     }
 
+    /// <summary>
+    /// Checks if they've reached the position
+    /// </summary>
     void CheckPosition()
     {
         if (Vector3.Distance(m_targetDestination, transform.position) <= m_agent.stoppingDistance)
@@ -89,24 +95,25 @@ public class BaseUnit : MonoBehaviour
             m_rigidbody2D.velocity = Vector3.zero;
             m_targetDestination = transform.position;
             m_destinationReached = true;
-
-            //m_currentState = State.Idle;
         }
 
     }
 
+    /// <summary>
+    /// Rotates towards the direction the agent is moving in
+    /// </summary>
     void RotateTowards()
     {
         if (m_targetDestination != transform.position && !m_unitFieldOfView.m_enemySpotted)
         {
-            //Vector3 vectorToTarget = m_target - transform.position;
-            //float angle = Mathf.Atan2(vectorToTarget.y, vectorToTarget.x) * Mathf.Rad2Deg - m_rotationModifier;
-            //Quaternion q = Quaternion.AngleAxis(angle, Vector3.forward);
-            //transform.rotation = Quaternion.Slerp(transform.rotation, q, Time.deltaTime * m_rotationSpeed);
             transform.rotation = Quaternion.LookRotation(Vector3.forward, m_rigidbody2D.velocity * m_rotationSpeed);
         }
     }
 
+    /// <summary>
+    /// Reset target variables
+    /// </summary>
+    /// <param name="t_position">Position of formation point is passed</param>
     public void SetTargetPosition(Vector3 t_position)
     {
         m_destinationReached = false;
@@ -114,7 +121,9 @@ public class BaseUnit : MonoBehaviour
         SetAgentPosition();
     }
 
-
+    /// <summary>
+    /// Sets the agent's destination 
+    /// </summary>
     void SetAgentPosition()
     {
         Vector3 moveDirection = (m_targetDestination - transform.position).normalized;
@@ -124,11 +133,19 @@ public class BaseUnit : MonoBehaviour
         m_agent.SetDestination(new Vector3(m_targetDestination.x, m_targetDestination.y, 0));
     }
 
+    /// <summary>
+    /// Get leader of formation
+    /// </summary>
+    /// <returns>Leader of formation</returns>
     public GroupLeader GetLeader()
     {
         return m_groupLeader;
     }
 
+    /// <summary>
+    /// Assign leader of the formation/group they are in
+    /// </summary>
+    /// <param name="t_leader">Group leader</param>
     public void AssignLeader(GroupLeader t_leader)
     {
         m_groupLeader = t_leader;
@@ -147,6 +164,10 @@ public class BaseUnit : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Sets the team they are on
+    /// </summary>
+    /// <param name="t_teamTag"></param>
     public void SetupTeam(string t_teamTag)
     {
         gameObject.tag = t_teamTag;
